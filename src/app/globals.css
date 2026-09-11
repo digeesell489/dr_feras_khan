@@ -1,26 +1,83 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cream: #f4f1ea;
+  --cream-soft: #f8f6f1;
+  --ink: #1a1816;
+  --muted: #6d6860;
+  --line: #e4dfd6;
+  --navy: #0c1424;
+  --navy-mid: #152033;
+  --gold: #b9a27a;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-cream: var(--cream);
+  --color-cream-soft: var(--cream-soft);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-navy: var(--navy);
+  --color-navy-mid: var(--navy-mid);
+  --color-gold: var(--gold);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-instrument);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: #d8c9a8;
+  color: var(--ink);
+}
+
+.page-width {
+  width: 100%;
+  max-width: 1680px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+@media (min-width: 768px) {
+  .page-width {
+    padding-inline: 24px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .page-width {
+    padding-inline: 32px;
+  }
+}
+
+.hairline {
+  background: var(--line);
+}
+
+.orb-ring {
+  box-shadow:
+    0 50px 90px rgba(28, 24, 20, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.7),
+    inset 0 0 80px rgba(255, 255, 255, 0.28);
+}
+
+.orb-glass {
+  background:
+    radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.08) 36%, rgba(244, 241, 234, 0.18) 62%, rgba(230, 224, 212, 0.35) 100%);
+}
+
+.orb-highlight {
+  background: radial-gradient(circle at 30% 22%, rgba(255, 255, 255, 0.85), transparent 38%);
+}
+
+.photo-fade {
+  mask-image: linear-gradient(to bottom, black 72%, transparent 100%);
 }
