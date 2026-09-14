@@ -1,60 +1,60 @@
-import { approaches } from "@/lib/content";
-import { Section, SectionHeader } from "./ui/Section";
+"use client";
 
-const icons = [
-  <svg key="joint" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
-    <circle cx="12" cy="12" r="8.5" stroke="currentColor" strokeWidth="1.4" />
-    <path d="M8 12h8M12 8v8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-  </svg>,
-  <svg key="robot" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
-    <rect x="5" y="7" width="14" height="11" rx="2.5" stroke="currentColor" strokeWidth="1.4" />
-    <circle cx="9.5" cy="12" r="1.2" fill="currentColor" />
-    <circle cx="14.5" cy="12" r="1.2" fill="currentColor" />
-    <path d="M12 7V5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-  </svg>,
-  <svg key="implant" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
-    <path
-      d="M7 17 17 7M9 7h8v8"
-      stroke="currentColor"
-      strokeWidth="1.4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>,
-];
+import { approaches } from "@/lib/content";
+import { useLanguage } from "@/lib/language";
+import { Badge, Icon } from "./ui/Icons";
 
 export function Approach() {
+  const { lang, t } = useLanguage();
+
   return (
-    <Section id="approach">
-      <SectionHeader
-        badge="Clinical philosophy"
-        title="A Holistic Approach to Joint Replacement"
-        subtitle="Surgical technique and implant geometry are selected individually based on joint structure, alignment, tissue integrity, and functional goals."
-      />
+    <section className="relative w-full bg-alabaster-warm py-space-3xl lg:py-space-4xl" id="holistic-approach">
+      <div className="page-wrap">
+        <div className="mx-auto mb-space-2xl max-w-max-width-editorial text-center">
+          <Badge>
+            <Icon name="biotech" className="text-[16px]" />
+            {t.approachBadge}
+          </Badge>
+          <h2 className="mb-space-md font-headline-lg text-headline-lg text-primary">{t.approachTitle}</h2>
+          <p className="font-body-lg text-body-lg leading-relaxed text-text-secondary">{t.approachBody}</p>
+        </div>
 
-      <div className="mt-10 grid items-stretch gap-5 md:grid-cols-3">
-        {approaches.map((item, index) => (
-          <article
-            key={item.title}
-            className="flex h-full flex-col rounded-2xl border border-line bg-white p-7 shadow-[0_10px_30px_rgba(28,24,20,0.04)]"
-          >
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eef6f2] text-[#3d7a64]">
-              {icons[index]}
-            </span>
-            <h3 className="mt-5 text-[18px] font-medium leading-snug tracking-tight">
-              {item.title}
-            </h3>
-            <p className="mt-3 flex-1 text-[14px] leading-7 text-muted">{item.body}</p>
-            <p className="mt-6 text-[11px] font-medium uppercase tracking-[0.12em] text-muted">
-              {item.link} →
-            </p>
-          </article>
-        ))}
+        <div className="mb-space-xl grid grid-cols-1 gap-space-lg md:grid-cols-3">
+          {approaches.map((item, index) => (
+            <div
+              key={item.title}
+              className="glass-card-light group flex flex-col justify-between rounded-2xl border border-white/80 p-space-lg transition-all duration-300 hover:-translate-y-1 hover:border-surgical-teal/50"
+            >
+              <div
+                className={`mb-space-md flex h-11 w-11 items-center justify-center rounded-xl transition-colors ${
+                  index === 1
+                    ? "bg-surgical-teal-subtle text-surgical-teal group-hover:bg-surgical-teal group-hover:text-on-primary"
+                    : "bg-sand-tint text-clinical-navy group-hover:bg-clinical-navy group-hover:text-on-primary"
+                }`}
+              >
+                <Icon name={item.icon} className="text-[24px]" />
+              </div>
+              <div>
+                <h3 className="mb-space-sm font-headline-md text-headline-md text-primary">
+                  {lang === "ar" ? item.titleAr : item.title}
+                </h3>
+                <p className="font-body-md text-body-md leading-relaxed text-text-secondary">
+                  {lang === "ar" ? item.bodyAr : item.body}
+                </p>
+              </div>
+              <div className="mt-space-md border-t border-surface-border/60 pt-space-sm">
+                <span className="font-label-md text-[11px] font-semibold tracking-wider text-text-secondary uppercase">
+                  {lang === "ar" ? item.linkAr : item.link}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mx-auto max-w-xl rounded-xl border border-surgical-teal/20 bg-surgical-teal-subtle/80 px-space-md py-space-sm text-center">
+          <p className="font-headline-md text-[1.25rem] font-medium text-surgical-teal italic">{t.approachQuote}</p>
+        </div>
       </div>
-
-      <p className="serif mx-auto mt-10 max-w-[520px] text-center text-[18px] leading-7 text-ink/80 italic">
-        “The approach is chosen to suit the patient — not the other way around.”
-      </p>
-    </Section>
+    </section>
   );
 }

@@ -1,85 +1,133 @@
+"use client";
+
 import Image from "next/image";
+import { BookButton } from "@/components/BookButton";
+import { CountUp } from "@/components/CountUp";
 import { stats } from "@/lib/content";
-import { Section } from "./ui/Section";
+import { useLanguage } from "@/lib/language";
+import { ExternalArrow, Icon } from "./ui/Icons";
 
 export function Hero() {
+  const { lang, t } = useLanguage();
+
   return (
-    <Section id="about" innerClassName="py-10 md:py-14">
-      <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
-        <div>
-          <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-muted">
-            Consultant trauma &amp; orthopaedic surgeon · hip &amp; knee specialist · UAE &amp; UK
-          </p>
-
-          <h1 className="serif mt-4 max-w-[640px] text-[40px] leading-[1.08] tracking-[-0.03em] text-ink md:text-[56px]">
-            Restoring Natural Mobility with Precision Orthopaedic Surgery
-          </h1>
-
-          <p className="mt-5 text-[13px] tracking-wide text-ink/80">
-            Dr. Feras Ya&apos;ish · MBBS · MRCS(Ed) · FRCS (Tr&amp;Orth) · CCT (UK)
-          </p>
-
-          <p className="mt-5 max-w-[540px] text-[15px] leading-7 text-muted">
-            Specialised in robotic-assisted joint replacement, complex revision hip
-            &amp; knee surgery, and advanced ligament reconstruction at Healthpoint
-            Hospital, Zayed Sports City, Abu Dhabi.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a
-              href="#book"
-              className="inline-flex h-11 items-center justify-center rounded-lg bg-navy px-5 text-[13px] font-medium text-cream-soft transition-colors hover:bg-navy-mid"
-            >
-              Request Appointment
-            </a>
-            <a
-              href="tel:80077"
-              className="inline-flex h-11 items-center justify-center rounded-lg border border-line bg-transparent px-5 text-[13px] font-medium text-ink transition-colors hover:bg-white/50"
-            >
-              Call 800 77 (24h Phone)
-            </a>
-          </div>
-
-          <p className="mt-4 text-[12px] text-muted/80">
-            International patients &amp; complex revision referrals welcome.
-          </p>
+    <>
+      <section
+        className="relative w-full overflow-hidden bg-alabaster-warm bg-grid-pattern py-space-2xl lg:py-space-4xl"
+        id="about"
+      >
+        <div className="pointer-events-none absolute -top-12 start-10 h-96 w-96 opacity-[0.05]">
+          <svg fill="none" height="100%" stroke="#1B365D" strokeWidth="1.2" viewBox="0 0 200 200" width="100%">
+            <circle cx="100" cy="100" r="90" strokeDasharray="4 4" />
+            <circle cx="100" cy="100" r="60" />
+            <circle cx="100" cy="100" r="30" strokeDasharray="2 2" />
+            <line x1="100" x2="100" y1="0" y2="200" />
+            <line x1="0" x2="200" y1="100" y2="100" />
+          </svg>
         </div>
 
-        <div className="w-full">
-          <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-[0_18px_50px_rgba(28,24,20,0.08)]">
-            <div className="flex items-center justify-center bg-navy px-4 py-2.5 text-center text-[10px] font-medium uppercase tracking-[0.16em] text-white/80">
-              MBBS · MRCS · FRCS · CCT
+        <div className="page-wrap relative z-10">
+          <div className="grid grid-cols-1 items-center gap-space-xl lg:grid-cols-12 lg:gap-space-2xl">
+            <div className="flex flex-col items-start lg:col-span-7">
+              <div className="mb-space-sm inline-flex items-center gap-space-xs rounded border border-surface-border bg-sand-tint/90 px-space-sm py-1 font-label-md text-label-md uppercase tracking-wider text-primary backdrop-blur-md">
+                <span className="h-2 w-2 rounded-full bg-surgical-teal" />
+                {t.heroBadge}
+              </div>
+              <h1 className="mb-space-xs font-headline-hero text-[2.25rem] leading-[2.75rem] tracking-tight text-primary lg:text-headline-hero">
+                {t.heroTitle}
+              </h1>
+              <p className="mb-space-md font-label-lg text-label-lg font-semibold tracking-wide text-surgical-teal">
+                Dr. Feras Ya&apos;ish · MBBS · MRCS (Ed) · FRCS (Tr &amp; Orth) · CCT (UK)
+              </p>
+              <div className="glass-card-light relative mb-space-lg overflow-hidden rounded-xl border border-white/60 p-space-md">
+                <p className="font-body-lg text-body-lg leading-relaxed text-text-primary">{t.heroLead}</p>
+              </div>
+              <div className="mb-space-md flex w-full flex-wrap items-center gap-space-md sm:w-auto">
+                <BookButton className="inline-flex w-full items-center justify-center gap-space-xs rounded bg-clinical-navy px-space-lg py-space-sm font-label-lg text-label-lg text-on-primary shadow-sm transition-all duration-300 hover:bg-clinical-slate-deep sm:w-auto">
+                  <span>{t.requestAppointment}</span>
+                  <ExternalArrow />
+                </BookButton>
+                <a
+                  className="inline-flex w-full items-center justify-center gap-space-xs rounded border border-clinical-navy/40 px-space-lg py-space-sm font-label-lg text-label-lg text-clinical-navy transition-all duration-300 hover:border-clinical-navy hover:bg-clinical-navy/5 sm:w-auto"
+                  href="tel:80077"
+                >
+                  <Icon name="call" className="text-[18px]" />
+                  <span>{t.callTollFree}</span>
+                </a>
+              </div>
+              <a
+                className="inline-flex items-center gap-1.5 font-label-md text-xs text-text-secondary transition-colors hover:text-surgical-teal"
+                href="/about"
+              >
+                <Icon name="expand_circle_down" className="text-[16px]" />
+                <span>{t.heroExplore}</span>
+              </a>
             </div>
-            <div className="relative aspect-[4/5] bg-[#f3efe8]">
-              <Image
-                src="/images/doctor-hero-card.png"
-                alt="Dr. Feras Ya'ish, consultant orthopaedic surgeon"
-                fill
-                priority
-                className="object-cover object-[center_12%]"
-                sizes="(min-width: 1024px) 420px, 90vw"
-              />
-            </div>
-            <div className="bg-navy px-4 py-3 text-center text-[12px] tracking-wide text-white/85">
-              Hip &amp; Knee Surgery · Revision Arthroplasty
+
+            <div className="relative flex flex-col items-center lg:col-span-5">
+              <div className="glass-card-light relative w-full overflow-hidden rounded-2xl border border-white/80 p-space-xs shadow-[0_16px_48px_rgba(15,32,39,0.12)]">
+                <div className="relative flex items-end justify-center overflow-hidden rounded-xl bg-gradient-to-tr from-sand-tint via-surface-container to-sand-tint pt-space-xl">
+                  <Image
+                    src="/images/doctor-hero-card.png"
+                    alt="Dr. Feras Ya'ish"
+                    width={340}
+                    height={425}
+                    priority
+                    className="aspect-[4/5] w-full max-w-[340px] object-contain object-bottom transition-transform duration-500 hover:scale-105"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-clinical-slate-deep/80 via-transparent to-transparent" />
+                </div>
+                <div className="absolute top-space-md end-space-md flex items-center gap-1.5 rounded border border-white/20 bg-clinical-slate-deep/85 px-space-xs py-1 font-mono text-[10px] tracking-widest text-on-primary uppercase shadow-sm backdrop-blur-md">
+                  <span className="h-1.5 w-1.5 rounded-full bg-surgical-teal-light" />
+                  <span>UK CCT · DOH LIC: 12480 · 20+ Yrs</span>
+                </div>
+                <div className="absolute inset-x-space-md bottom-space-md flex items-center justify-between rounded-xl border border-white/15 bg-clinical-navy/95 p-space-sm text-on-primary shadow-xl backdrop-blur-md">
+                  <div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="h-2 w-2 rounded-full bg-surgical-teal-light" />
+                      <span className="font-label-md text-label-md font-bold tracking-wider text-surgical-teal-light uppercase">
+                        Healthpoint Abu Dhabi
+                      </span>
+                    </div>
+                    <span className="mt-0.5 block font-body-sm text-[0.82rem] text-sand-tint">{t.heroCampus}</span>
+                  </div>
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-surgical-teal/40 bg-surgical-teal/20">
+                    <Icon name="verified" className="text-[20px] text-surgical-teal-light" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="mt-10 grid items-stretch gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        {stats.map((item) => (
-          <article
-            key={item.value}
-            className="flex h-full flex-col justify-center rounded-xl border border-line bg-white px-5 py-4"
-          >
-            <p className="text-[15px] font-medium tracking-tight text-ink">
-              {item.value}
-            </p>
-            <p className="mt-1 text-[13px] text-muted">{item.label}</p>
-          </article>
-        ))}
-      </div>
-    </Section>
+      <section className="relative w-full border-y border-surface-border bg-sand-tint/70 py-space-lg">
+        <div className="page-wrap">
+          <div className="grid grid-cols-1 gap-space-md sm:grid-cols-2 lg:grid-cols-4">
+            {stats.map((item) => (
+              <div key={item.value} className="glass-card-light flex items-center gap-space-sm rounded-xl border border-white/80 p-space-md">
+                <div
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${
+                    item.icon === "clinical_notes"
+                      ? "bg-surgical-teal-subtle text-surgical-teal"
+                      : "bg-sand-tint text-clinical-navy"
+                  }`}
+                >
+                  <Icon name={item.icon} className="text-[22px]" />
+                </div>
+                <div>
+                  <span className="block font-headline-sm text-sm leading-snug font-bold text-primary">
+                    <CountUp value={lang === "ar" ? item.valueAr : item.value} />
+                  </span>
+                  <span className="block font-body-sm text-xs leading-tight text-text-secondary">
+                    {lang === "ar" ? item.labelAr : item.label}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
