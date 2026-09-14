@@ -35,7 +35,7 @@ export function TreatmentDetail({ treatment }: { treatment: Treatment }) {
       <section className="pb-space-3xl">
         <div className="page-wrap grid items-start gap-space-xl lg:grid-cols-12">
           <div className="overflow-hidden rounded-2xl border border-surface-border bg-white lg:col-span-6">
-            <Image src={treatment.image} alt={copy.title} width={960} height={720} className="h-full w-full object-cover" />
+            <Image src={treatment.image} alt={treatment.imageAlt} width={960} height={720} className="h-full w-full object-cover" />
           </div>
           <div className="lg:col-span-6">
             <p className="text-base leading-relaxed text-text-secondary">{copy.summary}</p>

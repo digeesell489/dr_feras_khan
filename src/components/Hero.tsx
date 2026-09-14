@@ -29,11 +29,11 @@ export function Hero() {
         <div className="page-wrap relative z-10">
           <div className="grid grid-cols-1 items-center gap-space-xl lg:grid-cols-12 lg:gap-space-2xl">
             <div className="flex flex-col items-start lg:col-span-7">
-              <div className="mb-space-sm inline-flex items-center gap-space-xs rounded border border-surface-border bg-sand-tint/90 px-space-sm py-1 font-label-md text-label-md uppercase tracking-wider text-primary backdrop-blur-md">
+              <div className="mb-space-sm inline-flex items-center gap-space-xs rounded border border-surface-border bg-sand-tint/90 px-space-sm py-1 font-label-md text-label-md uppercase tracking-wider text-primary shadow-xs backdrop-blur-md">
                 <span className="h-2 w-2 rounded-full bg-surgical-teal" />
                 {t.heroBadge}
               </div>
-              <h1 className="mb-space-xs font-headline-hero text-[2.25rem] leading-[2.75rem] tracking-tight text-primary lg:text-headline-hero">
+              <h1 className="mb-space-xs font-headline-hero text-headline-hero-mobile tracking-tight text-primary lg:text-headline-hero lg:leading-[1.1]">
                 {t.heroTitle}
               </h1>
               <p className="mb-space-md font-label-lg text-label-lg font-semibold tracking-wide text-surgical-teal">
@@ -57,7 +57,7 @@ export function Hero() {
               </div>
               <a
                 className="inline-flex items-center gap-1.5 font-label-md text-xs text-text-secondary transition-colors hover:text-surgical-teal"
-                href="/about"
+                href="#holistic-approach"
               >
                 <Icon name="expand_circle_down" className="text-[16px]" />
                 <span>{t.heroExplore}</span>
@@ -73,7 +73,7 @@ export function Hero() {
                     width={340}
                     height={425}
                     priority
-                    className="aspect-[4/5] w-full max-w-[340px] object-contain object-bottom transition-transform duration-500 hover:scale-105"
+                    className="aspect-[4/5] w-full max-w-[340px] object-cover object-top transition-transform duration-500 hover:scale-105"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-clinical-slate-deep/80 via-transparent to-transparent" />
                 </div>

@@ -76,7 +76,7 @@ export function Hospital() {
                   800 77
                 </a>
                 <span className="text-outline-variant">|</span>
-                <span className="text-xs text-text-secondary">(+971 2 492 9000)</span>
+                <span className="text-xs text-text-secondary">(+971 2 492 9000 intl)</span>
               </div>
             </div>
             <div className="flex flex-col gap-space-sm sm:flex-row">

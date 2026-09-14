@@ -1,13 +1,14 @@
 "use client";
 
+import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { CtaBand } from "@/components/CtaBand";
+import { BookButton } from "@/components/BookButton";
 import { ExternalArrow } from "@/components/ui/Icons";
 import { treatmentCopy } from "@/lib/ar-copy";
 import { useLanguage } from "@/lib/language";
 import { loc } from "@/lib/loc";
-import { treatments } from "@/lib/treatments";
+import { treatments, type TreatmentCategory } from "@/lib/treatments";
 
 const comparison = {
   headers: ["Clinical Parameter", "Conventional Jigs", "Patient-Specific Guides (PSI)", "Robotic-Navigated (Mako / ROSA)"],
@@ -57,15 +58,153 @@ const pathway = [
   },
 ];
 
+const filters: { id: "all" | TreatmentCategory; en: string; ar: string }[] = [
+  { id: "all", en: "All Specialties", ar: "كل التخصصات" },
+  { id: "hip", en: "Hip Arthroplasty", ar: "استبدال الورك" },
+  { id: "knee", en: "Knee Reconstruction", ar: "إعادة بناء الركبة" },
+  { id: "robotic", en: "Robotic Navigation", ar: "الملاحة الروبوتية" },
+  { id: "revision", en: "Complex Revision", ar: "المراجعة المعقدة" },
+  { id: "sports", en: "Sports Injuries", ar: "الإصابات الرياضية" },
+  { id: "trauma", en: "Trauma & Fractures", ar: "الرضوض والكسور" },
+];
+
+const extras: Record<
+  string,
+  {
+    specialty: string;
+    specialtyAr: string;
+    badges: [string, string];
+    specs: { label: string; labelAr: string; value: string; valueAr: string }[];
+    cta: string;
+    ctaAr: string;
+    note: string;
+    noteAr: string;
+    href?: string;
+  }
+> = {
+  "hip-replacement": {
+    specialty: "Specialty Intervention 01 · Hip Joint",
+    specialtyAr: "التدخل التخصصي 01 · مفصل الورك",
+    badges: ["DAA Approach", "Day 1 Ambulation"],
+    specs: [
+      { label: "Surgical Approach", labelAr: "النهج الجراحي", value: "Muscle-Sparing DAA", valueAr: "DAA يحافظ على العضلات" },
+      { label: "Bearing Surface", labelAr: "سطح الاحتكاك", value: "Biolox Ceramic-on-Poly", valueAr: "سيراميك بيولوكس على بولي" },
+      { label: "Hospital Inpatient", labelAr: "الإقامة", value: "24 - 48 Hours", valueAr: "24 – 48 ساعة" },
+      { label: "Weight Bearing", labelAr: "تحميل الوزن", value: "Immediate / Day 0", valueAr: "فوري / اليوم 0" },
+    ],
+    cta: "Evaluate Hip Candidacy",
+    ctaAr: "قيّم أهلية الورك",
+    note: "Fluoroscopic Guidance Certified",
+    noteAr: "معتمد بالتوجيه الفلوري",
+  },
+  "knee-replacement": {
+    specialty: "Specialty Intervention 02 · Knee Joint",
+    specialtyAr: "التدخل التخصصي 02 · مفصل الركبة",
+    badges: ["Sub-Millimeter Balance", "Kinematic Fit"],
+    specs: [
+      { label: "Alignment Philosophy", labelAr: "فلسفة المحاذاة", value: "Kinematic Restoration", valueAr: "استعادة حركية" },
+      { label: "Component Fixation", labelAr: "تثبيت المكوّنات", value: "Cobalt-Chrome & PEEK/Poly", valueAr: "كوبالت كروم وبولي" },
+      { label: "Soft Tissue Release", labelAr: "تحرير الأنسجة", value: "Preservative / Negligible", valueAr: "حافظ / شبه معدوم" },
+      { label: "Functional Target", labelAr: "الهدف الوظيفي", value: "125°+ Smooth Flexion", valueAr: "ثني سلس 125°+" },
+    ],
+    cta: "Book Knee Assessment",
+    ctaAr: "احجز تقييم الركبة",
+    note: "Digital Pre-Op Templating",
+    noteAr: "قوالب رقمية قبل الجراحة",
+  },
+  "partial-knee": {
+    specialty: "Specialty Intervention 03 · Compartmental Resurfacing",
+    specialtyAr: "التدخل التخصصي 03 · إعادة تسطيح الحيز",
+    badges: ["Cruciate-Retaining", "Outpatient Eligible"],
+    specs: [
+      { label: "Native Ligaments", labelAr: "الأربطة الأصلية", value: "100% Retained", valueAr: "محفوظة بالكامل" },
+      { label: "Incision Length", labelAr: "طول الشق", value: "6 - 8 cm Micro-Incised", valueAr: "شق صغير 6–8 سم" },
+      { label: "Hospital Stay", labelAr: "الإقامة", value: "Day-Case / Overnight", valueAr: "يوم واحد / ليلة" },
+      { label: "Normal Activity", labelAr: "النشاط الطبيعي", value: "3 - 4 Weeks", valueAr: "3 – 4 أسابيع" },
+    ],
+    cta: "Check Partial Eligibility",
+    ctaAr: "تحقق من أهلية الجزئي",
+    note: "Medial & Patellofemoral",
+    noteAr: "الإنسي والرضفي الفخذي",
+  },
+  "robotic-arthroplasty": {
+    specialty: "Specialty Intervention 04 · State-of-the-Art Navigation",
+    specialtyAr: "التدخل التخصصي 04 · ملاحة متقدمة",
+    badges: ["CT 3D Modeling", "Haptic Security"],
+    specs: [
+      { label: "Positional Precision", labelAr: "دقة الموضع", value: "±0.5 mm / 0.5°", valueAr: "±0.5 مم / 0.5°" },
+      { label: "Real-Time Balancing", labelAr: "الموازنة اللحظية", value: "Dynamic Ligament Sensor", valueAr: "حسّاس أربطة ديناميكي" },
+      { label: "Soft Tissue Safety", labelAr: "سلامة الأنسجة", value: "Haptic Boundary Lock", valueAr: "قفل حدود لمسي" },
+      { label: "Revision Risk Reduction", labelAr: "خفض خطر المراجعة", value: "Clinically Documented", valueAr: "موثّق سريرياً" },
+    ],
+    cta: "Inquire About Robotic Surgery",
+    ctaAr: "استفسر عن الجراحة الروبوتية",
+    note: "Healthpoint Robotic Suite",
+    noteAr: "جناح الروبوت في هيلث بوينت",
+  },
+  "revision-surgery": {
+    specialty: "Specialty Intervention 05 · High-Complexity Reconstruction",
+    specialtyAr: "التدخل التخصصي 05 · إعادة بناء عالية التعقيد",
+    badges: ["Tertiary Level Referral", "AO Recon Expert"],
+    specs: [
+      { label: "Indications Managed", labelAr: "الاستطبابات", value: "Loosening, PJI, Bone Loss", valueAr: "ارتخاء، عدوى، فقدان عظم" },
+      { label: "Bone Reconstruction", labelAr: "إعادة بناء العظم", value: "Trabecular Titanium Sleeves", valueAr: "أكمام تيتانيوم تربيقية" },
+      { label: "MDT Collaboration", labelAr: "التعاون المتعدد", value: "Infectious Disease & Radiology", valueAr: "العدوى والأشعة" },
+      { label: "Regional Expertise", labelAr: "الخبرة الإقليمية", value: "AO Recon MENA Faculty", valueAr: "هيئة AO Recon للمنطقة" },
+    ],
+    cta: "Physician Referral & Case Review",
+    ctaAr: "إحالة الطبيب ومراجعة الحالة",
+    note: "Major Referral Center",
+    noteAr: "مركز إحالة رئيسي",
+    href: "/for-physicians",
+  },
+  arthroscopy: {
+    specialty: "Specialty Intervention 06 · Sports Medicine",
+    specialtyAr: "التدخل التخصصي 06 · الطب الرياضي",
+    badges: ["Anatomic Kinematics", "Meniscal Salvage"],
+    specs: [
+      { label: "Procedures", labelAr: "الإجراءات", value: "ACL / PCL / ALL / MPFL", valueAr: "ACL / PCL / ALL / MPFL" },
+      { label: "Meniscal Strategy", labelAr: "استراتيجية الهلالة", value: "Preservation & All-Inside Fix", valueAr: "حفظ وتثبيت من الداخل" },
+      { label: "Surgical Access", labelAr: "المدخل الجراحي", value: "4 mm HD Arthroscopy", valueAr: "منظار عالي الدقة 4 مم" },
+      { label: "Return to Pivot Sports", labelAr: "العودة للرياضة", value: "Structured Return-to-Play", valueAr: "عودة منظمة للعب" },
+    ],
+    cta: "Sports Injury Assessment",
+    ctaAr: "تقييم الإصابة الرياضية",
+    note: "Accelerated Recovery Protocol",
+    noteAr: "بروتوكول تعافٍ سريع",
+  },
+  trauma: {
+    specialty: "Specialty Intervention 07 · Skeletal Trauma",
+    specialtyAr: "التدخل التخصصي 07 · رضوض الهيكل",
+    badges: ["AO Foundation Principles", "LCP Osteosynthesis"],
+    specs: [
+      { label: "Clinical Focus", labelAr: "التركيز السريري", value: "Periarticular & Complex Fractures", valueAr: "كسور مفصلية ومعقدة" },
+      { label: "Implant Technology", labelAr: "تقنية الزرعة", value: "Titanium Locking Compression", valueAr: "ضغط تيتانيوم قافل" },
+      { label: "Deformity Correction", labelAr: "تصحيح التشوه", value: "Corrective Osteotomy", valueAr: "قطع عظمي تصحيحي" },
+      { label: "Surgical Protocol", labelAr: "البروتوكول", value: "Biological Bone Preservation", valueAr: "حفظ بيولوجي للعظم" },
+    ],
+    cta: "Emergency / Trauma Triage Desk",
+    ctaAr: "مكتب فرز الرضوض",
+    note: "British Trauma Fellowship Standards",
+    noteAr: "معايير زمالة الرضوض البريطانية",
+    href: "tel:80077",
+  },
+};
+
 export function TreatmentsPage() {
   const { lang, t } = useLanguage();
+  const [filter, setFilter] = useState<"all" | TreatmentCategory>("all");
+  const visible = useMemo(
+    () => (filter === "all" ? treatments : treatments.filter((item) => item.category === filter)),
+    [filter],
+  );
 
   return (
     <>
-      <section className="bg-alabaster-warm py-space-2xl lg:py-space-3xl">
+      <section className="bg-sand-tint py-space-2xl lg:py-space-3xl">
         <div className="page-wrap">
           <p className="mb-2 text-[11px] tracking-[0.2em] text-surgical-teal uppercase">
-            {loc(lang, "Surgical Portfolio", "المحفظة الجراحية")}
+            {loc(lang, "Clinical Catalogue & Surgical Portfolio", "الكتالوج السريري والمحفظة الجراحية")}
           </p>
           <h1 className="max-w-3xl font-headline-hero text-[2.25rem] leading-tight text-primary lg:text-[3rem]">
             {loc(lang, "Orthopaedic Surgical Specialties & Joint Care", "تخصصات جراحة العظام ورعاية المفاصل")}
@@ -77,28 +216,81 @@ export function TreatmentsPage() {
               "إجراءات إعادة بناء مبنية على الأدلة، ونُهج تحافظ على الأنسجة، وملاحة روبوتية، ومراجعة مفاصل معقدة وفق معايير بريطانية استشارية في هيلث بوينت أبوظبي.",
             )}
           </p>
+          <div className="mt-8 flex flex-wrap gap-2">
+            {filters.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => setFilter(item.id)}
+                className={`rounded-full px-4 py-2 text-[13px] font-semibold transition ${
+                  filter === item.id ? "bg-clinical-navy text-white shadow-sm" : "bg-white text-clinical-navy"
+                }`}
+              >
+                {loc(lang, item.en, item.ar)}
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="pb-space-3xl">
-        <div className="page-wrap grid gap-5 md:grid-cols-2">
-          {treatments.map((item) => {
+        <div className="page-wrap space-y-8">
+          {visible.map((item, index) => {
             const copy = treatmentCopy(item, lang);
+            const meta = extras[item.slug];
+            const imageRight = index % 2 === 1;
+            const ctaClass =
+              "inline-flex items-center gap-2 rounded bg-clinical-navy px-4 py-2.5 text-[13px] font-semibold text-white";
             return (
-            <article key={item.slug} className="overflow-hidden rounded-2xl border border-surface-border bg-white">
-              <div className="aspect-[16/10] bg-sand-tint">
-                <Image src={item.image} alt={copy.title} width={800} height={500} className="h-full w-full object-cover" />
-              </div>
-              <div className="p-5">
-                <p className="mb-2 text-[11px] tracking-wider text-surgical-teal uppercase">{copy.tag}</p>
-                <h2 className="mb-2 font-headline-sm text-[1.2rem] text-primary">{copy.title}</h2>
-                <p className="mb-4 text-sm leading-relaxed text-text-secondary">{copy.summary}</p>
-                <Link className="inline-flex items-center gap-1 text-[13px] font-semibold text-clinical-navy" href={`/treatments/${item.slug}`}>
-                  {t.viewProcedure}
-                  <ExternalArrow />
-                </Link>
-              </div>
-            </article>
+              <article key={item.slug} className="overflow-hidden rounded-2xl border border-surface-border bg-white">
+                <div className="grid items-stretch lg:grid-cols-12">
+                  <div className={`relative min-h-[280px] bg-sand-tint lg:col-span-6 lg:min-h-[420px] ${imageRight ? "lg:order-2" : ""}`}>
+                    <Image src={item.image} alt={item.imageAlt} fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
+                    <div className={`absolute top-4 flex flex-wrap gap-1 ${imageRight ? "right-4" : "left-4"}`}>
+                      {meta.badges.map((badge) => (
+                        <span key={badge} className="rounded bg-clinical-slate-deep/80 px-2 py-1 text-[11px] font-semibold text-white backdrop-blur-md">
+                          {badge}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className={`flex flex-col justify-between p-6 lg:col-span-6 lg:p-10 ${imageRight ? "lg:order-1" : ""}`}>
+                    <div>
+                      <p className="mb-2 text-[11px] tracking-wider text-surgical-teal uppercase">
+                        {loc(lang, meta.specialty, meta.specialtyAr)}
+                      </p>
+                      <h2 className="mb-3 font-headline-sm text-[1.6rem] leading-tight text-primary lg:text-[2rem]">{copy.title}</h2>
+                      <p className="mb-6 text-sm leading-relaxed text-text-secondary">{copy.summary}</p>
+                      <div className="mb-6 grid grid-cols-2 gap-3 rounded-lg bg-sand-tint p-4">
+                        {meta.specs.map((spec) => (
+                          <div key={spec.label}>
+                            <p className="text-[11px] tracking-wide text-text-secondary uppercase">{loc(lang, spec.label, spec.labelAr)}</p>
+                            <p className="text-sm font-semibold text-clinical-navy">{loc(lang, spec.value, spec.valueAr)}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      {meta.href?.startsWith("tel:") ? (
+                        <a className={ctaClass} href={meta.href}>
+                          {loc(lang, meta.cta, meta.ctaAr)}
+                        </a>
+                      ) : meta.href ? (
+                        <Link className={ctaClass} href={meta.href}>
+                          {loc(lang, meta.cta, meta.ctaAr)}
+                        </Link>
+                      ) : (
+                        <BookButton className={ctaClass}>{loc(lang, meta.cta, meta.ctaAr)}</BookButton>
+                      )}
+                      <Link className="inline-flex items-center gap-1 text-[13px] font-semibold text-clinical-navy" href={`/treatments/${item.slug}`}>
+                        {t.viewProcedure}
+                        <ExternalArrow />
+                      </Link>
+                    </div>
+                    <p className="mt-3 text-[12px] text-text-secondary">{loc(lang, meta.note, meta.noteAr)}</p>
+                  </div>
+                </div>
+              </article>
             );
           })}
         </div>
@@ -106,6 +298,9 @@ export function TreatmentsPage() {
 
       <section className="bg-sand-tint/70 py-space-3xl">
         <div className="page-wrap">
+          <p className="mb-2 text-[11px] tracking-[0.18em] text-surgical-teal uppercase">
+            {loc(lang, "Precision Matrix", "مصفوفة الدقة")}
+          </p>
           <h2 className="mb-6 font-headline-lg text-headline-lg text-primary">
             {loc(lang, "Surgical Modality Comparison", "مقارنة الأساليب الجراحية")}
           </h2>
@@ -153,14 +348,60 @@ export function TreatmentsPage() {
         </div>
       </section>
 
-      <CtaBand
-        eyebrow="Consultant Evaluation"
-        eyebrowAr="تقييم استشاري"
-        title="Schedule Your Consultant Evaluation"
-        titleAr="احجز تقييمك الاستشاري"
-        body="Whether you are considering primary joint arthroplasty, seeking a second opinion, or requiring complex tertiary revision surgery, consultations are unhurried and evidence-based."
-        bodyAr="سواء كنت تفكر في استبدال أولي، أو رأي ثانٍ، أو مراجعة تخصصية معقدة، تتم الاستشارات بهدوء وبناءً على الأدلة."
-      />
+      <section className="relative overflow-hidden bg-clinical-slate-deep py-space-3xl text-white">
+        <div className="page-wrap relative z-10 grid items-center gap-space-xl lg:grid-cols-12">
+          <div className="lg:col-span-8">
+            <p className="mb-2 text-[11px] tracking-[0.2em] text-surgical-teal-light uppercase">
+              {loc(lang, "Healthpoint Hospital Abu Dhabi · Orthopaedic Department", "مستشفى هيلث بوينت أبوظبي · قسم العظام")}
+            </p>
+            <h2 className="font-headline-hero text-[2rem] leading-tight lg:text-[3rem]">
+              {loc(lang, "Schedule Your Consultant Evaluation", "احجز تقييمك الاستشاري")}
+            </h2>
+            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-sand-tint/75">
+              {loc(
+                lang,
+                "Whether you are considering primary joint arthroplasty, seeking a second opinion, or requiring complex tertiary revision surgery, consultations are unhurried and evidence-based.",
+                "سواء كنت تفكر في استبدال أولي، أو رأي ثانٍ، أو مراجعة تخصصية معقدة، تتم الاستشارات بهدوء وبناءً على الأدلة.",
+              )}
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <BookButton className="inline-flex rounded bg-surgical-teal px-5 py-3 text-[13px] font-semibold text-white">
+                {t.requestConsultation}
+              </BookButton>
+              <a className="inline-flex rounded border border-white/20 px-5 py-3 text-[13px] font-semibold" href="tel:80077">
+                {loc(lang, "Direct Booking: 800 77", "الحجز المباشر: 800 77")}
+              </a>
+            </div>
+          </div>
+          <aside className="rounded-xl bg-clinical-navy/60 p-6 backdrop-blur-xl lg:col-span-4">
+            <p className="text-[11px] tracking-wider text-surgical-teal-light uppercase">
+              {loc(lang, "Direct Clinic Location", "موقع العيادة")}
+            </p>
+            <p className="mt-1 font-semibold">Healthpoint Abu Dhabi</p>
+            <p className="mt-1 text-sm text-sand-tint/75">
+              {loc(lang, "Zayed Sports City, Al Rawdah, Abu Dhabi, UAE", "مدينة زايد الرياضية، الروضة، أبوظبي")}
+            </p>
+            <p className="mt-4 text-[11px] tracking-wider text-surgical-teal-light uppercase">
+              {loc(lang, "Physician Referrals", "إحالات الأطباء")}
+            </p>
+            <p className="mt-1 text-sm text-sand-tint/75">
+              {loc(
+                lang,
+                "Direct tertiary referral desk for hospital-to-hospital transfers, radiological review, and complex trauma triage.",
+                "مكتب إحالة تخصصي للتحويل بين المستشفيات ومراجعة الأشعة وفرز الرضوض المعقدة.",
+              )}
+            </p>
+            <Link className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-surgical-teal-light" href="/for-physicians">
+              {loc(lang, "Physician Referral Portal", "بوابة إحالة الأطباء")}
+              <ExternalArrow />
+            </Link>
+            <div className="mt-4 flex justify-between text-[12px] text-sand-tint/70">
+              <span>DoH Licensed Consultant</span>
+              <span className="text-clinical-gold-honorary">FRCS (Tr &amp; Orth) UK</span>
+            </div>
+          </aside>
+        </div>
+      </section>
     </>
   );
 }

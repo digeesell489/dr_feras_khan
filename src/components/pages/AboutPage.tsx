@@ -9,10 +9,10 @@ import { useLanguage } from "@/lib/language";
 import { loc } from "@/lib/loc";
 
 const stats = [
-  { value: "22+", label: "Years Reconstructive Practice", labelAr: "سنوات ممارسة إعادة البناء" },
-  { value: "4,500+", label: "Primary & Revision Joints", labelAr: "مفاصل أولية ومراجعات" },
-  { value: "40+", label: "International Faculty Roles", labelAr: "أدوار هيئة دولية" },
-  { value: "100%", label: "Consultant-Led Surgery", labelAr: "جراحة بإشراف استشاري" },
+  { value: "22+", label: "Years Consultant Experience", labelAr: "سنوات خبرة استشارية" },
+  { value: "4,500+", label: "Joint Arthroplasties", labelAr: "عمليات استبدال المفاصل" },
+  { value: "40+", label: "Cadaveric AO Faculty", labelAr: "هيئة AO للتشريح" },
+  { value: "100%", label: "NHS UK Fellowship Track", labelAr: "مسار زمالة NHS البريطانية" },
 ];
 
 const philosophy = [
@@ -48,8 +48,9 @@ const philosophy = [
 
 const timeline = [
   {
-    years: "2018 — Present",
-    yearsAr: "2018 — حتى الآن",
+    years: "2023 — Present",
+    yearsAr: "2023 — حتى الآن",
+    current: true,
     title: "Consultant Orthopaedic & Trauma Surgeon",
     titleAr: "استشاري جراحة العظام والحوادث",
     place: "Healthpoint Hospital Abu Dhabi · M42 Healthcare",
@@ -59,8 +60,8 @@ const timeline = [
       "يقود استبدال الورك بالنهج الأمامي، واستبدال الركبة بمساعدة الروبوت، وخدمات المراجعة التخصصية. يستقبل مرضى الإحالة من الإمارات والخليج لحالات الإنقاذ البيولوجي وإعادة البناء المعقدة.",
   },
   {
-    years: "2015 — 2018",
-    yearsAr: "2015 — 2018",
+    years: "2020 — 2023",
+    yearsAr: "2020 — 2023",
     title: "Consultant Orthopaedic Surgeon & Trauma Core Lead",
     titleAr: "استشاري جراحة العظام وقائد مسار الرضوض",
     place: "Sheikh Shakhbout Medical City (SSMC) in Partnership with Mayo Clinic",
@@ -70,8 +71,8 @@ const timeline = [
       "قاد خدمات رضوض الحوض والحُق وبرامج الاستبدال المتقدمة خلال التكامل المؤسسي مع مايو كلينك، وساهم في توحيد مسارات الإحالة وبروتوكولات الفريق متعدد التخصصات.",
   },
   {
-    years: "2008 — 2015",
-    yearsAr: "2008 — 2015",
+    years: "2013 — 2020",
+    yearsAr: "2013 — 2020",
     title: "Substantive NHS Consultant Orthopaedic Surgeon",
     titleAr: "استشاري جراحة عظام دائم في هيئة الخدمات الصحية البريطانية",
     place: "National Health Service (NHS) Foundation Trusts, United Kingdom",
@@ -81,8 +82,8 @@ const timeline = [
       "قدّم حجماً عالياً من استبدال الطرف السفلي الأولي والمراجعة، وتثبيت الكسور حول الزرعة، وإعادة بناء الرضوض المتعددة، مع الإشراف على تدريب الأطباء المقيمين والزملاء.",
   },
   {
-    years: "2006 — 2008",
-    yearsAr: "2006 — 2008",
+    years: "2011 — 2013",
+    yearsAr: "2011 — 2013",
     title: "Advanced Fellowships in Complex Arthroplasty & Trauma",
     titleAr: "زمالات متقدمة في الاستبدال المعقد والرضوض",
     place: "Prestigious Specialist Centres across the UK & Europe",
@@ -92,12 +93,12 @@ const timeline = [
       "تدريب زمالة تخصصي في إعادة بناء الورك والركبة الأولية والمعقدة، والاستبدال الداخلي الواسع، وتثبيت كسور الحوض والحُق.",
   },
   {
-    years: "2000 — 2006",
-    yearsAr: "2000 — 2006",
+    years: "2005 — 2011",
+    yearsAr: "2005 — 2011",
     title: "Higher Specialist Surgical Training (Orthopaedics)",
     titleAr: "التدريب الجراحي التخصصي العالي (جراحة العظام)",
-    place: "Deanery & Royal Colleges, United Kingdom",
-    placeAr: "الهيئات التدريبية والكليات الملكية، المملكة المتحدة",
+    place: "Mersey & Northern UK Deaneries",
+    placeAr: "هيئات ميرسي وشمال المملكة المتحدة التدريبية",
     body: "Rigorous six-year UK surgical rotation culminating in FRCS (Tr & Orth) and subsequent Certificate of Completion of Training (CCT).",
     bodyAr: "دورة جراحية بريطانية صارمة لست سنوات انتهت بـ FRCS (Tr & Orth) ثم شهادة إتمام التدريب (CCT).",
   },
@@ -146,11 +147,28 @@ export function AboutPage() {
 
   return (
     <>
+      <nav className="sticky top-[5.5rem] z-40 hidden border-b border-surface-border bg-sand-tint/90 backdrop-blur-md md:block">
+        <div className="page-wrap flex flex-wrap gap-x-5 gap-y-2 py-3 text-[12px] font-semibold tracking-wide text-text-secondary uppercase">
+          {[
+            ["#clinical-background", "Clinical Pedigree", "السجل السريري"],
+            ["#surgical-philosophy", "Surgical Philosophy", "الفلسفة الجراحية"],
+            ["#nh-timeline", "NHS Fellowship Path", "مسار زمالة NHS"],
+            ["#academic-leadership", "AO Recon Leadership", "قيادة AO Recon"],
+            ["#accreditations", "Board Certifications", "شهادات المجالس"],
+            ["#facility", "Healthpoint Facility", "منشأة هيلث بوينت"],
+          ].map(([href, en, ar]) => (
+            <a key={href} className="hover:text-clinical-navy" href={href}>
+              {loc(lang, en, ar)}
+            </a>
+          ))}
+        </div>
+      </nav>
+
       <section className="relative overflow-hidden bg-clinical-slate-deep py-space-3xl text-white lg:py-space-4xl" id="clinical-background">
         <div className="page-wrap relative z-10 grid items-center gap-space-xl lg:grid-cols-12">
           <div className="lg:col-span-7">
             <p className="mb-3 text-[11px] tracking-[0.2em] text-surgical-teal-light uppercase">
-              {loc(lang, "Consultant Trauma & Orthopaedic Surgeon", "استشاري جراحة الحوادث والعظام")}
+              {loc(lang, "Editorial Profile", "الملف التحريري")}
             </p>
             <h1 className="mb-4 font-headline-hero text-[2.25rem] leading-tight text-white lg:text-[3.1rem] lg:leading-[3.5rem]">
               {loc(
@@ -159,13 +177,18 @@ export function AboutPage() {
                 "عقدان من صرامة الزمالة البريطانية ودقة إعادة البناء",
               )}
             </h1>
-            <p className="mb-8 max-w-xl text-sm leading-relaxed text-sand-tint/75">
+            <p className="mb-4 max-w-xl text-sm leading-relaxed text-sand-tint/75">
               {loc(
                 lang,
-                "British fellowship-trained consultant specializing in primary and revision hip and knee arthroplasty, robotic-assisted surgical intervention, complex trauma reconstructive surgery, and sports joint reconstruction.",
-                "استشاري بزمالة بريطانية متخصص في استبدال الورك والركبة الأولي والمراجعة، والجراحة بمساعدة الروبوت، وإعادة بناء الرضوض المعقدة، وجراحة المفاصل الرياضية.",
+                "British fellowship-trained consultant specializing in primary and revision hip and knee arthroplasty, robotic-assisted surgical intervention, complex trauma reconstructive surgery, and sports joint reconstruction. Twenty-two years of NHS reconstructive practice, including a consultant post at SSMC in partnership with Mayo Clinic, now at Healthpoint Hospital (M42).",
+                "استشاري بزمالة بريطانية متخصص في استبدال الورك والركبة الأولي والمراجعة، والجراحة بمساعدة الروبوت، وإعادة بناء الرضوض المعقدة، وجراحة المفاصل الرياضية. اثنان وعشرون عاماً في NHS بما في ذلك منصب استشاري في مدينة الشيخ شخبوط بالشراكة مع مايو كلينك، والآن في هيلث بوينت (M42).",
               )}
             </p>
+            <div className="mb-6 flex flex-wrap gap-2 text-[11px] font-semibold">
+              <span className="rounded-full border border-white/20 px-3 py-1">GMC UK Specialist #6037418</span>
+              <span className="rounded-full border border-white/20 px-3 py-1">DoH Abu Dhabi Consultant</span>
+              <span className="rounded-full border border-white/20 px-3 py-1">AO Recon Chairman MENA</span>
+            </div>
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
               {stats.map((item) => (
                 <div key={item.label}>
@@ -178,27 +201,36 @@ export function AboutPage() {
               <a className="inline-flex items-center gap-2 rounded bg-white px-5 py-2.5 text-[13px] font-semibold text-clinical-navy" href="tel:80077">
                 {t.book} · 800 77
               </a>
-              <Link className="inline-flex items-center gap-2 rounded border border-white/25 px-5 py-2.5 text-[13px] font-semibold text-white" href="/treatments">
-                {t.nav["/treatments"].label}
+              <Link className="inline-flex items-center gap-2 rounded border border-white/25 px-5 py-2.5 text-[13px] font-semibold text-white" href="#surgical-philosophy">
+                {loc(lang, "Clinical Methodology", "المنهجية السريرية")}
                 <ExternalArrow className="h-3.5 w-3.5 text-surgical-teal-light" />
               </Link>
             </div>
           </div>
           <div className="lg:col-span-5">
             <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-              <Image
-                src="/images/doctor-hero-card.png"
-                alt="Dr. Feras Ya'ish"
-                width={720}
-                height={860}
-                className="h-auto w-full object-cover"
-              />
+              <div className="relative aspect-[4/5] bg-gradient-to-b from-sand-tint to-surface-container">
+                <Image
+                  src="/images/doctor-hero-card.png"
+                  alt="Dr. Feras Ya'ish"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(min-width: 1024px) 420px, 100vw"
+                />
+              </div>
               <div className="p-4">
-                <p className="font-semibold text-white">Dr. Feras Ya&apos;ish</p>
-                <p className="text-sm text-sand-tint/65">FRCS (Tr &amp; Orth) · CCT (UK)</p>
-                <p className="mt-1 text-sm text-surgical-teal-light">
-                  {loc(lang, "Healthpoint Hospital, Abu Dhabi", "مستشفى هيلث بوينت، أبوظبي")}
+                <p className="text-[10px] font-bold tracking-widest text-surgical-teal-light uppercase">
+                  {loc(lang, "Clinical Registry · Verified", "السجل السريري · موثّق")}
                 </p>
+                <p className="font-semibold text-white">Dr. Feras Ya&apos;ish</p>
+                <p className="text-sm text-sand-tint/65">FRCS (Tr &amp; Orth) UK · CCT Accredited</p>
+                <p className="mt-1 text-sm text-surgical-teal-light">
+                  {loc(lang, "Primary practice: Healthpoint Abu Dhabi · Zayed Sports City · M42", "العيادة الأساسية: هيلث بوينت أبوظبي · مدينة زايد الرياضية · M42")}
+                </p>
+                <p className="mt-2 text-xs text-sand-tint/60">
+                  {loc(lang, "Former substantive: SSMC / Mayo & NHS UK · AO Foundation MENA Chairman", "سابقاً: مدينة الشيخ شخبوط / مايو وNHS · رئيس AO في المنطقة")}
+                </p>
+                <a className="mt-3 inline-block text-sm font-semibold text-white" href="tel:80077">800 77</a>
               </div>
             </div>
           </div>
@@ -241,8 +273,15 @@ export function AboutPage() {
           </h2>
           <div className="space-y-5">
             {timeline.map((item) => (
-              <article key={item.years} className="grid gap-3 rounded-xl border border-surface-border bg-white p-5 md:grid-cols-[160px_1fr]">
-                <p className="text-[12px] font-semibold tracking-wide text-surgical-teal">{loc(lang, item.years, item.yearsAr)}</p>
+              <article key={item.years} className="grid gap-3 rounded-xl border border-surface-border bg-white p-5 md:grid-cols-[180px_1fr]">
+                <div>
+                  <p className="text-[12px] font-semibold tracking-wide text-surgical-teal">{loc(lang, item.years, item.yearsAr)}</p>
+                  {"current" in item && item.current ? (
+                    <span className="mt-2 inline-block rounded bg-surgical-teal-subtle px-2 py-0.5 text-[10px] font-bold tracking-wider text-surgical-teal uppercase">
+                      {loc(lang, "Current Primary Post", "المنصب الأساسي الحالي")}
+                    </span>
+                  ) : null}
+                </div>
                 <div>
                   <h3 className="font-headline-sm text-[1.05rem] text-primary">{loc(lang, item.title, item.titleAr)}</h3>
                   <p className="mb-2 text-sm font-semibold text-clinical-navy">{loc(lang, item.place, item.placeAr)}</p>
@@ -266,8 +305,16 @@ export function AboutPage() {
               "بصفته رئيس AO Recon للشرق الأوسط وشمال أفريقيا، يشرف الدكتور فراس يعيش على مناهج جراحية متقدمة ومختبرات تشريح وندوات ميكانيكية في زيورخ ودافوس ودبي والرياض.",
             )}
           </p>
-          <div className="grid gap-4 md:grid-cols-3">
+          <p className="mb-4 rounded-lg border border-clinical-gold-honorary/30 bg-clinical-gold-honorary/10 px-4 py-3 text-sm text-sand-tint/80">
+            {loc(
+              lang,
+              "Dual UK Certificate of Completion of Training (CCT). AO Foundation Global Faculty. Peer-review contributor to The Bone & Joint Journal.",
+              "شهادة إتمام تدريب بريطانية مزدوجة (CCT). هيئة AO العالمية. مراجع في مجلة Bone & Joint Journal.",
+            )}
+          </p>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             <article className="rounded-xl border border-white/10 bg-white/5 p-5">
+              <p className="mb-2 font-serif text-3xl text-surgical-teal-light">40+</p>
               <p className="mb-2 text-[11px] tracking-wider text-surgical-teal-light uppercase">AO Recon</p>
               <h3 className="mb-2 font-headline-sm text-white">{loc(lang, "Cadaveric Masterclasses", "دورات التشريح المتقدمة")}</h3>
               <p className="text-sm text-sand-tint/70">
@@ -297,6 +344,17 @@ export function AboutPage() {
                   lang,
                   "Scientific program committee faculty for the International Congress for Joint Reconstruction Middle East.",
                   "عضو هيئة البرنامج العلمي للمؤتمر الدولي لإعادة بناء المفاصل في الشرق الأوسط.",
+                )}
+              </p>
+            </article>
+            <article className="rounded-xl border border-white/10 bg-white/5 p-5">
+              <p className="mb-2 text-[11px] tracking-wider text-surgical-teal-light uppercase">BJJ</p>
+              <h3 className="mb-2 font-headline-sm text-white">{loc(lang, "Peer-Review Contributor", "مساهم في التحكيم العلمي")}</h3>
+              <p className="text-sm text-sand-tint/70">
+                {loc(
+                  lang,
+                  "Evaluating global scientific clinical research submissions in arthroplasty, periprosthetic fractures, and biomechanics.",
+                  "تقييم الأبحاث السريرية العالمية في استبدال المفاصل والكسور حول الزرعة والميكانيكا الحيوية.",
                 )}
               </p>
             </article>
@@ -364,8 +422,17 @@ export function AboutPage() {
               <ExternalArrow />
             </Link>
           </div>
-          <div className="overflow-hidden rounded-2xl lg:col-span-6">
-            <Image src="/images/education-lounge.png" alt="Healthpoint Hospital recovery environment" width={960} height={720} className="h-full w-full object-cover" />
+          <div className="relative overflow-hidden rounded-2xl lg:col-span-6">
+            <Image src="/images/education-lounge.png" alt="Healthpoint Hospital recovery environment" width={960} height={720} className="h-full min-h-[280px] w-full object-cover" />
+            <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-clinical-slate-deep/80 p-4 text-white backdrop-blur-md">
+              <div>
+                <p className="text-sm font-semibold">Healthpoint Hospital Abu Dhabi</p>
+                <p className="text-xs text-sand-tint/80">Zayed Sports City · Al Rawdah</p>
+              </div>
+              <a className="rounded bg-surgical-teal px-3 py-2 text-[12px] font-semibold" href="tel:80077">
+                {loc(lang, "Book Visit", "احجز زيارة")}
+              </a>
+            </div>
           </div>
         </div>
       </section>

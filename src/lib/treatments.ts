@@ -1,3 +1,5 @@
+export type TreatmentCategory = "hip" | "knee" | "robotic" | "revision" | "sports" | "trauma";
+
 export type Treatment = {
   slug: string;
   tag: string;
@@ -5,6 +7,8 @@ export type Treatment = {
   short: string;
   shortAr: string;
   image: string;
+  imageAlt: string;
+  category: TreatmentCategory;
   summary: string;
   who: string[];
   approach: string[];
@@ -19,6 +23,8 @@ export const treatments: Treatment[] = [
     short: "Direct Anterior Hip",
     shortAr: "استبدال الورك الأمامي",
     image: "/images/implant-hip.png",
+    imageAlt: "Direct Anterior Hip Prosthesis",
+    category: "hip",
     summary:
       "Utilizing the internervous, intermuscular Direct Anterior Approach (DAA) to access the hip joint without detaching or incising gluteal muscle structures. Coupled with high-grade delta ceramic articulations and porous titanium osseointegration sleeves to promote frictionless biomechanics and long-term durability.",
     who: [
@@ -48,6 +54,8 @@ export const treatments: Treatment[] = [
     short: "Total Knee (Kinematic)",
     shortAr: "استبدال الركبة الكامل",
     image: "/images/implant-knee.png",
+    imageAlt: "Precision Total Knee Replacement Implant",
+    category: "knee",
     summary:
       "Moving past rigid mechanical alignment, Dr. Ya'ish implements kinematic alignment protocols calibrated to replicate each patient's constitutional joint line and soft-tissue envelope. This physiological philosophy eliminates unnatural tightness and restores a natural, pain-free arc of flexion.",
     who: [
@@ -75,6 +83,8 @@ export const treatments: Treatment[] = [
     short: "Partial Knee",
     shortAr: "استبدال الركبة الجزئي",
     image: "/images/implant-partial.png",
+    imageAlt: "Partial Unicompartmental Knee Implant",
+    category: "knee",
     summary:
       "Ideal for isolated medial or lateral compartment osteoarthritis. By resurfacing solely the worn articulating compartment, both the Anterior Cruciate Ligament (ACL) and Posterior Cruciate Ligament (PCL) remain fully intact, preserving proprioceptive feedback and a more natural knee.",
     who: [
@@ -101,6 +111,8 @@ export const treatments: Treatment[] = [
     short: "Robotic Joint Replacement",
     shortAr: "الجراحة الروبوتية",
     image: "/images/implant-robotic.png",
+    imageAlt: "Robotic Assisted Surgical Arm",
+    category: "robotic",
     summary:
       "Next-generation robotic arm stereotactic guidance combined with high-resolution pre-operative 3D-CT modeling. Surgeon-controlled haptic boundaries prevent inadvertent soft-tissue damage, keeping femoral and tibial component positioning within 0.5 mm and 0.5 degrees of planned alignment.",
     who: [
@@ -127,6 +139,8 @@ export const treatments: Treatment[] = [
     short: "Revision Hip & Knee",
     shortAr: "جراحة المراجعة",
     image: "/images/implant-revision.png",
+    imageAlt: "Complex Revision Arthroplasty Modular Hardware",
+    category: "revision",
     summary:
       "Specialized referral pathway for previously operated joints with aseptic loosening, osteolysis, structural bone loss, instability, or periprosthetic joint infection (PJI). Uses modular revision stems, titanium trabecular 3D cones, custom acetabular augments, and hinge knee systems.",
     who: [
@@ -154,6 +168,8 @@ export const treatments: Treatment[] = [
     short: "Knee Arthroscopy",
     shortAr: "منظار الركبة",
     image: "/images/knee-mechanics.png",
+    imageAlt: "Biomechanical Knee Ligament Tension Diagnostic",
+    category: "sports",
     summary:
       "Minimally invasive keyhole surgery for athletic injuries in professional and recreational sports. High-definition arthroscopic anatomical ACL/PCL reconstruction, ramp-lesion meniscal repair, root re-anchoring, and matrix-induced cartilage preservation.",
     who: [
@@ -181,6 +197,8 @@ export const treatments: Treatment[] = [
     short: "Trauma & Malunion",
     shortAr: "الكسور وإعادة البناء",
     image: "/images/implant-trauma.png",
+    imageAlt: "Orthopaedic Trauma Titanium Locking Plate Hardware",
+    category: "trauma",
     summary:
       "Treatment of high-energy intra-articular fractures, open injuries, periarticular disruptions, and established non-unions or malunions. Rigid internal fixation uses anatomically contoured titanium locking compression plates (LCP) and minimally invasive plate osteosynthesis (MIPO).",
     who: [

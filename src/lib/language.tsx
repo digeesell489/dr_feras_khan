@@ -73,6 +73,7 @@ const dictionary = {
     excellenceBadge: "Anatomical Kinematics & Procedures",
     excellenceTitle: "Operative Specialties & Joint Mechanics",
     excellenceBody: "State-of-the-art prosthetic design and biological joint preservation delivered through evidence-based surgical precision.",
+    ligamentOverlay: "DYNAMIC LIGAMENT VECTORS · CT RECONSTRUCTION",
     scheduleAssessment: "Schedule a Joint Assessment",
     casesBadge: "Diagnostic Radiology & Reconstructive Audits",
     casesTitle: "Clinical Case Studies",
@@ -99,6 +100,10 @@ const dictionary = {
     faqBadge: "Clinical Clarifications",
     faqTitle: "Frequently Asked Questions",
     faqBody: "Clear, verified clinical answers regarding assessments, surgical methods, and recovery.",
+    homeCtaEyebrow: "Consultant Trauma & Orthopaedic Care",
+    homeCtaTitle: "Initiate Your Clinical Consultation",
+    homeCtaBody:
+      "Consultations and surgical procedures take place exclusively at Healthpoint Hospital, Zayed Sports City, Abu Dhabi.",
     contactEyebrow: "Contact the practice",
     contactTitle: "Book a consultation at Healthpoint",
     contactLead:
@@ -264,6 +269,7 @@ const dictionary = {
     excellenceBadge: "الحركة التشريحية والإجراءات",
     excellenceTitle: "التخصصات الجراحية وميكانيكا المفصل",
     excellenceBody: "تصميم تعويضي متقدم والحفاظ البيولوجي على المفصل عبر دقة جراحية مبنية على الأدلة.",
+    ligamentOverlay: "متجهات الأربطة الديناميكية · إعادة بناء مقطعي",
     scheduleAssessment: "حجز تقييم للمفصل",
     casesBadge: "الأشعة التشخيصية ومراجعات إعادة البناء",
     casesTitle: "دراسات حالات سريرية",
@@ -289,6 +295,9 @@ const dictionary = {
     faqBadge: "توضيحات سريرية",
     faqTitle: "الأسئلة الشائعة",
     faqBody: "إجابات سريرية واضحة حول التقييم والأساليب الجراحية والتعافي.",
+    homeCtaEyebrow: "رعاية استشارية للحوادث والعظام",
+    homeCtaTitle: "ابدأ استشارتك السريرية",
+    homeCtaBody: "تتم الاستشارات والإجراءات الجراحية حصراً في مستشفى هيلث بوينت، مدينة زايد الرياضية، أبوظبي.",
     contactEyebrow: "تواصل مع العيادة",
     contactTitle: "احجز استشارة في هيلث بوينت",
     contactLead:

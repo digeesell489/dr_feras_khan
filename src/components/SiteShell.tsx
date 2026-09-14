@@ -14,7 +14,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <BookingProvider>
         <div className="min-h-full bg-alabaster-warm">
           <Header />
-          <main className="w-full bg-alabaster-warm pt-24 pb-20 sm:pt-28 sm:pb-0">{children}</main>
+          <main className="w-full bg-alabaster-warm pt-20 pb-20 sm:pb-0">{children}</main>
           <Footer />
           <MobileBar />
           <WhatsAppFloat />

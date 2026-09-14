@@ -52,16 +52,8 @@ export function Header() {
               : "border-white/70 bg-alabaster-warm/80 shadow-[0_8px_28px_rgba(27,54,93,0.06)] backdrop-blur-md"
           }`}
         >
-          <Link className="flex min-w-0 items-center gap-2.5 justify-self-start" href="/">
-            <LogoMark className="h-10 w-10 shrink-0" />
-            <span className="flex min-w-0 flex-col">
-              <span className="font-headline-sm text-[1.05rem] leading-none tracking-tight text-primary">
-                Dr. Feras Ya&apos;ish
-              </span>
-              <span className="mt-1 hidden whitespace-nowrap text-[10px] tracking-[0.12em] text-text-secondary uppercase sm:block">
-                {t.tagline}
-              </span>
-            </span>
+          <Link className="flex min-w-0 items-center justify-self-start" href="/">
+            <LogoMark className="h-9 w-auto max-w-[200px] shrink-0 sm:h-10 sm:max-w-[248px]" />
           </Link>
 
           <nav className="hidden min-w-0 items-center justify-center justify-self-center lg:flex">

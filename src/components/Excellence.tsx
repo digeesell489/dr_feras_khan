@@ -22,16 +22,7 @@ export function Excellence() {
             {t.excellenceBadge}
           </Badge>
           <h2 className="mb-space-xs font-headline-lg text-headline-lg text-primary">{t.excellenceTitle}</h2>
-          <p className="font-body-md text-body-md leading-relaxed text-text-secondary">
-            {t.excellenceBody}{" "}
-            <a className="font-semibold text-clinical-navy" href="/treatments">
-              {t.viewAllTreatments}
-            </a>
-            {" · "}
-            <a className="font-semibold text-clinical-navy" href="/conditions">
-              {t.treatmentExplorer}
-            </a>
-          </p>
+          <p className="font-body-md text-body-md leading-relaxed text-text-secondary">{t.excellenceBody}</p>
         </div>
 
         <div className="glass-card-light mb-space-2xl overflow-hidden rounded-2xl border border-white/80 p-space-md shadow-sm">
@@ -44,6 +35,9 @@ export function Excellence() {
                 className="object-cover"
                 sizes="(min-width: 1024px) 700px, 100vw"
               />
+              <div className="absolute top-3 start-3 rounded border border-white/10 bg-clinical-slate-deep/80 px-2 py-1 font-mono text-[11px] text-surgical-teal-light backdrop-blur-md">
+                {t.ligamentOverlay}
+              </div>
             </div>
             <div className="flex h-full flex-col justify-between lg:col-span-5">
               <div className="flex flex-col gap-space-xs">

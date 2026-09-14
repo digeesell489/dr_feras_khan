@@ -92,7 +92,7 @@ export function PatientEducation() {
             </span>
             <a
               className="flex items-center gap-1 font-label-md text-label-md font-semibold text-surgical-teal hover:underline"
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/dr.ferasyaish/"
               target="_blank"
               rel="noreferrer"
             >
@@ -113,6 +113,9 @@ export function PatientEducation() {
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                   sizes="(min-width: 768px) 280px, 50vw"
                 />
+                <div className="absolute inset-0 flex items-center justify-center bg-clinical-slate-deep/40 text-white opacity-0 transition-opacity group-hover:opacity-100">
+                  <Icon name="visibility" className="text-[22px]" />
+                </div>
               </div>
             ))}
           </div>

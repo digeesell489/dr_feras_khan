@@ -39,7 +39,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-space-xl pb-space-2xl sm:grid-cols-2 lg:grid-cols-12">
           <div className="flex flex-col gap-4 lg:col-span-3">
             <Link className="flex items-center gap-3" href="/">
-              <LogoMark className="h-10 w-10 shrink-0" />
+              <LogoMark variant="mark" className="h-10 w-10 shrink-0" />
               <span>
                 <span className="block font-headline-sm text-[1.15rem] text-white">Dr. Feras Ya&apos;ish</span>
                 <span className="block text-[11px] tracking-wide text-sand-tint/60">

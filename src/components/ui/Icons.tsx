@@ -68,19 +68,42 @@ export function ClockIcon({ className = "h-5 w-5" }: { className?: string }) {
   );
 }
 
-export function LogoMark({ className = "h-10 w-10" }: { className?: string }) {
+export function LogoMark({
+  className = "h-10 w-auto",
+  variant = "full",
+}: {
+  className?: string;
+  variant?: "full" | "mark";
+}) {
+  if (variant === "mark") {
+    return (
+      <svg className={className} viewBox="0 0 42 44" fill="none" aria-hidden>
+        <g transform="translate(4, 4)">
+          <path d="M18 4L22 4C28.6274 4 34 9.37258 34 16C34 22.6274 28.6274 28 22 28L18 28" stroke="#14B8A6" strokeWidth="3" strokeLinecap="round" />
+          <path d="M18 4L18 36" stroke="#14B8A6" strokeWidth="3.5" strokeLinecap="round" />
+          <path d="M12 16L24 16" stroke="#14B8A6" strokeWidth="2.5" strokeLinecap="round" />
+          <circle cx="28" cy="16" r="3" fill="#FAF9F6" />
+          <path d="M8 26C12 34 22 38 30 34" stroke="#C4C6CF" strokeWidth="2" strokeLinecap="round" strokeDasharray="2 3" />
+        </g>
+      </svg>
+    );
+  }
+
   return (
-    <svg className={className} viewBox="0 0 40 40" fill="none" aria-hidden>
-      <rect width="40" height="40" rx="10" fill="#1B365D" />
-      <rect x="1.25" y="1.25" width="37.5" height="37.5" rx="8.75" stroke="#B4975A" strokeOpacity="0.7" />
-      <path
-        d="M20 8.5c-3 3.9-4.7 7.3-4.7 10.5 0 3.1 2.1 5.7 4.7 5.7s4.7-2.6 4.7-5.7c0-3.2-1.7-6.6-4.7-10.5Z"
-        fill="#14B8A6"
-      />
-      <path
-        d="M13.6 27.2c2-1.3 4.2-2 6.4-2s4.4.7 6.4 2c.5.3.5 1.1 0 1.4-2 1.3-4.2 2-6.4 2s-4.4-.7-6.4-2c-.5-.3-.5-1.1 0-1.4Z"
-        fill="#FAF9F6"
-      />
+    <svg className={className} viewBox="0 0 240 50" fill="none" role="img" aria-label="Dr. Feras Ya'ish">
+      <g transform="translate(4, 5)">
+        <path d="M18 4L22 4C28.6274 4 34 9.37258 34 16C34 22.6274 28.6274 28 22 28L18 28" stroke="#1B365D" strokeWidth="3" strokeLinecap="round" />
+        <path d="M18 4L18 36" stroke="#0D9488" strokeWidth="3.5" strokeLinecap="round" />
+        <path d="M12 16L24 16" stroke="#0D9488" strokeWidth="2.5" strokeLinecap="round" />
+        <circle cx="28" cy="16" r="3" fill="#1B365D" />
+        <path d="M8 26C12 34 22 38 30 34" stroke="#64748B" strokeWidth="2" strokeLinecap="round" strokeDasharray="2 3" />
+      </g>
+      <text x="52" y="24" className="font-label-lg" fontSize="16" fontWeight="700" fill="#0F172A" letterSpacing="-0.02em">
+        DR. FERAS YA&apos;ISH
+      </text>
+      <text x="52" y="38" className="font-label-md" fontSize="9" fontWeight="600" fill="#0D9488" letterSpacing="0.08em">
+        CONSULTANT ORTHOPAEDIC SURGEON · ABU DHABI
+      </text>
     </svg>
   );
 }
@@ -115,7 +138,9 @@ export function Badge({
 
   return (
     <div
-      className={`mb-space-xs inline-flex items-center gap-space-xs rounded border px-space-sm py-1 font-label-md text-label-md uppercase tracking-wider ${styles}`}
+      className={`mb-space-xs inline-flex items-center gap-space-xs rounded border px-space-sm py-1 font-label-md text-label-md uppercase tracking-wider ${
+        tone === "teal" ? "font-bold" : ""
+      } ${styles}`}
     >
       {children}
     </div>
