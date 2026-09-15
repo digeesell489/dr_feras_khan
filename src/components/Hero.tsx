@@ -66,14 +66,14 @@ export function Hero() {
 
             <div className="relative flex flex-col items-center lg:col-span-5">
               <div className="glass-card-light relative w-full overflow-hidden rounded-2xl border border-white/80 p-space-xs shadow-[0_16px_48px_rgba(15,32,39,0.12)]">
-                <div className="relative flex items-end justify-center overflow-hidden rounded-xl bg-gradient-to-tr from-sand-tint via-surface-container to-sand-tint pt-space-xl">
+                <div className="relative flex items-end justify-center overflow-hidden rounded-xl bg-clinical-slate-deep">
                   <Image
-                    src="/images/doctor-hero-card.png"
+                    src="/images/doctor-cutout.png"
                     alt="Dr. Feras Ya'ish"
-                    width={340}
-                    height={425}
+                    width={420}
+                    height={560}
                     priority
-                    className="aspect-[4/5] w-full max-w-[340px] object-cover object-top transition-transform duration-500 hover:scale-105"
+                    className="aspect-[4/5] w-full object-contain object-bottom transition-transform duration-500 hover:scale-[1.03]"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-clinical-slate-deep/80 via-transparent to-transparent" />
                 </div>
