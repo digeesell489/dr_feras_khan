@@ -27,9 +27,9 @@ export const conditions: Condition[] = [
     title: "Hip Osteoarthritis",
     short: "Hip Osteoarthritis",
     shortAr: "خشونة الورك",
-    image: "/images/implant-hip.png",
+    image: "/images/hip-anatomy.png",
     summary:
-      "Osteoarthritis of the hip is progressive cartilage wear of the femoral head and acetabulum. Patients typically describe groin stiffness, night pain, and reduced walking distance. Dr. Ya'ish evaluates constitutional anatomy before recommending joint-preserving care or Direct Anterior hip replacement.",
+      "Osteoarthritis of the hip is progressive cartilage wear of the femoral head and acetabulum. Patients typically describe groin stiffness, night pain, and reduced walking distance. Dr. Ya'ish evaluates constitutional anatomy before recommending joint-preserving care or patient-specific / robotic hip reconstruction.",
     symptoms: [
       "Groin, buttock, or lateral hip pain that worsens with walking",
       "Morning stiffness and difficulty putting on socks or shoes",
@@ -42,8 +42,8 @@ export const conditions: Condition[] = [
       "CT templating when arthroplasty or dysplasia is being considered",
     ],
     treatments: [
-      { href: "/treatments/hip-replacement", label: "Direct Anterior Hip Replacement" },
       { href: "/treatments/robotic-arthroplasty", label: "Robotic Joint Replacement" },
+      { href: "/treatments/revision-surgery", label: "Revision Hip & Knee Surgery" },
       { href: "/patient-care", label: "Care & recovery pathway" },
     ],
   },
@@ -81,9 +81,9 @@ export const conditions: Condition[] = [
     title: "Avascular Necrosis of the Femoral Head",
     short: "Avascular Necrosis",
     shortAr: "نخر رأس الفخذ",
-    image: "/images/implant-hip.png",
+    image: "/images/hip-anatomy.png",
     summary:
-      "Avascular necrosis (osteonecrosis) interrupts blood supply to the femoral head. Collapse of the head leads to secondary arthritis. Early stages may be observed or decompressed; established collapse is typically treated with total hip replacement using a muscle-sparing Direct Anterior approach.",
+      "Avascular necrosis (osteonecrosis) interrupts blood supply to the femoral head. Collapse of the head leads to secondary arthritis. Early stages may be observed or decompressed; established collapse is typically treated with total hip reconstruction planned to the patient's anatomy.",
     symptoms: [
       "Deep groin pain, often in younger or steroid-exposed patients",
       "Pain with rotation and weight-bearing",
@@ -95,7 +95,7 @@ export const conditions: Condition[] = [
       "Medical review of steroid, alcohol, or clotting risk factors",
     ],
     treatments: [
-      { href: "/treatments/hip-replacement", label: "Total Hip Replacement" },
+      { href: "/treatments/robotic-arthroplasty", label: "Robotic Joint Replacement" },
       { href: "/treatments/robotic-arthroplasty", label: "Robotic Hip Arthroplasty" },
       { href: "/patient-care", label: "Pre-operative optimisation" },
     ],
@@ -107,7 +107,7 @@ export const conditions: Condition[] = [
     title: "Hip Dysplasia & Structural Impingement",
     short: "Hip Dysplasia",
     shortAr: "خلل تنسج الورك",
-    image: "/images/knee-mechanics.png",
+    image: "/images/hip-anatomy.png",
     summary:
       "Acetabular dysplasia and femoroacetabular impingement alter load across the hip from a young age. Some patients present with groin stiffness and early arthritis. Reconstruction must restore coverage and offset; replacement, when required, is planned to the patient's anatomy rather than a generic cup position.",
     symptoms: [
@@ -121,8 +121,8 @@ export const conditions: Condition[] = [
       "Shared decision between joint preservation and arthroplasty",
     ],
     treatments: [
-      { href: "/treatments/hip-replacement", label: "Direct Anterior Hip Replacement" },
       { href: "/treatments/robotic-arthroplasty", label: "Patient-specific planning" },
+      { href: "/treatments/revision-surgery", label: "Revision Hip & Knee Surgery" },
       { href: "/conditions", label: "Conditions explorer" },
     ],
   },
@@ -157,8 +157,8 @@ export const conditions: Condition[] = [
     slug: "sports-knee-injury",
     region: "Knee Joint",
     presentation: "Sports injury / instability",
-    title: "Sports Knee Injury & Instability",
-    short: "Sports Knee Injury",
+    title: "Knee Sports Injuries & Instability",
+    short: "Knee Sports Injuries",
     shortAr: "إصابات الركبة الرياضية",
     image: "/images/knee-mechanics.png",
     summary:
@@ -175,7 +175,8 @@ export const conditions: Condition[] = [
       "Discussion of graft choice and return-to-sport criteria",
     ],
     treatments: [
-      { href: "/treatments/arthroscopy", label: "Arthroscopy & Ligament Reconstruction" },
+      { href: "/treatments/arthroscopy", label: "Knee Arthroscopy" },
+      { href: "/treatments/ligament-reconstruction", label: "Knee Ligament Reconstruction" },
       { href: "/patient-care", label: "Rehabilitation milestones" },
       { href: "/treatments/partial-knee", label: "Partial knee if arthritis coexists" },
     ],
@@ -189,7 +190,7 @@ export const conditions: Condition[] = [
     shortAr: "الكسور وعدم الالتئام",
     image: "/images/implant-trauma.png",
     summary:
-      "High-energy periarticular fractures, open injuries, and established non-unions or malunions require anatomical reduction and stable fixation. Prosthetic dislocation and periprosthetic fractures are managed on the Healthpoint tertiary trauma pathway.",
+      "High-energy periarticular fractures, open injuries, and established non-unions or malunions require anatomical reduction and stable fixation. Prosthetic dislocation and periprosthetic fractures are managed on a tertiary trauma pathway.",
     symptoms: [
       "Acute deformity, inability to bear weight, or an open wound after trauma",
       "Persistent pain or angulation after previous fracture treatment",

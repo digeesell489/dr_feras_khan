@@ -24,7 +24,7 @@ const newsreader = Newsreader({
 export const metadata: Metadata = {
   title: "Dr. Feras Ya'ish | Consultant Orthopaedic Surgeon, Abu Dhabi",
   description:
-    "UK-trained consultant orthopaedic and trauma surgeon at Healthpoint Hospital, Abu Dhabi. Specialist in hip and knee replacement, revision arthroplasty, and patient-specific surgery.",
+    "UK-trained consultant orthopaedic and trauma surgeon in Abu Dhabi. Specialist in robotic-assisted and patient-specific joint replacement, complex revision hip and knee surgery, and advanced knee ligament reconstruction.",
   robots: {
     index: false,
     follow: false,

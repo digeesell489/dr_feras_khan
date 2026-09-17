@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { CtaBand } from "@/components/CtaBand";
 import { EnquiryForm } from "@/components/EnquiryForm";
+import { WhatsAppButton } from "@/components/WhatsAppFloat";
 import { CallIcon, ClockIcon, ExternalArrow, PinIcon } from "@/components/ui/Icons";
 import { clinicHours } from "@/lib/content";
 import { loc } from "@/lib/loc";
@@ -27,6 +28,7 @@ export function ContactPage() {
               <a className="rounded bg-white px-4 py-2.5 text-[13px] font-semibold text-clinical-navy" href="tel:80077">
                 {t.call}
               </a>
+              <WhatsAppButton className="rounded border border-[#25D366]/50 bg-[#25D366]/10 px-4 py-2.5 text-[13px] font-semibold text-[#25D366]" />
               <a className="rounded border border-white/25 px-4 py-2.5 text-[13px] font-semibold" href="#enquiry">
                 {t.enquiry}
               </a>

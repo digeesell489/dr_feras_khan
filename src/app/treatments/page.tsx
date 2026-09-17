@@ -4,7 +4,7 @@ import { SiteShell } from "@/components/SiteShell";
 export const metadata = {
   title: "Treatments & Procedures | Dr. Feras Ya'ish",
   description:
-    "Hip and knee replacement, robotic arthroplasty, revision surgery, arthroscopy, and trauma reconstruction at Healthpoint Abu Dhabi.",
+    "Total knee replacement, partial knee replacement, robotic joint replacement, revision hip and knee surgery, knee arthroscopy, knee ligament reconstruction, and trauma reconstruction.",
 };
 
 export default function Page() {

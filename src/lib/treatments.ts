@@ -1,4 +1,4 @@
-export type TreatmentCategory = "hip" | "knee" | "robotic" | "revision" | "sports" | "trauma";
+export type TreatmentCategory = "knee" | "robotic" | "revision" | "sports" | "trauma";
 
 export type Treatment = {
   slug: string;
@@ -17,47 +17,16 @@ export type Treatment = {
 
 export const treatments: Treatment[] = [
   {
-    slug: "hip-replacement",
-    tag: "Hip Arthroplasty",
-    title: "Total & Direct Anterior Hip Replacement",
-    short: "Direct Anterior Hip",
-    shortAr: "استبدال الورك الأمامي",
-    image: "/images/implant-hip.png",
-    imageAlt: "Direct Anterior Hip Prosthesis",
-    category: "hip",
-    summary:
-      "Utilizing the internervous, intermuscular Direct Anterior Approach (DAA) to access the hip joint without detaching or incising gluteal muscle structures. Coupled with high-grade delta ceramic articulations and porous titanium osseointegration sleeves to promote frictionless biomechanics and long-term durability.",
-    who: [
-      "End-stage hip osteoarthritis with groin or lateral hip pain",
-      "Avascular necrosis of the femoral head",
-      "Inflammatory arthritis affecting the hip",
-      "Patients seeking muscle-sparing recovery and earlier independent walking",
-    ],
-    approach: [
-      "Direct Anterior Approach through the internervous interval — no gluteal detachment",
-      "Pre-operative templating and, where indicated, robotic or navigation assistance",
-      "Ceramic-on-polyethylene or dual-mobility bearings selected for stability and wear",
-      "Porous titanium acetabular shells for biological osseointegration",
-      "Tranexamic acid and multimodal anaesthesia to reduce blood loss and narcotic need",
-    ],
-    recovery: [
-      "Independent mobilisation typically within 3–6 hours",
-      "Most patients discharge with a structured physiotherapy plan within 1–3 days",
-      "Driving usually resumes once an emergency stop is safe",
-      "Clinic review at 2 weeks, 6 weeks, 3 months, and 1 year",
-    ],
-  },
-  {
     slug: "knee-replacement",
     tag: "Knee Arthroplasty",
-    title: "Kinematically Aligned Total Knee Arthroplasty (TKA)",
-    short: "Total Knee (Kinematic)",
+    title: "Total Knee Replacement",
+    short: "Total Knee Replacement",
     shortAr: "استبدال الركبة الكامل",
     image: "/images/implant-knee.png",
     imageAlt: "Precision Total Knee Replacement Implant",
     category: "knee",
     summary:
-      "Moving past rigid mechanical alignment, Dr. Ya'ish implements kinematic alignment protocols calibrated to replicate each patient's constitutional joint line and soft-tissue envelope. This physiological philosophy eliminates unnatural tightness and restores a natural, pain-free arc of flexion.",
+      "Moving past rigid mechanical alignment, Dr. Ya'ish implements kinematic and patient-specific protocols calibrated to replicate each patient's constitutional joint line and soft-tissue envelope. This physiological philosophy reduces unnatural tightness and restores a natural, pain-free arc of flexion.",
     who: [
       "Tricompartmental knee osteoarthritis",
       "Failed non-operative care (physiotherapy, injections, activity modification)",
@@ -79,8 +48,8 @@ export const treatments: Treatment[] = [
   {
     slug: "partial-knee",
     tag: "Joint Preservation",
-    title: "Partial (Unicompartmental) Knee Replacement",
-    short: "Partial Knee",
+    title: "Partial Knee Replacement",
+    short: "Partial Knee Replacement",
     shortAr: "استبدال الركبة الجزئي",
     image: "/images/implant-partial.png",
     imageAlt: "Partial Unicompartmental Knee Implant",
@@ -107,7 +76,7 @@ export const treatments: Treatment[] = [
   {
     slug: "robotic-arthroplasty",
     tag: "Robotics",
-    title: "Robotic-Assisted Joint Arthroplasty",
+    title: "Robotic Joint Replacement",
     short: "Robotic Joint Replacement",
     shortAr: "الجراحة الروبوتية",
     image: "/images/implant-robotic.png",
@@ -135,9 +104,9 @@ export const treatments: Treatment[] = [
   {
     slug: "revision-surgery",
     tag: "Tertiary Revision",
-    title: "Complex Revision Hip & Knee Surgery",
-    short: "Revision Hip & Knee",
-    shortAr: "جراحة المراجعة",
+    title: "Revision Hip & Knee Surgery",
+    short: "Revision Hip & Knee Surgery",
+    shortAr: "جراحة مراجعة الورك والركبة",
     image: "/images/implant-revision.png",
     imageAlt: "Complex Revision Arthroplasty Modular Hardware",
     category: "revision",
@@ -163,29 +132,58 @@ export const treatments: Treatment[] = [
   },
   {
     slug: "arthroscopy",
-    tag: "Sports Knee",
-    title: "Arthroscopy & Multi-Ligament Reconstruction",
+    tag: "Knee Sports Injuries",
+    title: "Knee Arthroscopy",
     short: "Knee Arthroscopy",
     shortAr: "منظار الركبة",
-    image: "/images/knee-mechanics.png",
-    imageAlt: "Biomechanical Knee Ligament Tension Diagnostic",
+    image: "/images/implant-partial.png",
+    imageAlt: "Arthroscopic knee surgery",
     category: "sports",
     summary:
-      "Minimally invasive keyhole surgery for athletic injuries in professional and recreational sports. High-definition arthroscopic anatomical ACL/PCL reconstruction, ramp-lesion meniscal repair, root re-anchoring, and matrix-induced cartilage preservation.",
+      "Minimally invasive keyhole surgery for meniscal tears, cartilage lesions, and mechanical locking of the knee. High-definition arthroscopy allows targeted repair or debridement while protecting healthy tissue.",
     who: [
-      "ACL or PCL rupture",
       "Meniscal tear, ramp lesion, or root avulsion",
-      "Recurrent instability after previous sports injury",
+      "Mechanical locking, catching, or swelling after injury",
       "Focal cartilage injury suitable for preservation techniques",
+      "Diagnostic assessment of the knee when imaging is inconclusive",
     ],
     approach: [
-      "Anatomical ligament reconstruction with modern fixation",
+      "4 mm high-definition arthroscopic portals",
       "Meniscal repair preferred over resection whenever tissue quality allows",
       "Cartilage restoration or debridement matched to lesion type",
       "Early protected motion to avoid stiffness",
     ],
     recovery: [
       "Brace and crutches protocols vary by repair type",
+      "Desk work often resumes within days when the meniscus is not repaired",
+      "Running and pivoting only after strength and hop testing when repair is performed",
+    ],
+  },
+  {
+    slug: "ligament-reconstruction",
+    tag: "Knee Sports Injuries",
+    title: "Knee Ligament Reconstruction, including ACL",
+    short: "Knee Ligament Reconstruction",
+    shortAr: "إعادة بناء أربطة الركبة",
+    image: "/images/knee-mechanics.png",
+    imageAlt: "Knee ligament anatomy including the ACL",
+    category: "sports",
+    summary:
+      "Anatomical reconstruction of the anterior cruciate ligament (ACL) and associated knee ligaments after rupture or multi-ligament injury. The goal is a stable, proprioceptive knee for daily function, prayer, work, and return to sport when appropriate.",
+    who: [
+      "ACL rupture with giving-way during cutting, pivoting, or landing",
+      "PCL or combined ligament injury",
+      "Recurrent instability after a previous knee sports injury",
+      "Patients needing a structured return-to-play plan",
+    ],
+    approach: [
+      "Anatomical ACL reconstruction with modern fixation",
+      "Addressing ramp lesions, meniscal roots, and associated ligament injury in the same sitting when indicated",
+      "Graft choice discussed according to age, sport, and tissue quality",
+      "Early protected motion with a criterion-based rehabilitation plan",
+    ],
+    recovery: [
+      "Brace and crutches protocols vary by reconstruction type",
       "Running and pivoting sport only after strength and hop testing",
       "Shared plan with physiotherapy and, for professionals, team medical staff",
     ],
@@ -193,7 +191,7 @@ export const treatments: Treatment[] = [
   {
     slug: "trauma",
     tag: "Trauma",
-    title: "Major Orthopaedic Trauma & Malunion Reconstruction",
+    title: "Trauma & Malunion Reconstruction",
     short: "Trauma & Malunion",
     shortAr: "الكسور وإعادة البناء",
     image: "/images/implant-trauma.png",
@@ -211,7 +209,7 @@ export const treatments: Treatment[] = [
       "Damage-control then definitive reconstruction as physiology allows",
       "Anatomically contoured locking plates and MIPO where indicated",
       "Restoration of articular surface and mechanical axis",
-      "Coordination with Healthpoint trauma and ICU pathways",
+      "Coordination with hospital trauma and ICU pathways",
     ],
     recovery: [
       "Weight-bearing status is fracture-specific",

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { CountUp } from "@/components/CountUp";
 import { specialties } from "@/lib/content";
 import { useLanguage } from "@/lib/language";
@@ -76,8 +77,9 @@ export function Excellence() {
 
         <div className="grid grid-cols-1 gap-space-md sm:grid-cols-2 md:grid-cols-3">
           {cards.map((card) => (
-            <div
+            <Link
               key={card.title}
+              href={card.href}
               className="glass-card-light group flex flex-col justify-between overflow-hidden rounded-xl border border-white/80 p-space-sm transition-all duration-300 hover:-translate-y-1 hover:border-surgical-teal/40"
             >
               <div className="mb-space-sm aspect-[4/3] overflow-hidden rounded-lg bg-surface-container">
@@ -92,7 +94,7 @@ export function Excellence() {
               <div>
                 <span
                   className={`mb-1 inline-block rounded px-2 py-0.5 font-mono text-[10px] uppercase ${
-                    card.category === "Preservation"
+                    card.category === "Preservation" || card.category === "Knee Sports Injuries"
                       ? "bg-surgical-teal-subtle text-surgical-teal"
                       : "bg-sand-tint text-clinical-navy"
                   }`}
@@ -104,7 +106,7 @@ export function Excellence() {
                 </h4>
                 <p className="text-xs leading-relaxed text-text-secondary">{lang === "ar" ? card.bodyAr : card.body}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

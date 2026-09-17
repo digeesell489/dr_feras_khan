@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { BookButton } from "@/components/BookButton";
 import { CountUp } from "@/components/CountUp";
+import { WhatsAppButton } from "@/components/WhatsAppFloat";
 import { stats } from "@/lib/content";
 import { useLanguage } from "@/lib/language";
 import { ExternalArrow, Icon } from "./ui/Icons";
@@ -29,15 +30,15 @@ export function Hero() {
         <div className="page-wrap relative z-10">
           <div className="grid grid-cols-1 items-center gap-space-xl lg:grid-cols-12 lg:gap-space-2xl">
             <div className="flex flex-col items-start lg:col-span-7">
+              <h1 className="mb-space-sm font-headline-hero text-headline-hero-mobile tracking-tight text-primary lg:text-headline-hero lg:leading-[1.1]">
+                {t.heroTitle}
+              </h1>
               <div className="mb-space-sm inline-flex items-center gap-space-xs rounded border border-surface-border bg-sand-tint/90 px-space-sm py-1 font-label-md text-label-md uppercase tracking-wider text-primary shadow-xs backdrop-blur-md">
                 <span className="h-2 w-2 rounded-full bg-surgical-teal" />
                 {t.heroBadge}
               </div>
-              <h1 className="mb-space-xs font-headline-hero text-headline-hero-mobile tracking-tight text-primary lg:text-headline-hero lg:leading-[1.1]">
-                {t.heroTitle}
-              </h1>
               <p className="mb-space-md font-label-lg text-label-lg font-semibold tracking-wide text-surgical-teal">
-                Dr. Feras Ya&apos;ish · MBBS · MRCS (Ed) · FRCS (Tr &amp; Orth) · CCT (UK)
+                {t.heroCredentials}
               </p>
               <div className="glass-card-light relative mb-space-lg overflow-hidden rounded-xl border border-white/60 p-space-md">
                 <p className="font-body-lg text-body-lg leading-relaxed text-text-primary">{t.heroLead}</p>
@@ -54,6 +55,7 @@ export function Hero() {
                   <Icon name="call" className="text-[18px]" />
                   <span>{t.callTollFree}</span>
                 </a>
+                <WhatsAppButton className="inline-flex w-full items-center justify-center gap-space-xs rounded border border-[#25D366]/40 bg-[#25D366]/10 px-space-lg py-space-sm font-label-lg text-label-lg text-[#128C7E] transition-all duration-300 hover:border-[#25D366] hover:bg-[#25D366]/15 sm:w-auto" />
               </div>
               <a
                 className="inline-flex items-center gap-1.5 font-label-md text-xs text-text-secondary transition-colors hover:text-surgical-teal"
@@ -77,23 +79,9 @@ export function Hero() {
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-clinical-slate-deep/80 via-transparent to-transparent" />
                 </div>
-                <div className="absolute top-space-md end-space-md flex items-center gap-1.5 rounded border border-white/20 bg-clinical-slate-deep/85 px-space-xs py-1 font-mono text-[10px] tracking-widest text-on-primary uppercase shadow-sm backdrop-blur-md">
-                  <span className="h-1.5 w-1.5 rounded-full bg-surgical-teal-light" />
-                  <span>UK CCT · DOH LIC: 12480 · 20+ Yrs</span>
-                </div>
-                <div className="absolute inset-x-space-md bottom-space-md flex items-center justify-between rounded-xl border border-white/15 bg-clinical-navy/95 p-space-sm text-on-primary shadow-xl backdrop-blur-md">
-                  <div>
-                    <div className="flex items-center gap-1.5">
-                      <span className="h-2 w-2 rounded-full bg-surgical-teal-light" />
-                      <span className="font-label-md text-label-md font-bold tracking-wider text-surgical-teal-light uppercase">
-                        Healthpoint Abu Dhabi
-                      </span>
-                    </div>
-                    <span className="mt-0.5 block font-body-sm text-[0.82rem] text-sand-tint">{t.heroCampus}</span>
-                  </div>
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-surgical-teal/40 bg-surgical-teal/20">
-                    <Icon name="verified" className="text-[20px] text-surgical-teal-light" />
-                  </div>
+                <div className="px-space-sm py-space-sm">
+                  <p className="font-headline-sm text-sm font-bold text-primary">{t.heroExperience}</p>
+                  <p className="mt-0.5 font-body-sm text-xs text-text-secondary">{t.heroExperienceDetail}</p>
                 </div>
               </div>
             </div>

@@ -60,11 +60,10 @@ const pathway = [
 
 const filters: { id: "all" | TreatmentCategory; en: string; ar: string }[] = [
   { id: "all", en: "All Specialties", ar: "كل التخصصات" },
-  { id: "hip", en: "Hip Arthroplasty", ar: "استبدال الورك" },
   { id: "knee", en: "Knee Reconstruction", ar: "إعادة بناء الركبة" },
   { id: "robotic", en: "Robotic Navigation", ar: "الملاحة الروبوتية" },
   { id: "revision", en: "Complex Revision", ar: "المراجعة المعقدة" },
-  { id: "sports", en: "Sports Injuries", ar: "الإصابات الرياضية" },
+  { id: "sports", en: "Knee Sports Injuries", ar: "إصابات الركبة الرياضية" },
   { id: "trauma", en: "Trauma & Fractures", ar: "الرضوض والكسور" },
 ];
 
@@ -82,21 +81,6 @@ const extras: Record<
     href?: string;
   }
 > = {
-  "hip-replacement": {
-    specialty: "Specialty Intervention 01 · Hip Joint",
-    specialtyAr: "التدخل التخصصي 01 · مفصل الورك",
-    badges: ["DAA Approach", "Day 1 Ambulation"],
-    specs: [
-      { label: "Surgical Approach", labelAr: "النهج الجراحي", value: "Muscle-Sparing DAA", valueAr: "DAA يحافظ على العضلات" },
-      { label: "Bearing Surface", labelAr: "سطح الاحتكاك", value: "Biolox Ceramic-on-Poly", valueAr: "سيراميك بيولوكس على بولي" },
-      { label: "Hospital Inpatient", labelAr: "الإقامة", value: "24 - 48 Hours", valueAr: "24 – 48 ساعة" },
-      { label: "Weight Bearing", labelAr: "تحميل الوزن", value: "Immediate / Day 0", valueAr: "فوري / اليوم 0" },
-    ],
-    cta: "Evaluate Hip Candidacy",
-    ctaAr: "قيّم أهلية الورك",
-    note: "Fluoroscopic Guidance Certified",
-    noteAr: "معتمد بالتوجيه الفلوري",
-  },
   "knee-replacement": {
     specialty: "Specialty Intervention 02 · Knee Joint",
     specialtyAr: "التدخل التخصصي 02 · مفصل الركبة",
@@ -139,8 +123,8 @@ const extras: Record<
     ],
     cta: "Inquire About Robotic Surgery",
     ctaAr: "استفسر عن الجراحة الروبوتية",
-    note: "Healthpoint Robotic Suite",
-    noteAr: "جناح الروبوت في هيلث بوينت",
+    note: "Robotic planning when indicated",
+    noteAr: "تخطيط روبوتي عند الحاجة",
   },
   "revision-surgery": {
     specialty: "Specialty Intervention 05 · High-Complexity Reconstruction",
@@ -159,19 +143,34 @@ const extras: Record<
     href: "/for-physicians",
   },
   arthroscopy: {
-    specialty: "Specialty Intervention 06 · Sports Medicine",
-    specialtyAr: "التدخل التخصصي 06 · الطب الرياضي",
-    badges: ["Anatomic Kinematics", "Meniscal Salvage"],
+    specialty: "Specialty Intervention 06 · Knee Sports Injuries",
+    specialtyAr: "التدخل التخصصي 06 · إصابات الركبة الرياضية",
+    badges: ["Keyhole Surgery", "Meniscal Salvage"],
     specs: [
-      { label: "Procedures", labelAr: "الإجراءات", value: "ACL / PCL / ALL / MPFL", valueAr: "ACL / PCL / ALL / MPFL" },
+      { label: "Procedures", labelAr: "الإجراءات", value: "Meniscus / Cartilage", valueAr: "هلالة / غضروف" },
       { label: "Meniscal Strategy", labelAr: "استراتيجية الهلالة", value: "Preservation & All-Inside Fix", valueAr: "حفظ وتثبيت من الداخل" },
       { label: "Surgical Access", labelAr: "المدخل الجراحي", value: "4 mm HD Arthroscopy", valueAr: "منظار عالي الدقة 4 مم" },
-      { label: "Return to Pivot Sports", labelAr: "العودة للرياضة", value: "Structured Return-to-Play", valueAr: "عودة منظمة للعب" },
+      { label: "Recovery", labelAr: "التعافي", value: "Repair-specific protocol", valueAr: "بروتوكول حسب الإصلاح" },
     ],
-    cta: "Sports Injury Assessment",
-    ctaAr: "تقييم الإصابة الرياضية",
-    note: "Accelerated Recovery Protocol",
-    noteAr: "بروتوكول تعافٍ سريع",
+    cta: "Knee Arthroscopy Assessment",
+    ctaAr: "تقييم منظار الركبة",
+    note: "Repair-first meniscal strategy",
+    noteAr: "استراتيجية إصلاح الهلالة أولاً",
+  },
+  "ligament-reconstruction": {
+    specialty: "Specialty Intervention 07 · Knee Sports Injuries",
+    specialtyAr: "التدخل التخصصي 07 · إصابات الركبة الرياضية",
+    badges: ["ACL Reconstruction", "Anatomic Kinematics"],
+    specs: [
+      { label: "Procedures", labelAr: "الإجراءات", value: "ACL / PCL / ALL / MPFL", valueAr: "ACL / PCL / ALL / MPFL" },
+      { label: "Focus", labelAr: "التركيز", value: "Knee ligament stability", valueAr: "ثبات أربطة الركبة" },
+      { label: "Associated Care", labelAr: "الرعاية المصاحبة", value: "Ramp & root repair", valueAr: "إصلاح الحافة والجذر" },
+      { label: "Return to Pivot Sports", labelAr: "العودة للرياضة", value: "Criterion-based testing", valueAr: "اختبارات وفق معايير" },
+    ],
+    cta: "Knee Ligament Assessment",
+    ctaAr: "تقييم أربطة الركبة",
+    note: "Focused on knee sports injuries",
+    noteAr: "مركز على إصابات الركبة الرياضية",
   },
   trauma: {
     specialty: "Specialty Intervention 07 · Skeletal Trauma",
@@ -212,7 +211,7 @@ export function TreatmentsPage() {
           <p className="mt-4 max-w-2xl text-text-secondary">
             {loc(
               lang,
-              "Evidence-based reconstructive procedures, tissue-sparing approaches, robotic-assisted navigation, and complex joint revision performed under consultant-led British standards at Healthpoint Abu Dhabi.",
+              "Evidence-based reconstructive procedures, tissue-sparing approaches, robotic-assisted and patient-specific joint replacement, complex revision hip and knee surgery, and advanced knee ligament reconstruction.",
               "إجراءات إعادة بناء مبنية على الأدلة، ونُهج تحافظ على الأنسجة، وملاحة روبوتية، ومراجعة مفاصل معقدة وفق معايير بريطانية استشارية في هيلث بوينت أبوظبي.",
             )}
           </p>
@@ -238,6 +237,7 @@ export function TreatmentsPage() {
           {visible.map((item, index) => {
             const copy = treatmentCopy(item, lang);
             const meta = extras[item.slug];
+            if (!meta) return null;
             const imageRight = index % 2 === 1;
             const ctaClass =
               "inline-flex items-center gap-2 rounded bg-clinical-navy px-4 py-2.5 text-[13px] font-semibold text-white";
@@ -352,7 +352,7 @@ export function TreatmentsPage() {
         <div className="page-wrap relative z-10 grid items-center gap-space-xl lg:grid-cols-12">
           <div className="lg:col-span-8">
             <p className="mb-2 text-[11px] tracking-[0.2em] text-surgical-teal-light uppercase">
-              {loc(lang, "Healthpoint Hospital Abu Dhabi · Orthopaedic Department", "مستشفى هيلث بوينت أبوظبي · قسم العظام")}
+              {loc(lang, "Consultant Trauma & Orthopaedic Practice", "ممارسة استشارية للحوادث والعظام")}
             </p>
             <h2 className="font-headline-hero text-[2rem] leading-tight lg:text-[3rem]">
               {loc(lang, "Schedule Your Consultant Evaluation", "احجز تقييمك الاستشاري")}

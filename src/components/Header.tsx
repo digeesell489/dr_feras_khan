@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BookButton } from "@/components/BookButton";
 import { LanguageToggle } from "@/components/LanguageToggle";
+import { WhatsAppIcon, whatsappHref } from "@/components/WhatsAppFloat";
 import { useLanguage } from "@/lib/language";
 import { conditions } from "@/lib/conditions";
 import { siteNav } from "@/lib/nav";
@@ -144,6 +145,15 @@ export function Header() {
             >
               <CallIcon className="h-4 w-4" />
             </a>
+            <a
+              className="hidden h-10 w-10 items-center justify-center rounded-full border border-[#25D366]/30 text-[#128C7E] transition-colors hover:bg-[#25D366] hover:text-white sm:inline-flex"
+              href={whatsappHref(t.whatsappMessage)}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={t.whatsapp}
+            >
+              <WhatsAppIcon className="h-4 w-4" />
+            </a>
             <BookButton className="hidden items-center gap-1.5 rounded-full bg-clinical-navy px-3.5 py-2 text-[12px] font-semibold whitespace-nowrap text-white shadow-sm transition-all hover:bg-clinical-slate-deep sm:inline-flex sm:text-[13px]">
               {t.book}
               <ExternalArrow />
@@ -236,13 +246,22 @@ export function Header() {
                 )}
               </div>
             ))}
-            <div className="mt-5 grid grid-cols-2 gap-2">
+            <div className="mt-5 grid grid-cols-3 gap-2">
               <a
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 py-2.5 text-[13px] font-semibold"
                 href="tel:80077"
               >
                 <CallIcon className="h-4 w-4" />
                 {t.call}
+              </a>
+              <a
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#25D366]/40 py-2.5 text-[13px] font-semibold text-[#25D366]"
+                href={whatsappHref(t.whatsappMessage)}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <WhatsAppIcon className="h-4 w-4" />
+                {t.whatsapp}
               </a>
               <BookButton
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-surgical-teal py-2.5 text-[13px] font-semibold text-white"

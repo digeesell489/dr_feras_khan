@@ -47,8 +47,8 @@ const concerns: { id: Concern; title: string; titleAr: string; body: string; bod
   },
   {
     id: "sports",
-    title: "Sports / Acute Injury",
-    titleAr: "إصابة رياضية / حادة",
+    title: "Sports / Knee Injury",
+    titleAr: "إصابة الركبة الرياضية",
     body: "Sudden twist, pop, joint instability, ligament tear, or traumatic impact.",
     bodyAr: "التواء مفاجئ، طقطقة، عدم استقرار المفصل، تمزق رباط، أو صدمة.",
   },
@@ -76,12 +76,12 @@ function concernToPresentation(concern: Concern): ConditionPresentation | null {
 }
 
 const portfolio = [
-  { area: "hip" as const, intent: "replacement" as const, anatomy: "Hip Joint" as const, title: "Primary Total Hip Replacement", titleAr: "استبدال الورك الكامل الأولي", body: "Precision replacement of the arthritic femoral head and acetabular socket with modern dual-mobility or ceramic bearings.", bodyAr: "استبدال دقيق لرأس الفخذ والحُق بأسطح ثنائية الحركة أو سيراميك حديثة.", href: "/treatments/hip-replacement", tags: ["Direct Anterior / Posterior", "Rapid Mobilization"] },
+  { area: "hip" as const, intent: "revision" as const, anatomy: "Hip Joint" as const, title: "Revision Hip & Knee Surgery", titleAr: "مراجعة الورك والركبة", body: "Extraction of failed, loose, or infected implants with bone augments, modular stems, and hinged reconstruction.", bodyAr: "إزالة الزرعات الفاشلة أو المرتخية أو المصابة مع دعائم عظمية وسيقان معيارية وإعادة بناء مفصلية.", href: "/treatments/revision-surgery", tags: ["PJI Protocols", "Trabecular Cones"] },
   { area: "knee" as const, intent: "replacement" as const, anatomy: "Knee Joint" as const, title: "Total Knee Arthroplasty", titleAr: "استبدال الركبة الكامل", body: "Complete resurfacing with anatomical kinematic alignment to re-establish natural soft-tissue tension balance.", bodyAr: "إعادة تسطيح كاملة بمحاذاة حركية تشريحية لاستعادة توازن الأنسجة الرخوة.", href: "/treatments/knee-replacement", tags: ["Kinematic Alignment", "Rapid Recovery"] },
   { area: "knee" as const, intent: "replacement" as const, anatomy: "Knee Joint" as const, title: "Robotic-Assisted Joint Replacement", titleAr: "استبدال المفصل بمساعدة الروبوت", body: "Pre-computed 3D CT surgical modeling paired with intra-operative haptic guidance for sub-millimeter resection accuracy.", bodyAr: "نمذجة مقطعية ثلاثية الأبعاد مع توجيه لمسي أثناء الجراحة لدقة قطع دون المليمتر.", href: "/treatments/robotic-arthroplasty", tags: ["Haptic Guidance", "3D CT Plan"] },
   { area: "knee" as const, intent: "preservation" as const, anatomy: "Knee Joint" as const, title: "Unicompartmental (Partial) Knee", titleAr: "استبدال الركبة الجزئي", body: "Isolated resurfacing of only the worn compartment, preserving cruciate ligaments and proprioception.", bodyAr: "إعادة تسطيح الحيز المتآكل فقط مع الحفاظ على الأربطة المتصالبة والإحساس العميق.", href: "/treatments/partial-knee", tags: ["Ligament Sparing", "Day Case"] },
-  { area: "hip" as const, intent: "revision" as const, anatomy: "Hip Joint" as const, title: "Revision Joint Arthroplasty", titleAr: "مراجعة استبدال المفصل", body: "Extraction of failed, loose, or infected implants with bone augments, modular stems, and hinged reconstruction.", bodyAr: "إزالة الزرعات الفاشلة أو المرتخية أو المصابة مع دعائم عظمية وسيقان معيارية وإعادة بناء مفصلية.", href: "/treatments/revision-surgery", tags: ["PJI Protocols", "Trabecular Cones"] },
-  { area: "knee" as const, intent: "preservation" as const, anatomy: "Knee Joint" as const, title: "Knee Arthroscopy & Ligament Repair", titleAr: "منظار الركبة وإصلاح الأربطة", body: "Minimally invasive ACL/PCL reconstruction, meniscal preservation sutures, and cartilage restoring debridement.", bodyAr: "إعادة بناء الرباط المتصالب طفيفة التوغل، وخيوط الحفاظ على الهلالة، وتنظيف الغضروف.", href: "/treatments/arthroscopy", tags: ["ACL / PCL", "Meniscal Salvage"] },
+  { area: "knee" as const, intent: "preservation" as const, anatomy: "Knee Joint" as const, title: "Knee Ligament Reconstruction", titleAr: "إعادة بناء أربطة الركبة", body: "Anatomical ACL reconstruction and associated ligament repair after knee sports injury.", bodyAr: "إعادة بناء تشريحي للرباط المتصالب وإصلاح الأربطة المرتبطة بعد إصابة الركبة الرياضية.", href: "/treatments/ligament-reconstruction", tags: ["ACL", "Knee Sports Injuries"] },
+  { area: "knee" as const, intent: "preservation" as const, anatomy: "Knee Joint" as const, title: "Knee Arthroscopy", titleAr: "منظار الركبة", body: "Minimally invasive meniscal preservation, cartilage work, and keyhole assessment of the knee.", bodyAr: "حفظ الهلالة طفيف التوغل وعمل الغضروف وتقييم الركبة بثقب المفتاح.", href: "/treatments/arthroscopy", tags: ["Meniscal Salvage", "Keyhole"] },
   { area: "trauma" as const, intent: "preservation" as const, anatomy: "Trauma & Other" as const, title: "Complex Trauma & Malunion Repair", titleAr: "إصلاح الرضوض المعقدة والالتئام المعيب", body: "ORIF for complex articular fractures, pelvic trauma stabilization, and surgical revision of non-healing bones.", bodyAr: "تثبيت مفتوح للكسور المفصلية المعقدة، واستقرار رضوض الحوض، ومراجعة العظام غير الملتئمة.", href: "/treatments/trauma", tags: ["LCP Fixation", "Malunion"] },
 ];
 
@@ -101,11 +101,11 @@ const mandated = [
   {
     q: "What surgical approach and implant design are recommended for my activity goals?",
     qAr: "أي نهج جراحي وتصميم زرعة يناسب أهداف نشاطي؟",
-    hint: "Evaluates ceramic-on-crosslinked-polyethylene bearings, direct anterior vs. posterior hip access, and returning to sport.",
-    hintAr: "يقيّم سطوح السيراميك والنهج الأمامي مقابل الخلفي للورك والعودة للرياضة.",
+    hint: "Evaluates ceramic-on-crosslinked-polyethylene bearings, robotic or patient-specific planning, and return to activity.",
+    hintAr: "يقيّم سطوح السيراميك والتخطيط الروبوتي أو المخصص للمريض والعودة للنشاط.",
   },
   {
-    q: "What does the post-operative physiotherapy pathway look like at Healthpoint?",
+    q: "What does the post-operative physiotherapy pathway look like?",
     qAr: "كيف يبدو مسار العلاج الطبيعي بعد العملية في هيلث بوينت؟",
     hint: "Covers same-day mobilization protocol, inpatient recovery milestones, and outpatient rehabilitation duration.",
     hintAr: "يشمل التحريك في يوم الجراحة ومحطات التعافي داخل المستشفى ومدة التأهيل الخارجي.",
@@ -228,7 +228,7 @@ export function ConditionsPage() {
         <div className="page-wrap grid items-center gap-space-xl lg:grid-cols-12">
           <div className="lg:col-span-7">
             <p className="mb-2 text-[11px] tracking-[0.2em] text-surgical-teal-light uppercase">
-              {loc(lang, "Evidence-led joint reconstruction · Healthpoint Abu Dhabi", "إعادة بناء المفاصل المبنية على الأدلة · هيلث بوينت أبوظبي")}
+              {loc(lang, "Evidence-led joint reconstruction", "إعادة بناء المفاصل المبنية على الأدلة")}
             </p>
             <h1 className="font-headline-hero text-[2.25rem] leading-tight lg:text-[3rem]">
               {loc(lang, "Precision Orthopaedic Surgical Solutions", "حلول جراحة عظام دقيقة")}
@@ -252,14 +252,16 @@ export function ConditionsPage() {
           <div className="relative overflow-hidden rounded-xl bg-clinical-navy shadow-xl lg:col-span-5">
             <Image
               src="/images/education-or.png"
-              alt="Healthpoint Orthopaedic Arthroplasty Suite"
+              alt={loc(lang, "Consultant orthopaedic practice", "ممارسة استشارية لجراحة العظام")}
               width={900}
               height={640}
               className="h-80 w-full object-cover opacity-90"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-clinical-slate-deep via-transparent to-transparent" />
             <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-white/10 p-space-md backdrop-blur-md">
-              <span className="font-label-md text-label-md text-white">Healthpoint Orthopaedic Arthroplasty Suite</span>
+              <span className="font-label-md text-label-md text-white">
+                {loc(lang, "Consultant Orthopaedic Practice", "ممارسة استشارية لجراحة العظام")}
+              </span>
               <span className="font-label-md text-label-md text-surgical-teal-light">Zayed Sports City</span>
             </div>
           </div>
@@ -551,7 +553,7 @@ export function ConditionsPage() {
             </table>
           </div>
           <p className="mt-3 text-sm text-text-secondary">
-            {loc(lang, "Platform and technology availability confirmed at Healthpoint Hospital.", "توفر المنصة والتقنية مؤكد في مستشفى هيلث بوينت.")}
+            {loc(lang, "Platform and technology availability confirmed at the time of consultation.", "يُؤكد توفر المنصة والتقنية عند الاستشارة.")}
           </p>
         </div>
       </section>

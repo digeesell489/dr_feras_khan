@@ -26,7 +26,7 @@ export const physicianPages: PhysicianPage[] = [
     title: "AO Recon Faculty & Clinical Fellowship",
     eyebrow: "Academic rigour & surgical education",
     summary:
-      "Accredited CME, cadaveric arthroplasty courses, and interactive tertiary case panels convened by Dr. Feras Ya'ish across the Middle East, plus a visiting surgeon observer programme at Healthpoint.",
+      "Accredited CME, cadaveric arthroplasty courses, and interactive tertiary case panels convened by Dr. Feras Ya'ish across the Middle East, plus a visiting surgeon observer programme.",
     image: "/images/education-or.png",
   },
   {
@@ -205,9 +205,9 @@ export const facultySessions = [
     tagAr: "زمالة مستشفى",
     credit: "Observer credit",
     creditAr: "ساعات مراقبة",
-    title: "Visiting Surgeon Observer Programme at Healthpoint",
+    title: "Visiting Surgeon Observer Programme",
     titleAr: "برنامج مراقبة الجرّاح الزائر في هيلث بوينت",
-    body: "Direct operating theatre immersion in direct anterior hip arthroplasty, robotic knee reconstruction, and complex revision cases.",
+    body: "Direct operating theatre immersion in robotic and patient-specific reconstruction, complex revision cases, and trauma.",
     bodyAr: "حضور مباشر في غرفة العمليات لاستبدال الورك الأمامي وإعادة بناء الركبة الروبوتية وحالات المراجعة المعقدة.",
     meta: ["Healthpoint Hospital, Zayed Sports City", "Duration: 2 to 4 weeks (rotating)"],
     metaAr: ["مستشفى هيلث بوينت، مدينة زايد الرياضية", "المدة: 2 إلى 4 أسابيع (بالتناوب)"],

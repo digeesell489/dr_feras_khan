@@ -32,12 +32,12 @@ const glossary = [
     bodyAr: "استبدال جزئي: يُعاد تسطيح الحيز المتضرر فقط مع الإبقاء على الأربطة المتصالبة.",
   },
   {
-    term: "Direct Anterior Hip (DAA)",
-    termAr: "استبدال الورك الأمامي المباشر",
-    tag: "Minimally Invasive",
-    tagAr: "طفيف التوغل",
-    body: "An advanced hip replacement incision performed from the front of the hip. The surgeon works between natural muscle planes without detaching or cutting muscles from the femur.",
-    bodyAr: "استبدال الورك من الأمام بين مستويات العضلات الطبيعية دون فصلها عن الفخذ.",
+    term: "Knee Ligament Reconstruction",
+    termAr: "إعادة بناء أربطة الركبة",
+    tag: "Knee Sports Injuries",
+    tagAr: "إصابات الركبة الرياضية",
+    body: "Anatomical reconstruction of the ACL and associated knee ligaments after rupture, restoring stability for daily function and return to sport when appropriate.",
+    bodyAr: "إعادة بناء تشريحي للرباط المتصالب الأمامي والأربطة المرتبطة بعد التمزق لاستعادة الثبات للحياة اليومية والرياضة عند المناسبة.",
   },
   {
     term: "Osteotomy",
@@ -61,8 +61,8 @@ const questions = [
   {
     q: "What surgical approach best suits my individual pelvic or knee anatomy?",
     qAr: "أي نهج جراحي يناسب تشريح الحوض أو الركبة لدي؟",
-    hint: "E.g., Direct Anterior vs. Posterior Hip Arthroplasty, or Robotic Kinematic vs. Mechanical Knee alignment.",
-    hintAr: "مثل النهج الأمامي مقابل الخلفي للورك، أو المحاذاة الحركية الروبوتية مقابل الميكانيكية للركبة.",
+    hint: "E.g., robotic or patient-specific joint replacement versus conventional jigs, or kinematic versus mechanical knee alignment.",
+    hintAr: "مثل الاستبدال الروبوتي أو المخصص للمريض مقابل القوالب التقليدية، أو المحاذاة الحركية مقابل الميكانيكية للركبة.",
   },
   {
     q: "What specific implant materials and bearing surfaces will be utilized?",
@@ -117,7 +117,7 @@ export function PatientCarePage() {
         <div className="page-wrap grid items-center gap-space-xl lg:grid-cols-12">
           <div className="lg:col-span-7">
             <p className="mb-3 inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-[11px] tracking-wider text-clinical-navy uppercase shadow-sm">
-              {loc(lang, "Comprehensive Clinical Pathway · Healthpoint Abu Dhabi", "مسار سريري شامل · هيلث بوينت أبوظبي")}
+              {loc(lang, "Comprehensive Clinical Pathway", "مسار سريري شامل")}
             </p>
             <h1 className="font-headline-hero text-[2.25rem] leading-tight text-primary lg:text-[3rem]">
               {loc(lang, "Your Surgical Care & Recovery Journey", "رحلة الرعاية الجراحية والتعافي")}
@@ -125,7 +125,7 @@ export function PatientCarePage() {
             <p className="mt-4 max-w-2xl text-text-secondary">
               {loc(
                 lang,
-                "Clear, step-by-step guidance curated by Dr. Feras Ya'ish from your initial diagnostic evaluation through advanced robotic intervention and compassionate post-operative rehabilitation at Healthpoint Hospital Abu Dhabi.",
+                "Clear, step-by-step guidance curated by Dr. Feras Ya'ish from your initial diagnostic evaluation through robotic-assisted or patient-specific joint replacement and structured post-operative rehabilitation. Appointments and surgery are arranged at Healthpoint Hospital, Zayed Sports City.",
                 "إرشاد واضح خطوة بخطوة من التقييم التشخيصي حتى التدخل الروبوتي وإعادة التأهيل بعد العملية في مستشفى هيلث بوينت أبوظبي.",
               )}
             </p>
@@ -296,7 +296,7 @@ export function PatientCarePage() {
                   3 · {loc(lang, "Surgical Execution", "التنفيذ الجراحي")}
                 </p>
                 <h3 className="mb-3 font-headline-sm text-[1.4rem] text-primary">
-                  {loc(lang, "The Day of Surgery at Healthpoint Hospital", "يوم الجراحة في مستشفى هيلث بوينت")}
+                  {loc(lang, "The Day of Surgery", "يوم الجراحة")}
                 </h3>
                 <p className="mb-5 text-sm text-text-secondary">
                   {loc(lang, "From reception in the day admissions suite to your arrival in the sterile theatre, your comfort and security remain paramount.", "من قبول اليوم الواحد إلى غرفة العمليات المعقمة تبقى الراحة والأمان أولوية.")}
@@ -308,7 +308,7 @@ export function PatientCarePage() {
                   </li>
                   <li>
                     <p className="font-semibold text-primary">{loc(lang, "02 · Robotic-Assisted Precision Implantation", "02 · زرع دقيق بمساعدة الروبوت")}</p>
-                    <p className="text-text-secondary">{loc(lang, "Haptic robotic boundaries align components within 0.5mm accuracy for minimal soft-tissue trauma and zero muscle cutting in Direct Anterior hip access.", "حدود لمسية روبوتية تحاذي المكوّنات بدقة 0.5 مم دون قطع عضلات في النهج الأمامي.")}</p>
+                    <p className="text-text-secondary">{loc(lang, "Haptic robotic boundaries align components within 0.5mm accuracy for minimal soft-tissue trauma when robotic assistance is selected.", "حدود لمسية روبوتية تحاذي المكوّنات بدقة 0.5 مم مع أقل رض للأنسجة عند اختيار المساعدة الروبوتية.")}</p>
                   </li>
                   <li>
                     <p className="font-semibold text-primary">{loc(lang, "03 · Day 0 Rapid Mobilization", "03 · تحريك سريع في اليوم 0")}</p>
@@ -331,7 +331,7 @@ export function PatientCarePage() {
                 <p className="mb-5 text-sm text-text-secondary">
                   {loc(
                     lang,
-                    "Healthpoint Hospital provides a five-star clinical environment designed to minimize anxiety, foster tranquil rest, and deliver attentive orthopaedic rehabilitation care.",
+                    "Inpatient recovery is arranged in a calm clinical environment with dedicated orthopaedic rehabilitation. Appointments and admission are coordinated at Healthpoint Hospital.",
                     "يوفر هيلث بوينت بيئة سريرية فاخرة تقلل القلق وتعزز الراحة وتقدم إعادة تأهيل عظمية دقيقة.",
                   )}
                 </p>
@@ -496,7 +496,7 @@ export function PatientCarePage() {
         <div className="page-wrap grid items-center gap-space-lg lg:grid-cols-12">
           <div className="lg:col-span-7">
             <p className="mb-3 inline-flex rounded-full bg-white px-3 py-1 text-[11px] font-semibold tracking-wider text-clinical-navy uppercase shadow-sm">
-              Healthpoint Hospital Zayed Sports City
+              {loc(lang, "Consultant Trauma & Orthopaedic Practice · Healthpoint, Zayed Sports City", "ممارسة استشارية · هيلث بوينت، مدينة زايد الرياضية")}
             </p>
             <h2 className="mb-3 font-headline-lg text-headline-lg text-primary">
               {loc(lang, "Insurance Coverage & Hospital Access", "التغطية التأمينية ودخول المستشفى")}

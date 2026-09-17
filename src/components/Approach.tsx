@@ -51,8 +51,10 @@ export function Approach() {
           ))}
         </div>
 
-        <div className="mx-auto max-w-xl rounded-xl border border-surgical-teal/20 bg-surgical-teal-subtle/80 px-space-md py-space-sm text-center">
-          <p className="font-headline-md text-[1.25rem] font-medium text-surgical-teal italic">{t.approachQuote}</p>
+        <div className="mx-auto max-w-3xl rounded-2xl border-2 border-surgical-teal/35 bg-surgical-teal-subtle px-space-lg py-space-lg text-center shadow-[0_12px_32px_rgba(13,148,136,0.12)]">
+          <p className="font-headline-lg text-[1.45rem] leading-snug font-medium text-surgical-teal italic md:text-[1.85rem]">
+            {t.approachQuote}
+          </p>
         </div>
       </div>
     </section>

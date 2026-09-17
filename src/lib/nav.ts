@@ -11,16 +11,17 @@ export const siteNav = [
 export const footerPractice = [
   { href: "/about", label: "About the Practice" },
   { href: "/about#surgical-philosophy", label: "Holistic Approach" },
-  { href: "/#case-studies", label: "Surgical Case Studies" },
+  { href: "/#case-examples", label: "Case Examples" },
   { href: "/#faq", label: "FAQs" },
   { href: "/contact", label: "Contact & Appointments" },
 ];
 
 export const footerCare = [
   { href: "/treatments", label: "All Treatments" },
-  { href: "/treatments/hip-replacement", label: "Direct Anterior Hip" },
   { href: "/treatments/knee-replacement", label: "Total Knee Replacement" },
-  { href: "/treatments/robotic-arthroplasty", label: "Robotic Arthroplasty" },
+  { href: "/treatments/partial-knee", label: "Partial Knee Replacement" },
+  { href: "/treatments/robotic-arthroplasty", label: "Robotic Joint Replacement" },
+  { href: "/treatments/ligament-reconstruction", label: "Knee Ligament Reconstruction" },
   { href: "/conditions", label: "All Conditions" },
   { href: "/conditions/hip-osteoarthritis", label: "Hip Osteoarthritis" },
   { href: "/conditions/knee-osteoarthritis", label: "Knee Osteoarthritis" },

@@ -26,9 +26,9 @@ const philosophy = [
   {
     title: "Tissue-Sparing Portals",
     titleAr: "مداخل تحافظ على الأنسجة",
-    body: "Utilization of the muscle-sparing Direct Anterior Hip approach and true subvastus knee pathways that preserve dynamic stabilizers, drastically minimizing post-operative narcotic burden.",
+    body: "Utilization of muscle-sparing hip and knee pathways that preserve dynamic stabilizers, reducing post-operative narcotic burden.",
     bodyAr:
-      "استخدام النهج الأمامي المباشر للورك ومسارات تحت المتسعة للركبة التي تحافظ على المثبتات الديناميكية وتقلل الحاجة للمسكنات بعد العملية.",
+      "استخدام مداخل للورك والركبة تحافظ على العضلات والمثبتات الديناميكية وتقلل الحاجة للمسكنات بعد العملية.",
   },
   {
     title: "Sub-Millimeter Navigation",
@@ -55,9 +55,9 @@ const timeline = [
     titleAr: "استشاري جراحة العظام والحوادث",
     place: "Healthpoint Hospital Abu Dhabi · M42 Healthcare",
     placeAr: "مستشفى هيلث بوينت أبوظبي · M42 للرعاية الصحية",
-    body: "Leading direct anterior hip arthroplasty, robotic-assisted total knee replacement, and specialized revision joint services. Serving tertiary referral patients across the UAE and GCC requiring advanced biological salvage and revision reconstruction.",
+    body: "Leading robotic-assisted and patient-specific joint replacement, complex revision hip and knee surgery, and advanced knee ligament reconstruction. Serving tertiary referral patients across the UAE and GCC.",
     bodyAr:
-      "يقود استبدال الورك بالنهج الأمامي، واستبدال الركبة بمساعدة الروبوت، وخدمات المراجعة التخصصية. يستقبل مرضى الإحالة من الإمارات والخليج لحالات الإنقاذ البيولوجي وإعادة البناء المعقدة.",
+      "يقود استبدال المفاصل بمساعدة الروبوت والمخصص للمريض، وجراحة مراجعة الورك والركبة المعقدة، وإعادة بناء أربطة الركبة. يستقبل مرضى الإحالة من الإمارات والخليج.",
   },
   {
     years: "2020 — 2023",
@@ -137,8 +137,8 @@ const credentials = [
   {
     title: "Healthpoint Hospital",
     titleAr: "مستشفى هيلث بوينت",
-    body: "Practicing within Abu Dhabi's premier centre for orthopaedic medicine and sports surgery, adjacent to Zayed Sports City.",
-    bodyAr: "يمارس في أحد أبرز مراكز جراحة العظام والرياضة في أبوظبي، بجوار مدينة زايد الرياضية.",
+    body: "Practicing as a consultant at Healthpoint Hospital, Zayed Sports City — the location for appointments, imaging, and surgery.",
+    bodyAr: "يمارس كاستشاري في مستشفى هيلث بوينت، مدينة زايد الرياضية — موقع المواعيد والتصوير والجراحة.",
   },
 ];
 
@@ -155,7 +155,7 @@ export function AboutPage() {
             ["#nh-timeline", "NHS Fellowship Path", "مسار زمالة NHS"],
             ["#academic-leadership", "AO Recon Leadership", "قيادة AO Recon"],
             ["#accreditations", "Board Certifications", "شهادات المجالس"],
-            ["#facility", "Healthpoint Facility", "منشأة هيلث بوينت"],
+            ["#facility", "Clinic Location", "موقع العيادة"],
           ].map(([href, en, ar]) => (
             <a key={href} className="hover:text-clinical-navy" href={href}>
               {loc(lang, en, ar)}
@@ -180,8 +180,8 @@ export function AboutPage() {
             <p className="mb-4 max-w-xl text-sm leading-relaxed text-sand-tint/75">
               {loc(
                 lang,
-                "British fellowship-trained consultant specializing in primary and revision hip and knee arthroplasty, robotic-assisted surgical intervention, complex trauma reconstructive surgery, and sports joint reconstruction. Twenty-two years of NHS reconstructive practice, including a consultant post at SSMC in partnership with Mayo Clinic, now at Healthpoint Hospital (M42).",
-                "استشاري بزمالة بريطانية متخصص في استبدال الورك والركبة الأولي والمراجعة، والجراحة بمساعدة الروبوت، وإعادة بناء الرضوض المعقدة، وجراحة المفاصل الرياضية. اثنان وعشرون عاماً في NHS بما في ذلك منصب استشاري في مدينة الشيخ شخبوط بالشراكة مع مايو كلينك، والآن في هيلث بوينت (M42).",
+                "British fellowship-trained consultant specializing in robotic-assisted and patient-specific joint replacement, complex revision hip and knee surgery, advanced knee ligament reconstruction, and trauma reconstructive surgery. Twenty-two years of NHS reconstructive practice, including a consultant post at SSMC in partnership with Mayo Clinic. Consultations and surgery are arranged at Healthpoint Hospital, Zayed Sports City.",
+                "استشاري بزمالة بريطانية متخصص في استبدال المفاصل بمساعدة الروبوت والمخصص للمريض، وجراحات مراجعة الورك والركبة المعقدة، وإعادة بناء أربطة الركبة المتقدمة، وإعادة بناء الرضوض. اثنان وعشرون عاماً في NHS بما في ذلك منصب استشاري في مدينة الشيخ شخبوط بالشراكة مع مايو كلينك. تُنسَّق الاستشارات والجراحة في مستشفى هيلث بوينت، مدينة زايد الرياضية.",
               )}
             </p>
             <div className="mb-6 flex flex-wrap gap-2 text-[11px] font-semibold">
@@ -320,8 +320,8 @@ export function AboutPage() {
               <p className="text-sm text-sand-tint/70">
                 {loc(
                   lang,
-                  "Hands-on anatomical instruction in Direct Anterior Hip, revision acetabular cups, and modern sensor-guided knee balance.",
-                  "تدريب عملي على النهج الأمامي للورك، وأصداف الحُق للمراجعة، وموازنة الركبة الموجَّهة بالحساسات.",
+                  "Hands-on anatomical instruction in revision acetabular reconstruction, kinematic knee balance, and patient-specific planning.",
+                  "تدريب عملي على إعادة بناء الحُق للمراجعة، وموازنة الركبة الحركية، والتخطيط المخصص للمريض.",
                 )}
               </p>
             </article>

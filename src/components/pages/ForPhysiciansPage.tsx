@@ -19,7 +19,7 @@ export function ForPhysiciansPage() {
         <div className="page-wrap grid items-start gap-space-xl lg:grid-cols-12">
           <div className="lg:col-span-8">
             <p className="mb-3 inline-flex rounded-full bg-white px-3 py-1 text-[11px] tracking-wider text-clinical-navy uppercase shadow-sm">
-              {loc(lang, "Healthpoint Hospital · Division of Adult Reconstruction & Trauma", "هيلث بوينت · قسم إعادة بناء البالغين والرضوض")}
+              {loc(lang, "Consultant Tertiary Referral Gateway", "بوابة التحويل التخصصي للاستشاري")}
             </p>
             <h1 className="font-headline-hero text-[2.25rem] leading-tight text-primary lg:text-[3rem]">
               {loc(lang, "Tertiary Orthopaedic Referral Gateway", "بوابة التحويل التخصصي لجراحة العظام")}
@@ -289,7 +289,7 @@ export function ForPhysiciansPage() {
                 cme: "Fellowship Credit",
                 title: "Visiting Surgeon Observer Programme at Healthpoint",
                 titleAr: "برنامج مراقبة الجرّاح الزائر في هيلث بوينت",
-                body: "Theatre immersion in direct anterior hip arthroplasty, robotic knee reconstruction, and complex revision under Dr. Ya'ish's mentorship.",
+                body: "Theatre immersion in robotic and patient-specific knee reconstruction, complex revision, and trauma under Dr. Ya'ish's mentorship.",
                 bodyAr: "حضور غرفة العمليات في استبدال الورك الأمامي وإعادة بناء الركبة الروبوتية والمراجعة المعقدة تحت إشراف الدكتور يعيش.",
                 meta: "Healthpoint Abu Dhabi",
                 metaAr: "هيلث بوينت أبوظبي",

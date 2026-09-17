@@ -12,9 +12,29 @@ export function WhatsAppIcon({ className = "h-7 w-7" }: { className?: string }) 
   );
 }
 
+export function whatsappHref(message: string) {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+
+export function WhatsAppButton({ className }: { className?: string }) {
+  const { t } = useLanguage();
+  return (
+    <a
+      href={whatsappHref(t.whatsappMessage)}
+      target="_blank"
+      rel="noreferrer"
+      className={`inline-flex items-center justify-center gap-1.5 ${className ?? ""}`}
+      aria-label={t.whatsapp}
+    >
+      <WhatsAppIcon className="h-[18px] w-[18px]" />
+      <span>{t.whatsapp}</span>
+    </a>
+  );
+}
+
 export function WhatsAppFloat() {
   const { t } = useLanguage();
-  const href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(t.whatsappMessage)}`;
+  const href = whatsappHref(t.whatsappMessage);
 
   return (
     <a

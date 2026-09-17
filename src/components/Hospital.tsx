@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import { BookButton } from "@/components/BookButton";
+import { WhatsAppButton } from "@/components/WhatsAppFloat";
 import { clinicHours } from "@/lib/content";
+import { HEALTHPOINT_LOCATION, HEALTHPOINT_MAPS } from "@/lib/links";
 import { useLanguage } from "@/lib/language";
 import { Badge, ExternalArrow, Icon } from "./ui/Icons";
 
@@ -76,7 +78,27 @@ export function Hospital() {
                   800 77
                 </a>
                 <span className="text-outline-variant">|</span>
-                <span className="text-xs text-text-secondary">(+971 2 492 9000 intl)</span>
+                <WhatsAppButton className="inline-flex items-center gap-1.5 font-semibold text-[#128C7E] hover:underline" />
+              </div>
+              <div className="mb-space-md flex flex-wrap gap-3 text-sm">
+                <a
+                  className="inline-flex items-center gap-1 font-semibold text-clinical-navy hover:text-surgical-teal"
+                  href={HEALTHPOINT_MAPS}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Icon name="location_on" className="text-[16px]" />
+                  {t.openMaps}
+                </a>
+                <a
+                  className="inline-flex items-center gap-1 font-semibold text-clinical-navy hover:text-surgical-teal"
+                  href={HEALTHPOINT_LOCATION}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Icon name="open_in_new" className="text-[16px]" />
+                  {t.locationLink}
+                </a>
               </div>
             </div>
             <div className="flex flex-col gap-space-sm sm:flex-row">
@@ -91,6 +113,7 @@ export function Hospital() {
                 <Icon name="call" className="text-[17px]" />
                 <span>{t.call}</span>
               </a>
+              <WhatsAppButton className="inline-flex flex-1 items-center justify-center gap-1.5 rounded border border-[#25D366]/40 bg-[#25D366]/10 px-space-md py-space-xs text-center font-label-lg text-label-lg text-[#128C7E] transition-all hover:border-[#25D366]" />
             </div>
           </div>
         </div>

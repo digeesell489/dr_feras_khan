@@ -1,6 +1,7 @@
 "use client";
 
 import { BookButton } from "@/components/BookButton";
+import { WhatsAppButton } from "@/components/WhatsAppFloat";
 import { useLanguage } from "@/lib/language";
 import { Icon } from "./ui/Icons";
 
@@ -29,6 +30,7 @@ export function HomeCta() {
             <Icon name="call" className="text-[18px]" />
             <span>{t.call}</span>
           </a>
+          <WhatsAppButton className="inline-flex items-center gap-2 rounded border border-[#25D366]/50 px-space-lg py-space-sm font-label-lg text-label-lg text-[#25D366] transition-all hover:bg-[#25D366]/10" />
         </div>
       </div>
     </section>
