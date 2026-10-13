@@ -64,7 +64,7 @@ const dictionary = {
     heroCredentials: "MBBS · MRCS (Ed) · FRCS (Tr & Orth) · CCT (UK)",
     heroLead:
       "Specialized in robotic-assisted and patient-specific joint replacement, complex revision hip and knee surgery, and advanced knee ligament reconstruction.",
-    heroExperience: "20+ years in Trauma & Orthopaedics",
+    heroExperience: "25+ years in Trauma & Orthopaedics",
     heroExperienceDetail: "UK CCT · FRCS (Tr & Orth) · DOH Licensed Consultant",
     heroExplore: "Explore Clinical Philosophy & Surgical Methods",
     heroCampus: "Zayed Sports City · Consultant Practice",
@@ -73,10 +73,10 @@ const dictionary = {
     approachBody:
       "Surgical technique and implant geometry are selected exclusively based on structural joint anatomy, biological age, and functional goals.",
     approachQuote: "“The approach is chosen to suit the patient — not the other way around.”",
-    excellenceBadge: "Anatomical Kinematics & Procedures",
+    excellenceBadge: "COMMON PROCEDURES",
     excellenceTitle: "Special Interests",
     excellenceBody: "State-of-the-art prosthetic design and biological joint preservation delivered through evidence-based surgical precision.",
-    ligamentOverlay: "DYNAMIC LIGAMENT VECTORS · CT RECONSTRUCTION",
+    ligamentOverlay: "ROBOTIC-ASSISTED THEATRE · STRYKER MAKO",
     scheduleAssessment: "Schedule a Joint Assessment",
     casesBadge: "Diagnostic Radiology & Reconstructive Audits",
     casesTitle: "Case Examples",
@@ -272,7 +272,7 @@ const dictionary = {
     heroCredentials: "MBBS · MRCS (Ed) · FRCS (Tr & Orth) · CCT (UK)",
     heroLead:
       "متخصص في استبدال المفاصل بمساعدة الروبوت والمخصص للمريض، وجراحات مراجعة الورك والركبة المعقدة، وإعادة بناء أربطة الركبة المتقدمة.",
-    heroExperience: "+20 عاماً في جراحة الحوادث والعظام",
+    heroExperience: "+25 عاماً في جراحة الحوادث والعظام",
     heroExperienceDetail: "شهادة CCT البريطانية · FRCS (Tr & Orth) · استشاري مرخّص من دائرة الصحة",
     heroExplore: "تعرّف على الفلسفة السريرية والأساليب الجراحية",
     heroCampus: "مدينة زايد الرياضية · عيادة استشارية",
@@ -281,10 +281,10 @@ const dictionary = {
     approachBody:
       "يُختار الأسلوب الجراحي وشكل الزرعة حصراً وفق تشريح المفصل والعمر البيولوجي والأهداف الوظيفية.",
     approachQuote: "«يُختار النهج ليناسب المريض — لا العكس.»",
-    excellenceBadge: "الحركة التشريحية والإجراءات",
+    excellenceBadge: "الإجراءات الشائعة",
     excellenceTitle: "الاهتمامات الخاصة",
     excellenceBody: "تصميم تعويضي متقدم والحفاظ البيولوجي على المفصل عبر دقة جراحية مبنية على الأدلة.",
-    ligamentOverlay: "متجهات الأربطة الديناميكية · إعادة بناء مقطعي",
+    ligamentOverlay: "غرفة عمليات بمساعدة الروبوت · سترايكر ماكو",
     scheduleAssessment: "حجز تقييم للمفصل",
     casesBadge: "الأشعة التشخيصية ومراجعات إعادة البناء",
     casesTitle: "أمثلة الحالات",

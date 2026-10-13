@@ -1,3 +1,5 @@
+import { kneeArthroscopy } from "@/assets/clinical-images";
+
 export type TreatmentCategory = "knee" | "robotic" | "revision" | "sports" | "trauma";
 
 export type Treatment = {
@@ -8,6 +10,7 @@ export type Treatment = {
   shortAr: string;
   image: string;
   imageAlt: string;
+  imageFit?: "cover" | "contain";
   category: TreatmentCategory;
   summary: string;
   who: string[];
@@ -136,8 +139,8 @@ export const treatments: Treatment[] = [
     title: "Knee Arthroscopy",
     short: "Knee Arthroscopy",
     shortAr: "منظار الركبة",
-    image: "/images/implant-partial.png",
-    imageAlt: "Arthroscopic knee surgery",
+    image: kneeArthroscopy.src,
+    imageAlt: kneeArthroscopy.alt,
     category: "sports",
     summary:
       "Minimally invasive keyhole surgery for meniscal tears, cartilage lesions, and mechanical locking of the knee. High-definition arthroscopy allows targeted repair or debridement while protecting healthy tissue.",

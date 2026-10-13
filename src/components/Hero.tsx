@@ -103,11 +103,11 @@ export function Hero() {
                 >
                   <Icon name={item.icon} className="text-[22px]" />
                 </div>
-                <div>
-                  <span className="block font-headline-sm text-sm leading-snug font-bold text-primary">
+                <div className="min-w-0">
+                  <span className="block whitespace-normal font-headline-sm text-sm leading-snug font-bold text-primary">
                     <CountUp value={lang === "ar" ? item.valueAr : item.value} />
                   </span>
-                  <span className="block font-body-sm text-xs leading-tight text-text-secondary">
+                  <span className="block whitespace-normal font-body-sm text-xs leading-tight text-text-secondary">
                     {lang === "ar" ? item.labelAr : item.label}
                   </span>
                 </div>
