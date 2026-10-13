@@ -93,7 +93,7 @@ export function Excellence() {
                   height={card.imageHeight ?? 900}
                   loading="lazy"
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className={`absolute inset-0 h-full w-full ${card.imageClassName ?? "object-cover object-center"} transition-transform duration-300 group-hover:scale-105`}
+                  className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <div className="flex flex-1 flex-col">
