@@ -1,8 +1,6 @@
 /**
- * Clinical image manifest. Every src below is a file that exists in public/images.
- * The client theatre and radiograph files were not in the project, so these use the
- * on-site photographs until those files are added.
- * orSurgeonOperating is not rendered. It is an open surgical field.
+ * Client photographs and radiographs from the 13 Oct 2026 feedback deck.
+ * The open surgical-field photo is not included. It is not used on the public site.
  */
 
 export type ClinicalImage = {
@@ -13,74 +11,66 @@ export type ClinicalImage = {
   altAr: string;
 };
 
-export const orSurgeonOperating: ClinicalImage = {
-  src: "/images/clinical/03-or-surgeon-operating.jpg",
-  width: 1600,
-  height: 1067,
-  alt: "Open surgical field during orthopaedic surgery",
-  altAr: "حقل جراحي مفتوح أثناء جراحة العظام",
-};
-
 export const orRobotPortrait: ClinicalImage = {
-  src: "/images/education-or.png",
-  width: 1600,
-  height: 900,
-  alt: "Robotic-assisted surgery in the Healthpoint operating theatre",
-  altAr: "جراحة بمساعدة الروبوت في غرفة عمليات هيلث بوينت",
+  src: "/images/clinical/or-robot-portrait.jpeg",
+  width: 2048,
+  height: 1536,
+  alt: "Dr Feras Ya'ish beside the Stryker Mako robotic arm in theatre",
+  altAr: "الدكتور فراس يعيش بجانب ذراع سترايكر ماكو الروبوتية في غرفة العمليات",
 };
 
 export const roboticTheatre: ClinicalImage = {
-  src: "/images/education-or.png",
-  width: 1600,
-  height: 900,
-  alt: "Stryker Mako robotic arm in theatre with the intra-operative navigation display",
+  src: "/images/clinical/mako-theatre.jpeg",
+  width: 2048,
+  height: 1536,
+  alt: "Stryker Mako robotic arm positioned in theatre with the intra-operative navigation display",
   altAr: "ذراع سترايكر ماكو الروبوتية في غرفة العمليات مع شاشة الملاحة أثناء الجراحة",
 };
 
 export const psiCtPlanning: ClinicalImage = {
-  src: "/images/education-ct.png",
-  width: 1600,
-  height: 1000,
-  alt: "Anatomical planning view of the knee used for patient-specific replacement",
-  altAr: "عرض تخطيطي تشريحي للركبة لاستبدال مخصص للمريض",
+  src: "/images/clinical/psi-ct-planning.png",
+  width: 2910,
+  height: 1480,
+  alt: "CT-based patient-specific knee replacement planning in axial, sagittal, coronal and 3D views",
+  altAr: "تخطيط استبدال ركبة مخصص للمريض بالأشعة المقطعية في مقاطع محورية وسهمية وإكليلية وثلاثية الأبعاد",
 };
 
 export const partialKneeCompartments: ClinicalImage = {
-  src: "/images/implant-partial.png",
-  width: 1600,
-  height: 1000,
-  alt: "Partial knee replacement implant",
-  altAr: "زرعة استبدال الركبة الجزئي",
+  src: "/images/clinical/partial-knee-compartments.png",
+  width: 1536,
+  height: 1024,
+  alt: "Anatomical comparison of a knee with medial compartment arthritis and the same knee after partial knee replacement",
+  altAr: "مقارنة تشريحية لركبة بخشونة الحيز الإنسي والركبة نفسها بعد الاستبدال الجزئي",
 };
 
 export const hipReplacementXray: ClinicalImage = {
-  src: "/images/implant-hip.png",
-  width: 1600,
-  height: 1000,
-  alt: "Hip replacement implant",
-  altAr: "زرعة استبدال الورك",
+  src: "/images/clinical/hip-replacement-xray.png",
+  width: 739,
+  height: 714,
+  alt: "Radiograph showing bilateral total hip replacements",
+  altAr: "صورة شعاعية لاستبدال الورك الكامل في الجانبين",
 };
 
 export const revisionKneeXray: ClinicalImage = {
-  src: "/images/implant-revision.png",
-  width: 1600,
-  height: 1000,
-  alt: "Revision knee replacement components",
-  altAr: "مكونات استبدال الركبة المراجَع",
+  src: "/images/clinical/revision-knee-xray.png",
+  width: 405,
+  height: 913,
+  alt: "Radiograph of a revision total knee replacement with long-stem femoral and tibial components",
+  altAr: "صورة شعاعية لاستبدال ركبة مراجَع بسيقان فخذية وظنبوبية طويلة",
 };
 
 export const kneeArthroscopy: ClinicalImage = {
-  src: "/images/knee-mechanics.png",
-  width: 1600,
-  height: 1000,
-  alt: "Knee joint anatomy relevant to arthroscopy",
-  altAr: "تشريح مفصل الركبة المرتبط بالمنظار",
+  src: "/images/clinical/knee-arthroscopy.png",
+  width: 1536,
+  height: 1024,
+  alt: "Knee arthroscopy showing the arthroscope camera and surgical instrument with the real-time view inside the joint",
+  altAr: "منظار الركبة يُظهر الكاميرا والأداة الجراحية مع المشهد المباشر داخل المفصل",
 };
 
 export const traumaMalunionXray: ClinicalImage = {
-  src: "/images/implant-trauma.png",
-  width: 1600,
-  height: 1000,
-  alt: "Trauma fixation plate used for fracture and malunion reconstruction",
-  altAr: "صفيحة تثبيت للرضوض وإعادة بناء الالتئام المعيب",
+  src: "/images/clinical/trauma-malunion-xray.png",
+  width: 492,
+  height: 830,
+  alt: "Radiograph of internal fixation with an intramedullary nail and periarticular plate construct",
+  altAr: "صورة شعاعية لتثبيت داخلي بمسمار نخاعي وصفيحة حول المفصل",
 };

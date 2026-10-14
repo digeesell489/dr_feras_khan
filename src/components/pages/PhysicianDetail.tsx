@@ -147,8 +147,31 @@ function FacultyBody({ image }: { image: string }) {
   return (
     <section className="py-space-3xl">
       <div className="page-wrap">
-        <div className="mb-8 overflow-hidden rounded-2xl border border-surface-border">
-          <Image src={image} alt={loc(lang, "AO Recon faculty teaching", "تعليم هيئة AO Recon")} width={1400} height={560} className="h-56 w-full object-cover lg:h-72" />
+        <div className="mb-8 grid gap-4 md:grid-cols-3">
+          {[
+            {
+              src: image,
+              alt: "Dr Feras Ya'ish teaching an AO Recon course on hip and knee arthroplasty",
+              altAr: "الدكتور فراس يعيش يدرّس دورة AO Recon لاستبدال الورك والركبة",
+              position: "object-top",
+            },
+            {
+              src: "/images/practice/teaching-workshop.jpeg",
+              alt: "Surgeons gathered around a knee model during an AO reconstruction workshop",
+              altAr: "جرّاحون حول نموذج ركبة في ورشة إعادة بناء تابعة لـ AO",
+              position: "object-center",
+            },
+            {
+              src: "/images/practice/faculty-ao-sharjah.jpeg",
+              alt: "AO Recon faculty at the University of Sharjah clinical training centre",
+              altAr: "هيئة AO Recon في مركز التدريب السريري بجامعة الشارقة",
+              position: "object-center",
+            },
+          ].map((photo) => (
+            <figure key={photo.src} className="overflow-hidden rounded-2xl border border-surface-border bg-sand-tint">
+              <Image src={photo.src} alt={loc(lang, photo.alt, photo.altAr)} width={1024} height={768} className={`h-56 w-full object-cover lg:h-64 ${photo.position}`} />
+            </figure>
+          ))}
         </div>
         <h2 className="mb-6 font-headline-lg text-headline-lg text-primary">
           {loc(lang, "Faculty sessions & observerships", "جلسات الهيئة وبرامج المراقبة")}

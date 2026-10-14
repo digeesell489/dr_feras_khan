@@ -1,6 +1,7 @@
 export type CaseExample = {
   slug: string;
   image: string;
+  imageClassName?: string;
   code: string;
   tags: string[];
   tagsAr: string[];
@@ -19,7 +20,7 @@ export type CaseExample = {
 export const caseExamples: CaseExample[] = [
   {
     slug: "robotic-total-knee",
-    image: "/images/knee-mechanics.png",
+    image: "/images/clinical/or-robot-portrait.jpeg",
     code: "CASE #R-2024-KNEE",
     tags: ["Primary Arthroplasty", "Kinematic Alignment", "Haptic Navigation"],
     tagsAr: ["استبدال أولي", "محاذاة حركية", "ملاحة لمسية"],
@@ -48,7 +49,8 @@ export const caseExamples: CaseExample[] = [
   },
   {
     slug: "revision-hip",
-    image: "/images/implant-revision.png",
+    image: "/images/clinical/hip-replacement-xray.png",
+    imageClassName: "object-contain object-center",
     code: "CASE #REV-2023-HIP",
     tags: ["Revision Arthroplasty", "Trabecular Metal Augments", "Bone Loss"],
     tagsAr: ["مراجعة المفصل", "تعزيزات معدنية إسفنجية", "فقدان عظم"],
@@ -77,7 +79,8 @@ export const caseExamples: CaseExample[] = [
   },
   {
     slug: "periprosthetic-fracture",
-    image: "/images/implant-trauma.png",
+    image: "/images/clinical/trauma-malunion-xray.png",
+    imageClassName: "object-contain object-center",
     code: "CASE #TR-2024-FEMUR",
     tags: ["Trauma & Malunion", "Locking Plate Fixation", "Minimally Invasive MIPO"],
     tagsAr: ["رضوض وعدم الالتئام", "تثبيت بصفيحة قافلة", "تثبيت طفيف التوغل"],
@@ -106,7 +109,8 @@ export const caseExamples: CaseExample[] = [
   },
   {
     slug: "partial-knee",
-    image: "/images/implant-partial.png",
+    image: "/images/clinical/partial-knee-compartments.png",
+    imageClassName: "object-contain object-center",
     code: "CASE #UKA-2024-MED",
     tags: ["Joint Preservation", "Unicompartmental", "Cruciate-Retaining"],
     tagsAr: ["الحفاظ على المفصل", "حيز واحد", "الحفاظ على المتصالب"],
@@ -164,7 +168,8 @@ export const caseExamples: CaseExample[] = [
   },
   {
     slug: "knee-arthroscopy",
-    image: "/images/implant-knee.png",
+    image: "/images/clinical/knee-arthroscopy.png",
+    imageClassName: "object-cover object-top",
     code: "CASE #SCOPE-2024-MEN",
     tags: ["Knee Arthroscopy", "Meniscal Repair", "Keyhole Surgery"],
     tagsAr: ["منظار الركبة", "إصلاح الهلالة", "جراحة ثقب المفتاح"],
@@ -193,7 +198,8 @@ export const caseExamples: CaseExample[] = [
   },
   {
     slug: "revision-knee",
-    image: "/images/implant-revision.png",
+    image: "/images/clinical/revision-knee-xray.png",
+    imageClassName: "object-contain object-center",
     code: "CASE #REV-2024-KNEE",
     tags: ["Revision Arthroplasty", "Instability", "Joint-Line Restoration"],
     tagsAr: ["مراجعة المفصل", "عدم استقرار", "استعادة خط المفصل"],
@@ -222,7 +228,8 @@ export const caseExamples: CaseExample[] = [
   },
   {
     slug: "malunion-reconstruction",
-    image: "/images/implant-trauma.png",
+    image: "/images/clinical/trauma-malunion-xray.png",
+    imageClassName: "object-contain object-center",
     code: "CASE #MAL-2023-TIB",
     tags: ["Trauma & Malunion", "Corrective Osteotomy", "Axis Restoration"],
     tagsAr: ["رضوض وعدم الالتئام", "قطع عظمي تصحيحي", "استعادة المحور"],

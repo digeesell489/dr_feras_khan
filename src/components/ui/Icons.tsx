@@ -108,6 +108,41 @@ export function LogoMark({
   );
 }
 
+export function LinkedInIcon({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M4.98 3.5A2.5 2.5 0 1 1 2.48 1a2.5 2.5 0 0 1 2.5 2.5ZM.5 8.5h4V24h-4V8.5Zm8 0h3.83v2.12h.05c.53-1.01 1.84-2.12 3.79-2.12 4.05 0 4.8 2.67 4.8 6.14V24h-4v-7.71c0-1.84-.03-4.2-2.56-4.2-2.56 0-2.95 2-2.95 4.06V24h-4V8.5Z" />
+    </svg>
+  );
+}
+
+export function InstagramIcon({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+export function DoctifyIcon({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M12 2.8 14.2 7.6l5.2.6-3.8 3.5.9 5.1L12 14.4 7.5 16.8l.9-5.1L4.6 8.2l5.2-.6L12 2.8Z" />
+    </svg>
+  );
+}
+
+export function HealthpointIcon({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+      <path strokeLinejoin="round" d="M4 20.5V9.2L12 4l8 5.2v11.3" />
+      <path strokeLinecap="round" d="M9.5 20.5v-5.2h5v5.2M12 9.2v4.2M9.9 11.3h4.2" />
+    </svg>
+  );
+}
+
 export function Icon({
   name,
   className = "",

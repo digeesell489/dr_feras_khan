@@ -34,8 +34,19 @@ export function ConditionDetail({ condition }: { condition: Condition }) {
 
       <section className="pb-space-3xl">
         <div className="page-wrap grid items-start gap-space-xl lg:grid-cols-12">
-          <div className="overflow-hidden rounded-2xl border border-surface-border bg-white lg:col-span-6">
-            <Image src={condition.image} alt={copy.title} width={960} height={720} className="h-full w-full object-cover" />
+          <div className="flex items-center justify-center overflow-hidden rounded-2xl border border-surface-border bg-sand-tint p-3 lg:col-span-6">
+            <Image
+              src={condition.image}
+              alt={copy.title}
+              width={960}
+              height={720}
+              sizes="(min-width: 1024px) 560px, 100vw"
+              className={
+                condition.imageFit === "contain"
+                  ? "mx-auto h-auto max-h-[380px] w-auto max-w-full object-contain"
+                  : "h-auto w-full object-cover"
+              }
+            />
           </div>
           <div className="lg:col-span-6">
             <p className="text-base leading-relaxed text-text-secondary">{copy.summary}</p>

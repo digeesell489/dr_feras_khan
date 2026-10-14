@@ -244,8 +244,18 @@ export function TreatmentsPage() {
             return (
               <article key={item.slug} className="overflow-hidden rounded-2xl border border-surface-border bg-white">
                 <div className="grid items-stretch lg:grid-cols-12">
-                  <div className={`relative min-h-[280px] bg-sand-tint lg:col-span-6 lg:min-h-[420px] ${imageRight ? "lg:order-2" : ""}`}>
-                    <Image src={item.image} alt={item.imageAlt} fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
+                  <div
+                    className={`relative overflow-hidden bg-sand-tint lg:col-span-6 ${
+                      item.imageFit === "contain" ? "h-[260px] self-center lg:h-[300px]" : "min-h-[280px] lg:min-h-[420px]"
+                    } ${imageRight ? "lg:order-2" : ""}`}
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.imageAlt}
+                      fill
+                      className={item.imageFit === "contain" ? "object-contain" : "object-cover"}
+                      sizes="(min-width: 1024px) 50vw, 100vw"
+                    />
                     <div className={`absolute top-4 flex flex-wrap gap-1 ${imageRight ? "right-4" : "left-4"}`}>
                       {meta.badges.map((badge) => (
                         <span key={badge} className="rounded bg-clinical-slate-deep/80 px-2 py-1 text-[11px] font-semibold text-white backdrop-blur-md">

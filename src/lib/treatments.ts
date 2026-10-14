@@ -1,4 +1,10 @@
-import { kneeArthroscopy } from "@/assets/clinical-images";
+import {
+  kneeArthroscopy,
+  partialKneeCompartments,
+  revisionKneeXray,
+  roboticTheatre,
+  traumaMalunionXray,
+} from "@/assets/clinical-images";
 
 export type TreatmentCategory = "knee" | "robotic" | "revision" | "sports" | "trauma";
 
@@ -54,11 +60,12 @@ export const treatments: Treatment[] = [
     title: "Partial Knee Replacement",
     short: "Partial Knee Replacement",
     shortAr: "استبدال الركبة الجزئي",
-    image: "/images/implant-partial.png",
-    imageAlt: "Partial Unicompartmental Knee Implant",
+    image: partialKneeCompartments.src,
+    imageAlt: partialKneeCompartments.alt,
+    imageFit: "contain",
     category: "knee",
     summary:
-      "Ideal for isolated medial or lateral compartment osteoarthritis. By resurfacing solely the worn articulating compartment, both the Anterior Cruciate Ligament (ACL) and Posterior Cruciate Ligament (PCL) remain fully intact, preserving proprioceptive feedback and a more natural knee.",
+      "Ideal for isolated medial or lateral compartment osteoarthritis. By resurfacing solely the worn articulating compartment, both the Anterior Cruciate Ligament (ACL) and Posterior Cruciate Ligament (PCL) remain fully intact, preserving proprioceptive feedback and a more natural knee. Quicker recovery to function representing native joint.",
     who: [
       "Isolated medial or lateral compartment wear",
       "Intact ACL and PCL with a correctable deformity",
@@ -82,8 +89,8 @@ export const treatments: Treatment[] = [
     title: "Robotic Joint Replacement",
     short: "Robotic Joint Replacement",
     shortAr: "الجراحة الروبوتية",
-    image: "/images/implant-robotic.png",
-    imageAlt: "Robotic Assisted Surgical Arm",
+    image: roboticTheatre.src,
+    imageAlt: roboticTheatre.alt,
     category: "robotic",
     summary:
       "Next-generation robotic arm stereotactic guidance combined with high-resolution pre-operative 3D-CT modeling. Surgeon-controlled haptic boundaries prevent inadvertent soft-tissue damage, keeping femoral and tibial component positioning within 0.5 mm and 0.5 degrees of planned alignment.",
@@ -110,8 +117,9 @@ export const treatments: Treatment[] = [
     title: "Revision Hip & Knee Surgery",
     short: "Revision Hip & Knee Surgery",
     shortAr: "جراحة مراجعة الورك والركبة",
-    image: "/images/implant-revision.png",
-    imageAlt: "Complex Revision Arthroplasty Modular Hardware",
+    image: revisionKneeXray.src,
+    imageAlt: revisionKneeXray.alt,
+    imageFit: "contain",
     category: "revision",
     summary:
       "Specialized referral pathway for previously operated joints with aseptic loosening, osteolysis, structural bone loss, instability, or periprosthetic joint infection (PJI). Uses modular revision stems, titanium trabecular 3D cones, custom acetabular augments, and hinge knee systems.",
@@ -141,6 +149,7 @@ export const treatments: Treatment[] = [
     shortAr: "منظار الركبة",
     image: kneeArthroscopy.src,
     imageAlt: kneeArthroscopy.alt,
+    imageFit: "contain",
     category: "sports",
     summary:
       "Minimally invasive keyhole surgery for meniscal tears, cartilage lesions, and mechanical locking of the knee. High-definition arthroscopy allows targeted repair or debridement while protecting healthy tissue.",
@@ -197,8 +206,9 @@ export const treatments: Treatment[] = [
     title: "Trauma & Malunion Reconstruction",
     short: "Trauma & Malunion",
     shortAr: "الكسور وإعادة البناء",
-    image: "/images/implant-trauma.png",
-    imageAlt: "Orthopaedic Trauma Titanium Locking Plate Hardware",
+    image: traumaMalunionXray.src,
+    imageAlt: traumaMalunionXray.alt,
+    imageFit: "contain",
     category: "trauma",
     summary:
       "Treatment of high-energy intra-articular fractures, open injuries, periarticular disruptions, and established non-unions or malunions. Rigid internal fixation uses anatomically contoured titanium locking compression plates (LCP) and minimally invasive plate osteosynthesis (MIPO).",

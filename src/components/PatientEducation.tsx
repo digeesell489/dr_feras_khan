@@ -145,7 +145,7 @@ export function PatientEducation() {
                   src={item.image}
                   alt={lang === "ar" ? item.altAr : item.alt}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className={`${item.fit} transition-transform duration-300 group-hover:scale-105`}
                   sizes="(min-width: 768px) 280px, 50vw"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-clinical-slate-deep/40 text-white opacity-0 transition-opacity group-hover:opacity-100">

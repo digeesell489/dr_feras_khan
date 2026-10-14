@@ -1,3 +1,5 @@
+import { hipReplacementXray, revisionKneeXray, traumaMalunionXray } from "@/assets/clinical-images";
+
 export type ConditionRegion = "Hip Joint" | "Knee Joint" | "Trauma & Other";
 export type ConditionPresentation =
   | "Osteoarthritis / Joint degeneration"
@@ -13,6 +15,7 @@ export type Condition = {
   short: string;
   shortAr: string;
   image: string;
+  imageFit?: "cover" | "contain";
   summary: string;
   symptoms: string[];
   evaluation: string[];
@@ -27,7 +30,8 @@ export const conditions: Condition[] = [
     title: "Hip Osteoarthritis",
     short: "Hip Osteoarthritis",
     shortAr: "خشونة الورك",
-    image: "/images/hip-anatomy.png",
+    image: hipReplacementXray.src,
+    imageFit: "contain",
     summary:
       "Osteoarthritis of the hip is progressive cartilage wear of the femoral head and acetabulum. Patients typically describe groin stiffness, night pain, and reduced walking distance. Dr. Ya'ish evaluates constitutional anatomy before recommending joint-preserving care or patient-specific / robotic hip reconstruction.",
     symptoms: [
@@ -133,7 +137,8 @@ export const conditions: Condition[] = [
     title: "Failed or Painful Joint Replacement",
     short: "Failed Joint Replacement",
     shortAr: "فشل المفصل الصناعي",
-    image: "/images/implant-revision.png",
+    image: revisionKneeXray.src,
+    imageFit: "contain",
     summary:
       "Pain after hip or knee replacement may come from loosening, osteolysis, instability, fracture, or periprosthetic joint infection. Dr. Ya'ish provides a tertiary revision pathway with metal-reduction CT, aspiration protocols, and modular reconstruction.",
     symptoms: [
@@ -188,7 +193,8 @@ export const conditions: Condition[] = [
     title: "Fractures, Non-union & Malunion",
     short: "Fracture & Malunion",
     shortAr: "الكسور وعدم الالتئام",
-    image: "/images/implant-trauma.png",
+    image: traumaMalunionXray.src,
+    imageFit: "contain",
     summary:
       "High-energy periarticular fractures, open injuries, and established non-unions or malunions require anatomical reduction and stable fixation. Prosthetic dislocation and periprosthetic fractures are managed on a tertiary trauma pathway.",
     symptoms: [

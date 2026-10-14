@@ -19,7 +19,7 @@ export const educationItems: EducationItem[] = [
   {
     id: "robotic",
     kind: "video",
-    image: "/images/education-robotic.png",
+    image: "/images/practice/mako-briefing.jpeg",
     duration: "4:15",
     category: "Featured Clinical Guide",
     categoryAr: "دليل سريري مميز",
@@ -43,7 +43,7 @@ export const educationItems: EducationItem[] = [
   {
     id: "psi",
     kind: "video",
-    image: "/images/implant-partial.png",
+    image: "/images/clinical/psi-ct-planning.png",
     duration: "3:40",
     category: "Planning",
     categoryAr: "التخطيط",
@@ -210,12 +210,12 @@ export function getEducationItem(id: string) {
 }
 
 export const educationGallery = [
-  { image: "/images/hospital-atrium.png", alt: "Clinic reception and waiting environment", altAr: "استقبال العيادة وبيئة الانتظار" },
-  { image: "/images/doctor-about.png", alt: "Consultant clinic consultation", altAr: "استشارة في عيادة الاستشاري" },
-  { image: "/images/education-or.png", alt: "Surgical theatre and robotic workflow", altAr: "غرفة العمليات ومسار الروبوت" },
-  { image: "/images/education-lounge.png", alt: "Patient recovery environment", altAr: "بيئة تعافي المريض" },
-  { image: "/images/education-robotic.png", alt: "Surgical technology insight", altAr: "تقنية جراحية" },
-  { image: "/images/education-ct.png", alt: "Biomechanical joint anatomy education", altAr: "تشريح المفصل" },
-  { image: "/images/implant-revision.png", alt: "Professional reconstructive practice", altAr: "ممارسة إعادة البناء التخصصية" },
-  { image: "/images/knee-mechanics.png", alt: "Anatomical education for knee ligaments", altAr: "تثقيف تشريحي لأربطة الركبة" },
+  { image: "/images/practice/portrait.jpeg", alt: "Dr Feras Ya'ish", altAr: "الدكتور فراس يعيش", fit: "object-cover object-[center_20%]" },
+  { image: "/images/practice/surgical-team.jpeg", alt: "Dr Feras Ya'ish with the surgical team", altAr: "الدكتور فراس يعيش مع الفريق الجراحي", fit: "object-cover object-[center_24%]" },
+  { image: "/images/practice/teaching-sawbone.jpeg", alt: "Dr Feras Ya'ish teaching knee reconstruction on a surgical model", altAr: "الدكتور فراس يعيش يدرّس إعادة بناء الركبة على نموذج جراحي", fit: "object-cover object-[center_35%]" },
+  { image: "/images/practice/mako-briefing.jpeg", alt: "Stryker Mako robotic arm during a surgical briefing", altAr: "ذراع سترايكر ماكو الروبوتية أثناء إحاطة جراحية", fit: "object-cover object-center" },
+  { image: "/images/practice/lecture-gulf-knee.jpeg", alt: "Dr Feras Ya'ish lecturing at the Emirates Orthopaedic Society Gulf Knee Course", altAr: "الدكتور فراس يعيش يحاضر في دورة الخليج للركبة لجمعية الإمارات لجراحة العظام", fit: "object-cover object-[center_22%]" },
+  { image: "/images/practice/faculty-ao-sharjah.jpeg", alt: "AO Recon faculty at a joint preservation and replacement course", altAr: "هيئة AO Recon في دورة الحفاظ على المفصل واستبداله", fit: "object-cover object-center" },
+  { image: "/images/practice/lecture-icjr.jpeg", alt: "Dr Feras Ya'ish speaking at the International Congress for Joint Reconstruction", altAr: "الدكتور فراس يعيش يتحدث في المؤتمر الدولي لإعادة بناء المفاصل", fit: "object-cover object-[32%_center]" },
+  { image: "/images/practice/teaching-workshop.jpeg", alt: "Hands-on knee reconstruction workshop", altAr: "ورشة عملية لإعادة بناء الركبة", fit: "object-cover object-[center_42%]" },
 ];

@@ -34,13 +34,18 @@ export function TreatmentDetail({ treatment }: { treatment: Treatment }) {
 
       <section className="pb-space-3xl">
         <div className="page-wrap grid items-start gap-space-xl lg:grid-cols-12">
-          <div className="overflow-hidden rounded-2xl border border-surface-border bg-white lg:col-span-6">
+          <div className="flex items-center justify-center overflow-hidden rounded-2xl border border-surface-border bg-sand-tint p-3 lg:col-span-6">
             <Image
               src={treatment.image}
               alt={treatment.imageAlt}
               width={960}
               height={720}
-              className={`h-full w-full ${treatment.imageFit === "contain" ? "object-contain bg-sand-tint" : "object-cover"}`}
+              sizes="(min-width: 1024px) 560px, 100vw"
+              className={
+                treatment.imageFit === "contain"
+                  ? "mx-auto h-auto max-h-[380px] w-auto max-w-full object-contain"
+                  : "h-auto w-full object-cover"
+              }
             />
           </div>
           <div className="lg:col-span-6">

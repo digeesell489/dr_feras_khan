@@ -45,6 +45,24 @@ export const approaches = [
   },
 ];
 
+type ProcedureCard = {
+  image: string;
+  imageAlt?: string;
+  imageAltAr?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  imageClassName?: string;
+  href: string;
+  category: string;
+  categoryAr: string;
+  title: string;
+  titleAr: string;
+  body: string;
+  bodyAr: string;
+  body2?: string;
+  body2Ar?: string;
+};
+
 export const specialties = {
   featured: {
     eyebrow: "FUNCTIONAL ALIGNMENT MATRIX",
@@ -76,6 +94,7 @@ export const specialties = {
       imageAltAr: psiCtPlanning.altAr,
       imageWidth: psiCtPlanning.width,
       imageHeight: psiCtPlanning.height,
+      imageClassName: "object-contain object-center",
       href: "/treatments/knee-replacement",
       category: "Personalised Implants",
       categoryAr: "زرعات مخصصة",
@@ -90,6 +109,7 @@ export const specialties = {
       imageAltAr: hipReplacementXray.altAr,
       imageWidth: hipReplacementXray.width,
       imageHeight: hipReplacementXray.height,
+      imageClassName: "object-contain object-center",
       href: "/conditions/hip-osteoarthritis",
       category: "Arthroplasty",
       categoryAr: "استبدال المفصل",
@@ -104,6 +124,7 @@ export const specialties = {
       imageAltAr: partialKneeCompartments.altAr,
       imageWidth: partialKneeCompartments.width,
       imageHeight: partialKneeCompartments.height,
+      imageClassName: "object-contain object-center",
       href: "/treatments/partial-knee",
       category: "Preservation",
       categoryAr: "الحفاظ على المفصل",
@@ -134,6 +155,7 @@ export const specialties = {
       imageAltAr: revisionKneeXray.altAr,
       imageWidth: revisionKneeXray.width,
       imageHeight: revisionKneeXray.height,
+      imageClassName: "object-contain object-center",
       href: "/treatments/revision-surgery",
       category: "Complex Revision",
       categoryAr: "مراجعة معقدة",
@@ -148,6 +170,7 @@ export const specialties = {
       imageAltAr: kneeArthroscopy.altAr,
       imageWidth: kneeArthroscopy.width,
       imageHeight: kneeArthroscopy.height,
+      imageClassName: "object-cover object-top",
       href: "/treatments/arthroscopy",
       category: "Knee Sports Injuries",
       categoryAr: "إصابات الركبة الرياضية",
@@ -172,6 +195,7 @@ export const specialties = {
       imageAltAr: traumaMalunionXray.altAr,
       imageWidth: traumaMalunionXray.width,
       imageHeight: traumaMalunionXray.height,
+      imageClassName: "object-contain object-center",
       href: "/treatments/trauma",
       category: "Trauma",
       categoryAr: "الرضوض",
@@ -180,7 +204,7 @@ export const specialties = {
       body: "Minimally invasive osteosynthesis for intra-articular and periprosthetic fractures.",
       bodyAr: "تثبيت عظمي طفيف التوغل لكسور داخل المفصل وحول الزرعة.",
     },
-  ],
+  ] satisfies ProcedureCard[],
 };
 
 export const clinicHours = [

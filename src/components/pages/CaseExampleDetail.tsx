@@ -34,8 +34,15 @@ export function CaseExampleDetail({ item }: { item: CaseExample }) {
 
       <section className="py-space-3xl">
         <div className="page-wrap grid items-start gap-space-xl lg:grid-cols-12">
-          <div className="overflow-hidden rounded-2xl border border-surface-border bg-white lg:col-span-6">
-            <Image src={item.image} alt={title} width={960} height={720} className="h-full w-full object-cover" />
+          <div className="flex items-center justify-center overflow-hidden rounded-2xl border border-surface-border bg-sand-tint p-3 lg:col-span-6">
+            <Image
+              src={item.image}
+              alt={title}
+              width={960}
+              height={720}
+              sizes="(min-width: 1024px) 560px, 100vw"
+              className={`mx-auto h-auto max-h-[380px] w-auto max-w-full bg-sand-tint ${item.imageClassName ?? "object-cover object-center"}`}
+            />
           </div>
           <div className="lg:col-span-6">
             <div className="mb-4 flex flex-wrap gap-1.5">

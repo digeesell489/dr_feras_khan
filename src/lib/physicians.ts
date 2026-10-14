@@ -27,7 +27,7 @@ export const physicianPages: PhysicianPage[] = [
     eyebrow: "Academic rigour & surgical education",
     summary:
       "Accredited CME, cadaveric arthroplasty courses, and interactive tertiary case panels convened by Dr. Feras Ya'ish across the Middle East, plus a visiting surgeon observer programme.",
-    image: "/images/education-or.png",
+    image: "/images/practice/lecture-ao-recon.jpeg",
   },
   {
     slug: "case-submission",

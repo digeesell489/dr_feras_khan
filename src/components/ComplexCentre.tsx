@@ -114,7 +114,7 @@ export function ComplexCentre() {
                       src={item.image}
                       alt={lang === "ar" ? item.titleAr : item.title}
                       fill
-                      className="object-cover"
+                      className={item.imageClassName ?? "object-cover object-center"}
                       sizes="(min-width: 1024px) 340px, (min-width: 768px) 50vw, 100vw"
                     />
                     <div className="absolute top-2 start-2 rounded border border-white/10 bg-clinical-slate-deep/80 px-2 py-0.5 font-mono text-[10px] text-surgical-teal-light">

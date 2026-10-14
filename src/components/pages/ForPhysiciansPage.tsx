@@ -259,6 +259,32 @@ export function ForPhysiciansPage() {
               "يعقد الدكتور فراس يعيش بانتظام تعليماً طبياً مستمراً معتمداً ودورات تشريح جثث لاستبدال المفصل ولجان حالات تخصصية عبر الشرق الأوسط.",
             )}
           </p>
+          <div className="mb-8 grid gap-4 md:grid-cols-3">
+            {[
+              {
+                src: "/images/practice/lecture-gulf-knee.jpeg",
+                alt: "Dr Feras Ya'ish lecturing at the Emirates Orthopaedic Society Gulf Knee Course",
+                altAr: "الدكتور فراس يعيش يحاضر في دورة الخليج للركبة",
+                position: "object-center",
+              },
+              {
+                src: "/images/practice/teaching-sawbone.jpeg",
+                alt: "Dr Feras Ya'ish teaching knee reconstruction on a surgical model",
+                altAr: "الدكتور فراس يعيش يدرّس إعادة بناء الركبة على نموذج جراحي",
+                position: "object-top",
+              },
+              {
+                src: "/images/practice/faculty-ao-sharjah.jpeg",
+                alt: "AO Recon faculty at a joint preservation and replacement course",
+                altAr: "هيئة AO Recon في دورة الحفاظ على المفصل واستبداله",
+                position: "object-center",
+              },
+            ].map((photo) => (
+              <figure key={photo.src} className="overflow-hidden rounded-xl border border-surface-border bg-white">
+                <Image src={photo.src} alt={loc(lang, photo.alt, photo.altAr)} width={1200} height={800} className={`h-52 w-full object-cover ${photo.position}`} />
+              </figure>
+            ))}
+          </div>
           <div className="grid gap-4 md:grid-cols-3">
             {[
               {

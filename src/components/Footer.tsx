@@ -6,7 +6,14 @@ import { LanguageToggle } from "@/components/LanguageToggle";
 import { WhatsAppButton, WhatsAppIcon, whatsappHref } from "@/components/WhatsAppFloat";
 import { professionalLinks } from "@/lib/links";
 import { useLanguage } from "@/lib/language";
-import { ArrowIcon, CallIcon, ClockIcon, ExternalArrow, LogoMark, PinIcon } from "./ui/Icons";
+import { ArrowIcon, CallIcon, ClockIcon, DoctifyIcon, ExternalArrow, HealthpointIcon, InstagramIcon, LinkedInIcon, LogoMark, PinIcon } from "./ui/Icons";
+
+const portalIcons = {
+  LinkedIn: LinkedInIcon,
+  Instagram: InstagramIcon,
+  Doctify: DoctifyIcon,
+  Healthpoint: HealthpointIcon,
+} as const;
 
 export function Footer() {
   const { t } = useLanguage();
@@ -17,25 +24,25 @@ export function Footer() {
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-clinical-gold-honorary to-transparent" />
 
       <div className="page-wrap relative z-10 pt-space-3xl pb-24 sm:pb-space-2xl">
-        <div className="mb-space-2xl grid items-end gap-space-lg border-b border-white/10 pb-space-2xl lg:grid-cols-12">
-          <div className="lg:col-span-7">
+        <div className="mb-space-2xl flex flex-col items-start justify-between gap-space-lg border-b border-white/10 pb-space-2xl lg:flex-row lg:items-end">
+          <div className="min-w-0">
             <p className="mb-3 text-[11px] tracking-[0.22em] text-clinical-gold-honorary uppercase">{t.footerEyebrow}</p>
             <h2 className="max-w-xl font-headline-lg text-[2rem] leading-tight text-white md:text-headline-lg">{t.footerTitle}</h2>
             <p className="mt-3 max-w-lg font-body-sm text-body-sm leading-relaxed text-sand-tint/70">{t.footerBody}</p>
           </div>
-          <div className="flex flex-col gap-2 sm:flex-row lg:col-span-5 lg:justify-end">
-            <BookButton className="inline-flex items-center justify-center gap-2 rounded-full bg-surgical-teal px-6 py-3 text-[13px] font-semibold text-white transition-colors hover:bg-surgical-teal-light">
+          <div className="flex w-full shrink-0 flex-col gap-2 sm:w-auto sm:flex-row sm:flex-nowrap sm:items-center">
+            <BookButton className="inline-flex w-full shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-surgical-teal px-5 py-3 text-[13px] font-semibold text-white transition-colors hover:bg-surgical-teal-light sm:w-auto">
               {t.requestAppt}
               <ArrowIcon className="h-4 w-4" />
             </BookButton>
             <a
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3 text-[13px] font-semibold text-white transition-colors hover:bg-white/10"
+              className="inline-flex w-full shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full border border-white/20 px-5 py-3 text-[13px] font-semibold text-white transition-colors hover:bg-white/10 sm:w-auto"
               href="tel:80077"
             >
               <CallIcon className="h-4 w-4" />
               {t.call}
             </a>
-            <WhatsAppButton className="inline-flex items-center justify-center gap-2 rounded-full border border-[#25D366]/50 px-6 py-3 text-[13px] font-semibold text-[#25D366] transition-colors hover:bg-[#25D366]/10" />
+            <WhatsAppButton className="inline-flex w-full shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full border border-[#25D366]/50 px-5 py-3 text-[13px] font-semibold text-[#25D366] transition-colors hover:bg-[#25D366]/10 sm:w-auto" />
           </div>
         </div>
 
@@ -131,16 +138,24 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-4 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-sand-tint/55">
-            <span className="font-semibold text-sand-tint/80">{t.portals}</span>
-            {professionalLinks.map((item, index) => (
-              <span key={item.href} className="inline-flex items-center gap-x-3">
-                {index > 0 ? <span className="text-white/20">·</span> : null}
-                <a className="hover:text-white" href={item.href} target="_blank" rel="noreferrer">
-                  {item.label}
+          <div className="flex flex-wrap items-center gap-2 text-sm text-sand-tint/55">
+            <span className="me-1 font-semibold text-sand-tint/80">{t.portals}</span>
+            {professionalLinks.map((item) => {
+              const PortalIcon = portalIcons[item.label as keyof typeof portalIcons];
+              return (
+                <a
+                  key={item.href}
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-sand-tint/80 transition-colors hover:border-surgical-teal/50 hover:text-white"
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={item.label}
+                  title={item.label}
+                >
+                  <PortalIcon className="h-4 w-4" />
                 </a>
-              </span>
-            ))}
+              );
+            })}
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <span className="text-[12px] font-semibold text-sand-tint/50">{t.language}</span>

@@ -9,7 +9,7 @@ import { useLanguage } from "@/lib/language";
 import { loc } from "@/lib/loc";
 
 const stats = [
-  { value: "22+", label: "Years Consultant Experience", labelAr: "سنوات خبرة استشارية" },
+  { value: "25+", label: "Years in Trauma & Orthopaedics", labelAr: "عاماً في جراحة الحوادث والعظام" },
   { value: "4,500+", label: "Joint Arthroplasties", labelAr: "عمليات استبدال المفاصل" },
   { value: "40+", label: "Cadaveric AO Faculty", labelAr: "هيئة AO للتشريح" },
   { value: "100%", label: "NHS UK Fellowship Track", labelAr: "مسار زمالة NHS البريطانية" },
@@ -173,15 +173,15 @@ export function AboutPage() {
             <h1 className="mb-4 font-headline-hero text-[2.25rem] leading-tight text-white lg:text-[3.1rem] lg:leading-[3.5rem]">
               {loc(
                 lang,
-                "Two Decades of UK Fellowship Rigour & Reconstructive Precision",
-                "عقدان من صرامة الزمالة البريطانية ودقة إعادة البناء",
+                "25+ Years of UK Fellowship Rigour & Reconstructive Precision",
+                "+25 عاماً من صرامة الزمالة البريطانية ودقة إعادة البناء",
               )}
             </h1>
             <p className="mb-4 max-w-xl text-sm leading-relaxed text-sand-tint/75">
               {loc(
                 lang,
-                "British fellowship-trained consultant specializing in robotic-assisted and patient-specific joint replacement, complex revision hip and knee surgery, advanced knee ligament reconstruction, and trauma reconstructive surgery. Twenty-two years of NHS reconstructive practice, including a consultant post at SSMC in partnership with Mayo Clinic. Consultations and surgery are arranged at Healthpoint Hospital, Zayed Sports City.",
-                "استشاري بزمالة بريطانية متخصص في استبدال المفاصل بمساعدة الروبوت والمخصص للمريض، وجراحات مراجعة الورك والركبة المعقدة، وإعادة بناء أربطة الركبة المتقدمة، وإعادة بناء الرضوض. اثنان وعشرون عاماً في NHS بما في ذلك منصب استشاري في مدينة الشيخ شخبوط بالشراكة مع مايو كلينك. تُنسَّق الاستشارات والجراحة في مستشفى هيلث بوينت، مدينة زايد الرياضية.",
+                "British fellowship-trained consultant specializing in robotic-assisted and patient-specific joint replacement, complex revision hip and knee surgery, advanced knee ligament reconstruction, and trauma reconstructive surgery. More than 25 years in trauma and orthopaedics, including NHS reconstructive practice and a consultant post at SSMC in partnership with Mayo Clinic. Consultations and surgery are arranged at Healthpoint Hospital, Zayed Sports City.",
+                "استشاري بزمالة بريطانية متخصص في استبدال المفاصل بمساعدة الروبوت والمخصص للمريض، وجراحات مراجعة الورك والركبة المعقدة، وإعادة بناء أربطة الركبة المتقدمة، وإعادة بناء الرضوض. أكثر من 25 عاماً في جراحة الحوادث والعظام، بما في ذلك الممارسة في NHS ومنصب استشاري في مدينة الشيخ شخبوط بالشراكة مع مايو كلينك. تُنسَّق الاستشارات والجراحة في مستشفى هيلث بوينت، مدينة زايد الرياضية.",
               )}
             </p>
             <div className="mb-6 flex flex-wrap gap-2 text-[11px] font-semibold">
@@ -298,13 +298,46 @@ export function AboutPage() {
           <h2 className="mb-3 font-headline-lg text-headline-lg text-white">
             {loc(lang, "Educating the Next Generation of Joint Surgeons", "تأهيل الجيل التالي من جرّاحي المفاصل")}
           </h2>
-          <p className="mb-space-xl max-w-3xl text-sand-tint/75">
+          <p className="mb-8 max-w-3xl text-sand-tint/75">
             {loc(
               lang,
               "As Chairman of AO Recon MENA, Dr. Feras Ya'ish oversees master-level surgical curricula, cadaveric instructional labs, and biomechanical symposiums across Zurich, Davos, Dubai, and Riyadh.",
               "بصفته رئيس AO Recon للشرق الأوسط وشمال أفريقيا، يشرف الدكتور فراس يعيش على مناهج جراحية متقدمة ومختبرات تشريح وندوات ميكانيكية في زيورخ ودافوس ودبي والرياض.",
             )}
           </p>
+          <div className="mb-8 grid gap-4 md:grid-cols-3">
+            {[
+              {
+                src: "/images/practice/lecture-ao-recon.jpeg",
+                alt: "Dr Feras Ya'ish teaching an AO Recon course on hip and knee arthroplasty",
+                altAr: "الدكتور فراس يعيش يدرّس دورة AO Recon لاستبدال الورك والركبة",
+                caption: "AO Recon faculty",
+                captionAr: "هيئة AO Recon",
+                position: "object-top",
+              },
+              {
+                src: "/images/practice/teaching-sawbone.jpeg",
+                alt: "Dr Feras Ya'ish teaching knee reconstruction on a surgical model",
+                altAr: "الدكتور فراس يعيش يدرّس إعادة بناء الركبة على نموذج جراحي",
+                caption: "Hands-on instruction",
+                captionAr: "تدريب عملي",
+                position: "object-top",
+              },
+              {
+                src: "/images/practice/lecture-icjr.jpeg",
+                alt: "Dr Feras Ya'ish speaking at the International Congress for Joint Reconstruction, Middle East",
+                altAr: "الدكتور فراس يعيش يتحدث في المؤتمر الدولي لإعادة بناء المفاصل في الشرق الأوسط",
+                caption: "ICJR Middle East",
+                captionAr: "ICJR الشرق الأوسط",
+                position: "object-center",
+              },
+            ].map((photo) => (
+              <figure key={photo.src} className="overflow-hidden rounded-xl border border-white/10 bg-white/5">
+                <Image src={photo.src} alt={loc(lang, photo.alt, photo.altAr)} width={1200} height={800} className={`h-52 w-full object-cover ${photo.position}`} />
+                <figcaption className="px-3 py-2 text-[12px] text-sand-tint/80">{loc(lang, photo.caption, photo.captionAr)}</figcaption>
+              </figure>
+            ))}
+          </div>
           <p className="mb-4 rounded-lg border border-clinical-gold-honorary/30 bg-clinical-gold-honorary/10 px-4 py-3 text-sm text-sand-tint/80">
             {loc(
               lang,
@@ -423,7 +456,13 @@ export function AboutPage() {
             </Link>
           </div>
           <div className="relative overflow-hidden rounded-2xl lg:col-span-6">
-            <Image src="/images/education-lounge.png" alt="Healthpoint Hospital recovery environment" width={960} height={720} className="h-full min-h-[280px] w-full object-cover" />
+            <Image
+              src="/images/clinical/or-robot-portrait.jpeg"
+              alt="Dr Feras Ya'ish beside the Stryker Mako robotic arm in theatre"
+              width={2048}
+              height={1536}
+              className="h-full min-h-[320px] w-full object-cover object-[center_30%]"
+            />
             <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-clinical-slate-deep/80 p-4 text-white backdrop-blur-md">
               <div>
                 <p className="text-sm font-semibold">Healthpoint Hospital Abu Dhabi</p>
