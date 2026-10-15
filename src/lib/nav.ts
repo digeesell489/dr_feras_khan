@@ -4,7 +4,7 @@ export const siteNav = [
   { href: "/treatments", label: "Treatments", short: "Treatments" },
   { href: "/conditions", label: "Conditions", short: "Conditions" },
   { href: "/patient-care", label: "Patient Care", short: "Care" },
-  { href: "/for-physicians", label: "For Physicians", short: "Physicians" },
+  { href: "/events", label: "Events", short: "Events" },
   { href: "/contact", label: "Contact", short: "Contact" },
 ];
 

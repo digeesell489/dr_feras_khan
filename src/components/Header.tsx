@@ -8,6 +8,7 @@ import { LanguageToggle } from "@/components/LanguageToggle";
 import { WhatsAppIcon, whatsappHref } from "@/components/WhatsAppFloat";
 import { useLanguage } from "@/lib/language";
 import { conditions } from "@/lib/conditions";
+import { eventMenu } from "@/lib/events";
 import { siteNav } from "@/lib/nav";
 import { physicianPages } from "@/lib/physicians";
 import { treatments } from "@/lib/treatments";
@@ -21,6 +22,7 @@ export function Header() {
   const [treatmentsOpen, setTreatmentsOpen] = useState(false);
   const [conditionsOpen, setConditionsOpen] = useState(false);
   const [physiciansOpen, setPhysiciansOpen] = useState(false);
+  const [eventsOpen, setEventsOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -41,6 +43,7 @@ export function Header() {
     setTreatmentsOpen(false);
     setConditionsOpen(false);
     setPhysiciansOpen(false);
+    setEventsOpen(false);
   }, [pathname]);
 
   return (
@@ -54,7 +57,7 @@ export function Header() {
           }`}
         >
           <Link className="flex min-w-0 items-center justify-self-start" href="/">
-            <LogoMark className="h-9 w-auto max-w-[200px] shrink-0 sm:h-10 sm:max-w-[248px]" />
+            <LogoMark className="h-12 w-auto max-w-[220px] shrink-0 object-contain sm:h-14 sm:max-w-[280px]" />
           </Link>
 
           <nav className="hidden min-w-0 items-center justify-center justify-self-center lg:flex">
@@ -63,6 +66,44 @@ export function Header() {
                 item.href === "/"
                   ? pathname === "/"
                   : pathname === item.href || pathname.startsWith(`${item.href}/`);
+
+              if (item.href === "/events") {
+                return (
+                  <div key={item.href} className="group relative">
+                    <Link
+                      href={item.href}
+                      className={`relative flex items-center gap-1 whitespace-nowrap px-2 py-1 text-[13px] font-semibold tracking-wide transition-colors ${
+                        isActive ? "text-clinical-navy" : "text-on-surface-variant hover:text-clinical-navy"
+                      }`}
+                    >
+                      {t.nav[item.href]?.short ?? item.short}
+                      <svg className="h-3 w-3 opacity-70" viewBox="0 0 12 12" fill="none" aria-hidden>
+                        <path d="M3 4.5 6 7.5 9 4.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+                      </svg>
+                      <span
+                        className={`absolute inset-x-3 -bottom-0.5 h-[2px] rounded-full transition-opacity ${
+                          isActive ? "bg-surgical-teal opacity-100" : "opacity-0"
+                        }`}
+                      />
+                    </Link>
+                    <div className="invisible absolute start-0 top-full z-50 min-w-[280px] pt-2 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                      <div className="overflow-hidden rounded-xl border border-surface-border bg-white py-2 shadow-[0_16px_40px_rgba(27,54,93,0.12)]">
+                        {eventMenu.map((entry) => (
+                          <Link
+                            key={entry.href}
+                            href={entry.href}
+                            className={`block px-4 py-2 text-[13px] hover:bg-sand-tint ${
+                              pathname === entry.href ? "font-semibold text-clinical-navy" : "text-text-secondary"
+                            }`}
+                          >
+                            {lang === "ar" ? entry.shortAr : entry.short}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
 
               if (item.href === "/treatments" || item.href === "/conditions" || item.href === "/for-physicians") {
                 const items = item.href === "/treatments" ? treatments : item.href === "/conditions" ? conditions : physicianPages;
@@ -179,7 +220,27 @@ export function Header() {
             </div>
             {siteNav.map((item) => (
               <div key={item.href} className="border-b border-white/10 last:border-b-0">
-                {item.href === "/treatments" || item.href === "/conditions" || item.href === "/for-physicians" ? (
+                {item.href === "/events" ? (
+                  <>
+                    <button
+                      type="button"
+                      className="flex w-full items-center justify-between py-3.5 font-headline-sm text-[1.35rem] text-white"
+                      onClick={() => setEventsOpen((v) => !v)}
+                    >
+                      {t.nav[item.href]?.label ?? item.label}
+                      <span className={`text-surgical-teal-light transition ${eventsOpen ? "rotate-90" : ""}`}>→</span>
+                    </button>
+                    {eventsOpen ? (
+                      <div className="mb-3 space-y-1 pb-2">
+                        {eventMenu.map((entry) => (
+                          <Link key={entry.href} href={entry.href} className="block py-1.5 text-sm text-sand-tint/80">
+                            {lang === "ar" ? entry.shortAr : entry.short}
+                          </Link>
+                        ))}
+                      </div>
+                    ) : null}
+                  </>
+                ) : item.href === "/treatments" || item.href === "/conditions" || item.href === "/for-physicians" ? (
                   <>
                     <button
                       type="button"

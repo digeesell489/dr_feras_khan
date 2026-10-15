@@ -13,6 +13,7 @@ export type EducationItem = {
   bodyAr: string;
   content: string[];
   contentAr: string[];
+  videoUrl?: string;
 };
 
 export const educationItems: EducationItem[] = [
@@ -20,6 +21,7 @@ export const educationItems: EducationItem[] = [
     id: "robotic",
     kind: "video",
     image: "/images/practice/mako-briefing.jpeg",
+    videoUrl: "https://www.youtube.com/watch?v=w_M7h4Ig6m4",
     duration: "4:15",
     category: "Featured Clinical Guide",
     categoryAr: "دليل سريري مميز",
@@ -44,6 +46,7 @@ export const educationItems: EducationItem[] = [
     id: "psi",
     kind: "video",
     image: "/images/clinical/psi-ct-planning.png",
+    videoUrl: "https://lnkd.in/p/eG4Erhty",
     duration: "3:40",
     category: "Planning",
     categoryAr: "التخطيط",
@@ -66,6 +69,7 @@ export const educationItems: EducationItem[] = [
     id: "knee-recovery",
     kind: "video",
     image: "/images/implant-knee.png",
+    videoUrl: "https://www.facebook.com/reel/1340395331004480",
     duration: "5:10",
     category: "Recovery",
     categoryAr: "التعافي",
@@ -218,4 +222,6 @@ export const educationGallery = [
   { image: "/images/practice/faculty-ao-sharjah.jpeg", alt: "AO Recon faculty at a joint preservation and replacement course", altAr: "هيئة AO Recon في دورة الحفاظ على المفصل واستبداله", fit: "object-cover object-center" },
   { image: "/images/practice/lecture-icjr.jpeg", alt: "Dr Feras Ya'ish speaking at the International Congress for Joint Reconstruction", altAr: "الدكتور فراس يعيش يتحدث في المؤتمر الدولي لإعادة بناء المفاصل", fit: "object-cover object-[32%_center]" },
   { image: "/images/practice/teaching-workshop.jpeg", alt: "Hands-on knee reconstruction workshop", altAr: "ورشة عملية لإعادة بناء الركبة", fit: "object-cover object-[center_42%]" },
+  { image: "/images/practice/lecture-ao-recon.jpeg", alt: "Dr Feras Ya'ish lecturing at the AO Recon total knee arthroplasty course", altAr: "الدكتور فراس يعيش يحاضر في دورة AO Recon لاستبدال الركبة", fit: "object-contain object-center" },
+  { image: "/images/clinical/or-robot-portrait.jpeg", alt: "Dr Feras Ya'ish beside the Stryker Mako robotic arm in theatre", altAr: "الدكتور فراس يعيش بجانب ذراع سترايكر ماكو الروبوتية في غرفة العمليات", fit: "object-cover object-[center_30%]" },
 ];

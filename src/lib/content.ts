@@ -95,7 +95,7 @@ export const specialties = {
       imageWidth: psiCtPlanning.width,
       imageHeight: psiCtPlanning.height,
       imageClassName: "object-contain object-center",
-      href: "/treatments/knee-replacement",
+      href: "/treatments/patient-specific-knee",
       category: "Personalised Implants",
       categoryAr: "زرعات مخصصة",
       title: "Patient-Specific Knee Replacement (PSI)",
@@ -110,7 +110,7 @@ export const specialties = {
       imageWidth: hipReplacementXray.width,
       imageHeight: hipReplacementXray.height,
       imageClassName: "object-contain object-center",
-      href: "/conditions/hip-osteoarthritis",
+      href: "/treatments/hip-replacement",
       category: "Arthroplasty",
       categoryAr: "استبدال المفصل",
       title: "Hip Replacement",
@@ -209,7 +209,7 @@ export const specialties = {
 
 export const clinicHours = [
   { day: "Tuesday", dayAr: "الثلاثاء", time: "8:00 AM – 5:00 PM", muted: false },
-  { day: "Wednesday", dayAr: "الأربعاء", time: "11:00 AM – 7:00 PM", muted: false },
+  { day: "Wednesday", dayAr: "الأربعاء", time: "11:00 AM – 8:00 PM", muted: false },
   { day: "Thursday", dayAr: "الخميس", time: "8:00 AM – 5:00 PM", muted: false },
   { day: "Friday", dayAr: "الجمعة", time: "8:00 AM – 5:00 PM", muted: false },
   {

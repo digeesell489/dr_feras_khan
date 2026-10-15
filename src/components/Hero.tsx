@@ -70,12 +70,12 @@ export function Hero() {
               <div className="glass-card-light relative w-full overflow-hidden rounded-2xl border border-white/80 p-space-xs shadow-[0_16px_48px_rgba(15,32,39,0.12)]">
                 <div className="relative flex items-end justify-center overflow-hidden rounded-xl bg-clinical-slate-deep">
                   <Image
-                    src="/images/practice/portrait.jpeg"
+                    src="/images/doctor-cutout.png"
                     alt="Dr. Feras Ya'ish"
-                    width={1099}
-                    height={715}
+                    width={420}
+                    height={560}
                     priority
-                    className="aspect-[4/5] w-full object-cover object-[center_18%] transition-transform duration-500 hover:scale-[1.03]"
+                    className="aspect-[4/5] w-full object-contain object-bottom transition-transform duration-500 hover:scale-[1.03]"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-clinical-slate-deep/80 via-transparent to-transparent" />
                 </div>

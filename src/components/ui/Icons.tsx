@@ -73,38 +73,18 @@ export function LogoMark({
   variant = "full",
 }: {
   className?: string;
-  variant?: "full" | "mark";
+  variant?: "full" | "onDark";
 }) {
-  if (variant === "mark") {
-    return (
-      <svg className={className} viewBox="0 0 42 44" fill="none" aria-hidden>
-        <g transform="translate(4, 4)">
-          <path d="M18 4L22 4C28.6274 4 34 9.37258 34 16C34 22.6274 28.6274 28 22 28L18 28" stroke="#14B8A6" strokeWidth="3" strokeLinecap="round" />
-          <path d="M18 4L18 36" stroke="#14B8A6" strokeWidth="3.5" strokeLinecap="round" />
-          <path d="M12 16L24 16" stroke="#14B8A6" strokeWidth="2.5" strokeLinecap="round" />
-          <circle cx="28" cy="16" r="3" fill="#FAF9F6" />
-          <path d="M8 26C12 34 22 38 30 34" stroke="#C4C6CF" strokeWidth="2" strokeLinecap="round" strokeDasharray="2 3" />
-        </g>
-      </svg>
-    );
-  }
+  const onDark = variant === "onDark";
 
   return (
-    <svg className={className} viewBox="0 0 240 50" fill="none" role="img" aria-label="Dr. Feras Ya'ish">
-      <g transform="translate(4, 5)">
-        <path d="M18 4L22 4C28.6274 4 34 9.37258 34 16C34 22.6274 28.6274 28 22 28L18 28" stroke="#1B365D" strokeWidth="3" strokeLinecap="round" />
-        <path d="M18 4L18 36" stroke="#0D9488" strokeWidth="3.5" strokeLinecap="round" />
-        <path d="M12 16L24 16" stroke="#0D9488" strokeWidth="2.5" strokeLinecap="round" />
-        <circle cx="28" cy="16" r="3" fill="#1B365D" />
-        <path d="M8 26C12 34 22 38 30 34" stroke="#64748B" strokeWidth="2" strokeLinecap="round" strokeDasharray="2 3" />
-      </g>
-      <text x="52" y="24" className="font-label-lg" fontSize="16" fontWeight="700" fill="#0F172A" letterSpacing="-0.02em">
-        DR. FERAS YA&apos;ISH
-      </text>
-      <text x="52" y="38" className="font-label-md" fontSize="9" fontWeight="600" fill="#0D9488" letterSpacing="0.08em">
-        CONSULTANT ORTHOPAEDIC SURGEON · ABU DHABI
-      </text>
-    </svg>
+    <img
+      src={onDark ? "/images/fy-ortho-logo-footer.png" : "/images/fy-ortho-logo.png"}
+      alt="Dr. Feras Ya'ish Ortho — Hip & Knee Surgery"
+      width={722}
+      height={192}
+      className={className}
+    />
   );
 }
 

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { CaseExampleDetail } from "@/components/pages/CaseExampleDetail";
 import { SiteShell } from "@/components/SiteShell";
 import { caseExamples, getCaseExample } from "@/lib/cases";
+import { showCaseExamples } from "@/lib/visibility";
 
 export const dynamicParams = false;
 
@@ -16,6 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${item.title} | Dr. Feras Ya'ish`,
     description: item.body,
+    robots: showCaseExamples ? undefined : { index: false, follow: false },
   };
 }
 

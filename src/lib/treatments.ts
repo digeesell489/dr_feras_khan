@@ -1,12 +1,14 @@
 import {
+  hipReplacementXray,
   kneeArthroscopy,
   partialKneeCompartments,
+  psiCtPlanning,
   revisionKneeXray,
   roboticTheatre,
   traumaMalunionXray,
 } from "@/assets/clinical-images";
 
-export type TreatmentCategory = "knee" | "robotic" | "revision" | "sports" | "trauma";
+export type TreatmentCategory = "knee" | "hip" | "robotic" | "revision" | "sports" | "trauma";
 
 export type Treatment = {
   slug: string;
@@ -52,6 +54,64 @@ export const treatments: Treatment[] = [
       "Same-day or day-1 walking with dedicated orthopaedic physiotherapy",
       "Reduced tightness compared with classic mechanical alignment in suitable patients",
       "Structured milestones at 2 weeks, 6 weeks, 3 months, and 1 year",
+    ],
+  },
+  {
+    slug: "patient-specific-knee",
+    tag: "Personalised Implants",
+    title: "Patient-Specific Knee Replacement (PSI)",
+    short: "Patient-Specific Knee Replacement (PSI)",
+    shortAr: "استبدال الركبة المخصص للمريض (PSI)",
+    image: psiCtPlanning.src,
+    imageAlt: psiCtPlanning.alt,
+    imageFit: "contain",
+    category: "knee",
+    summary:
+      "CT-based pre-operative planning produces patient-specific instrumentation, so femoral and tibial cuts are mapped to the individual's own anatomy before the first incision is made. PSI sits alongside total knee replacement; it is the planning method, not a different operation.",
+    who: [
+      "Patients planned for total knee replacement whose bone shape needs cuts mapped in advance",
+      "Knees where a one-size-fits-all mechanical template would not match the individual's anatomy",
+      "Cases in which robotic assistance and patient-specific guides are weighed as complementary tools",
+    ],
+    approach: [
+      "A CT plan of the knee produces cutting guides matched to that patient's anatomy",
+      "Femoral and tibial cuts are mapped before the first incision",
+      "The aim is the individual's joint line and morphology, used with total knee replacement",
+      "The approach is chosen to suit the patient, alongside conventional or robotic planning",
+    ],
+    recovery: [
+      "Same-day or day-1 walking with dedicated orthopaedic physiotherapy",
+      "The recovery pathway follows the total knee replacement plan",
+      "Structured milestones at 2 weeks, 6 weeks, 3 months, and 1 year",
+    ],
+  },
+  {
+    slug: "hip-replacement",
+    tag: "Hip Arthroplasty",
+    title: "Hip Replacement",
+    short: "Hip Replacement",
+    shortAr: "استبدال الورك",
+    image: hipReplacementXray.src,
+    imageAlt: hipReplacementXray.alt,
+    imageFit: "contain",
+    category: "hip",
+    summary:
+      "Primary total hip arthroplasty using cementless and hybrid fixation, with leg-length and offset restored to the patient's own anatomy.",
+    who: [
+      "Hip osteoarthritis limiting walking, sleep, or daily activity",
+      "Failed non-operative care of the hip",
+      "Patients who need leg length and offset restored to their own anatomy",
+    ],
+    approach: [
+      "Cementless or hybrid fixation selected for bone quality",
+      "Restoration of leg length and femoral offset",
+      "CT templating, and robotic assistance when precision alignment is required",
+      "Muscle-sparing exposure in an ultra-clean theatre",
+    ],
+    recovery: [
+      "Supported walking on the day of surgery or within 24 hours",
+      "Physiotherapy for gait, hip precautions, and strength",
+      "Clinic review to confirm wound healing, leg length, and implant position",
     ],
   },
   {
@@ -198,6 +258,34 @@ export const treatments: Treatment[] = [
       "Brace and crutches protocols vary by reconstruction type",
       "Running and pivoting sport only after strength and hop testing",
       "Shared plan with physiotherapy and, for professionals, team medical staff",
+    ],
+  },
+  {
+    slug: "patellofemoral-instability",
+    tag: "Knee Sports Injuries",
+    title: "Patellofemoral Instability Surgery",
+    short: "Patellofemoral Instability Surgery",
+    shortAr: "جراحة عدم استقرار الرضفة",
+    image: "/images/knee-mechanics.png",
+    imageAlt: "Knee anatomy showing the structures that guide the kneecap",
+    category: "sports",
+    summary:
+      "Surgery for a kneecap that slips or repeatedly dislocates. The stabilising ligament is restored, and bone alignment is corrected only when it is pulling the patella out of its groove.",
+    who: [
+      "A kneecap that dislocates or repeatedly gives way",
+      "Instability after a first dislocation when the stabilising ligament has failed",
+      "Apprehension with twisting, stairs, or sport",
+    ],
+    approach: [
+      "Assessment of tracking, limb alignment, and the medial patellofemoral ligament",
+      "MPFL reconstruction to restore the checkrein that holds the kneecap",
+      "Tibial tubercle realignment only when bone alignment is pulling the kneecap out of its groove",
+      "Arthroscopy when cartilage or meniscal injury needs attention at the same time",
+    ],
+    recovery: [
+      "A brace and protected bending in the early weeks",
+      "Physiotherapy for quadriceps control and confidence in the kneecap",
+      "Return to pivoting sport after strength and stability testing",
     ],
   },
   {

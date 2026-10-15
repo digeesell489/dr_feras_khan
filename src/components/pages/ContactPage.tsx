@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { CtaBand } from "@/components/CtaBand";
-import { EnquiryForm } from "@/components/EnquiryForm";
 import { WhatsAppButton } from "@/components/WhatsAppFloat";
 import { CallIcon, ClockIcon, ExternalArrow, PinIcon } from "@/components/ui/Icons";
 import { clinicHours } from "@/lib/content";
+import { HEALTHPOINT_APPOINTMENT } from "@/lib/links";
 import { loc } from "@/lib/loc";
 import { useLanguage } from "@/lib/language";
 
@@ -29,9 +29,6 @@ export function ContactPage() {
                 {t.call}
               </a>
               <WhatsAppButton className="rounded border border-[#25D366]/50 bg-[#25D366]/10 px-4 py-2.5 text-[13px] font-semibold text-[#25D366]" />
-              <a className="rounded border border-white/25 px-4 py-2.5 text-[13px] font-semibold" href="#enquiry">
-                {t.enquiry}
-              </a>
             </div>
           </div>
           <aside className="rounded-2xl border border-white/10 bg-white/5 p-5 lg:col-span-4">
@@ -78,15 +75,9 @@ export function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-sand-tint/70 py-space-3xl" id="enquiry">
-        <div className="page-wrap grid items-start gap-space-xl lg:grid-cols-12">
-          <div className="rounded-2xl border border-surface-border bg-white p-6 lg:col-span-7">
-            <h2 className="mb-2 font-headline-lg text-[1.75rem] text-primary">{t.enquiry}</h2>
-            <p className="mb-6 text-sm text-text-secondary">{t.formDisclaimer}</p>
-            <EnquiryForm />
-          </div>
-
-          <div className="lg:col-span-5">
+      <section className="bg-sand-tint/70 py-space-3xl">
+        <div className="page-wrap grid items-stretch gap-6 lg:grid-cols-2">
+          <div className="flex flex-col">
             <div className="rounded-2xl border border-surface-border bg-white p-6">
               <h2 className="mb-4 font-headline-sm text-primary">{t.clinicHoursTitle}</h2>
               <div className="divide-y divide-surface-border">
@@ -105,39 +96,32 @@ export function ContactPage() {
             </div>
             <a
               className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-clinical-navy px-4 py-3 text-[13px] font-semibold text-white"
-              href="tel:80077"
+              href={HEALTHPOINT_APPOINTMENT}
             >
-              <CallIcon className="h-4 w-4" />
-              {t.requestAppointment} — 800 77
+              {t.requestAppointment}
             </a>
           </div>
-        </div>
-      </section>
 
-      <section className="pb-space-3xl">
-        <div className="page-wrap">
-          <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
-            <div>
-              <h2 className="font-headline-lg text-[1.75rem] text-primary">
-                {loc(lang, "How to find us", "كيف تصل إلينا")}
-              </h2>
-              <p className="mt-1 text-sm text-text-secondary">{t.address}</p>
+          <div className="flex min-h-[320px] flex-col overflow-hidden rounded-2xl border border-surface-border bg-white">
+            <div className="flex flex-wrap items-end justify-between gap-3 border-b border-surface-border px-5 py-4">
+              <div>
+                <h2 className="font-headline-sm text-primary">{loc(lang, "How to find us", "كيف تصل إلينا")}</h2>
+                <p className="mt-1 text-sm text-text-secondary">{t.address}</p>
+              </div>
+              <a
+                className="inline-flex items-center gap-1 text-[13px] font-semibold text-clinical-navy"
+                href={mapLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {t.openMaps}
+                <ExternalArrow />
+              </a>
             </div>
-            <a
-              className="inline-flex items-center gap-1 text-[13px] font-semibold text-clinical-navy"
-              href={mapLink}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {t.openMaps}
-              <ExternalArrow />
-            </a>
-          </div>
-          <div className="overflow-hidden rounded-2xl border border-surface-border bg-white">
             <iframe
               title="Healthpoint Hospital Abu Dhabi map"
               src={mapEmbed}
-              className="h-[320px] w-full border-0 lg:h-[420px]"
+              className="min-h-[280px] w-full flex-1 border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />

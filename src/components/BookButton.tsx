@@ -1,26 +1,16 @@
-"use client";
+import type { MouseEventHandler, ReactNode } from "react";
+import { HEALTHPOINT_APPOINTMENT } from "@/lib/links";
 
-import type { ButtonHTMLAttributes, ReactNode } from "react";
-import { useBooking } from "@/lib/booking";
-
-type BookButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+type BookButtonProps = {
   children: ReactNode;
+  className?: string;
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
 };
 
-export function BookButton({ children, className = "", type = "button", onClick, ...props }: BookButtonProps) {
-  const { openBooking } = useBooking();
-
+export function BookButton({ children, className = "", onClick }: BookButtonProps) {
   return (
-    <button
-      type={type}
-      className={className}
-      onClick={(event) => {
-        openBooking();
-        onClick?.(event);
-      }}
-      {...props}
-    >
+    <a href={HEALTHPOINT_APPOINTMENT} className={className} onClick={onClick}>
       {children}
-    </button>
+    </a>
   );
 }

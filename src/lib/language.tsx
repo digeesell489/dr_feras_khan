@@ -57,6 +57,7 @@ const dictionary = {
     colPractice: "Practice",
     colCare: "Clinical Care",
     colPhysicians: "Physicians",
+    colEvents: "Events",
     colVisit: "Visit",
     clinicHoursShort: "Tue–Fri clinic hours",
     heroBadge: "Consultant Trauma & Orthopaedic Surgeon",
@@ -97,6 +98,7 @@ const dictionary = {
     eduBody: "Structured explanations of surgical workflows, joint mechanics, and post-operative physical recovery pathways.",
     eduGallery: "Clinical Practice & Anatomical Education",
     followIg: "Follow on Instagram (@dr.ferasyaish)",
+    viewAll: "View all",
     clinicBadge: "Consultation Schedule",
     clinicTitle: "Clinic Hours & Location",
     clinicBody: "Outpatient clinical appointments and elective surgery coordination at Healthpoint Hospital.",
@@ -118,7 +120,7 @@ const dictionary = {
     contactEyebrow: "Contact the practice",
     contactTitle: "Book a consultation at Healthpoint",
     contactLead:
-      "Outpatient appointments and surgery with Dr. Feras Ya'ish take place exclusively at Healthpoint Hospital, Zayed Sports City, Abu Dhabi. Call the hospital concierge or leave your details below.",
+      "Outpatient appointments and surgery with Dr. Feras Ya'ish take place exclusively at Healthpoint Hospital, Zayed Sports City, Abu Dhabi. Call the hospital concierge on 800 77.",
     enquiry: "Appointment enquiry",
     urgentHotline: "Urgent hot-line 800 77",
     submitCase: "Submit a case",
@@ -187,6 +189,7 @@ const dictionary = {
       "/conditions": { label: "Conditions", short: "Conditions" },
       "/patient-care": { label: "Patient Care", short: "Care" },
       "/for-physicians": { label: "For Physicians", short: "Physicians" },
+      "/events": { label: "Events", short: "Events" },
       "/contact": { label: "Contact", short: "Contact" },
     } as Record<string, { label: string; short: string }>,
     footerPractice: [
@@ -212,6 +215,10 @@ const dictionary = {
       { href: "/for-physicians/urgent-escalation", label: "Urgent Trauma Escalation" },
       { href: "/for-physicians/ao-recon-faculty", label: "AO Recon Faculty" },
       { href: "/for-physicians/case-submission", label: "Case Submission" },
+    ],
+    footerEvents: [
+      { href: "/events/images", label: "Event Image" },
+      { href: "/events/media", label: "Appearances on newspapers and media" },
     ],
   },
   ar: {
@@ -265,6 +272,7 @@ const dictionary = {
     colPractice: "العيادة",
     colCare: "الرعاية السريرية",
     colPhysicians: "الأطباء",
+    colEvents: "الفعاليات",
     colVisit: "الزيارة",
     clinicHoursShort: "ساعات العيادة الثلاثاء–الجمعة",
     heroBadge: "استشاري جراحة الحوادث والعظام",
@@ -304,6 +312,7 @@ const dictionary = {
     eduBody: "شروحات منظمة لمسار الجراحة وميكانيكا المفصل وبرامج التعافي بعد العملية.",
     eduGallery: "الممارسة السريرية والتثقيف التشريحي",
     followIg: "تابع على إنستغرام (@dr.ferasyaish)",
+    viewAll: "عرض الكل",
     clinicBadge: "جدول الاستشارات",
     clinicTitle: "ساعات العيادة والموقع",
     clinicBody: "مواعيد العيادات الخارجية وتنسيق الجراحة الاختيارية في مستشفى هيلث بوينت.",
@@ -324,7 +333,7 @@ const dictionary = {
     contactEyebrow: "تواصل مع العيادة",
     contactTitle: "احجز استشارة في هيلث بوينت",
     contactLead:
-      "تتم مواعيد العيادات والجراحة مع الدكتور فراس يعيش حصراً في مستشفى هيلث بوينت، مدينة زايد الرياضية، أبوظبي. اتصل بمكتب المواعيد أو اترك بياناتك أدناه.",
+      "تتم مواعيد العيادات والجراحة مع الدكتور فراس يعيش حصراً في مستشفى هيلث بوينت، مدينة زايد الرياضية، أبوظبي. اتصل بمكتب المواعيد على 800 77.",
     enquiry: "استفسار موعد",
     urgentHotline: "خط الطوارئ 800 77",
     submitCase: "إرسال حالة",
@@ -393,6 +402,7 @@ const dictionary = {
       "/conditions": { label: "الحالات", short: "الحالات" },
       "/patient-care": { label: "رعاية المريض", short: "الرعاية" },
       "/for-physicians": { label: "للأطباء", short: "الأطباء" },
+      "/events": { label: "الفعاليات", short: "الفعاليات" },
       "/contact": { label: "تواصل", short: "تواصل" },
     } as Record<string, { label: string; short: string }>,
     footerPractice: [
@@ -418,6 +428,10 @@ const dictionary = {
       { href: "/for-physicians/urgent-escalation", label: "التصعيد الرضّي العاجل" },
       { href: "/for-physicians/ao-recon-faculty", label: "هيئة AO Recon" },
       { href: "/for-physicians/case-submission", label: "إرسال الحالة" },
+    ],
+    footerEvents: [
+      { href: "/events/images", label: "صور الفعاليات" },
+      { href: "/events/media", label: "الظهور في الصحف والإعلام" },
     ],
   },
 };

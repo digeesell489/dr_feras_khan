@@ -29,8 +29,8 @@ export const roboticTheatre: ClinicalImage = {
 
 export const psiCtPlanning: ClinicalImage = {
   src: "/images/clinical/psi-ct-planning.png",
-  width: 2910,
-  height: 1480,
+  width: 1024,
+  height: 778,
   alt: "CT-based patient-specific knee replacement planning in axial, sagittal, coronal and 3D views",
   altAr: "تخطيط استبدال ركبة مخصص للمريض بالأشعة المقطعية في مقاطع محورية وسهمية وإكليلية وثلاثية الأبعاد",
 };

@@ -48,15 +48,14 @@ export function Footer() {
 
         <div className="grid grid-cols-1 gap-space-xl pb-space-2xl sm:grid-cols-2 lg:grid-cols-12">
           <div className="flex flex-col gap-4 lg:col-span-3">
-            <Link className="flex items-center gap-3" href="/">
-              <LogoMark variant="mark" className="h-10 w-10 shrink-0" />
-              <span>
-                <span className="block font-headline-sm text-[1.15rem] text-white">Dr. Feras Ya&apos;ish</span>
-                <span className="block text-[11px] tracking-wide text-sand-tint/60">
-                  MBBS · MRCS · FRCS (Tr &amp; Orth) · CCT (UK)
-                </span>
-              </span>
-            </Link>
+            <div className="flex flex-col items-start gap-3">
+              <Link href="/">
+                <LogoMark variant="onDark" className="h-16 w-auto" />
+              </Link>
+              <p className="text-[11px] leading-relaxed tracking-wide text-sand-tint/60">
+                MBBS · MRCS · FRCS (Tr &amp; Orth) · CCT (UK)
+              </p>
+            </div>
             <p className="max-w-sm text-sm leading-relaxed text-sand-tint/70">{t.bio}</p>
             <div className="flex items-center gap-2 text-[11px] tracking-wide text-clinical-gold-honorary uppercase">
               <span className="h-1.5 w-1.5 rounded-full bg-surgical-teal" />
@@ -91,9 +90,9 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <p className="mb-4 text-[11px] font-bold tracking-[0.16em] text-white uppercase">{t.colPhysicians}</p>
+            <p className="mb-4 text-[11px] font-bold tracking-[0.16em] text-white uppercase">{t.colEvents}</p>
             <ul className="flex flex-col gap-2.5">
-              {t.footerPhysicians.map((item) => (
+              {t.footerEvents.map((item) => (
                 <li key={item.href}>
                   <Link className="text-sm text-sand-tint/70 transition-colors hover:text-white" href={item.href}>
                     {item.label}

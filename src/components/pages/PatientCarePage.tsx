@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { CtaBand } from "@/components/CtaBand";
 import { useLanguage } from "@/lib/language";
@@ -57,59 +56,8 @@ const glossary = [
   },
 ];
 
-const questions = [
-  {
-    q: "What surgical approach best suits my individual pelvic or knee anatomy?",
-    qAr: "أي نهج جراحي يناسب تشريح الحوض أو الركبة لدي؟",
-    hint: "E.g., robotic or patient-specific joint replacement versus conventional jigs, or kinematic versus mechanical knee alignment.",
-    hintAr: "مثل الاستبدال الروبوتي أو المخصص للمريض مقابل القوالب التقليدية، أو المحاذاة الحركية مقابل الميكانيكية للركبة.",
-  },
-  {
-    q: "What specific implant materials and bearing surfaces will be utilized?",
-    qAr: "ما مواد الزرعة وأسطح الاحتكاك التي ستُستخدم؟",
-    hint: "Clarify ceramic-on-crosslinked polyethylene wear rates and biocompatibility with your physical lifestyle.",
-    hintAr: "وضّح معدلات تآكل السيراميك على البولي إيثيلين المتشابك وتوافقها مع نمط حياتك.",
-  },
-  {
-    q: "What is the hospital's infection and complication management protocol?",
-    qAr: "ما بروتوكول المستشفى لإدارة العدوى والمضاعفات؟",
-    hint: "Review laminar airflow theatre standards, antibiotic prophylaxis, and sterile wound closure techniques.",
-    hintAr: "راجع معايير غرف التدفق الصفحي والوقاية بالمضادات وتقنيات إغلاق الجرح المعقم.",
-  },
-  {
-    q: "What anaesthetic modality is recommended for my physiological profile?",
-    qAr: "أي أسلوب تخدير يناسب وضعي الفسيولوجي؟",
-    hint: "Explore spinal block with localized sensory catheter infusions versus general anaesthesia alternatives.",
-    hintAr: "استكشف التخدير النخاعي مع قسطرة حسية موضعية مقابل التخدير العام.",
-  },
-  {
-    q: "When will I be able to drive, return to flight travel, and resume sports?",
-    qAr: "متى أستطيع القيادة والسفر جواً واستئناف الرياضة؟",
-    hint: "Set concrete milestones based on whether left or right side surgery is being performed.",
-    hintAr: "حدّد محطات واضحة حسب الجانب الأيمن أو الأيسر للجراحة.",
-  },
-  {
-    q: "What happens if I experience unexpected pain or swelling after discharge?",
-    qAr: "ماذا لو ظهر ألم أو تورم غير متوقع بعد الخروج؟",
-    hint: "Confirm the 24/7 direct telephone contact numbers for the Healthpoint orthopaedic nursing team.",
-    hintAr: "أكد أرقام الاتصال المباشرة على مدار الساعة لفريق تمريض العظام في هيلث بوينت.",
-  },
-];
-
-const insurers = [
-  "Thiqa (Full Direct Coverage)",
-  "Daman Enhanced",
-  "ADNIC (Abu Dhabi National)",
-  "NextCare (Gold / VIP)",
-  "Bupa Global",
-  "MetLife Alico",
-  "Cigna International",
-  "Al Buhaira / Saico",
-];
-
 export function PatientCarePage() {
   const { lang } = useLanguage();
-  const [checked, setChecked] = useState<string[]>([]);
 
   return (
     <>
@@ -134,8 +82,6 @@ export function PatientCarePage() {
                 ["#pathway-prep", "Pre-Op Preparation", "التحضير قبل العملية"],
                 ["#pathway-hospital", "Hospital Amenities", "خدمات المستشفى"],
                 ["#pathway-milestones", "Recovery Milestones", "محطات التعافي"],
-                ["#consultation-checklist", "Checklist & Questions", "القائمة والأسئلة"],
-                ["#insurance-desk", "Insurance & Coverage", "التأمين والتغطية"],
               ].map(([href, en, ar]) => (
                 <a key={href} className="rounded-lg bg-white px-3 py-2 text-[12px] font-semibold text-clinical-navy shadow-sm" href={href}>
                   {loc(lang, en, ar)}
@@ -326,7 +272,7 @@ export function PatientCarePage() {
                   4 · {loc(lang, "Post-Surgical Inpatient Care", "الرعاية الداخلية بعد الجراحة")}
                 </p>
                 <h3 className="mb-3 font-headline-sm text-[1.4rem] text-primary">
-                  {loc(lang, "In-Hospital Recovery & VIP Amenities", "التعافي داخل المستشفى وخدمات VIP")}
+                  {loc(lang, "In-Hospital Recovery", "التعافي داخل المستشفى")}
                 </h3>
                 <p className="mb-5 text-sm text-text-secondary">
                   {loc(
@@ -353,13 +299,13 @@ export function PatientCarePage() {
                 </p>
               </div>
               <div className="relative order-1 min-h-[320px] lg:order-2 lg:col-span-6">
-                <Image src="/images/education-lounge.png" alt="Panoramic wellness and family lounges at Healthpoint" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
+                <Image src="/images/healthpoint-building.jpg" alt="Healthpoint Hospital, Zayed Sports City, Abu Dhabi" fill className="object-cover object-center" sizes="(min-width: 1024px) 50vw, 100vw" />
                 <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-clinical-slate-deep/80 via-transparent to-transparent p-6 text-white">
                   <p className="text-[11px] font-bold tracking-wider text-surgical-teal-light uppercase">
-                    {loc(lang, "Panoramic Wellness & Family Lounges", "صالات عافية عائلية بإطلالة بانورامية")}
+                    {loc(lang, "Healthpoint Hospital Abu Dhabi", "مستشفى هيلث بوينت أبوظبي")}
                   </p>
                   <p className="mt-1 text-sm">
-                    {loc(lang, "Sunlit, open-plan spaces designed to enhance patient wellbeing and facilitate gentle mobility strolls.", "مساحات مشمسة مفتوحة لتعزيز العافية والمشي الخفيف.")}
+                    {loc(lang, "Zayed Sports City, Abu Dhabi.", "مدينة زايد الرياضية، أبوظبي.")}
                   </p>
                 </div>
               </div>
@@ -408,69 +354,6 @@ export function PatientCarePage() {
         </div>
       </section>
 
-      <section className="bg-sand-tint py-space-3xl" id="consultation-checklist">
-        <div className="page-wrap grid gap-space-xl lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <p className="mb-3 inline-flex rounded-full bg-surgical-teal-subtle px-3 py-1 text-[11px] font-semibold tracking-wider text-surgical-teal uppercase">
-              {loc(lang, "Patient Empowerment Tool", "أداة تمكين المريض")}
-            </p>
-            <h2 className="mb-3 font-headline-lg text-headline-lg text-primary">
-              {loc(lang, "Questions to Ask Your Orthopaedic Surgeon", "أسئلة لطرحها على جرّاح العظام")}
-            </h2>
-            <p className="mb-6 text-text-secondary">
-              {loc(
-                lang,
-                "Dr. Feras Ya'ish actively encourages patients to be informed decision-makers. Use this interactive checklist during your consultation at Healthpoint to record key clarifications.",
-                "يشجع الدكتور يعيش اتخاذ القرار المستنير. استخدم هذه القائمة خلال استشارتك في هيلث بوينت.",
-              )}
-            </p>
-            <div className="rounded-xl border border-surface-border bg-white p-5">
-              <h3 className="mb-2 font-headline-sm text-primary">{loc(lang, "Preparation Advice", "نصيحة التحضير")}</h3>
-              <p className="mb-4 text-sm text-text-secondary">
-                {loc(lang, "Check items off as you discuss them. You can print this personalized list ahead of your visit.", "أشّر على البنود أثناء النقاش. يمكنك طباعة قائمتك قبل الزيارة.")}
-              </p>
-              <div className="flex gap-2">
-                <button className="rounded bg-clinical-navy px-4 py-2 text-[12px] font-semibold text-white" type="button" onClick={() => window.print()}>
-                  {loc(lang, "Print Checklist", "اطبع القائمة")}
-                </button>
-                <button className="rounded bg-sand-tint px-4 py-2 text-[12px] font-semibold text-clinical-navy" type="button" onClick={() => setChecked([])}>
-                  {loc(lang, "Reset Selection", "إعادة التحديد")}
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="rounded-xl border border-surface-border bg-white p-6 lg:col-span-7">
-            <div className="mb-4 flex items-center justify-between">
-              <h3 className="font-headline-sm text-primary">{loc(lang, "Consultation Checklist", "قائمة الاستشارة")}</h3>
-              <span className="rounded-full bg-surgical-teal-subtle px-2 py-1 text-[11px] font-bold text-surgical-teal">
-                {lang === "ar" ? `${checked.length} من 6 نوقشت` : `${checked.length} of 6 Discussed`}
-              </span>
-            </div>
-            <ul className="space-y-3">
-              {questions.map((item, index) => {
-                const on = checked.includes(String(index));
-                return (
-                  <li key={item.q}>
-                    <label className="flex cursor-pointer items-start gap-3 rounded-lg bg-sand-tint p-3 text-sm">
-                      <input
-                        type="checkbox"
-                        checked={on}
-                        onChange={() => setChecked((prev) => (on ? prev.filter((x) => x !== String(index)) : [...prev, String(index)]))}
-                        className="mt-0.5"
-                      />
-                      <span>
-                        <span className="block font-semibold text-clinical-navy">{loc(lang, item.q, item.qAr)}</span>
-                        <span className="text-text-secondary">{loc(lang, item.hint, item.hintAr)}</span>
-                      </span>
-                    </label>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </div>
-      </section>
-
       <section className="py-space-3xl">
         <div className="page-wrap">
           <h2 className="mb-8 font-headline-lg text-headline-lg text-primary">
@@ -489,60 +372,6 @@ export function PatientCarePage() {
               </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="bg-sand-tint py-space-3xl" id="insurance-desk">
-        <div className="page-wrap grid items-center gap-space-lg lg:grid-cols-12">
-          <div className="lg:col-span-7">
-            <p className="mb-3 inline-flex rounded-full bg-white px-3 py-1 text-[11px] font-semibold tracking-wider text-clinical-navy uppercase shadow-sm">
-              {loc(lang, "Consultant Trauma & Orthopaedic Practice · Healthpoint, Zayed Sports City", "ممارسة استشارية · هيلث بوينت، مدينة زايد الرياضية")}
-            </p>
-            <h2 className="mb-3 font-headline-lg text-headline-lg text-primary">
-              {loc(lang, "Insurance Coverage & Hospital Access", "التغطية التأمينية ودخول المستشفى")}
-            </h2>
-            <p className="mb-5 text-text-secondary">
-              {loc(
-                lang,
-                "Dr. Feras Ya'ish delivers consultations and surgeries at Healthpoint Hospital Abu Dhabi, accredited by the Joint Commission International (JCI). We work seamlessly with major UAE and international health insurance providers.",
-                "تُقدَّم الاستشارات والجراحات في مستشفى هيلث بوينت أبوظبي المعتمد من اللجنة الدولية المشتركة (JCI). نعمل مع كبرى شركات التأمين الإماراتية والدولية.",
-              )}
-            </p>
-            <p className="mb-3 text-[12px] font-bold tracking-wider text-clinical-navy uppercase">
-              {loc(lang, "Approved Major Insurance Networks:", "شبكات التأمين الرئيسية المعتمدة:")}
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {insurers.map((name) => (
-                <span key={name} className="rounded-lg bg-white px-3 py-1.5 text-[12px] font-semibold text-clinical-navy shadow-sm">
-                  {name}
-                </span>
-              ))}
-            </div>
-            <p className="mt-3 text-sm text-text-secondary">
-              {loc(lang, "*Prior authorization for surgery is managed directly by Healthpoint's insurance clearance desk prior to your scheduled surgical admission date.", "*تُدار الموافقات المسبقة عبر مكتب التأمين في هيلث بوينت قبل موعد القبول الجراحي.")}
-            </p>
-          </div>
-          <aside className="rounded-2xl bg-clinical-navy p-6 text-white lg:col-span-5">
-            <p className="mb-2 text-[11px] tracking-widest text-surgical-teal-light uppercase">
-              {loc(lang, "Patient Concierge Service", "خدمة الكونسيرج للمريض")}
-            </p>
-            <h3 className="mb-4 font-headline-sm">{loc(lang, "Plan Your Hospital Arrival", "خطط لوصولك إلى المستشفى")}</h3>
-            <ul className="mb-5 space-y-3 text-sm text-sand-tint/80">
-              <li>
-                <strong className="text-white">{loc(lang, "Healthpoint Hospital", "مستشفى هيلث بوينت")}</strong>
-                <br />
-                {loc(lang, "Zayed Sports City, Al Rawdah, Abu Dhabi, UAE", "مدينة زايد الرياضية، الروضة، أبوظبي")}
-              </li>
-              <li>
-                <strong className="text-white">{loc(lang, "Complimentary Valet Parking", "صف سيارات مجاني")}</strong>
-                <br />
-                {loc(lang, "Available at the main hospital VIP entrance 24/7. Wheelchair escort available immediately upon curbside arrival.", "متاح عند المدخل التنفيذي على مدار الساعة مع مرافقة كرسي متحرك.")}
-              </li>
-            </ul>
-            <a className="inline-flex rounded bg-surgical-teal px-4 py-2.5 text-[13px] font-semibold" href="tel:80077">
-              {loc(lang, "Call Appointments Desk: 800 77", "اتصل بمكتب المواعيد: 800 77")}
-            </a>
-          </aside>
         </div>
       </section>
 

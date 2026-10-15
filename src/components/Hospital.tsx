@@ -60,10 +60,10 @@ export function Hospital() {
               <p className="mb-space-md font-body-sm leading-relaxed text-text-secondary">{t.address}</p>
               <div className="group relative mb-space-md h-72 overflow-hidden rounded-xl border border-surface-border">
                 <Image
-                  src="/images/practice/surgical-team.jpeg"
-                  alt="Dr Feras Ya'ish with the surgical team"
+                  src="/images/healthpoint-building.jpg"
+                  alt="Healthpoint Hospital, Zayed Sports City, Abu Dhabi"
                   fill
-                  className="object-cover object-[center_28%] transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                   sizes="(min-width: 1024px) 560px, 100vw"
                 />
                 <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-clinical-slate-deep/80 via-clinical-slate-deep/20 to-transparent p-space-sm">

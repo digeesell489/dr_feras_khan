@@ -39,7 +39,19 @@ export function EducationDetail({ item }: { item: EducationItem }) {
           <div className="overflow-hidden rounded-2xl border border-surface-border bg-white lg:col-span-6">
             <div className="relative aspect-video bg-clinical-slate-deep">
               <Image src={item.image} alt={title} fill className="object-cover" sizes="(min-width: 1024px) 560px, 100vw" />
-              {item.kind === "video" ? (
+              {item.kind === "video" && item.videoUrl ? (
+                <a
+                  className="absolute inset-0 flex items-center justify-center bg-clinical-slate-deep/20"
+                  href={item.videoUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={title}
+                >
+                  <span className="flex h-16 w-16 items-center justify-center rounded-full bg-clinical-navy/90 text-surgical-teal-light">
+                    ▶
+                  </span>
+                </a>
+              ) : item.kind === "video" ? (
                 <div className="absolute inset-0 flex items-center justify-center bg-clinical-slate-deep/20">
                   <span className="flex h-16 w-16 items-center justify-center rounded-full bg-clinical-navy/90 text-surgical-teal-light">
                     ▶

@@ -46,6 +46,7 @@ export const conditions: Condition[] = [
       "CT templating when arthroplasty or dysplasia is being considered",
     ],
     treatments: [
+      { href: "/treatments/hip-replacement", label: "Hip Replacement" },
       { href: "/treatments/robotic-arthroplasty", label: "Robotic Joint Replacement" },
       { href: "/treatments/revision-surgery", label: "Revision Hip & Knee Surgery" },
       { href: "/patient-care", label: "Care & recovery pathway" },
@@ -182,6 +183,7 @@ export const conditions: Condition[] = [
     treatments: [
       { href: "/treatments/arthroscopy", label: "Knee Arthroscopy" },
       { href: "/treatments/ligament-reconstruction", label: "Knee Ligament Reconstruction" },
+      { href: "/treatments/patellofemoral-instability", label: "Patellofemoral Instability Surgery" },
       { href: "/patient-care", label: "Rehabilitation milestones" },
       { href: "/treatments/partial-knee", label: "Partial knee if arthritis coexists" },
     ],

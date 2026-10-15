@@ -7,6 +7,7 @@ import { HomeCta } from "@/components/HomeCta";
 import { Hospital } from "@/components/Hospital";
 import { PatientEducation } from "@/components/PatientEducation";
 import { SiteShell } from "@/components/SiteShell";
+import { showCaseExamples } from "@/lib/visibility";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
         <Hero />
         <Approach />
         <Excellence />
-        <ComplexCentre />
+        {showCaseExamples ? <ComplexCentre /> : null}
         <PatientEducation />
         <Hospital />
         <FAQ />

@@ -6,6 +6,7 @@ import { CountUp } from "@/components/CountUp";
 import { CtaBand } from "@/components/CtaBand";
 import { ExternalArrow } from "@/components/ui/Icons";
 import { useLanguage } from "@/lib/language";
+import { HEALTHPOINT_APPOINTMENT } from "@/lib/links";
 import { loc } from "@/lib/loc";
 
 const stats = [
@@ -198,8 +199,8 @@ export function AboutPage() {
               ))}
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a className="inline-flex items-center gap-2 rounded bg-white px-5 py-2.5 text-[13px] font-semibold text-clinical-navy" href="tel:80077">
-                {t.book} · 800 77
+              <a className="inline-flex items-center gap-2 rounded bg-white px-5 py-2.5 text-[13px] font-semibold text-clinical-navy" href={HEALTHPOINT_APPOINTMENT}>
+                {t.book}
               </a>
               <Link className="inline-flex items-center gap-2 rounded border border-white/25 px-5 py-2.5 text-[13px] font-semibold text-white" href="#surgical-philosophy">
                 {loc(lang, "Clinical Methodology", "المنهجية السريرية")}
@@ -313,7 +314,6 @@ export function AboutPage() {
                 altAr: "الدكتور فراس يعيش يدرّس دورة AO Recon لاستبدال الورك والركبة",
                 caption: "AO Recon faculty",
                 captionAr: "هيئة AO Recon",
-                position: "object-top",
               },
               {
                 src: "/images/practice/teaching-sawbone.jpeg",
@@ -321,7 +321,6 @@ export function AboutPage() {
                 altAr: "الدكتور فراس يعيش يدرّس إعادة بناء الركبة على نموذج جراحي",
                 caption: "Hands-on instruction",
                 captionAr: "تدريب عملي",
-                position: "object-top",
               },
               {
                 src: "/images/practice/lecture-icjr.jpeg",
@@ -329,11 +328,10 @@ export function AboutPage() {
                 altAr: "الدكتور فراس يعيش يتحدث في المؤتمر الدولي لإعادة بناء المفاصل في الشرق الأوسط",
                 caption: "ICJR Middle East",
                 captionAr: "ICJR الشرق الأوسط",
-                position: "object-center",
               },
             ].map((photo) => (
               <figure key={photo.src} className="overflow-hidden rounded-xl border border-white/10 bg-white/5">
-                <Image src={photo.src} alt={loc(lang, photo.alt, photo.altAr)} width={1200} height={800} className={`h-52 w-full object-cover ${photo.position}`} />
+                <Image src={photo.src} alt={loc(lang, photo.alt, photo.altAr)} width={1200} height={800} className="aspect-[4/3] w-full bg-clinical-slate-deep/30 object-contain object-center" />
                 <figcaption className="px-3 py-2 text-[12px] text-sand-tint/80">{loc(lang, photo.caption, photo.captionAr)}</figcaption>
               </figure>
             ))}
