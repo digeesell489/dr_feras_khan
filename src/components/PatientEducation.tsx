@@ -81,7 +81,7 @@ export function PatientEducation() {
 
   return (
     <section
-      className="relative w-full border-b border-surface-border bg-sand-tint/60 py-space-3xl lg:py-space-4xl"
+      className="cv-auto relative w-full border-b border-surface-border bg-sand-tint/60 py-space-3xl lg:py-space-4xl"
       id="patient-education"
     >
       <div className="page-wrap">

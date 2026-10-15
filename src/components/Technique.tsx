@@ -10,7 +10,7 @@ export function Technique() {
       <div className="relative mx-auto mt-10 w-full max-w-[760px] md:mt-14">
         <div className="relative aspect-square w-full">
           <Image
-            src="/images/knee-orb.png"
+            src="/images/knee-orb.webp"
             alt="Three-dimensional anatomical model of a knee joint"
             fill
             className="object-contain"

@@ -33,7 +33,7 @@ export const treatments: Treatment[] = [
     title: "Total Knee Replacement",
     short: "Total Knee Replacement",
     shortAr: "استبدال الركبة الكامل",
-    image: "/images/implant-knee.png",
+    image: "/images/implant-knee.webp",
     imageAlt: "Precision Total Knee Replacement Implant",
     category: "knee",
     summary:
@@ -237,7 +237,7 @@ export const treatments: Treatment[] = [
     title: "Knee Ligament Reconstruction, including ACL",
     short: "Knee Ligament Reconstruction",
     shortAr: "إعادة بناء أربطة الركبة",
-    image: "/images/knee-mechanics.png",
+    image: "/images/knee-mechanics.webp",
     imageAlt: "Knee ligament anatomy including the ACL",
     category: "sports",
     summary:
@@ -266,7 +266,7 @@ export const treatments: Treatment[] = [
     title: "Patellofemoral Instability Surgery",
     short: "Patellofemoral Instability Surgery",
     shortAr: "جراحة عدم استقرار الرضفة",
-    image: "/images/knee-mechanics.png",
+    image: "/images/knee-mechanics.webp",
     imageAlt: "Knee anatomy showing the structures that guide the kneecap",
     category: "sports",
     summary:

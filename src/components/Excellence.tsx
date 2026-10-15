@@ -14,7 +14,7 @@ export function Excellence() {
 
   return (
     <section
-      className="relative w-full border-t border-surface-border bg-sand-tint/60 py-space-3xl lg:py-space-4xl"
+      className="cv-auto relative w-full border-t border-surface-border bg-sand-tint/60 py-space-3xl lg:py-space-4xl"
       id="specialties"
     >
       <div className="page-wrap">
@@ -29,7 +29,7 @@ export function Excellence() {
 
         <div className="glass-card-light mb-space-2xl overflow-hidden rounded-2xl border border-white/80 p-space-md shadow-sm">
           <div className="grid grid-cols-1 items-center gap-space-lg lg:grid-cols-12">
-            <div className="relative aspect-video overflow-hidden rounded-xl border border-surface-border bg-clinical-slate-deep lg:col-span-7">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-surface-border bg-clinical-slate-deep lg:col-span-7 lg:aspect-video">
               <Image
                 src={orRobotPortrait.src}
                 alt={lang === "ar" ? orRobotPortrait.altAr : orRobotPortrait.alt}
@@ -39,7 +39,7 @@ export function Excellence() {
                 sizes="(min-width: 1024px) 700px, 100vw"
                 className="absolute inset-0 h-full w-full object-cover object-center"
               />
-              <div className="absolute top-3 start-3 rounded border border-white/10 bg-clinical-slate-deep/80 px-2 py-1 font-mono text-[11px] text-surgical-teal-light backdrop-blur-md">
+              <div className="absolute top-3 start-3 max-w-[calc(100%-1.5rem)] rounded border border-white/10 bg-clinical-slate-deep/80 px-2 py-1 font-mono text-[10px] leading-snug text-surgical-teal-light backdrop-blur-md sm:text-[11px]">
                 {t.ligamentOverlay}
               </div>
             </div>

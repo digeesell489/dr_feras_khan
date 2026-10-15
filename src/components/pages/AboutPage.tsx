@@ -212,7 +212,7 @@ export function AboutPage() {
             <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
               <div className="relative aspect-[4/5] bg-gradient-to-b from-sand-tint to-surface-container">
                 <Image
-                  src="/images/doctor-hero-card.png"
+                  src="/images/doctor-hero-card.webp"
                   alt="Dr. Feras Ya'ish"
                   fill
                   className="object-cover object-top"
@@ -309,21 +309,21 @@ export function AboutPage() {
           <div className="mb-8 grid gap-4 md:grid-cols-3">
             {[
               {
-                src: "/images/practice/lecture-ao-recon.jpeg",
+                src: "/images/practice/lecture-ao-recon.webp",
                 alt: "Dr Feras Ya'ish teaching an AO Recon course on hip and knee arthroplasty",
                 altAr: "الدكتور فراس يعيش يدرّس دورة AO Recon لاستبدال الورك والركبة",
                 caption: "AO Recon faculty",
                 captionAr: "هيئة AO Recon",
               },
               {
-                src: "/images/practice/teaching-sawbone.jpeg",
+                src: "/images/practice/teaching-sawbone.webp",
                 alt: "Dr Feras Ya'ish teaching knee reconstruction on a surgical model",
                 altAr: "الدكتور فراس يعيش يدرّس إعادة بناء الركبة على نموذج جراحي",
                 caption: "Hands-on instruction",
                 captionAr: "تدريب عملي",
               },
               {
-                src: "/images/practice/lecture-icjr.jpeg",
+                src: "/images/practice/lecture-icjr.webp",
                 alt: "Dr Feras Ya'ish speaking at the International Congress for Joint Reconstruction, Middle East",
                 altAr: "الدكتور فراس يعيش يتحدث في المؤتمر الدولي لإعادة بناء المفاصل في الشرق الأوسط",
                 caption: "ICJR Middle East",
@@ -455,7 +455,7 @@ export function AboutPage() {
           </div>
           <div className="relative overflow-hidden rounded-2xl lg:col-span-6">
             <Image
-              src="/images/clinical/or-robot-portrait.jpeg"
+              src="/images/clinical/or-robot-portrait.webp"
               alt="Dr Feras Ya'ish beside the Stryker Mako robotic arm in theatre"
               width={2048}
               height={1536}

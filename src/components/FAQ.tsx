@@ -11,7 +11,7 @@ export function FAQ() {
 
   return (
     <section
-      className="relative w-full border-t border-surface-border bg-sand-tint/50 py-space-3xl lg:py-space-4xl"
+      className="cv-auto relative w-full border-t border-surface-border bg-sand-tint/50 py-space-3xl lg:py-space-4xl"
       id="faq"
     >
       <div className="page-wrap">

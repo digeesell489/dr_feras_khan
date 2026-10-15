@@ -79,7 +79,7 @@ export const specialties = {
   },
   cards: [
     {
-      image: "/images/implant-knee.png",
+      image: "/images/implant-knee.webp",
       href: "/treatments/knee-replacement",
       category: "Arthroplasty",
       categoryAr: "استبدال المفصل",
@@ -180,7 +180,7 @@ export const specialties = {
       bodyAr: "تقييم بثقب المفتاح والحفاظ على الهلالة أو غضروف الركبة.",
     },
     {
-      image: "/images/knee-mechanics.png",
+      image: "/images/knee-mechanics.webp",
       href: "/treatments/ligament-reconstruction",
       category: "Knee Sports Injuries",
       categoryAr: "إصابات الركبة الرياضية",

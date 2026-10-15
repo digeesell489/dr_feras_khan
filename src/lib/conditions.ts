@@ -59,7 +59,7 @@ export const conditions: Condition[] = [
     title: "Knee Osteoarthritis",
     short: "Knee Osteoarthritis",
     shortAr: "خشونة الركبة",
-    image: "/images/implant-knee.png",
+    image: "/images/implant-knee.webp",
     summary:
       "Compartmental wear of the knee may affect the medial, lateral, or patellofemoral surfaces. Treatment ranges from activity modification and injections to partial or kinematically aligned total knee replacement, with robotic assistance when precision alignment is required.",
     symptoms: [
@@ -86,7 +86,7 @@ export const conditions: Condition[] = [
     title: "Avascular Necrosis of the Femoral Head",
     short: "Avascular Necrosis",
     shortAr: "نخر رأس الفخذ",
-    image: "/images/hip-anatomy.png",
+    image: "/images/hip-anatomy.webp",
     summary:
       "Avascular necrosis (osteonecrosis) interrupts blood supply to the femoral head. Collapse of the head leads to secondary arthritis. Early stages may be observed or decompressed; established collapse is typically treated with total hip reconstruction planned to the patient's anatomy.",
     symptoms: [
@@ -112,7 +112,7 @@ export const conditions: Condition[] = [
     title: "Hip Dysplasia & Structural Impingement",
     short: "Hip Dysplasia",
     shortAr: "خلل تنسج الورك",
-    image: "/images/hip-anatomy.png",
+    image: "/images/hip-anatomy.webp",
     summary:
       "Acetabular dysplasia and femoroacetabular impingement alter load across the hip from a young age. Some patients present with groin stiffness and early arthritis. Reconstruction must restore coverage and offset; replacement, when required, is planned to the patient's anatomy rather than a generic cup position.",
     symptoms: [
@@ -166,7 +166,7 @@ export const conditions: Condition[] = [
     title: "Knee Sports Injuries & Instability",
     short: "Knee Sports Injuries",
     shortAr: "إصابات الركبة الرياضية",
-    image: "/images/knee-mechanics.png",
+    image: "/images/knee-mechanics.webp",
     summary:
       "ACL rupture, meniscal tears, ramp lesions, and multi-ligament injury are treated with anatomical arthroscopic reconstruction and repair-first meniscal surgery. The goal is a stable, proprioceptive knee for sport and daily prayer or work demands.",
     symptoms: [

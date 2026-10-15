@@ -227,7 +227,7 @@ export function PatientCarePage() {
           <article className="mb-10 overflow-hidden rounded-xl border border-surface-border bg-white" id="pathway-dayof">
             <div className="grid lg:grid-cols-12">
               <div className="relative min-h-[320px] lg:col-span-6">
-                <Image src="/images/education-or.png" alt="Ultra-clean laminar air flow theatres at Healthpoint" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
+                <Image src="/images/education-or.webp" alt="Ultra-clean laminar air flow theatres at Healthpoint" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
                 <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-clinical-slate-deep/80 via-transparent to-transparent p-6 text-white">
                   <p className="text-[11px] font-bold tracking-wider text-surgical-teal-light uppercase">
                     {loc(lang, "Ultra-Clean Laminar Air Flow Theatres", "غرف عمليات بتدفق هوائي صفحي فائق النظافة")}

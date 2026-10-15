@@ -20,7 +20,7 @@ export type CaseExample = {
 export const caseExamples: CaseExample[] = [
   {
     slug: "robotic-total-knee",
-    image: "/images/clinical/or-robot-portrait.jpeg",
+    image: "/images/clinical/or-robot-portrait.webp",
     code: "CASE #R-2024-KNEE",
     tags: ["Primary Arthroplasty", "Kinematic Alignment", "Haptic Navigation"],
     tagsAr: ["استبدال أولي", "محاذاة حركية", "ملاحة لمسية"],
@@ -49,7 +49,7 @@ export const caseExamples: CaseExample[] = [
   },
   {
     slug: "revision-hip",
-    image: "/images/clinical/hip-replacement-xray.png",
+    image: "/images/clinical/hip-replacement-xray.webp",
     imageClassName: "object-contain object-center",
     code: "CASE #REV-2023-HIP",
     tags: ["Revision Arthroplasty", "Trabecular Metal Augments", "Bone Loss"],
@@ -79,7 +79,7 @@ export const caseExamples: CaseExample[] = [
   },
   {
     slug: "periprosthetic-fracture",
-    image: "/images/clinical/trauma-malunion-xray.png",
+    image: "/images/clinical/trauma-malunion-xray.webp",
     imageClassName: "object-contain object-center",
     code: "CASE #TR-2024-FEMUR",
     tags: ["Trauma & Malunion", "Locking Plate Fixation", "Minimally Invasive MIPO"],
@@ -109,7 +109,7 @@ export const caseExamples: CaseExample[] = [
   },
   {
     slug: "partial-knee",
-    image: "/images/clinical/partial-knee-compartments.png",
+    image: "/images/clinical/partial-knee-compartments.webp",
     imageClassName: "object-contain object-center",
     code: "CASE #UKA-2024-MED",
     tags: ["Joint Preservation", "Unicompartmental", "Cruciate-Retaining"],
@@ -139,7 +139,7 @@ export const caseExamples: CaseExample[] = [
   },
   {
     slug: "acl-reconstruction",
-    image: "/images/knee-mechanics.png",
+    image: "/images/knee-mechanics.webp",
     code: "CASE #ACL-2024-KNEE",
     tags: ["Knee Sports Injuries", "ACL", "Anatomical Reconstruction"],
     tagsAr: ["إصابات الركبة الرياضية", "الرباط المتصالب الأمامي", "إعادة بناء تشريحي"],
@@ -168,7 +168,7 @@ export const caseExamples: CaseExample[] = [
   },
   {
     slug: "knee-arthroscopy",
-    image: "/images/clinical/knee-arthroscopy.png",
+    image: "/images/clinical/knee-arthroscopy.webp",
     imageClassName: "object-cover object-top",
     code: "CASE #SCOPE-2024-MEN",
     tags: ["Knee Arthroscopy", "Meniscal Repair", "Keyhole Surgery"],
@@ -198,7 +198,7 @@ export const caseExamples: CaseExample[] = [
   },
   {
     slug: "revision-knee",
-    image: "/images/clinical/revision-knee-xray.png",
+    image: "/images/clinical/revision-knee-xray.webp",
     imageClassName: "object-contain object-center",
     code: "CASE #REV-2024-KNEE",
     tags: ["Revision Arthroplasty", "Instability", "Joint-Line Restoration"],
@@ -228,7 +228,7 @@ export const caseExamples: CaseExample[] = [
   },
   {
     slug: "malunion-reconstruction",
-    image: "/images/clinical/trauma-malunion-xray.png",
+    image: "/images/clinical/trauma-malunion-xray.webp",
     imageClassName: "object-contain object-center",
     code: "CASE #MAL-2023-TIB",
     tags: ["Trauma & Malunion", "Corrective Osteotomy", "Axis Restoration"],

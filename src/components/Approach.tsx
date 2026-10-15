@@ -8,7 +8,7 @@ export function Approach() {
   const { lang, t } = useLanguage();
 
   return (
-    <section className="relative w-full bg-alabaster-warm py-space-3xl lg:py-space-4xl" id="holistic-approach">
+    <section className="cv-auto relative w-full bg-alabaster-warm py-space-3xl lg:py-space-4xl" id="holistic-approach">
       <div className="page-wrap">
         <div className="mx-auto mb-space-2xl max-w-max-width-editorial text-center">
           <Badge>

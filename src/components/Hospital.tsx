@@ -12,7 +12,7 @@ export function Hospital() {
   const { lang, t } = useLanguage();
 
   return (
-    <section className="relative w-full bg-alabaster-warm py-space-3xl lg:py-space-4xl" id="clinic-hours">
+    <section className="cv-auto relative w-full bg-alabaster-warm py-space-3xl lg:py-space-4xl" id="clinic-hours">
       <div className="page-wrap">
         <div className="mx-auto mb-space-2xl max-w-max-width-editorial text-center">
           <Badge tone="sand">

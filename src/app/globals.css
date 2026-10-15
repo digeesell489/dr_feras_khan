@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+
+@font-face {
+  font-family: "Material Symbols Outlined";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/material-symbols-outlined.woff2") format("woff2");
+}
+
 @theme inline {
   --color-secondary-fixed: #89f5e7;
   --color-outline: #74777f;
@@ -153,7 +162,13 @@ html[dir="rtl"] .font-serif {
   word-wrap: normal;
   direction: ltr;
   font-feature-settings: "liga";
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
   -webkit-font-smoothing: antialiased;
+}
+
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 720px;
 }
 
 .glass-card-light {

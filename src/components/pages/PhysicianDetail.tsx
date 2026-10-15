@@ -156,13 +156,13 @@ function FacultyBody({ image }: { image: string }) {
               position: "object-top",
             },
             {
-              src: "/images/practice/teaching-workshop.jpeg",
+              src: "/images/practice/teaching-workshop.webp",
               alt: "Surgeons gathered around a knee model during an AO reconstruction workshop",
               altAr: "جرّاحون حول نموذج ركبة في ورشة إعادة بناء تابعة لـ AO",
               position: "object-center",
             },
             {
-              src: "/images/practice/faculty-ao-sharjah.jpeg",
+              src: "/images/practice/faculty-ao-sharjah.webp",
               alt: "AO Recon faculty at the University of Sharjah clinical training centre",
               altAr: "هيئة AO Recon في مركز التدريب السريري بجامعة الشارقة",
               position: "object-center",

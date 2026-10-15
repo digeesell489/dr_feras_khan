@@ -17,7 +17,7 @@ export const physicianPages: PhysicianPage[] = [
     eyebrow: "Standardized transfer pathways",
     summary:
       "Streamlined inter-hospital transfer from public, private, and military facilities across Abu Dhabi, Dubai, and the Northern Emirates — for periprosthetic fracture, vascular compromise, and acute joint sepsis.",
-    image: "/images/implant-trauma.png",
+    image: "/images/implant-trauma.webp",
   },
   {
     slug: "ao-recon-faculty",
@@ -27,7 +27,7 @@ export const physicianPages: PhysicianPage[] = [
     eyebrow: "Academic rigour & surgical education",
     summary:
       "Accredited CME, cadaveric arthroplasty courses, and interactive tertiary case panels convened by Dr. Feras Ya'ish across the Middle East, plus a visiting surgeon observer programme.",
-    image: "/images/practice/lecture-ao-recon.jpeg",
+    image: "/images/practice/lecture-ao-recon.webp",
   },
   {
     slug: "case-submission",
@@ -37,7 +37,7 @@ export const physicianPages: PhysicianPage[] = [
     eyebrow: "Direct transmission",
     summary:
       "Submit diagnostic data, pathology workup, and imaging links for evaluation by Dr. Ya'ish. Records are handled under UAE Federal Law No. 2 of 2019 and DoH Malaffi standards.",
-    image: "/images/implant-revision.png",
+    image: "/images/implant-revision.webp",
   },
 ];
 

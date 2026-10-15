@@ -5,20 +5,23 @@ import "./globals.css";
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
+  preload: false,
 });
 
 const cairo = Cairo({
   variable: "--font-cairo",
   subsets: ["arabic", "latin"],
   weight: ["400", "600", "700"],
+  preload: false,
 });
 
 const newsreader = Newsreader({
   variable: "--font-newsreader",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["500", "400", "600"],
   style: ["normal", "italic"],
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -43,12 +46,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${jakarta.variable} ${newsreader.variable} ${cairo.variable} scroll-smooth antialiased`}
     >
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body className="bg-alabaster-warm font-body-md text-body-md text-on-surface">
         {children}
       </body>

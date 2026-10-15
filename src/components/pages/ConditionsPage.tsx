@@ -251,7 +251,7 @@ export function ConditionsPage() {
           </div>
           <div className="relative overflow-hidden rounded-xl bg-clinical-navy shadow-xl lg:col-span-5">
             <Image
-              src="/images/education-or.png"
+              src="/images/education-or.webp"
               alt={loc(lang, "Consultant orthopaedic practice", "ممارسة استشارية لجراحة العظام")}
               width={900}
               height={640}

@@ -71,18 +71,22 @@ export function ClockIcon({ className = "h-5 w-5" }: { className?: string }) {
 export function LogoMark({
   className = "h-10 w-auto",
   variant = "full",
+  loading = "eager",
 }: {
   className?: string;
   variant?: "full" | "onDark";
+  loading?: "eager" | "lazy";
 }) {
   const onDark = variant === "onDark";
 
   return (
     <img
-      src={onDark ? "/images/fy-ortho-logo-footer.png" : "/images/fy-ortho-logo.png"}
+      src={onDark ? "/images/fy-ortho-logo-footer.webp" : "/images/fy-ortho-logo.webp"}
       alt="Dr. Feras Ya'ish Ortho — Hip & Knee Surgery"
       width={722}
       height={192}
+      loading={loading}
+      fetchPriority="low"
       className={className}
     />
   );

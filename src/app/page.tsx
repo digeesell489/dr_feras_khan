@@ -12,7 +12,7 @@ import { showCaseExamples } from "@/lib/visibility";
 export default function Home() {
   return (
     <SiteShell>
-      <div className="flex w-full flex-col overflow-hidden">
+      <div className="flex w-full flex-col overflow-x-clip">
         <Hero />
         <Approach />
         <Excellence />

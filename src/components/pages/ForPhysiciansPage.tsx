@@ -125,9 +125,9 @@ export function ForPhysiciansPage() {
           </div>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {[
-              { img: "/images/implant-revision.png", cap: "Revision arthroplasty stems", capAr: "سيقان استبدال المراجعة" },
-              { img: "/images/trabecular-titanium.png", cap: "Trabecular osseointegration", capAr: "اندماج عظمي تربيقي" },
-              { img: "/images/implant-trauma.png", cap: "Periprosthetic cable plating", capAr: "صفائح وكابلات حول الزرعة" },
+              { img: "/images/implant-revision.webp", cap: "Revision arthroplasty stems", capAr: "سيقان استبدال المراجعة" },
+              { img: "/images/trabecular-titanium.webp", cap: "Trabecular osseointegration", capAr: "اندماج عظمي تربيقي" },
+              { img: "/images/implant-trauma.webp", cap: "Periprosthetic cable plating", capAr: "صفائح وكابلات حول الزرعة" },
             ].map((item) => (
               <figure key={item.cap} className="overflow-hidden rounded-xl border border-surface-border bg-white">
                 <Image src={item.img} alt={loc(lang, item.cap, item.capAr)} width={640} height={420} className="h-40 w-full object-cover" />
@@ -268,13 +268,13 @@ export function ForPhysiciansPage() {
                 position: "object-center",
               },
               {
-                src: "/images/practice/teaching-sawbone.jpeg",
+                src: "/images/practice/teaching-sawbone.webp",
                 alt: "Dr Feras Ya'ish teaching knee reconstruction on a surgical model",
                 altAr: "الدكتور فراس يعيش يدرّس إعادة بناء الركبة على نموذج جراحي",
                 position: "object-top",
               },
               {
-                src: "/images/practice/faculty-ao-sharjah.jpeg",
+                src: "/images/practice/faculty-ao-sharjah.webp",
                 alt: "AO Recon faculty at a joint preservation and replacement course",
                 altAr: "هيئة AO Recon في دورة الحفاظ على المفصل واستبداله",
                 position: "object-center",

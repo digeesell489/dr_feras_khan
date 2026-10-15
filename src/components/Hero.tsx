@@ -70,11 +70,12 @@ export function Hero() {
               <div className="glass-card-light relative w-full overflow-hidden rounded-2xl border border-white/80 p-space-xs shadow-[0_16px_48px_rgba(15,32,39,0.12)]">
                 <div className="relative flex items-end justify-center overflow-hidden rounded-xl bg-clinical-slate-deep">
                   <Image
-                    src="/images/doctor-cutout.png"
+                    src="/images/doctor-cutout.webp"
                     alt="Dr. Feras Ya'ish"
                     width={420}
                     height={560}
-                    priority
+                    preload
+                    fetchPriority="high"
                     className="aspect-[4/5] w-full object-contain object-bottom transition-transform duration-500 hover:scale-[1.03]"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-clinical-slate-deep/80 via-transparent to-transparent" />
@@ -89,7 +90,7 @@ export function Hero() {
         </div>
       </section>
 
-      <section className="relative w-full border-y border-surface-border bg-sand-tint/70 py-space-lg">
+      <section className="cv-auto relative w-full border-y border-surface-border bg-sand-tint/70 py-space-lg">
         <div className="page-wrap">
           <div className="grid grid-cols-1 gap-space-md sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((item) => (

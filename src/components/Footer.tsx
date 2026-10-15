@@ -19,7 +19,7 @@ export function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className="relative w-full overflow-hidden bg-clinical-slate-deep text-sand-tint" id="footer">
+    <footer className="cv-auto relative w-full overflow-hidden bg-clinical-slate-deep text-sand-tint" id="footer">
       <div className="pointer-events-none absolute inset-0 bg-grid-pattern opacity-40" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-clinical-gold-honorary to-transparent" />
 
@@ -50,7 +50,7 @@ export function Footer() {
           <div className="flex flex-col gap-4 lg:col-span-3">
             <div className="flex flex-col items-start gap-3">
               <Link href="/">
-                <LogoMark variant="onDark" className="h-16 w-auto" />
+                <LogoMark variant="onDark" loading="lazy" className="h-16 w-auto" />
               </Link>
               <p className="text-[11px] leading-relaxed tracking-wide text-sand-tint/60">
                 MBBS · MRCS · FRCS (Tr &amp; Orth) · CCT (UK)

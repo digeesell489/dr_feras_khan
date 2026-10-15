@@ -9,7 +9,7 @@ export function HomeCta() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative w-full overflow-hidden bg-clinical-navy py-space-2xl text-on-primary">
+    <section className="cv-auto relative w-full overflow-hidden bg-clinical-navy py-space-2xl text-on-primary">
       <div className="page-wrap relative z-10 flex flex-col items-start justify-between gap-space-lg lg:flex-row lg:items-center">
         <div className="min-w-0 max-w-xl">
           <span className="mb-1 block font-mono text-xs tracking-widest text-surgical-teal-light uppercase">
