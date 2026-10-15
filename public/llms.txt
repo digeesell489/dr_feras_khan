@@ -1,0 +1,11 @@
+# Dr. Feras Ya'ish
+
+UK-trained consultant orthopaedic and trauma surgeon at Healthpoint Hospital, Abu Dhabi. This site describes his practice, treatments, and how to arrange a consultation.
+
+- [Home](/)
+- [Treatments](/treatments)
+- [Conditions](/conditions)
+- [Patient care](/patient-care)
+- [Contact](/contact)
+- [Request an appointment](https://healthpoint.ae/request-appointment/)
+- [Doctor profile](https://healthpoint.ae/our-doctors/dr-feras-ya-ish/)

@@ -28,16 +28,6 @@ export const metadata: Metadata = {
   title: "Dr. Feras Ya'ish | Consultant Orthopaedic Surgeon, Abu Dhabi",
   description:
     "UK-trained consultant orthopaedic and trauma surgeon in Abu Dhabi. Specialist in robotic-assisted and patient-specific joint replacement, complex revision hip and knee surgery, and advanced knee ligament reconstruction.",
-  robots: {
-    index: false,
-    follow: false,
-    nocache: true,
-    googleBot: {
-      index: false,
-      follow: false,
-      noimageindex: true,
-    },
-  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

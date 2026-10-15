@@ -1,0 +1,17 @@
+{
+  "specVersion": "1.0",
+  "entries": [
+    {
+      "identifier": "urn:air:dr-feras-yaish:practice",
+      "displayName": "Dr. Feras Ya'ish practice guide",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "description": "Practice guide for Dr. Feras Ya'ish, consultant orthopaedic and trauma surgeon at Healthpoint Hospital, Abu Dhabi.",
+      "url": "https://healthpoint.ae/our-doctors/dr-feras-ya-ish/",
+      "representativeQueries": [
+        "How do I book an appointment with Dr. Feras Ya'ish?",
+        "What joint replacement treatments does Dr. Ya'ish offer?",
+        "Where is the clinic and what are the consultation hours?"
+      ]
+    }
+  ]
+}
