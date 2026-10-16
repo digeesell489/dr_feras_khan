@@ -307,30 +307,6 @@ export function Header() {
                 )}
               </div>
             ))}
-            <div className="mt-5 grid grid-cols-3 gap-2">
-              <a
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 py-2.5 text-[13px] font-semibold"
-                href="tel:80077"
-              >
-                <CallIcon className="h-4 w-4" />
-                {t.call}
-              </a>
-              <a
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#25D366]/40 py-2.5 text-[13px] font-semibold text-[#25D366]"
-                href={whatsappHref(t.whatsappMessage)}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <WhatsAppIcon className="h-4 w-4" />
-                {t.whatsapp}
-              </a>
-              <BookButton
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-surgical-teal py-2.5 text-[13px] font-semibold text-white"
-                onClick={() => setOpen(false)}
-              >
-                {t.bookNow}
-              </BookButton>
-            </div>
           </nav>
         </div>
       ) : null}

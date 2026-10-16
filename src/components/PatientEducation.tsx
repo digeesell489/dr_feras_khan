@@ -108,7 +108,7 @@ export function PatientEducation() {
                 src={featured.image}
                 alt={lang === "ar" ? featured.titleAr : featured.title}
                 fill
-                className="object-cover opacity-60"
+                className="object-cover"
                 sizes="(min-width: 1024px) 700px, 100vw"
               />
               {featured.duration ? (
@@ -140,7 +140,7 @@ export function PatientEducation() {
               const cardBody = (
                 <>
                   <span className="relative flex h-20 w-24 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-slate-900">
-                    <Image src={item.image} alt="" fill className="object-cover opacity-60" sizes="96px" />
+                    <Image src={item.image} alt="" fill className="object-cover" sizes="96px" />
                     <Icon name="play_circle" className="absolute text-[24px] text-surgical-teal-light" />
                     {item.duration ? (
                       <span className="absolute end-1 bottom-1 rounded bg-black/60 px-1 font-mono text-[9px] text-white">
