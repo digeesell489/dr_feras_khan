@@ -3,20 +3,22 @@
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { CloseIcon } from "@/components/ui/Icons";
-import { eventPhotos } from "@/lib/events";
+import { eventGalleries } from "@/lib/events";
 import { useLanguage } from "@/lib/language";
 
 export function EventsPage() {
   const { lang } = useLanguage();
+  const [tab, setTab] = useState(0);
   const [open, setOpen] = useState<number | null>(null);
+  const photos = eventGalleries[tab].photos;
 
   const showPrev = useCallback(() => {
-    setOpen((current) => (current === null ? current : (current - 1 + eventPhotos.length) % eventPhotos.length));
-  }, []);
+    setOpen((current) => (current === null ? current : (current - 1 + photos.length) % photos.length));
+  }, [photos.length]);
 
   const showNext = useCallback(() => {
-    setOpen((current) => (current === null ? current : (current + 1) % eventPhotos.length));
-  }, []);
+    setOpen((current) => (current === null ? current : (current + 1) % photos.length));
+  }, [photos.length]);
 
   useEffect(() => {
     if (open === null) return;
@@ -41,36 +43,67 @@ export function EventsPage() {
             {lang === "ar" ? "الدكتور فراس يعيش" : "Dr. Feras Ya'ish"}
           </p>
           <h1 className="font-headline-hero text-[2.25rem] leading-tight lg:text-[3rem]">
-            {lang === "ar" ? "صور الفعاليات" : "Event Image"}
+            {lang === "ar" ? "صور الفعاليات" : "Event Images"}
           </h1>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-sand-tint/75">
             {lang === "ar"
-              ? "صور المحاضرات والدورات وورش العمل في جراحة المفاصل، من هيئة AO Recon والمؤتمرات وغرف العمليات."
-              : "Photographs from lectures, courses, and workshops in joint surgery, from AO Recon faculty meetings to the operating theatre."}
+              ? "صور المحاضرات والدورات وورش العمل. مرّر المؤشر على الصورة ليظهر اسم الفعالية، وانقر للتكبير."
+              : "Photographs from lectures, courses, and workshops. Hover a photo to see the event name, and click to enlarge it."}
           </p>
         </div>
       </section>
 
       <section className="bg-sand-tint/60 py-space-3xl">
         <div className="page-wrap">
+          <div className="mb-6 flex flex-wrap gap-2" role="tablist">
+            {eventGalleries.map((gallery, galleryIndex) => {
+              const selected = galleryIndex === tab;
+              return (
+                <button
+                  key={gallery.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={selected}
+                  onClick={() => {
+                    setTab(galleryIndex);
+                    setOpen(null);
+                  }}
+                  className={`rounded-full px-4 py-2 text-sm transition ${
+                    selected
+                      ? "bg-clinical-navy text-white"
+                      : "border border-clinical-navy/15 bg-white text-clinical-navy hover:border-clinical-navy/40"
+                  }`}
+                >
+                  {lang === "ar" ? gallery.labelAr : gallery.label}
+                </button>
+              );
+            })}
+          </div>
+
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {eventPhotos.map((item, itemIndex) => (
-              <button
-                key={item.image}
-                type="button"
-                onClick={() => setOpen(itemIndex)}
-                className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-white/80 bg-surface-container text-start"
-                aria-label={lang === "ar" ? item.altAr : item.alt}
-              >
-                <Image
-                  src={item.image}
-                  alt=""
-                  fill
-                  className={item.fit}
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                />
-              </button>
-            ))}
+            {photos.map((item, itemIndex) => {
+              const name = lang === "ar" ? item.altAr : item.alt;
+              return (
+                <button
+                  key={item.image}
+                  type="button"
+                  onClick={() => setOpen(itemIndex)}
+                  className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-white/80 bg-white text-start"
+                  aria-label={name}
+                >
+                  <Image
+                    src={item.image}
+                    alt=""
+                    fill
+                    className="object-contain object-center"
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  />
+                  <span className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-clinical-navy/90 via-clinical-navy/55 to-transparent px-3 pt-10 pb-3 text-sm leading-snug text-white opacity-100 transition sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-visible:opacity-100">
+                    {name}
+                  </span>
+                </button>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -80,7 +113,7 @@ export function EventsPage() {
           className="fixed inset-0 z-[100] flex items-center justify-center bg-clinical-slate-deep/92 p-4 sm:p-8"
           role="dialog"
           aria-modal="true"
-          aria-label={lang === "ar" ? eventPhotos[open].altAr : eventPhotos[open].alt}
+          aria-label={lang === "ar" ? photos[open].altAr : photos[open].alt}
           onClick={() => setOpen(null)}
         >
           <button
@@ -106,16 +139,16 @@ export function EventsPage() {
           </button>
           <figure className="relative h-[78vh] w-full max-w-5xl" onClick={(event) => event.stopPropagation()}>
             <Image
-              src={eventPhotos[open].image}
-              alt={lang === "ar" ? eventPhotos[open].altAr : eventPhotos[open].alt}
+              src={photos[open].image}
+              alt={lang === "ar" ? photos[open].altAr : photos[open].alt}
               fill
               className="object-contain"
               sizes="100vw"
             />
             <figcaption className="absolute inset-x-0 -bottom-8 text-center text-sm text-white/80">
-              {lang === "ar" ? eventPhotos[open].altAr : eventPhotos[open].alt}
+              {lang === "ar" ? photos[open].altAr : photos[open].alt}
               <span className="mx-2 text-white/50">·</span>
-              {open + 1} / {eventPhotos.length}
+              {open + 1} / {photos.length}
             </figcaption>
           </figure>
           <button
