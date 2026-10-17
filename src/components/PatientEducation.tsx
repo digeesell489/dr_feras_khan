@@ -177,14 +177,7 @@ export function PatientEducation() {
             <span className="font-label-md text-label-md font-bold tracking-wider text-clinical-navy uppercase">
               {t.eduGallery}
             </span>
-            <div className="flex flex-wrap items-center gap-3">
-              <Link
-                className="font-label-md text-label-md font-semibold text-surgical-teal hover:underline"
-                href="/events/images"
-              >
-                {t.viewAll}
-              </Link>
-              <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2">
                 <button
                   type="button"
                   onClick={goPrev}
@@ -205,7 +198,6 @@ export function PatientEducation() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="m9 6 6 6-6 6" />
                   </svg>
                 </button>
-              </div>
             </div>
           </div>
           <div

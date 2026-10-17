@@ -100,8 +100,8 @@ export const conditions: Condition[] = [
       "Medical review of steroid, alcohol, or clotting risk factors",
     ],
     treatments: [
+      { href: "/treatments/hip-replacement", label: "Hip Replacement" },
       { href: "/treatments/robotic-arthroplasty", label: "Robotic Joint Replacement" },
-      { href: "/treatments/robotic-arthroplasty", label: "Robotic Hip Arthroplasty" },
       { href: "/patient-care", label: "Pre-operative optimisation" },
     ],
   },
@@ -126,7 +126,7 @@ export const conditions: Condition[] = [
       "Shared decision between joint preservation and arthroplasty",
     ],
     treatments: [
-      { href: "/treatments/robotic-arthroplasty", label: "Patient-specific planning" },
+      { href: "/treatments/hip-replacement", label: "Hip Replacement" },
       { href: "/treatments/revision-surgery", label: "Revision Hip & Knee Surgery" },
       { href: "/conditions", label: "Conditions explorer" },
     ],

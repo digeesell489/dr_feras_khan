@@ -290,7 +290,8 @@ export function TreatmentsPage() {
             return (
               <article key={item.slug} className="overflow-hidden rounded-2xl border border-surface-border bg-white">
                 <div className="grid items-stretch lg:grid-cols-12">
-                  <div
+                  <Link
+                    href={`/treatments/${item.slug}`}
                     className={`relative overflow-hidden bg-sand-tint lg:col-span-6 ${
                       item.imageFit === "contain" ? "h-[260px] self-center lg:h-[300px]" : "min-h-[280px] lg:min-h-[420px]"
                     } ${imageRight ? "lg:order-2" : ""}`}
@@ -309,13 +310,15 @@ export function TreatmentsPage() {
                         </span>
                       ))}
                     </div>
-                  </div>
+                  </Link>
                   <div className={`flex flex-col justify-between p-6 lg:col-span-6 lg:p-10 ${imageRight ? "lg:order-1" : ""}`}>
                     <div>
                       <p className="mb-2 text-[11px] tracking-wider text-surgical-teal uppercase">
                         {loc(lang, meta.specialty, meta.specialtyAr)}
                       </p>
-                      <h2 className="mb-3 font-headline-sm text-[1.6rem] leading-tight text-primary lg:text-[2rem]">{copy.title}</h2>
+                      <Link href={`/treatments/${item.slug}`}>
+                        <h2 className="mb-3 font-headline-sm text-[1.6rem] leading-tight text-primary lg:text-[2rem]">{copy.title}</h2>
+                      </Link>
                       <p className="mb-6 text-sm leading-relaxed text-text-secondary">{copy.summary}</p>
                       <div className="mb-6 grid grid-cols-2 gap-3 rounded-lg bg-sand-tint p-4">
                         {meta.specs.map((spec) => (

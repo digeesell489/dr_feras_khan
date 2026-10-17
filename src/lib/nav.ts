@@ -11,7 +11,7 @@ export const siteNav = [
 export const footerPractice = [
   { href: "/about", label: "About the Practice" },
   { href: "/about#surgical-philosophy", label: "Holistic Approach" },
-  { href: "/#case-examples", label: "Case Examples" },
+  { href: "/case-examples", label: "Case Examples" },
   { href: "/#faq", label: "FAQs" },
   { href: "/contact", label: "Contact & Appointments" },
 ];

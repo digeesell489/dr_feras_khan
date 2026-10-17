@@ -20,7 +20,7 @@ export function CaseExampleDetail({ item }: { item: CaseExample }) {
       <section className="bg-clinical-slate-deep py-space-2xl text-white lg:py-space-3xl">
         <div className="page-wrap">
           <p className="mb-3 text-[12px] text-sand-tint/70">
-            <Link className="hover:text-white" href="/#case-examples">
+            <Link className="hover:text-white" href="/case-examples">
               {t.casesTitle}
             </Link>
             <span className="mx-2 text-white/30">/</span>

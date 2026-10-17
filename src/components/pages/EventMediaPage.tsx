@@ -29,7 +29,13 @@ export function EventMediaPage() {
       <section className="bg-sand-tint/60 py-space-3xl">
         <div className="page-wrap grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {mediaAppearances.map((item) => (
-            <article key={item.href} className="flex flex-col overflow-hidden rounded-2xl border border-surface-border bg-white">
+            <a
+              key={item.href}
+              href={item.href}
+              target="_blank"
+              rel="noreferrer"
+              className="flex flex-col overflow-hidden rounded-2xl border border-surface-border bg-white transition hover:border-surgical-teal/40"
+            >
               <div className="relative aspect-[16/9] bg-white">
                 <Image src={item.image} alt={item.imageAlt} fill className="object-contain object-center" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
               </div>
@@ -45,17 +51,12 @@ export function EventMediaPage() {
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-text-secondary">
                   {lang === "ar" ? item.bodyAr : item.body}
                 </p>
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-5 inline-flex w-fit items-center gap-1.5 rounded bg-clinical-navy px-4 py-2.5 text-[13px] font-semibold text-white"
-                >
+                <span className="mt-5 inline-flex w-fit items-center gap-1.5 rounded bg-clinical-navy px-4 py-2.5 text-[13px] font-semibold text-white">
                   {lang === "ar" ? "اقرأ المزيد" : "Read more"}
                   <ExternalArrow />
-                </a>
+                </span>
               </div>
-            </article>
+            </a>
           ))}
         </div>
       </section>

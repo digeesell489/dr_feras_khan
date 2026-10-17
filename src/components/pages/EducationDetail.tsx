@@ -80,22 +80,31 @@ export function EducationDetail({ item }: { item: EducationItem }) {
         <div className="page-wrap">
           <h2 className="mb-6 font-headline-lg text-[1.75rem] text-primary">{t.eduTitle}</h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {others.map((entry) => (
-              <Link
-                key={entry.id}
-                href={`/patient-education/${entry.id}`}
-                className="rounded-xl border border-surface-border bg-white p-4 transition-colors hover:border-surgical-teal/40"
-              >
-                <p className="mb-1 text-[11px] tracking-wider text-surgical-teal uppercase">
-                  {lang === "ar" ? entry.categoryAr : entry.category}
-                </p>
-                <p className="font-semibold text-primary">{lang === "ar" ? entry.titleAr : entry.title}</p>
-                <span className="mt-2 inline-flex items-center gap-1 text-[13px] text-clinical-navy">
-                  {entry.kind === "video" ? t.viewVideo : t.viewArticle}
-                  <ExternalArrow className="h-3 w-3" />
-                </span>
-              </Link>
-            ))}
+            {others.map((entry) => {
+              const className =
+                "rounded-xl border border-surface-border bg-white p-4 transition-colors hover:border-surgical-teal/40";
+              const card = (
+                <>
+                  <p className="mb-1 text-[11px] tracking-wider text-surgical-teal uppercase">
+                    {lang === "ar" ? entry.categoryAr : entry.category}
+                  </p>
+                  <p className="font-semibold text-primary">{lang === "ar" ? entry.titleAr : entry.title}</p>
+                  <span className="mt-2 inline-flex items-center gap-1 text-[13px] text-clinical-navy">
+                    {entry.kind === "video" ? t.viewVideo : t.viewArticle}
+                    <ExternalArrow className="h-3 w-3" />
+                  </span>
+                </>
+              );
+              return entry.videoUrl ? (
+                <a key={entry.id} href={entry.videoUrl} target="_blank" rel="noreferrer" className={className}>
+                  {card}
+                </a>
+              ) : (
+                <Link key={entry.id} href={`/patient-education/${entry.id}`} className={className}>
+                  {card}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

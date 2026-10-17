@@ -195,7 +195,7 @@ const dictionary = {
     footerPractice: [
       { href: "/about", label: "About the Practice" },
       { href: "/about#surgical-philosophy", label: "Holistic Approach" },
-      { href: "/#case-examples", label: "Case Examples" },
+      { href: "/case-examples", label: "Case Examples" },
       { href: "/#faq", label: "FAQs" },
       { href: "/contact", label: "Contact & Appointments" },
     ],
@@ -408,7 +408,7 @@ const dictionary = {
     footerPractice: [
       { href: "/about", label: "عن العيادة" },
       { href: "/about#surgical-philosophy", label: "المنهج الشامل" },
-      { href: "/#case-examples", label: "أمثلة الحالات" },
+      { href: "/case-examples", label: "أمثلة الحالات" },
       { href: "/#faq", label: "الأسئلة الشائعة" },
       { href: "/contact", label: "التواصل والمواعيد" },
     ],

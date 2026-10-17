@@ -468,7 +468,11 @@ export function ConditionsPage() {
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {filteredPortfolio.map((item) => (
-              <article key={item.title} className="rounded-xl border border-surface-border bg-white p-5">
+              <Link
+                key={item.title}
+                href={item.href}
+                className="rounded-xl border border-surface-border bg-white p-5 transition hover:border-surgical-teal/40"
+              >
                 <p className="mb-2 text-[11px] tracking-wider text-surgical-teal uppercase">{regionCopy(item.anatomy, lang)}</p>
                 <h3 className="mb-2 font-headline-sm text-primary">{loc(lang, item.title, item.titleAr)}</h3>
                 <p className="mb-3 text-sm leading-relaxed text-text-secondary">{loc(lang, item.body, item.bodyAr)}</p>
@@ -479,10 +483,8 @@ export function ConditionsPage() {
                     </span>
                   ))}
                 </div>
-                <Link className="text-[13px] font-semibold text-clinical-navy" href={item.href}>
-                  {t.exploreTechnique}
-                </Link>
-              </article>
+                <span className="text-[13px] font-semibold text-clinical-navy">{t.exploreTechnique}</span>
+              </Link>
             ))}
           </div>
         </div>
