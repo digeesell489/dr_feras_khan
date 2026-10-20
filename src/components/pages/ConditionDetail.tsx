@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CtaBand } from "@/components/CtaBand";
+import { PageFaq } from "@/components/PageFaq";
 import { BookButton } from "@/components/BookButton";
 import { ExternalArrow } from "@/components/ui/Icons";
 import { conditionCopy, hrefCopy, regionCopy } from "@/lib/ar-copy";
@@ -95,6 +96,8 @@ export function ConditionDetail({ condition }: { condition: Condition }) {
           </article>
         </div>
       </section>
+
+      <PageFaq slug={condition.slug} />
 
       <section className="py-space-3xl">
         <div className="page-wrap">

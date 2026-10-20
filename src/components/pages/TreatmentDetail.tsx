@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CtaBand } from "@/components/CtaBand";
+import { PageFaq } from "@/components/PageFaq";
 import { BookButton } from "@/components/BookButton";
 import { ExternalArrow } from "@/components/ui/Icons";
 import { treatmentCopy } from "@/lib/ar-copy";
@@ -90,6 +91,8 @@ export function TreatmentDetail({ treatment }: { treatment: Treatment }) {
           </article>
         </div>
       </section>
+
+      <PageFaq slug={treatment.slug} />
 
       <section className="py-space-3xl">
         <div className="page-wrap">
