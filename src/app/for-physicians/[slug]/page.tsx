@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { PhysicianDetail } from "@/components/pages/PhysicianDetail";
+import { JsonLd } from "@/components/JsonLd";
 import { SiteShell } from "@/components/SiteShell";
+import { pageSchema } from "@/lib/schema";
 import { getPhysicianPage, physicianPages } from "@/lib/physicians";
 
 export const dynamicParams = false;
@@ -25,8 +27,17 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   if (!page) notFound();
 
   return (
-    <SiteShell>
-      <PhysicianDetail page={page} />
-    </SiteShell>
+    <>
+      <JsonLd
+        data={pageSchema({
+          path: `/for-physicians/${page.slug}`,
+          name: `${page.title} | Dr. Feras Ya'ish`,
+          description: page.summary,
+        })}
+      />
+      <SiteShell>
+        <PhysicianDetail page={page} />
+      </SiteShell>
+    </>
   );
 }

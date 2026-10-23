@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { CaseExampleDetail } from "@/components/pages/CaseExampleDetail";
+import { JsonLd } from "@/components/JsonLd";
 import { SiteShell } from "@/components/SiteShell";
+import { pageSchema } from "@/lib/schema";
 import { caseExamples, getCaseExample } from "@/lib/cases";
 import { showCaseExamples } from "@/lib/visibility";
 
@@ -27,8 +29,17 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   if (!item) notFound();
 
   return (
-    <SiteShell>
-      <CaseExampleDetail item={item} />
-    </SiteShell>
+    <>
+      <JsonLd
+        data={pageSchema({
+          path: `/case-examples/${item.slug}`,
+          name: `${item.title} | Dr. Feras Ya'ish`,
+          description: item.body,
+        })}
+      />
+      <SiteShell>
+        <CaseExampleDetail item={item} />
+      </SiteShell>
+    </>
   );
 }

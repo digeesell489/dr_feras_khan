@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { TreatmentDetail } from "@/components/pages/TreatmentDetail";
+import { JsonLd } from "@/components/JsonLd";
 import { SiteShell } from "@/components/SiteShell";
+import { pageSchema } from "@/lib/schema";
 import { getTreatment, treatments } from "@/lib/treatments";
 
 export const dynamicParams = false;
@@ -25,8 +27,19 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   if (!treatment) notFound();
 
   return (
-    <SiteShell>
-      <TreatmentDetail treatment={treatment} />
-    </SiteShell>
+    <>
+      <JsonLd
+        data={pageSchema({
+          path: `/treatments/${treatment.slug}`,
+          name: `${treatment.title} | Dr. Feras Ya'ish`,
+          description: treatment.summary,
+          type: "MedicalWebPage",
+          about: { "@type": "MedicalProcedure", name: treatment.title, description: treatment.summary },
+        })}
+      />
+      <SiteShell>
+        <TreatmentDetail treatment={treatment} />
+      </SiteShell>
+    </>
   );
 }

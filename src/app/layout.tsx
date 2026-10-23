@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Cairo, Newsreader, Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
+import { JsonLd } from "@/components/JsonLd";
+import { siteGraph } from "@/lib/schema";
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-MD8H243F2D";
@@ -52,6 +54,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             gtag('config', '${GA_MEASUREMENT_ID}');
           `}
         </Script>
+        <JsonLd data={siteGraph()} />
         {children}
       </body>
     </html>
