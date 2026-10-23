@@ -19,13 +19,17 @@ export function CaseExampleDetail({ item }: { item: CaseExample }) {
     <>
       <section className="bg-clinical-slate-deep py-space-2xl text-white lg:py-space-3xl">
         <div className="page-wrap">
-          <p className="mb-3 text-[12px] text-sand-tint/70">
+          <nav aria-label="Breadcrumb" className="mb-3 text-[12px] text-sand-tint/70">
+            <Link className="hover:text-white" href="/">
+              {loc(lang, "Home", "الرئيسية")}
+            </Link>
+            <span className="mx-2 text-white/30">/</span>
             <Link className="hover:text-white" href="/case-examples">
               {t.casesTitle}
             </Link>
             <span className="mx-2 text-white/30">/</span>
-            <span>{title}</span>
-          </p>
+            <span aria-current="page">{title}</span>
+          </nav>
           <p className="mb-2 font-mono text-[11px] tracking-wider text-surgical-teal-light uppercase">{item.code}</p>
           <h1 className="max-w-3xl font-headline-hero text-[2.15rem] leading-tight lg:text-[2.75rem]">{title}</h1>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-sand-tint/75">{body}</p>

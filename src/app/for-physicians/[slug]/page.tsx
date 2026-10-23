@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { PhysicianDetail } from "@/components/pages/PhysicianDetail";
 import { JsonLd } from "@/components/JsonLd";
 import { SiteShell } from "@/components/SiteShell";
-import { pageSchema } from "@/lib/schema";
+import { breadcrumbSchema, pageSchema } from "@/lib/schema";
 import { getPhysicianPage, physicianPages } from "@/lib/physicians";
 
 export const dynamicParams = false;
@@ -28,6 +28,13 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "For Physicians", path: "/for-physicians" },
+          { name: page.short, path: `/for-physicians/${page.slug}` },
+        ])}
+      />
       <JsonLd
         data={pageSchema({
           path: `/for-physicians/${page.slug}`,

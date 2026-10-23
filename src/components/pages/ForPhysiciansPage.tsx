@@ -19,6 +19,13 @@ export function ForPhysiciansPage() {
       <section className="bg-sand-tint py-space-3xl lg:py-space-4xl">
         <div className="page-wrap grid items-start gap-space-xl lg:grid-cols-12">
           <div className="lg:col-span-8">
+            <nav aria-label="Breadcrumb" className="mb-3 text-[12px] text-text-secondary">
+              <Link className="hover:text-clinical-navy" href="/">
+                {loc(lang, "Home", "الرئيسية")}
+              </Link>
+              <span className="mx-2 text-text-secondary/50">/</span>
+              <span aria-current="page">{t.physiciansCrumbs}</span>
+            </nav>
             <p className="mb-3 inline-flex rounded-full bg-white px-3 py-1 text-[11px] tracking-wider text-clinical-navy uppercase shadow-sm">
               {loc(lang, "Consultant Tertiary Referral Gateway", "بوابة التحويل التخصصي للاستشاري")}
             </p>

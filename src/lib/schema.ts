@@ -63,6 +63,23 @@ type PageInput = {
   about?: JsonLdNode;
 };
 
+/**
+ * BreadcrumbList for a page. Names must match the visible breadcrumb trail on the page.
+ * The last item is the current page.
+ */
+export function breadcrumbSchema(items: { name: string; path: string }[]): JsonLdNode {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${SITE_URL}${item.path}`,
+    })),
+  };
+}
+
 /** A single page node that points at the site-wide Physician. `about` must describe visible page content. */
 export function pageSchema({ path, name, description, type = "WebPage", about }: PageInput): JsonLdNode {
   return {

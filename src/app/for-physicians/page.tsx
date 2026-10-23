@@ -1,5 +1,7 @@
 import { ForPhysiciansPage } from "@/components/pages/ForPhysiciansPage";
+import { JsonLd } from "@/components/JsonLd";
 import { SiteShell } from "@/components/SiteShell";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata = {
   title: "For Physicians | Tertiary Referral Gateway — Dr. Feras Ya'ish",
@@ -9,8 +11,16 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <SiteShell>
-      <ForPhysiciansPage />
-    </SiteShell>
+    <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "For Physicians", path: "/for-physicians" },
+        ])}
+      />
+      <SiteShell>
+        <ForPhysiciansPage />
+      </SiteShell>
+    </>
   );
 }
