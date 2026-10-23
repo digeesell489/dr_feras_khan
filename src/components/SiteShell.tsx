@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 import { Footer, MobileBar } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import { BookingProvider } from "@/lib/booking";
+import { BookingProvider, useBooking } from "@/lib/booking";
 import { LanguageProvider } from "@/lib/language";
 
 // The booking modal (and its form) only renders after the user opens it, so load it as a
@@ -13,6 +13,13 @@ import { LanguageProvider } from "@/lib/language";
 const BookingModal = dynamic(() => import("@/components/BookingModal").then((m) => m.BookingModal), {
   ssr: false,
 });
+
+// next/dynamic fetches its chunk as soon as the component mounts, even if it renders null.
+// Only mount it once the user opens the booking popup so the chunk is not downloaded on page load.
+function LazyBookingModal() {
+  const { open } = useBooking();
+  return open ? <BookingModal /> : null;
+}
 
 export function SiteShell({ children }: { children: ReactNode }) {
   return (
@@ -24,7 +31,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <Footer />
           <MobileBar />
           <WhatsAppFloat />
-          <BookingModal />
+          <LazyBookingModal />
         </div>
       </BookingProvider>
     </LanguageProvider>
