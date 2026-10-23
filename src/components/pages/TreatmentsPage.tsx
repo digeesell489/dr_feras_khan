@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { AuthorByline } from "@/components/AuthorByline";
 import { BookButton } from "@/components/BookButton";
 import { ExternalArrow } from "@/components/ui/Icons";
 import { treatmentCopy } from "@/lib/ar-copy";
@@ -254,6 +255,7 @@ export function TreatmentsPage() {
           <h1 className="max-w-3xl font-headline-hero text-[2.25rem] leading-tight text-primary lg:text-[3rem]">
             {loc(lang, "Orthopaedic Surgical Specialties & Joint Care", "تخصصات جراحة العظام ورعاية المفاصل")}
           </h1>
+          <AuthorByline />
           <p className="mt-4 max-w-2xl text-text-secondary">
             {loc(
               lang,
