@@ -1,0 +1,9 @@
+# Security headers for the static export (next.config.ts uses output: "export",
+# so Next's headers() option is NOT applied). This file is read by Netlify and
+# Cloudflare Pages. TODO: hosting provider is not visible in the repo; if the site
+# is served by Vercel, nginx, Apache or a CDN, set the same headers there instead.
+/*
+  Strict-Transport-Security: max-age=31536000
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
