@@ -35,11 +35,11 @@ export function PageFaq({ slug }: { slug: string }) {
                     className={`shrink-0 text-[22px] text-clinical-navy transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
                   />
                 </button>
-                {isOpen ? (
-                  <div className="px-4 pb-4 text-sm leading-relaxed text-text-secondary">
-                    {lang === "ar" ? item.aAr : item.a}
-                  </div>
-                ) : null}
+                {/* Always render the answer so it is in the server HTML (unique per-page copy for crawlers);
+                    the `hidden` attribute keeps collapsed answers invisible to users. */}
+                <div hidden={!isOpen} className="px-4 pb-4 text-sm leading-relaxed text-text-secondary">
+                  {lang === "ar" ? item.aAr : item.a}
+                </div>
               </div>
             );
           })}
