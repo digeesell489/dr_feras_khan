@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { ConditionDetail } from "@/components/pages/ConditionDetail";
+import { JsonLd } from "@/components/JsonLd";
 import { SiteShell } from "@/components/SiteShell";
+import { pageSchema } from "@/lib/schema";
 import { conditions, getCondition } from "@/lib/conditions";
 
 export const dynamicParams = false;
@@ -25,8 +27,19 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   if (!condition) notFound();
 
   return (
-    <SiteShell>
-      <ConditionDetail condition={condition} />
-    </SiteShell>
+    <>
+      <JsonLd
+        data={pageSchema({
+          path: `/conditions/${condition.slug}`,
+          name: `${condition.title} | Dr. Feras Ya'ish`,
+          description: condition.summary,
+          type: "MedicalWebPage",
+          about: { "@type": "MedicalCondition", name: condition.title, description: condition.summary },
+        })}
+      />
+      <SiteShell>
+        <ConditionDetail condition={condition} />
+      </SiteShell>
+    </>
   );
 }
