@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { AuthorByline } from "@/components/AuthorByline";
 import { CountUp } from "@/components/CountUp";
 import { CtaBand } from "@/components/CtaBand";
 import { ExternalArrow } from "@/components/ui/Icons";
@@ -178,6 +179,9 @@ export function AboutPage() {
                 "+25 عاماً من صرامة الزمالة البريطانية ودقة إعادة البناء",
               )}
             </h1>
+            <div className="mb-4">
+              <AuthorByline colorClass="text-sand-tint/90" />
+            </div>
             <p className="mb-4 max-w-xl text-sm leading-relaxed text-sand-tint/75">
               {loc(
                 lang,

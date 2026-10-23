@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { AuthorByline } from "@/components/AuthorByline";
 import { CtaBand } from "@/components/CtaBand";
 import { PhysicianReferralForm } from "@/components/PhysicianReferralForm";
 import { ExternalArrow } from "@/components/ui/Icons";
@@ -24,6 +25,7 @@ export function ForPhysiciansPage() {
             <h1 className="font-headline-hero text-[2.25rem] leading-tight text-primary lg:text-[3rem]">
               {loc(lang, "Tertiary Orthopaedic Referral Gateway", "بوابة التحويل التخصصي لجراحة العظام")}
             </h1>
+            <AuthorByline />
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-text-secondary">
               {loc(
                 lang,

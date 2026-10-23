@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { AuthorByline } from "@/components/AuthorByline";
 import { CtaBand } from "@/components/CtaBand";
 import { useLanguage } from "@/lib/language";
 import { loc } from "@/lib/loc";
@@ -70,6 +71,7 @@ export function PatientCarePage() {
             <h1 className="font-headline-hero text-[2.25rem] leading-tight text-primary lg:text-[3rem]">
               {loc(lang, "Your Surgical Care & Recovery Journey", "رحلة الرعاية الجراحية والتعافي")}
             </h1>
+            <AuthorByline />
             <p className="mt-4 max-w-2xl text-text-secondary">
               {loc(
                 lang,

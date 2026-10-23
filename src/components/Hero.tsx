@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { AuthorByline } from "@/components/AuthorByline";
 import { BookButton } from "@/components/BookButton";
 import { CountUp } from "@/components/CountUp";
 import { WhatsAppButton } from "@/components/WhatsAppFloat";
@@ -33,6 +34,9 @@ export function Hero() {
               <h1 className="mb-space-sm font-headline-hero text-headline-hero-mobile tracking-tight text-primary lg:text-headline-hero lg:leading-[1.1]">
                 {t.heroTitle}
               </h1>
+              <div className="mb-space-sm">
+                <AuthorByline />
+              </div>
               <div className="mb-space-sm inline-flex items-center gap-space-xs rounded border border-surface-border bg-sand-tint/90 px-space-sm py-1 font-label-md text-label-md uppercase tracking-wider text-primary shadow-xs backdrop-blur-md">
                 <span className="h-2 w-2 rounded-full bg-surgical-teal" />
                 {t.heroBadge}

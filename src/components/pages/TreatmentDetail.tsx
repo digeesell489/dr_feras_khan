@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { AuthorByline } from "@/components/AuthorByline";
 import { CtaBand } from "@/components/CtaBand";
 import { PageFaq } from "@/components/PageFaq";
 import { BookButton } from "@/components/BookButton";
@@ -30,6 +31,8 @@ export function TreatmentDetail({ treatment }: { treatment: Treatment }) {
           <h1 className="max-w-3xl font-headline-hero text-[2.15rem] leading-tight text-primary lg:text-[2.75rem]">
             {copy.title}
           </h1>
+          {/* Byline limited to the audited URL (/treatments/patient-specific-knee); other treatment pages are not in scope. */}
+          {treatment.slug === "patient-specific-knee" ? <AuthorByline /> : null}
         </div>
       </section>
 
