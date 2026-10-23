@@ -11,7 +11,9 @@ const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  preload: false,
+  // Body/UI font: the hero lead paragraph and buttons render in it above the fold,
+  // so preload it to avoid a late font swap re-triggering LCP.
+  preload: true,
 });
 
 const cairo = Cairo({
