@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Approach } from "@/components/Approach";
 import { ComplexCentre } from "@/components/ComplexCentre";
 import { Excellence } from "@/components/Excellence";
@@ -11,6 +12,22 @@ import { HEALTHPOINT_PROFILE, INSTAGRAM_URL, LINKEDIN_URL } from "@/lib/links";
 import { showCaseExamples } from "@/lib/visibility";
 
 const SITE_URL = "https://drferasyaishortho.com";
+
+// Open Graph for the homepage. Title and description are the approved copy and
+// match the page <title> and meta description already set in src/app/layout.tsx.
+// og:image is intentionally NOT set yet: no verified absolute social-sharing image
+// exists in the repo (public/images has only SVG logos). Add it here once approved:
+//   images: [{ url: "https://drferasyaishortho.com/<approved-image>.jpg", width, height, alt }]
+export const metadata: Metadata = {
+  openGraph: {
+    title: "Dr. Feras Ya'ish | Consultant Orthopaedic Surgeon, Abu Dhabi",
+    description:
+      "Meet Dr. Feras Ya'ish, Consultant Orthopaedic Surgeon in Abu Dhabi, specialising in robotic-assisted and patient-specific joint replacement.",
+    url: `${SITE_URL}/`,
+    siteName: "Dr. Feras Ya'ish",
+    type: "website",
+  },
+};
 
 // Organization + WebSite JSON-LD. Every value matches text the site already shows
 // (name, address from the visit section, professional profiles in the footer).
