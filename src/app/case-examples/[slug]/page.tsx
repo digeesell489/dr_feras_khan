@@ -10,12 +10,17 @@ export function generateStaticParams() {
   return caseExamples.map((item) => ({ slug: item.slug }));
 }
 
+// Page-specific SEO titles where the default `${title} | brand` would duplicate another URL.
+const seoTitleOverrides: Record<string, string> = {
+  "partial-knee": "Partial Knee Replacement Case Example | Dr. Feras Ya'ish",
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const item = getCaseExample(slug);
   if (!item) return { title: "Case Examples | Dr. Feras Ya'ish" };
   return {
-    title: `${item.title} | Dr. Feras Ya'ish`,
+    title: seoTitleOverrides[slug] ?? `${item.title} | Dr. Feras Ya'ish`,
     description: item.body,
     robots: showCaseExamples ? undefined : { index: false, follow: false },
   };

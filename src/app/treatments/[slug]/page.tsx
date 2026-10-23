@@ -9,12 +9,17 @@ export function generateStaticParams() {
   return treatments.map((item) => ({ slug: item.slug }));
 }
 
+// Page-specific SEO titles where the default `${title} | brand` would duplicate another URL.
+const seoTitleOverrides: Record<string, string> = {
+  "partial-knee": "Partial Knee Replacement Treatment | Dr. Feras Ya'ish",
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const treatment = getTreatment(slug);
   if (!treatment) return { title: "Treatments | Dr. Feras Ya'ish" };
   return {
-    title: `${treatment.title} | Dr. Feras Ya'ish`,
+    title: seoTitleOverrides[slug] ?? `${treatment.title} | Dr. Feras Ya'ish`,
     description: treatment.summary,
   };
 }
