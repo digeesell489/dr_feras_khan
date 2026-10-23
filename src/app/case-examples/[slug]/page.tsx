@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { CaseExampleDetail } from "@/components/pages/CaseExampleDetail";
 import { JsonLd } from "@/components/JsonLd";
 import { SiteShell } from "@/components/SiteShell";
-import { pageSchema } from "@/lib/schema";
+import { breadcrumbSchema, pageSchema } from "@/lib/schema";
 import { caseExamples, getCaseExample } from "@/lib/cases";
 import { showCaseExamples } from "@/lib/visibility";
 
@@ -35,6 +35,13 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Case Examples", path: "/case-examples" },
+          { name: item.title, path: `/case-examples/${item.slug}` },
+        ])}
+      />
       <JsonLd
         data={pageSchema({
           path: `/case-examples/${item.slug}`,
