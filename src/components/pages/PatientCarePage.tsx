@@ -301,7 +301,7 @@ export function PatientCarePage() {
                 </p>
               </div>
               <div className="relative order-1 min-h-[320px] lg:order-2 lg:col-span-6">
-                <Image src="/images/healthpoint-building.jpg" alt="Healthpoint Hospital, Zayed Sports City, Abu Dhabi" fill className="object-cover object-center" sizes="(min-width: 1024px) 50vw, 100vw" />
+                <Image src="/images/healthpoint-building.webp" alt="Healthpoint Hospital, Zayed Sports City, Abu Dhabi" fill className="object-cover object-center" sizes="(min-width: 1024px) 50vw, 100vw" />
                 <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-clinical-slate-deep/80 via-transparent to-transparent p-6 text-white">
                   <p className="text-[11px] font-bold tracking-wider text-surgical-teal-light uppercase">
                     {loc(lang, "Healthpoint Hospital Abu Dhabi", "مستشفى هيلث بوينت أبوظبي")}

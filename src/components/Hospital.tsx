@@ -60,7 +60,7 @@ export function Hospital() {
               <p className="mb-space-md font-body-sm leading-relaxed text-text-secondary">{t.address}</p>
               <div className="group relative mb-space-md h-72 overflow-hidden rounded-xl border border-surface-border">
                 <Image
-                  src="/images/healthpoint-building.jpg"
+                  src="/images/healthpoint-building.webp"
                   alt="Healthpoint Hospital, Zayed Sports City, Abu Dhabi"
                   fill
                   className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
@@ -76,6 +76,10 @@ export function Hospital() {
                 <span className="font-semibold text-primary">{t.tollFree}</span>
                 <a className="font-mono font-bold text-clinical-navy transition-colors hover:text-surgical-teal" href="tel:80077">
                   800 77
+                </a>
+                <span className="text-outline-variant">|</span>
+                <a className="font-mono text-clinical-navy transition-colors hover:text-surgical-teal" href="tel:+97124929000">
+                  +971 2 492 9000
                 </a>
                 <span className="text-outline-variant">|</span>
                 <WhatsAppButton className="inline-flex items-center gap-1.5 font-semibold text-[#128C7E] hover:underline" />

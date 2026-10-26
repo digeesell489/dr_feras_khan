@@ -468,7 +468,9 @@ export function AboutPage() {
             <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-clinical-slate-deep/80 p-4 text-white backdrop-blur-md">
               <div>
                 <p className="text-sm font-semibold">Healthpoint Hospital Abu Dhabi</p>
-                <p className="text-xs text-sand-tint/80">Zayed Sports City · Al Rawdah</p>
+                <p className="text-xs text-sand-tint/80">
+                  {loc(lang, "Al Qiyada Street · Zayed Sports City, Al Rawdah", "شارع القيادة · مدينة زايد الرياضية، الروضة")}
+                </p>
               </div>
               <a className="rounded bg-surgical-teal px-3 py-2 text-[12px] font-semibold" href="tel:80077">
                 {loc(lang, "Book Visit", "احجز زيارة")}

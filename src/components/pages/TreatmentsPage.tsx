@@ -440,7 +440,11 @@ export function TreatmentsPage() {
             </p>
             <p className="mt-1 font-semibold">Healthpoint Abu Dhabi</p>
             <p className="mt-1 text-sm text-sand-tint/75">
-              {loc(lang, "Zayed Sports City, Al Rawdah, Abu Dhabi, UAE", "مدينة زايد الرياضية، الروضة، أبوظبي")}
+              {loc(
+                lang,
+                "Between Gates 1–6, Al Qiyada Street, Zayed Sports City, Al Rawdah, Abu Dhabi, UAE",
+                "بين البوابتين 1–6، شارع القيادة، مدينة زايد الرياضية، الروضة، أبوظبي",
+              )}
             </p>
             <p className="mt-4 text-[11px] tracking-wider text-surgical-teal-light uppercase">
               {loc(lang, "Physician Referrals", "إحالات الأطباء")}

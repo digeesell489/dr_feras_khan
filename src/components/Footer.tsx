@@ -106,18 +106,16 @@ export function Footer() {
             <p className="mb-4 text-[11px] font-bold tracking-[0.16em] text-white uppercase">{t.colVisit}</p>
             <div className="mb-3 flex items-start gap-2 text-sm leading-snug text-sand-tint/80">
               <PinIcon className="mt-0.5 h-4 w-4 shrink-0 text-surgical-teal-light" />
-              <span className="min-w-0">
-                Healthpoint Hospital
-                <br />
-                Zayed Sports City
-                <br />
-                أبوظبي / Abu Dhabi
-              </span>
+              <span className="min-w-0 whitespace-pre-line">{t.visitAddress}</span>
             </div>
-            <div className="mb-3 flex items-center gap-2 text-sm text-sand-tint/80">
+            <div className="mb-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-sand-tint/80">
               <CallIcon className="h-4 w-4 shrink-0 text-surgical-teal-light" />
               <a className="font-semibold text-white hover:text-surgical-teal-light" href="tel:80077">
                 800 77
+              </a>
+              <span className="text-white/30">·</span>
+              <a className="text-sand-tint/80 hover:text-white" href="tel:+97124929000">
+                +971 2 492 9000
               </a>
               <a
                 className="text-[#25D366] hover:text-white"

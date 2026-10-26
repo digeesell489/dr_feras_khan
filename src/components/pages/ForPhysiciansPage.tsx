@@ -271,7 +271,7 @@ export function ForPhysiciansPage() {
           <div className="mb-8 grid gap-4 md:grid-cols-3">
             {[
               {
-                src: "/images/practice/lecture-gulf-knee.jpeg",
+                src: "/images/practice/lecture-gulf-knee.webp",
                 alt: "Dr Feras Ya'ish lecturing at the Emirates Orthopaedic Society Gulf Knee Course",
                 altAr: "الدكتور فراس يعيش يحاضر في دورة الخليج للركبة",
                 position: "object-center",

@@ -80,6 +80,7 @@ export function Hero() {
                     height={560}
                     preload
                     fetchPriority="high"
+                    sizes="(min-width: 1024px) 420px, (min-width: 640px) 60vw, 90vw"
                     className="aspect-[4/5] w-full object-contain object-bottom transition-transform duration-500 hover:scale-[1.03]"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-clinical-slate-deep/80 via-transparent to-transparent" />

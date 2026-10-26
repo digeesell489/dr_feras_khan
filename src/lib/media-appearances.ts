@@ -15,7 +15,7 @@ export type MediaAppearance = {
 export const mediaAppearances: MediaAppearance[] = [
   {
     href: "https://ssmc.ae/ar/news/%D9%85%D8%AF%D9%8A%D9%86%D8%A9-%D8%A7%D9%84%D8%B4%D9%8A%D8%AE-%D8%B4%D8%AE%D8%A8%D9%88%D8%B7-%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%A9-%D8%AA%D9%8F%D9%86%D8%AC%D8%B2-%D8%A8%D9%86%D8%AC%D8%A7%D8%AD%D9%8D/",
-    image: "/images/media/ssmc-knee-navigation.jpg",
+    image: "/images/media/ssmc-knee-navigation.webp",
     imageAlt: "Portrait published with the Sheikh Shakhbout Medical City report",
     source: "Sheikh Shakhbout Medical City",
     sourceAr: "مدينة الشيخ شخبوط الطبية",
@@ -28,7 +28,7 @@ export const mediaAppearances: MediaAppearance[] = [
   },
   {
     href: "https://www.emaratalyoum.com/local-section/other/2021-08-15-1.1524683",
-    image: "/images/media/emaratalyoum-banner.png",
+    image: "/images/media/emaratalyoum-banner.webp",
     imageAlt: "Emirates Al Youm",
     source: "Emirates Al Youm",
     sourceAr: "الإمارات اليوم",
@@ -54,7 +54,7 @@ export const mediaAppearances: MediaAppearance[] = [
   },
   {
     href: "https://www.instagram.com/reels/DXV-FM9Dsw9/",
-    image: "/images/media/healthpoint-instagram.jpg",
+    image: "/images/media/healthpoint-instagram.webp",
     imageAlt: "Healthpoint patient testimonial reel",
     source: "Instagram · Healthpoint UAE",
     sourceAr: "إنستغرام · هيلث بوينت",

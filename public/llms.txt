@@ -1,11 +1,33 @@
-# Dr. Feras Ya'ish
+# drferasyaishortho.com llms.txt
 
-UK-trained consultant orthopaedic and trauma surgeon at Healthpoint Hospital, Abu Dhabi. This site describes his practice, treatments, and how to arrange a consultation.
+> Provide information and online booking for an orthopaedic specialist (Dr. Feras Ya'ish) offering consultant trauma and orthopaedic care, including robotic-assisted and patient-specific hip and knee replacements, complex revision surgery, and knee ligament reconstruction at Healthpoint Hospital, Abu Dhabi.
 
-- [Home](/)
-- [Treatments](/treatments)
-- [Conditions](/conditions)
-- [Patient care](/patient-care)
-- [Contact](/contact)
-- [Request an appointment](https://healthpoint.ae/request-appointment/)
-- [Doctor profile](https://healthpoint.ae/our-doctors/dr-feras-ya-ish/)
+- [Home](https://drferasyaishortho.com/): Practice overview for Dr. Feras Ya'ish, consultant orthopaedic and trauma surgeon in Abu Dhabi.
+- [About](https://drferasyaishortho.com/about): Clinical background, surgical philosophy, and Healthpoint Hospital practice details.
+- [Treatments](https://drferasyaishortho.com/treatments): Catalogue of hip, knee, robotic, revision, sports, and trauma procedures.
+- [Total Knee Replacement](https://drferasyaishortho.com/treatments/knee-replacement): Explain total knee replacement, candidacy, surgical approach, and recovery.
+- [Patient-Specific Knee Replacement (PSI)](https://drferasyaishortho.com/treatments/patient-specific-knee): Explain CT-based patient-specific planning used alongside total knee replacement.
+- [Hip Replacement](https://drferasyaishortho.com/treatments/hip-replacement): Explain primary hip replacement, fixation options, and recovery.
+- [Partial Knee Replacement](https://drferasyaishortho.com/treatments/partial-knee): Explain partial knee replacement, who it suits, surgical approach, and recovery, with options to request consultation.
+- [Robotic Joint Replacement](https://drferasyaishortho.com/treatments/robotic-arthroplasty): Explain robotic-assisted hip and knee replacement and surgical precision.
+- [Revision Hip & Knee Surgery](https://drferasyaishortho.com/treatments/revision-surgery): Explain revision surgery for failed or painful joint replacements.
+- [Knee Arthroscopy Treatment](https://drferasyaishortho.com/treatments/arthroscopy): Explain knee arthroscopy, who it’s for, surgical approach, recovery, and how to consult Dr. Feras Ya'ish.
+- [Knee Ligament Reconstruction](https://drferasyaishortho.com/treatments/ligament-reconstruction): Explain ACL and related knee ligament reconstruction after sports injury.
+- [Patellofemoral Instability Surgery](https://drferasyaishortho.com/treatments/patellofemoral-instability): Explain patellofemoral instability surgery, including who it’s for, surgical approach, and recovery.
+- [Trauma & Malunion Reconstruction](https://drferasyaishortho.com/treatments/trauma): Explain complex fracture care and malunion reconstruction.
+- [Conditions](https://drferasyaishortho.com/conditions): Educational guides for hip, knee, sports, and trauma presentations.
+- [Hip Osteoarthritis](https://drferasyaishortho.com/conditions/hip-osteoarthritis): Educates about hip osteoarthritis symptoms, evaluation, and treatment options.
+- [Knee Osteoarthritis](https://drferasyaishortho.com/conditions/knee-osteoarthritis): Educates about knee osteoarthritis symptoms, evaluation, and treatment options.
+- [Hip Avascular Necrosis Guide](https://drferasyaishortho.com/conditions/avascular-necrosis): Educates about avascular necrosis of the femoral head, its symptoms, evaluation, and treatment options at Healthpoint Hospital.
+- [Hip Dysplasia Guide](https://drferasyaishortho.com/conditions/hip-dysplasia): Explain hip dysplasia and structural femoroacetabular impingement, including symptoms, evaluation, and treatment options.
+- [Failed Joint Replacement Care](https://drferasyaishortho.com/conditions/failed-joint-replacement): Explain evaluation and treatment options for painful or failed hip and knee joint replacements.
+- [Knee Sports Injuries](https://drferasyaishortho.com/conditions/sports-knee-injury): Explain common knee sports injuries, instability, and care pathways.
+- [Fractures, Non-union & Malunion](https://drferasyaishortho.com/conditions/fracture-malunion): Explain fracture, non-union, and malunion assessment and reconstruction.
+- [Patient Care](https://drferasyaishortho.com/patient-care): Step-by-step surgical care and recovery journey at Healthpoint Hospital.
+- [Events](https://drferasyaishortho.com/events): Lectures, courses, workshops, and media appearances.
+- [Event Images](https://drferasyaishortho.com/events/images): Showcase photographs from Dr. Feras Ya'ish’s lectures, courses, and workshops.
+- [Media Appearances](https://drferasyaishortho.com/events/media): Newspaper, television, and media coverage.
+- [Contact & Appointments](https://drferasyaishortho.com/contact): Schedule an orthopaedic consultation or appointment with Dr. Feras Ya'ish at Healthpoint Hospital.
+- [ACL Recovery Guide](https://drferasyaishortho.com/patient-education/acl-recovery): Patient education on recovery after ACL reconstruction.
+- [Request an appointment](https://healthpoint.ae/request-appointment/): Book a consultation through Healthpoint Hospital.
+- [Doctor profile](https://healthpoint.ae/our-doctors/dr-feras-ya-ish/): Official Healthpoint profile for Dr. Feras Ya'ish.

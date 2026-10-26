@@ -109,7 +109,8 @@ const dictionary = {
     m42: "M42 Healthcare Facility",
     campusLine: "Zayed Sports City Campus · Outpatient Clinics & Surgery Center",
     tollFree: "Toll-Free Concierge:",
-    address: "Zayed Sports City, Al Rawdah, P.O. Box 112323, Abu Dhabi, United Arab Emirates",
+    address:
+      "Between Gates 1 and 6, Al Qiyada Street, Zayed Sports City, Al Rawdah, P.O. Box 112308, Abu Dhabi, United Arab Emirates",
     faqBadge: "Clinical Clarifications",
     faqTitle: "Frequently Asked Questions",
     faqBody: "Clear, verified clinical answers regarding assessments, surgical methods, and recovery.",
@@ -153,7 +154,8 @@ const dictionary = {
     reasonFollow: "Follow-up visit",
     reasonSecond: "Second opinion / imaging review",
     reasonInsurance: "Insurance or booking question",
-    visitAddress: "Healthpoint Hospital\nZayed Sports City, Al Rawdah\nAbu Dhabi, UAE",
+    visitAddress:
+      "Healthpoint Hospital\nBetween Gates 1–6, Al Qiyada Street\nZayed Sports City, Al Rawdah\nAbu Dhabi, UAE",
     referralTitle: "Clinical Referral Information",
     referralThanks:
       "Your case dossier has been logged for the Healthpoint Arthroplasty Escalation Register. For immediate life- or limb-threatening cases, dial 800 77 now. Please also call the referral desk so the liaison can confirm PACS access.",
@@ -323,7 +325,8 @@ const dictionary = {
     m42: "منشأة M42 للرعاية الصحية",
     campusLine: "حرم مدينة زايد الرياضية · العيادات الخارجية ومركز الجراحة",
     tollFree: "مركز الاتصال المجاني:",
-    address: "مدينة زايد الرياضية، الروضة، ص.ب 112323، أبوظبي، الإمارات العربية المتحدة",
+    address:
+      "بين البوابتين 1 و6، شارع القيادة، مدينة زايد الرياضية، الروضة، ص.ب 112308، أبوظبي، الإمارات العربية المتحدة",
     faqBadge: "توضيحات سريرية",
     faqTitle: "الأسئلة الشائعة",
     faqBody: "إجابات سريرية واضحة حول التقييم والأساليب الجراحية والتعافي.",
@@ -366,7 +369,8 @@ const dictionary = {
     reasonFollow: "زيارة متابعة",
     reasonSecond: "رأي ثانٍ / مراجعة صور",
     reasonInsurance: "سؤال عن التأمين أو الحجز",
-    visitAddress: "مستشفى هيلث بوينت\nمدينة زايد الرياضية، الروضة\nأبوظبي، الإمارات",
+    visitAddress:
+      "مستشفى هيلث بوينت\nبين البوابتين 1–6، شارع القيادة\nمدينة زايد الرياضية، الروضة\nأبوظبي، الإمارات",
     referralTitle: "بيانات الإحالة السريرية",
     referralThanks:
       "سُجّل ملف الحالة في سجل تصعيد استبدال المفاصل في هيلث بوينت. للحالات المهددة للحياة أو الطرف اتصل فوراً على 800 77، ثم بمكتب الإحالة لتأكيد وصول صور PACS.",

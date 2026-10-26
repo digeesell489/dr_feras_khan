@@ -38,10 +38,13 @@ export function siteGraph(): JsonLdNode {
         name: "Healthpoint Hospital",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Zayed Sports City",
+          streetAddress: "Between Gates 1 and 6, Al Qiyada Street, Zayed Sports City, Al Rawdah",
+          postalCode: "112308",
           addressLocality: "Abu Dhabi",
           addressCountry: "AE",
         },
+        telephone: "800 77",
+
       },
       {
         "@type": "WebSite",
