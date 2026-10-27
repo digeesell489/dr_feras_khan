@@ -1,4 +1,11 @@
-import { HEALTHPOINT_PROFILE, INSTAGRAM_URL, LINKEDIN_URL } from "@/lib/links";
+import {
+  FACEBOOK_URL,
+  HEALTHPOINT_PROFILE,
+  INSTAGRAM_URL,
+  LINKEDIN_URL,
+  TIKTOK_URL,
+  YOUTUBE_URL,
+} from "@/lib/links";
 
 export const SITE_URL = "https://drferasyaishortho.com";
 export const PHYSICIAN_ID = `${SITE_URL}/#physician`;
@@ -30,7 +37,14 @@ export function siteGraph(): JsonLdNode {
         workLocation: { "@id": HOSPITAL_ID },
         areaServed: { "@type": "Country", name: "United Arab Emirates" },
         knowsLanguage: ["en", "ar"],
-        sameAs: [HEALTHPOINT_PROFILE, LINKEDIN_URL, INSTAGRAM_URL],
+        sameAs: [
+          HEALTHPOINT_PROFILE,
+          FACEBOOK_URL,
+          LINKEDIN_URL,
+          INSTAGRAM_URL,
+          YOUTUBE_URL,
+          TIKTOK_URL,
+        ],
       },
       {
         "@type": "Hospital",

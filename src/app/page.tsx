@@ -8,7 +8,14 @@ import { HomeCta } from "@/components/HomeCta";
 import { Hospital } from "@/components/Hospital";
 import { PatientEducation } from "@/components/PatientEducation";
 import { SiteShell } from "@/components/SiteShell";
-import { HEALTHPOINT_PROFILE, INSTAGRAM_URL, LINKEDIN_URL } from "@/lib/links";
+import {
+  FACEBOOK_URL,
+  HEALTHPOINT_PROFILE,
+  INSTAGRAM_URL,
+  LINKEDIN_URL,
+  TIKTOK_URL,
+  YOUTUBE_URL,
+} from "@/lib/links";
 import { showCaseExamples } from "@/lib/visibility";
 
 const SITE_URL = "https://drferasyaishortho.com";
@@ -59,7 +66,14 @@ const homeJsonLd = {
         addressLocality: "Abu Dhabi",
         addressCountry: "AE",
       },
-      sameAs: [LINKEDIN_URL, INSTAGRAM_URL, HEALTHPOINT_PROFILE],
+      sameAs: [
+        HEALTHPOINT_PROFILE,
+        FACEBOOK_URL,
+        LINKEDIN_URL,
+        INSTAGRAM_URL,
+        YOUTUBE_URL,
+        TIKTOK_URL,
+      ],
     },
   ],
 };

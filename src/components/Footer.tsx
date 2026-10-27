@@ -6,11 +6,28 @@ import { LanguageToggle } from "@/components/LanguageToggle";
 import { WhatsAppButton, WhatsAppIcon, whatsappHref } from "@/components/WhatsAppFloat";
 import { professionalLinks } from "@/lib/links";
 import { useLanguage } from "@/lib/language";
-import { ArrowIcon, CallIcon, ClockIcon, DoctifyIcon, ExternalArrow, HealthpointIcon, InstagramIcon, LinkedInIcon, LogoMark, PinIcon } from "./ui/Icons";
+import {
+  ArrowIcon,
+  CallIcon,
+  ClockIcon,
+  DoctifyIcon,
+  ExternalArrow,
+  FacebookIcon,
+  HealthpointIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  LogoMark,
+  PinIcon,
+  TikTokIcon,
+  YouTubeIcon,
+} from "./ui/Icons";
 
 const portalIcons = {
+  Facebook: FacebookIcon,
   LinkedIn: LinkedInIcon,
   Instagram: InstagramIcon,
+  YouTube: YouTubeIcon,
+  TikTok: TikTokIcon,
   Doctify: DoctifyIcon,
   Healthpoint: HealthpointIcon,
 } as const;
