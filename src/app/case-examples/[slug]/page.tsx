@@ -9,6 +9,8 @@ import { showCaseExamples } from "@/lib/visibility";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
+  // No HTML routes while unpublished — URLs 404 and stay out of the crawl surface.
+  if (!showCaseExamples) return [];
   return caseExamples.map((item) => ({ slug: item.slug }));
 }
 
@@ -18,17 +20,20 @@ const seoTitleOverrides: Record<string, string> = {
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  if (!showCaseExamples) return { robots: { index: false, follow: false } };
   const { slug } = await params;
   const item = getCaseExample(slug);
   if (!item) return { title: "Case Examples | Dr. Feras Ya'ish" };
   return {
     title: seoTitleOverrides[slug] ?? `${item.title} | Dr. Feras Ya'ish`,
     description: item.body,
-    robots: showCaseExamples ? undefined : { index: false, follow: false },
+    robots: { index: true, follow: true },
   };
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  if (!showCaseExamples) notFound();
+
   const { slug } = await params;
   const item = getCaseExample(slug);
   if (!item) notFound();

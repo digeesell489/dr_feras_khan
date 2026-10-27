@@ -4,14 +4,17 @@ import { JsonLd } from "@/components/JsonLd";
 import { SiteShell } from "@/components/SiteShell";
 import { breadcrumbSchema, pageSchema } from "@/lib/schema";
 import { getPhysicianPage, physicianPages } from "@/lib/physicians";
+import { showForPhysicians } from "@/lib/visibility";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
+  if (!showForPhysicians) return [];
   return physicianPages.map((item) => ({ slug: item.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  if (!showForPhysicians) return { robots: { index: false, follow: false } };
   const { slug } = await params;
   const page = getPhysicianPage(slug);
   if (!page) return { title: "For Physicians | Dr. Feras Ya'ish" };
@@ -22,6 +25,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  if (!showForPhysicians) notFound();
+
   const { slug } = await params;
   const page = getPhysicianPage(slug);
   if (!page) notFound();

@@ -1,7 +1,9 @@
+import { notFound } from "next/navigation";
 import { ForPhysiciansPage } from "@/components/pages/ForPhysiciansPage";
 import { JsonLd } from "@/components/JsonLd";
 import { SiteShell } from "@/components/SiteShell";
 import { breadcrumbSchema } from "@/lib/schema";
+import { showForPhysicians } from "@/lib/visibility";
 
 export const metadata = {
   title: "For Physicians | Tertiary Referral Gateway — Dr. Feras Ya'ish",
@@ -10,6 +12,9 @@ export const metadata = {
 };
 
 export default function Page() {
+  // Unpublished until showForPhysicians is flipped to true in src/lib/visibility.ts
+  if (!showForPhysicians) notFound();
+
   return (
     <>
       <JsonLd

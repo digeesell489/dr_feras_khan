@@ -10,9 +10,10 @@ export const dynamic = "force-static";
 const SITE_URL = "https://drferasyaishortho.com";
 
 /**
- * Indexable pages only. Deliberately excluded:
- * - /for-physicians/* (noindex in src/app/for-physicians/layout.tsx)
- * - /case-examples/* (noindex while showCaseExamples is false in src/lib/visibility.ts)
+ * Indexable pages only. Deliberately excluded while unpublished
+ * (see src/lib/visibility.ts — flip flags to feature again):
+ * - /for-physicians/*
+ * - /case-examples/*
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPaths = [

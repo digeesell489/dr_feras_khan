@@ -9,6 +9,7 @@ import { ExternalArrow } from "@/components/ui/Icons";
 import { conditionCopy, hrefCopy, regionCopy } from "@/lib/ar-copy";
 import { conditions, type Condition } from "@/lib/conditions";
 import { useLanguage } from "@/lib/language";
+import { isPublishedPath } from "@/lib/visibility";
 
 export function ConditionDetail({ condition }: { condition: Condition }) {
   const { lang, t } = useLanguage();
@@ -84,7 +85,7 @@ export function ConditionDetail({ condition }: { condition: Condition }) {
           <article className="rounded-xl border border-surface-border bg-white p-5">
             <h2 className="mb-3 font-headline-sm text-primary">{t.relatedCare}</h2>
             <ul className="space-y-2 text-sm">
-              {condition.treatments.map((item) => (
+              {condition.treatments.filter((item) => isPublishedPath(item.href)).map((item) => (
                 <li key={item.href}>
                   <Link className="inline-flex items-center gap-1 font-semibold text-clinical-navy" href={item.href}>
                     {hrefCopy(item.href, item.label, lang)}
