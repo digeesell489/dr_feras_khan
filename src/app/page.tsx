@@ -49,12 +49,13 @@ const homeJsonLd = {
       url: `${SITE_URL}/`,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/images/logo.svg`,
+        url: `${SITE_URL}/images/fy-ortho-logo.webp`,
       },
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Zayed Sports City, Al Rawdah",
-        postOfficeBoxNumber: "112323",
+        streetAddress: "Between Gates 1 and 6, Al Qiyada Street, Zayed Sports City, Al Rawdah",
+        postOfficeBoxNumber: "112308",
+        postalCode: "112308",
         addressLocality: "Abu Dhabi",
         addressCountry: "AE",
       },

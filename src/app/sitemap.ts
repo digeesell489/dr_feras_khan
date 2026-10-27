@@ -3,7 +3,7 @@ import { conditions } from "@/lib/conditions";
 import { educationItems } from "@/lib/education";
 import { treatments } from "@/lib/treatments";
 
-// Required for `output: "export"` so the sitemap is written as a static file at build time.
+// Force a static sitemap.xml artifact at build time (Hostinger/standalone).
 export const dynamic = "force-static";
 
 // TODO: confirm the canonical host (apex vs www) matches the live site's preferred domain.

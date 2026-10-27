@@ -442,8 +442,8 @@ export function TreatmentsPage() {
             <p className="mt-1 text-sm text-sand-tint/75">
               {loc(
                 lang,
-                "Between Gates 1–6, Al Qiyada Street, Zayed Sports City, Al Rawdah, Abu Dhabi, UAE",
-                "بين البوابتين 1–6، شارع القيادة، مدينة زايد الرياضية، الروضة، أبوظبي",
+                "Between Gates 1–6, Al Qiyada Street, Zayed Sports City, Al Rawdah, P.O. Box 112308, Abu Dhabi, UAE",
+                "بين البوابتين 1–6، شارع القيادة، مدينة زايد الرياضية، الروضة، ص.ب 112308، أبوظبي",
               )}
             </p>
             <p className="mt-4 text-[11px] tracking-wider text-surgical-teal-light uppercase">

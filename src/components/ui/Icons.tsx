@@ -78,7 +78,7 @@ export function LogoMark({
 }) {
   return (
     <img
-      src="/images/fy-ortho-logo.png"
+      src="/images/fy-ortho-logo.webp"
       alt="Dr. Feras Ya'ish Ortho — Hip & Knee Surgery"
       width={720}
       height={190}
