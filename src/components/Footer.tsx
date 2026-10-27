@@ -50,7 +50,11 @@ export function Footer() {
           <div className="flex flex-col gap-4 lg:col-span-3">
             <div className="flex flex-col items-start gap-3">
               <Link href="/">
-                <LogoMark variant="onDark" loading="lazy" className="h-16 w-auto" />
+                <LogoMark
+                  variant="onDark"
+                  loading="lazy"
+                  className="h-14 w-auto max-w-[260px] object-contain object-left sm:h-16"
+                />
               </Link>
               <p className="text-[11px] leading-relaxed tracking-wide text-sand-tint/60">
                 MBBS · MRCS · FRCS (Tr &amp; Orth) · CCT (UK)

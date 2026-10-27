@@ -49,7 +49,7 @@ const homeJsonLd = {
       url: `${SITE_URL}/`,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/images/fy-ortho-logo.webp`,
+        url: `${SITE_URL}/images/fy-ortho-logo.png`,
       },
       address: {
         "@type": "PostalAddress",

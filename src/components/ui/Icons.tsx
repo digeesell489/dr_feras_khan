@@ -70,20 +70,29 @@ export function ClockIcon({ className = "h-5 w-5" }: { className?: string }) {
 
 export function LogoMark({
   className = "h-10 w-auto",
+  variant = "full",
   loading = "eager",
 }: {
   className?: string;
+  /** `full` = navy mark for light surfaces; `onDark` = white mark for dark footer/header. */
   variant?: "full" | "onDark";
   loading?: "eager" | "lazy";
 }) {
+  // PNG (not WebP): fine logo strokes stay crisp; lossy WebP was fringing on dark backgrounds.
+  const src =
+    variant === "onDark"
+      ? "/images/fy-ortho-logo-footer.png"
+      : "/images/fy-ortho-logo.png";
+
   return (
     <img
-      src="/images/fy-ortho-logo.webp"
+      src={src}
       alt="Dr. Feras Ya'ish Ortho — Hip & Knee Surgery"
-      width={720}
-      height={190}
+      width={722}
+      height={192}
       loading={loading}
       fetchPriority="low"
+      decoding="async"
       className={className}
     />
   );
