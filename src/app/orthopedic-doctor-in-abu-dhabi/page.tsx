@@ -6,9 +6,9 @@ import { SITE_URL } from "@/lib/schema";
 
 const PATH = "/orthopedic-doctor-in-abu-dhabi";
 const PAGE_URL = `${SITE_URL}${PATH}`;
-const TITLE = "Orthopedic Doctor in Abu Dhabi | Dr. Feras Ya'ish";
+const TITLE = "Expert Orthopedic Doctor in Abu Dhabi | Dr. Feras Ya'ish";
 const DESCRIPTION =
-  "Orthopedic doctor in Abu Dhabi, Dr. Feras Ya'ish, offers specialist assessment for hip and knee conditions, joint replacement and orthopaedic surgery.";
+  "Consult Dr. Feras Ya'ish, orthopedic doctor in Abu Dhabi, for expert hip and knee care, joint replacement and advanced surgical treatments.";
 const LOGO_URL = `${SITE_URL}/images/fy-ortho-logo.png`;
 const DOCTOR_IMAGE_URL = `${SITE_URL}/images/doctor-about.webp`;
 
