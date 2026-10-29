@@ -16,7 +16,7 @@
   box-sizing: border-box;
 }
 
-.abu-landing a {
+.abu-landing a:not([class*="bg-"]):not(.btn) {
   color: inherit;
 }
 

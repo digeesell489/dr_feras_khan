@@ -138,6 +138,7 @@ const faqs = [
 
 export function AbuDhabiLandingPage() {
   return (
+    <>
     <div className="abu-landing">
       <section className="hero">
         <div className="wrap hero-grid">
@@ -393,46 +394,31 @@ export function AbuDhabiLandingPage() {
         </div>
       </section>
 
+    </div>
+
       <Hospital />
 
-      <section id="faqs" className="soft">
-        <div className="wrap">
-          <div className="head">
-            <span className="eyebrow">Patient information</span>
-            <h2>Frequently Asked Questions</h2>
-            <p>Answers to common questions about orthopaedic consultations and treatment options.</p>
+      <div className="abu-landing">
+        <section id="faqs" className="soft">
+          <div className="wrap">
+            <div className="head">
+              <span className="eyebrow">Patient information</span>
+              <h2>Frequently Asked Questions</h2>
+              <p>Answers to common questions about orthopaedic consultations and treatment options.</p>
+            </div>
+            <div className="faq">
+              {faqs.map((item) => (
+                <details key={item.q}>
+                  <summary>{item.q}</summary>
+                  <p>{item.a}</p>
+                </details>
+              ))}
+            </div>
           </div>
-          <div className="faq">
-            {faqs.map((item) => (
-              <details key={item.q}>
-                <summary>{item.q}</summary>
-                <p>{item.a}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="appointment" className="cta">
-        <div className="wrap ctarow">
-          <div>
-            <h2>Discuss Your Orthopaedic Concerns</h2>
-            <p>
-              Arrange a consultation to discuss your symptoms, understand your options, and plan the next step with Dr.
-              Feras Ya&apos;ish.
-            </p>
-          </div>
-          <a
-            className="btn"
-            href={HEALTHPOINT_APPOINTMENT}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Contact the clinic ↗
-          </a>
-        </div>
-      </section>
-    </div>
+      </div>
+    </>
   );
 }
 
