@@ -104,6 +104,32 @@ const faqs = [
 export function AbuDhabiLandingPage() {
   return (
     <div className="abu-landing">
+      <header className="top">
+        <div className="wrap nav">
+          <Link className="brand" href="/">
+            <Image
+              src="/images/fy-ortho-logo.png"
+              alt="Dr. Feras Ya'ish Ortho — Hip & Knee Surgery"
+              width={722}
+              height={192}
+              className="brand-logo"
+              priority
+            />
+          </Link>
+          <nav className="links" aria-label="Landing sections">
+            <a href="#about">About</a>
+            <a href="#treatments">Treatments</a>
+            <a href="#approach">Approach</a>
+            <a href="#location">Location</a>
+            <a href="#faqs">FAQs</a>
+            <a className="btn" href="#appointment">
+              Book a consultation ↗
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
       <section className="hero">
         <div className="wrap hero-grid">
           <div className="hero-copy">
@@ -412,6 +438,25 @@ export function AbuDhabiLandingPage() {
           </a>
         </div>
       </section>
+      </main>
+
+      <footer className="landing-foot">
+        <div className="wrap foot">
+          <div>
+            <strong>Dr. Feras Ya&apos;ish</strong>
+            <br />
+            Consultant Trauma and Orthopaedic Surgeon
+          </div>
+          <div>
+            <Link href="/">Official website</Link>
+            {" · "}
+            <a href="#treatments">Treatments</a>
+            {" · "}
+            <a href="#faqs">FAQs</a>
+          </div>
+          <div>© {new Date().getFullYear()} Dr. Feras Ya&apos;ish</div>
+        </div>
+      </footer>
     </div>
   );
 }

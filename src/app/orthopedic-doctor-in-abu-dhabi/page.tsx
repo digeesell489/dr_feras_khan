@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { AbuDhabiLandingPage, abuDhabiFaqs } from "@/components/pages/AbuDhabiLandingPage";
 import { JsonLd } from "@/components/JsonLd";
-import { SiteShell } from "@/components/SiteShell";
 import { breadcrumbSchema, pageSchema, SITE_URL } from "@/lib/schema";
 
 const PATH = "/orthopedic-doctor-in-abu-dhabi";
@@ -58,9 +57,7 @@ export default function Page() {
         })}
       />
       <JsonLd data={faqSchema} />
-      <SiteShell>
-        <AbuDhabiLandingPage />
-      </SiteShell>
+      <AbuDhabiLandingPage />
     </>
   );
 }
