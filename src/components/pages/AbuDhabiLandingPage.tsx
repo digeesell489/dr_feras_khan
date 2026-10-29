@@ -104,21 +104,6 @@ const faqs = [
 export function AbuDhabiLandingPage() {
   return (
     <div className="abu-landing">
-      <div className="subnav">
-        <div className="wrap subnav-inner">
-          <nav className="sublinks" aria-label="Page sections">
-            <a href="#about">About</a>
-            <a href="#treatments">Treatments</a>
-            <a href="#approach">Approach</a>
-            <a href="#location">Location</a>
-            <a href="#faqs">FAQs</a>
-          </nav>
-          <a className="btn" href="#appointment">
-            Book a consultation ↗
-          </a>
-        </div>
-      </div>
-
       <section className="hero">
         <div className="wrap hero-grid">
           <div className="hero-copy">
