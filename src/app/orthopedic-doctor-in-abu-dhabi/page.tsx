@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AbuDhabiLandingPage, abuDhabiFaqs } from "@/components/pages/AbuDhabiLandingPage";
+import { AbuDhabiLandingPage } from "@/components/pages/AbuDhabiLandingPage";
 import { JsonLd } from "@/components/JsonLd";
 import { SiteShell } from "@/components/SiteShell";
 import { SITE_URL } from "@/lib/schema";
@@ -9,6 +9,8 @@ const PAGE_URL = `${SITE_URL}${PATH}`;
 const TITLE = "Orthopedic Doctor in Abu Dhabi | Dr. Feras Ya'ish";
 const DESCRIPTION =
   "Orthopedic doctor in Abu Dhabi, Dr. Feras Ya'ish, offers specialist assessment for hip and knee conditions, joint replacement and orthopaedic surgery.";
+const LOGO_URL = `${SITE_URL}/images/fy-ortho-logo.png`;
+const DOCTOR_IMAGE_URL = `${SITE_URL}/images/doctor-about.webp`;
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -29,7 +31,6 @@ export const metadata: Metadata = {
   },
 };
 
-/** Opening hours match the published clinic schedule shown on the page. */
 const landingGraph = {
   "@context": "https://schema.org",
   "@graph": [
@@ -38,11 +39,21 @@ const landingGraph = {
       "@id": `${SITE_URL}/#organization`,
       name: "Dr. Feras Ya'ish",
       url: `${SITE_URL}/`,
+      logo: {
+        "@type": "ImageObject",
+        url: LOGO_URL,
+      },
+      image: DOCTOR_IMAGE_URL,
     },
     {
       "@type": "MedicalBusiness",
       "@id": `${SITE_URL}/#healthpoint-hospital`,
       name: "Healthpoint Hospital",
+      image: DOCTOR_IMAGE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: LOGO_URL,
+      },
       address: {
         "@type": "PostalAddress",
         streetAddress: "Between Gates 1-6, Al Qiyada Street, Zayed Sports City, Al Rawdah",
@@ -54,27 +65,17 @@ const landingGraph = {
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
-          dayOfWeek: "https://schema.org/Tuesday",
-          opens: "08:00",
-          closes: "17:00",
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: "https://schema.org/Wednesday",
-          opens: "11:00",
-          closes: "20:00",
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: "https://schema.org/Thursday",
-          opens: "08:00",
-          closes: "17:00",
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: "https://schema.org/Friday",
-          opens: "08:00",
-          closes: "17:00",
+          dayOfWeek: [
+            "https://schema.org/Monday",
+            "https://schema.org/Tuesday",
+            "https://schema.org/Wednesday",
+            "https://schema.org/Thursday",
+            "https://schema.org/Friday",
+            "https://schema.org/Saturday",
+            "https://schema.org/Sunday",
+          ],
+          opens: "09:00",
+          closes: "21:00",
         },
       ],
     },
@@ -99,26 +100,10 @@ const landingGraph = {
   ],
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "@id": `${PAGE_URL}#faq`,
-  url: PAGE_URL,
-  mainEntity: abuDhabiFaqs.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.a,
-    },
-  })),
-};
-
 export default function Page() {
   return (
     <>
       <JsonLd data={landingGraph} />
-      <JsonLd data={faqSchema} />
       <SiteShell>
         <AbuDhabiLandingPage />
       </SiteShell>
