@@ -332,23 +332,42 @@
 }
 
 .abu-landing .visual {
-  min-height: 350px;
+  position: relative;
+  min-height: 420px;
   border-radius: 20px;
+  overflow: hidden;
   background: linear-gradient(145deg, #143b4d, #2a7777);
+  margin: 0;
+}
+
+.abu-landing .visual-caption {
+  position: absolute;
+  inset: auto 0 0 0;
   padding: 28px;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
+  background: linear-gradient(transparent, rgba(11, 37, 51, 0.88));
   color: white;
 }
 
 .abu-landing .visual .big {
-  font: 42px/1.1 var(--font-newsreader), Georgia, serif;
+  font: 36px/1.15 var(--font-newsreader), Georgia, serif;
 }
 
 .abu-landing .visual p {
   color: #e0f2ef;
-  margin-top: 12px;
+  margin: 12px 0 0;
+}
+
+.abu-landing .section-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  max-height: 360px;
+  border-radius: 18px;
+  overflow: hidden;
+  margin: 0 auto 28px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  background: #dfeceb;
 }
 
 .abu-landing .checks {

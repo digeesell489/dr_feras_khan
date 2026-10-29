@@ -212,10 +212,19 @@ export function AbuDhabiLandingPage() {
 
       <section id="about">
         <div className="wrap about">
-          <div className="visual">
-            <div className="big">Experience guided by individual needs.</div>
-            <p>Orthopaedic assessment, clear treatment discussions, and a plan shaped around the patient.</p>
-          </div>
+          <figure className="visual">
+            <Image
+              src="/images/landing/about-doctor.webp"
+              alt="Consultant orthopaedic surgeon in a modern Abu Dhabi clinic"
+              fill
+              sizes="(min-width: 900px) 420px, 100vw"
+              className="object-cover"
+            />
+            <figcaption className="visual-caption">
+              <div className="big">Experience guided by individual needs.</div>
+              <p>Orthopaedic assessment, clear treatment discussions, and a plan shaped around the patient.</p>
+            </figcaption>
+          </figure>
           <div>
             <span className="eyebrow">About the doctor</span>
             <h2>Meet Dr. Feras Ya&apos;ish, Consultant Trauma &amp; Orthopaedic Surgeon in Abu Dhabi</h2>
@@ -258,6 +267,15 @@ export function AbuDhabiLandingPage() {
               below.
             </p>
           </div>
+          <div className="section-image">
+            <Image
+              src="/images/landing/hip-knee.webp"
+              alt="Hip and knee joint anatomy for orthopaedic conditions"
+              fill
+              sizes="(min-width: 1140px) 1140px, 100vw"
+              className="object-cover"
+            />
+          </div>
           <div className="grid3">
             {treatments.map((item) => (
               <article key={item.href} className="card treat">
@@ -287,6 +305,15 @@ export function AbuDhabiLandingPage() {
               alone.
             </p>
           </div>
+          <div className="section-image">
+            <Image
+              src="/images/landing/personalized-care.webp"
+              alt="Personalized orthopaedic consultation between doctor and patient"
+              fill
+              sizes="(min-width: 1140px) 1140px, 100vw"
+              className="object-cover"
+            />
+          </div>
           <div className="steps">
             <div className="step">
               <b>01 · Assessment</b>
@@ -313,6 +340,15 @@ export function AbuDhabiLandingPage() {
               An orthopaedic assessment may help when symptoms persist, affect mobility, or interfere with everyday
               activities.
             </p>
+          </div>
+          <div className="section-image">
+            <Image
+              src="/images/landing/when-to-consult.webp"
+              alt="Patient seeking care for knee pain with an orthopaedic surgeon"
+              fill
+              sizes="(min-width: 1140px) 1140px, 100vw"
+              className="object-cover"
+            />
           </div>
           <div className="grid3">
             <article className="card">
