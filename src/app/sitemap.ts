@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/events/images",
     "/events/media",
     "/contact",
+    "/orthopedic-doctor-in-abu-dhabi",
   ];
 
   const paths = [

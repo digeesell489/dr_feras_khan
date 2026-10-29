@@ -1,0 +1,571 @@
+.abu-landing {
+  --navy: #123449;
+  --teal: #168b85;
+  --mint: #e9f8f4;
+  --paper: #fbfaf7;
+  --ink: #243d49;
+  --muted: #617580;
+  --line: #e3ecea;
+  --shadow: 0 12px 32px #1537470d;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.7 var(--font-jakarta), system-ui, sans-serif;
+}
+
+.abu-landing * {
+  box-sizing: border-box;
+}
+
+.abu-landing a {
+  color: inherit;
+}
+
+.abu-landing .wrap {
+  width: min(1140px, calc(100% - 36px));
+  margin: auto;
+}
+
+.abu-landing .subnav {
+  position: sticky;
+  top: 76px;
+  z-index: 4;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+.abu-landing .subnav-inner {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  overflow-x: auto;
+}
+
+.abu-landing .sublinks {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.abu-landing .sublinks a {
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.abu-landing .btn {
+  display: inline-block;
+  background: var(--navy);
+  color: white !important;
+  text-decoration: none;
+  padding: 11px 17px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 800;
+  border: 1px solid var(--navy);
+}
+
+.abu-landing .btn.alt {
+  background: white;
+  color: var(--navy) !important;
+  border-color: var(--line);
+}
+
+.abu-landing .hero {
+  padding: 48px 0 38px;
+  background:
+    radial-gradient(circle at 82% 18%, #e9f7f3, transparent 32%),
+    linear-gradient(#fbfaf7, #f6fbf9);
+}
+
+.abu-landing .hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 54px;
+  align-items: center;
+}
+
+.abu-landing .eyebrow {
+  color: var(--teal);
+  font-size: 11px;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  display: block;
+  margin-bottom: 13px;
+}
+
+.abu-landing h1,
+.abu-landing h2,
+.abu-landing h3 {
+  font-family: var(--font-newsreader), Georgia, "Times New Roman", serif;
+  color: var(--navy);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.abu-landing h1 {
+  font-size: clamp(36px, 4.4vw, 56px);
+  margin: 0 0 17px;
+}
+
+.abu-landing h2 {
+  font-size: clamp(28px, 3vw, 39px);
+  margin: 0 0 14px;
+}
+
+.abu-landing h3 {
+  font-size: 22px;
+  margin: 0 0 10px;
+}
+
+.abu-landing p {
+  color: #536873;
+  margin: 0 0 15px;
+}
+
+.abu-landing .lead {
+  font-size: 18px;
+}
+
+.abu-landing .actions,
+.abu-landing .pills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+
+.abu-landing .pill {
+  font-size: 12px;
+  font-weight: 750;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 8px 11px;
+  color: #42636b;
+}
+
+.abu-landing .portrait {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: white;
+  padding: 12px;
+  box-shadow: var(--shadow);
+  max-width: 410px;
+  margin: auto;
+}
+
+.abu-landing .portrait-art {
+  position: relative;
+  min-height: 370px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #102b3a, #1c5962);
+}
+
+.abu-landing .portrait-art img {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.abu-landing .portrait figcaption {
+  padding: 13px 7px 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.abu-landing .portrait figcaption strong {
+  display: block;
+  color: var(--navy);
+  font-size: 15px;
+}
+
+.abu-landing .stats {
+  padding: 0 0 44px;
+  background: #f6fbf9;
+}
+
+.abu-landing .statgrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 13px;
+}
+
+.abu-landing .stat,
+.abu-landing .card,
+.abu-landing .hours,
+.abu-landing .hospital {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.abu-landing .stat {
+  padding: 17px;
+  display: flex;
+  gap: 11px;
+  align-items: center;
+}
+
+.abu-landing .ico {
+  display: grid;
+  place-items: center;
+  flex: 0 0 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: var(--mint);
+  color: var(--teal);
+  font-size: 18px;
+}
+
+.abu-landing .stat strong {
+  display: block;
+  color: var(--navy);
+  font-size: 13px;
+}
+
+.abu-landing .stat small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.abu-landing section {
+  padding: 72px 0;
+}
+
+.abu-landing .soft {
+  background: #f0f6f5;
+}
+
+.abu-landing .head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 34px;
+}
+
+.abu-landing .head p {
+  max-width: 690px;
+  margin: 0 auto;
+}
+
+.abu-landing .grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+}
+
+.abu-landing .card {
+  padding: 23px;
+}
+
+.abu-landing .card p {
+  font-size: 14px;
+}
+
+.abu-landing .link {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.abu-landing .link:hover {
+  text-decoration: underline;
+}
+
+.abu-landing .treat {
+  padding: 0;
+  overflow: hidden;
+}
+
+.abu-landing .art {
+  height: 120px;
+  background: linear-gradient(135deg, #d7efea, #f8fbfa 65%, #d8e9ec);
+  display: flex;
+  align-items: end;
+  padding: 15px;
+  color: var(--teal);
+  font-size: 27px;
+}
+
+.abu-landing .tcopy {
+  padding: 21px;
+}
+
+.abu-landing .quote {
+  margin: 25px auto 0;
+  max-width: 790px;
+  text-align: center;
+  background: var(--mint);
+  border: 1px solid #c8eee5;
+  color: #267d78;
+  border-radius: 12px;
+  padding: 18px;
+  font: italic 19px var(--font-newsreader), Georgia, serif;
+}
+
+.abu-landing .about {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 42px;
+  align-items: center;
+}
+
+.abu-landing .visual {
+  min-height: 350px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #143b4d, #2a7777);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  color: white;
+}
+
+.abu-landing .visual .big {
+  font: 42px/1.1 var(--font-newsreader), Georgia, serif;
+}
+
+.abu-landing .visual p {
+  color: #e0f2ef;
+  margin-top: 12px;
+}
+
+.abu-landing .checks {
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 9px;
+  margin: 20px 0;
+}
+
+.abu-landing .checks li::before {
+  content: "✓";
+  color: var(--teal);
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+.abu-landing .steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.abu-landing .step {
+  border-left: 3px solid var(--teal);
+  background: white;
+  border-radius: 0 12px 12px 0;
+  padding: 17px;
+}
+
+.abu-landing .step b {
+  display: block;
+  color: var(--navy);
+}
+
+.abu-landing .step p {
+  font-size: 13px;
+  margin: 5px 0 0;
+}
+
+.abu-landing .locgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.abu-landing .hours,
+.abu-landing .hospital {
+  padding: 25px;
+}
+
+.abu-landing .rowline {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+  padding: 11px 0;
+  font-size: 14px;
+}
+
+.abu-landing .rowline b {
+  color: var(--navy);
+}
+
+.abu-landing .rowline span {
+  text-align: right;
+  color: var(--muted);
+}
+
+.abu-landing .hospital-art {
+  position: relative;
+  height: 140px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 15px 0;
+  background: linear-gradient(135deg, #d8e9eb, #f7fbfa, #cce7e1);
+}
+
+.abu-landing .hospital-art img {
+  object-fit: cover;
+}
+
+.abu-landing .faq {
+  max-width: 850px;
+  margin: auto;
+  display: grid;
+  gap: 11px;
+}
+
+.abu-landing details {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0 18px;
+}
+
+.abu-landing summary {
+  cursor: pointer;
+  padding: 17px 28px 17px 0;
+  font-weight: 800;
+  color: var(--navy);
+  list-style: none;
+  position: relative;
+}
+
+.abu-landing summary::-webkit-details-marker {
+  display: none;
+}
+
+.abu-landing summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  color: var(--teal);
+  font-size: 21px;
+}
+
+.abu-landing details[open] summary::after {
+  content: "−";
+}
+
+.abu-landing details p {
+  font-size: 14px;
+  padding-bottom: 16px;
+  margin: 0;
+}
+
+.abu-landing .cta {
+  background: var(--navy);
+  color: white;
+  padding: 52px 0;
+}
+
+.abu-landing .ctarow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.abu-landing .cta h2 {
+  color: white;
+}
+
+.abu-landing .cta p {
+  color: #d5e3e7;
+  max-width: 700px;
+}
+
+.abu-landing .cta .btn {
+  background: #b8eee4;
+  color: #123449 !important;
+  border-color: #b8eee4;
+  white-space: nowrap;
+}
+
+.abu-landing .note {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .abu-landing .sublinks a:not(.btn) {
+    display: none;
+  }
+
+  .abu-landing .hero-grid,
+  .abu-landing .about {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .abu-landing .hero-copy {
+    text-align: center;
+  }
+
+  .abu-landing .actions,
+  .abu-landing .pills {
+    justify-content: center;
+  }
+
+  .abu-landing .statgrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .abu-landing .grid3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .abu-landing .locgrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .abu-landing .subnav-inner .btn {
+    padding: 9px;
+    font-size: 11px;
+  }
+
+  .abu-landing .hero {
+    padding: 32px 0 28px;
+  }
+
+  .abu-landing section {
+    padding: 52px 0;
+  }
+
+  .abu-landing .portrait-art {
+    min-height: 285px;
+  }
+
+  .abu-landing .statgrid,
+  .abu-landing .grid3,
+  .abu-landing .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .abu-landing .ctarow {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .abu-landing h1 {
+    font-size: 38px;
+  }
+
+  .abu-landing .hours,
+  .abu-landing .hospital {
+    padding: 20px;
+  }
+}
