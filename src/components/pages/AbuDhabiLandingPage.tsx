@@ -1,19 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BookButton } from "@/components/BookButton";
-import { clinicHours } from "@/lib/content";
-import { educationGallery } from "@/lib/education";
-import { HEALTHPOINT_APPOINTMENT, HEALTHPOINT_MAPS } from "@/lib/links";
-import {
-  SITE_ADDRESS_EN,
-  SITE_PHONE_DISPLAY,
-  SITE_PHONE_HREF,
-  SITE_PHONE_INTERNATIONAL_DISPLAY,
-  SITE_PHONE_INTERNATIONAL_HREF,
-} from "@/lib/site";
+import { AbuLandingGallery } from "@/components/pages/AbuLandingGallery";
+import { Hospital } from "@/components/Hospital";
+import { HEALTHPOINT_APPOINTMENT } from "@/lib/links";
 import "./abu-landing.css";
-
-const galleryItems = educationGallery.slice(0, 8);
 
 const treatments = [
   {
@@ -126,61 +116,29 @@ const consultReasons = [
 const faqs = [
   {
     q: "How do I choose the best orthopedic doctor in Abu Dhabi?",
-    a: "Consider the doctor's qualifications, experience relevant to your condition, and options available for assessment and treatment. Discuss potential benefits, risks, alternatives, and recovery expectations. The right choice depends on your individual medical needs.",
+    a: "When choosing an orthopedic doctor, consider qualifications, experience, specialization and treatment options. Dr. Feras Ya'ish provides consultations for orthopedic conditions and hip and knee treatment options.",
   },
   {
     q: "What conditions does an orthopedic specialist treat?",
-    a: "Orthopaedic specialists assess conditions affecting bones, joints, ligaments, tendons, and related structures. Depending on their practice, this may include arthritis, joint damage, ligament injuries, fractures, and problems requiring reconstructive surgery.",
+    a: "An orthopedic specialist assesses and treats conditions affecting bones, joints, ligaments and other parts of the musculoskeletal system. Treatment depends on the diagnosis and the patient's individual needs.",
   },
   {
     q: "Does Dr. Feras Ya'ish perform robotic joint replacement?",
-    a: "Robotic-assisted joint replacement is among Dr. Feras Ya'ish's areas of surgical interest. Whether this technique is appropriate depends on the patient's condition, clinical assessment, and the technology and services available for the planned procedure.",
+    a: "Dr. Feras Ya'ish offers expertise in joint replacement, including robotic-assisted approaches where clinically appropriate. Suitability depends on the patient's condition and assessment.",
   },
   {
     q: "Where can I consult Dr. Feras Ya'ish in Abu Dhabi?",
-    a: "Dr. Feras Ya'ish practises at Healthpoint Hospital in Abu Dhabi. Contact the hospital or use official appointment booking options to confirm current availability and consultation details.",
+    a: "The listed consultation location is Healthpoint Hospital, between Gates 1-6, Al Qiyada Street, Zayed Sports City, Al Rawdah, Abu Dhabi, UAE. The hospital contact number is +971 2 492 9000.",
   },
   {
     q: "When should I consider hip or knee replacement surgery?",
-    a: "Joint replacement may be considered when significant joint damage causes persistent pain and reduced function, particularly when suitable non-surgical treatments have not provided sufficient relief. A clinical assessment is necessary to determine whether surgery is appropriate.",
+    a: "Hip or knee replacement may be considered when joint damage or arthritis causes persistent pain and limits daily activities, particularly when non-surgical treatments have not provided sufficient relief. An orthopedic consultation can help determine suitable options.",
   },
 ] as const;
 
 export function AbuDhabiLandingPage() {
   return (
     <div className="abu-landing">
-      <header className="top">
-        <div className="wrap nav">
-          <Link className="brand" href="/">
-            <Image
-              src="/images/fy-ortho-logo.png"
-              alt="Dr. Feras Ya'ish Ortho — Hip & Knee Surgery"
-              width={722}
-              height={192}
-              className="brand-logo"
-              priority
-            />
-          </Link>
-          <nav className="links" aria-label="Landing sections">
-            <a href="#about">About</a>
-            <a href="#treatments">Treatments</a>
-            <a href="#approach">Approach</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#location">Location</a>
-            <a href="#faqs">FAQs</a>
-            <a
-              className="btn"
-              href={HEALTHPOINT_APPOINTMENT}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Book a consultation ↗
-            </a>
-          </nav>
-        </div>
-      </header>
-
-      <main>
       <section className="hero">
         <div className="wrap hero-grid">
           <div className="hero-copy">
@@ -431,105 +389,11 @@ export function AbuDhabiLandingPage() {
               day-to-day practice and education work.
             </p>
           </div>
-          <div
-            className="gallery-grid"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
-              gridAutoRows: 150,
-              gap: 12,
-              marginTop: 28,
-            }}
-          >
-            {galleryItems.map((item, index) => {
-              const wide = index === 0;
-              return (
-                <figure
-                  key={item.image}
-                  className={`gallery-item${wide ? " gallery-item-wide" : ""}`}
-                  style={{
-                    margin: 0,
-                    height: wide ? 312 : 150,
-                    borderRadius: 14,
-                    overflow: "hidden",
-                    gridColumn: wide ? "span 2" : undefined,
-                    gridRow: wide ? "span 2" : undefined,
-                    background: "#eef6f4",
-                  }}
-                >
-                  <Image
-                    src={item.image}
-                    alt={item.alt}
-                    width={wide ? 900 : 450}
-                    height={wide ? 700 : 350}
-                    sizes={wide ? "(min-width: 900px) 560px, 100vw" : "(min-width: 900px) 270px, 50vw"}
-                    style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 28%" }}
-                  />
-                </figure>
-              );
-            })}
-          </div>
+          <AbuLandingGallery />
         </div>
       </section>
 
-      <section id="location">
-        <div className="wrap">
-          <div className="head">
-            <span className="eyebrow">Visit the clinic</span>
-            <h2>Consultation at Healthpoint Hospital, Abu Dhabi</h2>
-            <p>
-              Dr. Feras Ya&apos;ish practises at Healthpoint Hospital in Abu Dhabi, UAE. Contact the hospital or use
-              official appointment options to confirm clinic availability and timings before visiting.
-            </p>
-          </div>
-          <div className="locgrid">
-            <div className="hours">
-              <h3>Clinic Hours &amp; Appointments</h3>
-              <p>Consultation schedules may vary. Please confirm the latest availability directly with the hospital.</p>
-              {clinicHours.map((item) => (
-                <div className="rowline" key={item.day}>
-                  <b>{item.day}</b>
-                  <span>{item.time}</span>
-                </div>
-              ))}
-              <div className="rowline">
-                <b>Location</b>
-                <span>{SITE_ADDRESS_EN}</span>
-              </div>
-              <div className="rowline">
-                <b>Phone</b>
-                <span>
-                  <a href={SITE_PHONE_HREF}>{SITE_PHONE_DISPLAY}</a>
-                  {" · "}
-                  <a href={SITE_PHONE_INTERNATIONAL_HREF}>{SITE_PHONE_INTERNATIONAL_DISPLAY}</a>
-                </span>
-              </div>
-              <p className="note" style={{ marginTop: 15 }}>
-                <a className="link" href={HEALTHPOINT_MAPS} target="_blank" rel="noreferrer">
-                  Open in Google Maps →
-                </a>
-              </p>
-            </div>
-            <div className="hospital">
-              <h3>Healthpoint Hospital</h3>
-              <div className="hospital-art">
-                <Image
-                  src="/images/healthpoint-building.webp"
-                  alt="Healthpoint Hospital, Zayed Sports City, Abu Dhabi"
-                  fill
-                  sizes="(min-width: 900px) 520px, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <p>
-                A consultation can help clarify the cause of symptoms and identify next steps based on the clinical
-                findings.
-              </p>
-              <BookButton className="btn">Request an appointment ↗</BookButton>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hospital />
 
       <section id="faqs" className="soft">
         <div className="wrap">
@@ -568,27 +432,6 @@ export function AbuDhabiLandingPage() {
           </a>
         </div>
       </section>
-      </main>
-
-      <footer className="landing-foot">
-        <div className="wrap foot">
-          <div>
-            <strong>Dr. Feras Ya&apos;ish</strong>
-            <br />
-            Consultant Trauma and Orthopaedic Surgeon
-          </div>
-          <div>
-            <Link href="/">Official website</Link>
-            {" · "}
-            <a href="#treatments">Treatments</a>
-            {" · "}
-            <a href="#gallery">Gallery</a>
-            {" · "}
-            <a href="#faqs">FAQs</a>
-          </div>
-          <div>© {new Date().getFullYear()} Dr. Feras Ya&apos;ish</div>
-        </div>
-      </footer>
     </div>
   );
 }
