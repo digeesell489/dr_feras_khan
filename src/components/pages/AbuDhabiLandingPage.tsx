@@ -233,7 +233,7 @@ export function AbuDhabiLandingPage() {
               alt="Dr. Feras Ya'ish, Consultant Trauma and Orthopaedic Surgeon"
               fill
               sizes="(min-width: 900px) 420px, 100vw"
-              className="object-contain object-top"
+              className="object-cover object-[center_20%]"
             />
             <figcaption className="visual-caption">
               <div className="big">Experience guided by individual needs.</div>

@@ -28,6 +28,18 @@ export const metadata: Metadata = {
     url: PAGE_URL,
     siteName: "Dr. Feras Ya'ish",
     type: "website",
+    images: [
+      {
+        url: DOCTOR_IMAGE_URL,
+        alt: "Dr. Feras Ya'ish, Consultant Trauma and Orthopaedic Surgeon",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [DOCTOR_IMAGE_URL],
   },
 };
 
