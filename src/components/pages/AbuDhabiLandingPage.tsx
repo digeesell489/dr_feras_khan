@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BookButton } from "@/components/BookButton";
 import { clinicHours } from "@/lib/content";
+import { educationGallery } from "@/lib/education";
 import { HEALTHPOINT_APPOINTMENT, HEALTHPOINT_MAPS } from "@/lib/links";
 import {
   SITE_ADDRESS_EN,
@@ -10,71 +11,115 @@ import {
   SITE_PHONE_INTERNATIONAL_DISPLAY,
   SITE_PHONE_INTERNATIONAL_HREF,
 } from "@/lib/site";
-import "./abu-dhabi-landing.css";
+import "./abu-landing.css";
+
+const galleryItems = educationGallery.slice(0, 8);
 
 const treatments = [
   {
-    icon: "⌁",
     title: "Knee Replacement Surgery",
     body: "Knee replacement may be considered when advanced joint damage causes ongoing pain, stiffness, and difficulty with everyday activities. Assessment helps determine whether total knee replacement or another option is suitable.",
     href: "/treatments/knee-replacement",
     label: "Explore knee replacement →",
+    image: "/images/implant-knee.webp",
   },
   {
-    icon: "◇",
     title: "Hip Replacement Surgery",
     body: "Hip replacement may be an option when significant joint damage affects walking, movement, or quality of life. Consultation covers diagnosis, alternatives, surgical considerations, and recovery expectations.",
     href: "/treatments/hip-replacement",
     label: "Explore hip replacement →",
+    image: "/images/clinical/hip-replacement-xray.webp",
   },
   {
-    icon: "✳",
     title: "Robotic Joint Replacement",
     body: "Robotic-assisted technology can support planning and guide aspects of selected joint replacement procedures. Suitability depends on the patient's condition and clinical assessment.",
     href: "/treatments/robotic-arthroplasty",
     label: "Explore robotic arthroplasty →",
+    image: "/images/clinical/mako-theatre.webp",
   },
   {
-    icon: "↻",
     title: "Revision Hip and Knee Surgery",
     body: "Revision surgery may be needed when a previous joint replacement develops complications, such as loosening, wear, or infection. Careful investigation helps guide next steps.",
     href: "/treatments/revision-surgery",
     label: "Explore revision surgery →",
+    image: "/images/clinical/revision-knee-xray.webp",
   },
   {
-    icon: "⌘",
     title: "Knee Ligament Reconstruction and Arthroscopy",
     body: "Ligament reconstruction may be considered for selected injuries that cause persistent instability. Arthroscopy is a minimally invasive technique used for certain knee conditions.",
     href: "/treatments/ligament-reconstruction",
     label: "Explore ligament reconstruction →",
+    image: "/images/knee-mechanics.webp",
   },
   {
-    icon: "▦",
     title: "Patient-Specific and Partial Knee Replacement",
     body: "Patient-specific planning and partial knee replacement may suit selected patients depending on anatomy, the location of joint damage, and clinical findings.",
     href: "/treatments/patient-specific-knee",
     label: "Explore patient-specific knee replacement →",
+    image: "/images/clinical/partial-knee-compartments.webp",
   },
   {
-    icon: "＋",
     title: "Trauma and Malunion Treatment",
     body: "Orthopaedic trauma care addresses injuries affecting bones and joints. Malunion treatment may be considered when a fracture heals in a position that affects alignment or function.",
     href: "/treatments/trauma",
     label: "Explore trauma treatment →",
+    image: "/images/clinical/trauma-malunion-xray.webp",
   },
   {
-    icon: "◎",
     title: "Knee Arthroscopy",
     body: "Knee arthroscopy uses small incisions and a camera to assess or treat selected problems inside the joint. The appropriate approach depends on the diagnosis.",
     href: "/treatments/arthroscopy",
     label: "Explore arthroscopy →",
+    image: "/images/clinical/knee-arthroscopy.webp",
   },
   {
-    icon: "◇",
     title: "Patellofemoral Instability",
     body: "Repeated kneecap instability can affect comfort and confidence during movement. Assessment helps identify contributing factors and discuss appropriate management options.",
     href: "/treatments/patellofemoral-instability",
     label: "Explore patellofemoral treatment →",
+    image: "/images/landing/hip-knee.webp",
+  },
+] as const;
+
+const approachSteps = [
+  {
+    title: "01 · Assessment",
+    body: "Discuss symptoms, medical history, movement limitations, and relevant investigations.",
+    image: "/images/landing/step-assessment.webp",
+    alt: "Orthopaedic assessment tools and knee model",
+  },
+  {
+    title: "02 · Treatment discussion",
+    body: "Review suitable options, which may include rehabilitation, other non-surgical care, or surgery.",
+    image: "/images/landing/step-discussion.webp",
+    alt: "Doctor explaining joint treatment options to a patient",
+  },
+  {
+    title: "03 · Planning and follow-up",
+    body: "Where treatment is indicated, discuss preparation, recovery, rehabilitation, and follow-up.",
+    image: "/images/landing/step-followup.webp",
+    alt: "Recovery planning and rehabilitation materials",
+  },
+] as const;
+
+const consultReasons = [
+  {
+    title: "Persistent hip or knee pain",
+    body: "Ongoing pain, stiffness, or discomfort that limits walking, sleep, or routine activities may need assessment.",
+    image: "/images/landing/card-pain.webp",
+    alt: "Person holding a painful knee",
+  },
+  {
+    title: "Instability or restricted movement",
+    body: "Repeated knee giving-way, reduced range of motion, or difficulty bearing weight can warrant further evaluation.",
+    image: "/images/landing/card-instability.webp",
+    alt: "Person checking knee stability",
+  },
+  {
+    title: "Injury or previous surgery concerns",
+    body: "Symptoms after an injury or a problem affecting a previous joint replacement should be discussed with a clinician.",
+    image: "/images/landing/card-injury.webp",
+    alt: "Follow-up care after injury or joint surgery",
   },
 ] as const;
 
@@ -120,9 +165,15 @@ export function AbuDhabiLandingPage() {
             <a href="#about">About</a>
             <a href="#treatments">Treatments</a>
             <a href="#approach">Approach</a>
+            <a href="#gallery">Gallery</a>
             <a href="#location">Location</a>
             <a href="#faqs">FAQs</a>
-            <a className="btn" href="#appointment">
+            <a
+              className="btn"
+              href={HEALTHPOINT_APPOINTMENT}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Book a consultation ↗
             </a>
           </nav>
@@ -145,7 +196,12 @@ export function AbuDhabiLandingPage() {
               options explained according to your condition and goals.
             </p>
             <div className="actions">
-              <a className="btn" href="#appointment">
+              <a
+                className="btn"
+                href={HEALTHPOINT_APPOINTMENT}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Request an appointment ↗
               </a>
               <a className="btn alt" href="#treatments">
@@ -214,11 +270,11 @@ export function AbuDhabiLandingPage() {
         <div className="wrap about">
           <figure className="visual">
             <Image
-              src="/images/landing/about-doctor.webp"
-              alt="Consultant orthopaedic surgeon in a modern Abu Dhabi clinic"
+              src="/images/doctor-about.webp"
+              alt="Dr. Feras Ya'ish, Consultant Trauma and Orthopaedic Surgeon"
               fill
               sizes="(min-width: 900px) 420px, 100vw"
-              className="object-cover"
+              className="object-contain object-top"
             />
             <figcaption className="visual-caption">
               <div className="big">Experience guided by individual needs.</div>
@@ -267,19 +323,19 @@ export function AbuDhabiLandingPage() {
               below.
             </p>
           </div>
-          <div className="section-image">
-            <Image
-              src="/images/landing/hip-knee.webp"
-              alt="Hip and knee joint anatomy for orthopaedic conditions"
-              fill
-              sizes="(min-width: 1140px) 1140px, 100vw"
-              className="object-cover"
-            />
-          </div>
           <div className="grid3">
             {treatments.map((item) => (
               <article key={item.href} className="card treat">
-                <div className="art">{item.icon}</div>
+                <div className="art">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={640}
+                    height={360}
+                    sizes="(min-width: 900px) 340px, 100vw"
+                    style={{ width: "100%", height: 160, objectFit: "cover" }}
+                  />
+                </div>
                 <div className="tcopy">
                   <h3>{item.title}</h3>
                   <p>{item.body}</p>
@@ -305,28 +361,25 @@ export function AbuDhabiLandingPage() {
               alone.
             </p>
           </div>
-          <div className="section-image">
-            <Image
-              src="/images/landing/personalized-care.webp"
-              alt="Personalized orthopaedic consultation between doctor and patient"
-              fill
-              sizes="(min-width: 1140px) 1140px, 100vw"
-              className="object-cover"
-            />
-          </div>
           <div className="steps">
-            <div className="step">
-              <b>01 · Assessment</b>
-              <p>Discuss symptoms, medical history, movement limitations, and relevant investigations.</p>
-            </div>
-            <div className="step">
-              <b>02 · Treatment discussion</b>
-              <p>Review suitable options, which may include rehabilitation, other non-surgical care, or surgery.</p>
-            </div>
-            <div className="step">
-              <b>03 · Planning and follow-up</b>
-              <p>Where treatment is indicated, discuss preparation, recovery, rehabilitation, and follow-up.</p>
-            </div>
+            {approachSteps.map((item) => (
+              <article className="step" key={item.title}>
+                <div className="step-media">
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    width={640}
+                    height={360}
+                    sizes="(min-width: 900px) 340px, 100vw"
+                    style={{ width: "100%", height: 160, objectFit: "cover" }}
+                  />
+                </div>
+                <div className="step-body">
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -341,45 +394,81 @@ export function AbuDhabiLandingPage() {
               activities.
             </p>
           </div>
-          <div className="section-image">
-            <Image
-              src="/images/landing/when-to-consult.webp"
-              alt="Patient seeking care for knee pain with an orthopaedic surgeon"
-              fill
-              sizes="(min-width: 1140px) 1140px, 100vw"
-              className="object-cover"
-            />
-          </div>
           <div className="grid3">
-            <article className="card">
-              <div className="ico">↗</div>
-              <h3>Persistent hip or knee pain</h3>
-              <p>
-                Ongoing pain, stiffness, or discomfort that limits walking, sleep, or routine activities may need
-                assessment.
-              </p>
-            </article>
-            <article className="card">
-              <div className="ico">◇</div>
-              <h3>Instability or restricted movement</h3>
-              <p>
-                Repeated knee giving-way, reduced range of motion, or difficulty bearing weight can warrant further
-                evaluation.
-              </p>
-            </article>
-            <article className="card">
-              <div className="ico">＋</div>
-              <h3>Injury or previous surgery concerns</h3>
-              <p>
-                Symptoms after an injury or a problem affecting a previous joint replacement should be discussed with a
-                clinician.
-              </p>
-            </article>
+            {consultReasons.map((item) => (
+              <article className="card reason" key={item.title}>
+                <div className="reason-media">
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    width={640}
+                    height={360}
+                    sizes="(min-width: 900px) 340px, 100vw"
+                    style={{ width: "100%", height: 160, objectFit: "cover" }}
+                  />
+                </div>
+                <div className="reason-body">
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
+                </div>
+              </article>
+            ))}
           </div>
           <p className="note" style={{ marginTop: 18 }}>
             Sudden severe pain after an injury, a visibly deformed joint, or a hot, swollen joint accompanied by fever
             may require urgent medical attention.
           </p>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <div className="wrap">
+          <div className="head">
+            <span className="eyebrow">Practice &amp; teaching</span>
+            <h2>Clinical Practice Gallery</h2>
+            <p>
+              Selected photographs from clinic, theatre, and orthopaedic teaching settings that reflect Dr. Ya&apos;ish&apos;s
+              day-to-day practice and education work.
+            </p>
+          </div>
+          <div
+            className="gallery-grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
+              gridAutoRows: 150,
+              gap: 12,
+              marginTop: 28,
+            }}
+          >
+            {galleryItems.map((item, index) => {
+              const wide = index === 0;
+              return (
+                <figure
+                  key={item.image}
+                  className={`gallery-item${wide ? " gallery-item-wide" : ""}`}
+                  style={{
+                    margin: 0,
+                    height: wide ? 312 : 150,
+                    borderRadius: 14,
+                    overflow: "hidden",
+                    gridColumn: wide ? "span 2" : undefined,
+                    gridRow: wide ? "span 2" : undefined,
+                    background: "#eef6f4",
+                  }}
+                >
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    width={wide ? 900 : 450}
+                    height={wide ? 700 : 350}
+                    sizes={wide ? "(min-width: 900px) 560px, 100vw" : "(min-width: 900px) 270px, 50vw"}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 28%" }}
+                  />
+                </figure>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -469,7 +558,12 @@ export function AbuDhabiLandingPage() {
               Feras Ya&apos;ish.
             </p>
           </div>
-          <a className="btn" href={HEALTHPOINT_APPOINTMENT}>
+          <a
+            className="btn"
+            href={HEALTHPOINT_APPOINTMENT}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Contact the clinic ↗
           </a>
         </div>
@@ -487,6 +581,8 @@ export function AbuDhabiLandingPage() {
             <Link href="/">Official website</Link>
             {" · "}
             <a href="#treatments">Treatments</a>
+            {" · "}
+            <a href="#gallery">Gallery</a>
             {" · "}
             <a href="#faqs">FAQs</a>
           </div>

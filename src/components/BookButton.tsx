@@ -9,7 +9,13 @@ type BookButtonProps = {
 
 export function BookButton({ children, className = "", onClick }: BookButtonProps) {
   return (
-    <a href={HEALTHPOINT_APPOINTMENT} className={className} onClick={onClick}>
+    <a
+      href={HEALTHPOINT_APPOINTMENT}
+      className={className}
+      onClick={onClick}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       {children}
     </a>
   );
