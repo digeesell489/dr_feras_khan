@@ -176,11 +176,11 @@ export function AbuDhabiLandingPage() {
           <figure className="portrait">
             <div className="portrait-art">
               <Image
-                src="/images/doctor-cutout.webp"
+                src="/images/doctor-hero-card.webp"
                 alt="Dr. Feras Ya'ish, Consultant Trauma and Orthopaedic Surgeon in Abu Dhabi"
                 fill
                 sizes="(min-width: 1024px) 410px, 90vw"
-                className="object-contain object-bottom"
+                className="object-cover object-[center_12%]"
                 priority
               />
             </div>
@@ -229,11 +229,12 @@ export function AbuDhabiLandingPage() {
         <div className="wrap about">
           <figure className="visual">
             <Image
-              src="/images/doctor-about.webp"
-              alt="Dr. Feras Ya'ish, Consultant Trauma and Orthopaedic Surgeon"
+              src="/images/practice/teaching-workshop.webp"
+              alt="Dr. Feras Ya'ish teaching at an orthopaedic workshop"
               fill
               sizes="(min-width: 900px) 420px, 100vw"
-              className="object-cover object-[center_20%]"
+              className="object-cover object-center"
+              priority
             />
             <figcaption className="visual-caption">
               <div className="big">Experience guided by individual needs.</div>
