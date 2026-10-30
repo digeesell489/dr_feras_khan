@@ -1,12 +1,10 @@
 import type { MetadataRoute } from "next";
 import { conditions } from "@/lib/conditions";
-import { educationItems } from "@/lib/education";
 import { treatments } from "@/lib/treatments";
 
 // Force a static sitemap.xml artifact at build time (Hostinger/standalone).
 export const dynamic = "force-static";
 
-// TODO: confirm the canonical host (apex vs www) matches the live site's preferred domain.
 const SITE_URL = "https://drferasyaishortho.com";
 
 /**
@@ -14,29 +12,31 @@ const SITE_URL = "https://drferasyaishortho.com";
  * (see src/lib/visibility.ts — flip flags to feature again):
  * - /for-physicians/*
  * - /case-examples/*
+ *
+ * Route list and priorities align with the approved sitemap for the live site.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPaths = [
-    "/",
-    "/about",
-    "/treatments",
-    "/conditions",
-    "/patient-care",
-    "/events",
-    "/events/images",
-    "/events/media",
-    "/contact",
-    "/orthopedic-doctor-in-abu-dhabi",
+  const lastModified = new Date("2026-10-30T05:55:26.000Z");
+
+  const staticEntries: { path: string; priority: number }[] = [
+    { path: "/", priority: 1 },
+    { path: "/about", priority: 0.8 },
+    { path: "/treatments", priority: 0.8 },
+    ...treatments.map((item) => ({ path: `/treatments/${item.slug}`, priority: 0.8 })),
+    { path: "/conditions", priority: 0.8 },
+    ...conditions.map((item) => ({ path: `/conditions/${item.slug}`, priority: 0.8 })),
+    { path: "/patient-care", priority: 0.8 },
+    { path: "/events", priority: 0.8 },
+    { path: "/events/images", priority: 0.8 },
+    { path: "/events/media", priority: 0.8 },
+    { path: "/contact", priority: 0.8 },
+    { path: "/patient-education/acl-recovery", priority: 0.8 },
+    { path: "/orthopedic-doctor-in-abu-dhabi", priority: 0.8 },
   ];
 
-  const paths = [
-    ...staticPaths,
-    ...treatments.map((item) => `/treatments/${item.slug}`),
-    ...conditions.map((item) => `/conditions/${item.slug}`),
-    ...educationItems.map((item) => `/patient-education/${item.id}`),
-  ];
-
-  return paths.map((path) => ({
-    url: path === "/" ? SITE_URL : `${SITE_URL}${path}`,
+  return staticEntries.map(({ path, priority }) => ({
+    url: path === "/" ? `${SITE_URL}/` : `${SITE_URL}${path}`,
+    lastModified,
+    priority,
   }));
 }
