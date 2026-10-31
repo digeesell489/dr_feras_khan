@@ -46,6 +46,7 @@ export function Hero() {
               </p>
               <div className="glass-card-light relative mb-space-lg overflow-hidden rounded-xl border border-white/60 p-space-md">
                 <p className="font-body-lg text-body-lg leading-relaxed text-text-primary">{t.heroLead}</p>
+                <p className="mt-space-sm font-body-md text-body-md leading-relaxed text-text-secondary">{t.heroLead2}</p>
               </div>
               <div className="mb-space-md flex w-full flex-wrap items-center gap-space-md sm:w-auto">
                 <BookButton className="inline-flex w-full items-center justify-center gap-space-xs rounded bg-clinical-navy px-space-lg py-space-sm font-label-lg text-label-lg text-on-primary shadow-sm transition-all duration-300 hover:bg-clinical-slate-deep sm:w-auto">

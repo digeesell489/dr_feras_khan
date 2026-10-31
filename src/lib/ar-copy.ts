@@ -287,6 +287,7 @@ export function treatmentCopy(item: Treatment, lang: Lang) {
     title: loc(lang, item.title, ar?.title ?? item.title),
     short: loc(lang, item.short, item.shortAr),
     summary: loc(lang, item.summary, ar?.summary ?? item.summary),
+    summaryExtra: locList(lang, item.summaryExtra ?? [], item.summaryExtraAr ?? item.summaryExtra ?? []),
     who: locList(lang, item.who, ar?.who ?? item.who),
     approach: locList(lang, item.approach, ar?.approach ?? item.approach),
     recovery: locList(lang, item.recovery, ar?.recovery ?? item.recovery),

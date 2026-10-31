@@ -21,8 +21,9 @@ export type Treatment = {
   imageFit?: "cover" | "contain";
   category: TreatmentCategory;
   summary: string;
-  /** Extra hero paragraphs after `summary` (English long-form pages). */
+  /** Extra hero paragraphs after `summary`. */
   summaryExtra?: string[];
+  summaryExtraAr?: string[];
   /** Optional SEO title override for generateMetadata. */
   seoTitle?: string;
   /** Optional SEO description override for generateMetadata. */
@@ -48,6 +49,9 @@ export const treatments: Treatment[] = [
       "Persistent knee pain, stiffness and difficulty walking can affect everyday life. When these symptoms are caused by advanced arthritis and do not improve with non-surgical treatment, total knee replacement may be considered. The procedure replaces damaged joint surfaces with artificial components to help reduce pain, improve movement and restore knee function.",
     summaryExtra: [
       "Dr. Feras Ya'ish follows an individualised approach, considering each patient's anatomy, joint alignment and soft-tissue balance when planning surgery. Where appropriate, his surgical planning incorporates kinematic and patient-specific principles to support a balanced and functional knee.",
+    ],
+    summaryExtraAr: [
+      "يتبع الدكتور فراس يعيش نهجاً فردياً يراعي تشريح كل مريض ومحاذاة المفصل وتوازن الأنسجة الرخوة عند تخطيط الجراحة. وعند المناسبة يدمج تخطيطه مبادئ المحاذاة الحركية والمخصصة للمريض لدعم ركبة متوازنة ووظيفية.",
     ],
     seoTitle: "Expert Total Knee Replacement in UAE by Dr. Feras Ya'ish",
     seoDescription:

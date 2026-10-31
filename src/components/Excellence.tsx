@@ -110,9 +110,6 @@ export function Excellence() {
                   {lang === "ar" ? card.titleAr : card.title}
                 </h4>
                 <p className="text-xs leading-relaxed text-text-secondary">{lang === "ar" ? card.bodyAr : card.body}</p>
-                {card.body2 ? (
-                  <p className="mt-2 text-xs leading-relaxed text-text-secondary">{lang === "ar" ? card.body2Ar : card.body2}</p>
-                ) : null}
               </div>
             </Link>
           ))}

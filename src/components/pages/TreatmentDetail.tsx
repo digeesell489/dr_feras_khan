@@ -59,12 +59,11 @@ export function TreatmentDetail({ treatment }: { treatment: Treatment }) {
           </div>
           <div className="lg:col-span-6">
             <p className="text-base leading-relaxed text-text-secondary">{copy.summary}</p>
-            {lang === "en" &&
-              treatment.summaryExtra?.map((paragraph) => (
-                <p key={paragraph.slice(0, 48)} className="mt-4 text-base leading-relaxed text-text-secondary">
-                  {paragraph}
-                </p>
-              ))}
+            {copy.summaryExtra.map((paragraph) => (
+              <p key={paragraph.slice(0, 48)} className="mt-4 text-base leading-relaxed text-text-secondary">
+                {paragraph}
+              </p>
+            ))}
             <div className="mt-6 flex flex-wrap gap-3">
               <BookButton className="rounded bg-clinical-navy px-5 py-2.5 text-[13px] font-semibold text-white">
                 {t.requestConsultation}
@@ -106,7 +105,7 @@ export function TreatmentDetail({ treatment }: { treatment: Treatment }) {
         </div>
       </section>
 
-      {treatment.slug === "total-knee-replacement" && lang === "en" ? <KneeReplacementArticle /> : null}
+      {treatment.slug === "total-knee-replacement" ? <KneeReplacementArticle /> : null}
 
       <PageFaq slug={treatment.slug} />
 

@@ -27,9 +27,9 @@ const SITE_URL = "https://drferasyaishortho.com";
 //   images: [{ url: "https://drferasyaishortho.com/<approved-image>.jpg", width, height, alt }]
 export const metadata: Metadata = {
   openGraph: {
-    title: "Dr. Feras Ya'ish | Consultant Orthopaedic Surgeon, Abu Dhabi",
+    title: "Dr. Feras Ya'ish, Orthopedic Surgeon in UAE",
     description:
-      "Meet Dr. Feras Ya'ish, Consultant Orthopaedic Surgeon in Abu Dhabi, specialising in robotic-assisted and patient-specific joint replacement.",
+      "UK-trained orthopedic surgeon in UAE with more than 25 years of experience. Robotic-assisted and patient-specific joint replacement, revision surgery and knee ligament reconstruction at Healthpoint Hospital, Abu Dhabi.",
     url: `${SITE_URL}/`,
     siteName: "Dr. Feras Ya'ish",
     type: "website",
