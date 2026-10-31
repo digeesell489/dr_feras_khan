@@ -270,6 +270,3 @@ export function AbuDhabiLandingPage() {
     </>
   );
 }
-
-/** English FAQ list for JSON-LD (schema stays in English). */
-export const abuDhabiFaqs = abuLandingFaqs.map(({ q, a }) => ({ q, a }));
