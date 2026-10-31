@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!treatment) return { title: "Treatments | Dr. Feras Ya'ish" };
   return {
     title: seoTitleOverrides[slug] ?? `${treatment.title} | Dr. Feras Ya'ish`,
-    description: treatment.summary,
+    description: treatment.seoDescription ?? treatment.summary,
   };
 }
 
@@ -37,9 +37,13 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         data={pageSchema({
           path: `/treatments/${treatment.slug}`,
           name: `${treatment.title} | Dr. Feras Ya'ish`,
-          description: treatment.summary,
+          description: treatment.seoDescription ?? treatment.summary,
           type: "MedicalWebPage",
-          about: { "@type": "MedicalProcedure", name: treatment.title, description: treatment.summary },
+          about: {
+            "@type": "MedicalProcedure",
+            name: treatment.title,
+            description: treatment.seoDescription ?? treatment.summary,
+          },
         })}
       />
       <SiteShell>

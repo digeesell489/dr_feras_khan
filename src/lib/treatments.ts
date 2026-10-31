@@ -21,6 +21,12 @@ export type Treatment = {
   imageFit?: "cover" | "contain";
   category: TreatmentCategory;
   summary: string;
+  /** Extra hero paragraphs after `summary` (English long-form pages). */
+  summaryExtra?: string[];
+  /** Optional SEO description override for generateMetadata. */
+  seoDescription?: string;
+  /** Prefer these related treatment slugs on the detail page when set. */
+  relatedSlugs?: string[];
   who: string[];
   approach: string[];
   recovery: string[];
@@ -34,26 +40,32 @@ export const treatments: Treatment[] = [
     short: "Total Knee Replacement",
     shortAr: "استبدال الركبة الكامل",
     image: "/images/implant-knee.webp",
-    imageAlt: "Precision Total Knee Replacement Implant",
+    imageAlt: "Total knee replacement implant showing artificial knee joint components",
     category: "knee",
     summary:
-      "Moving past rigid mechanical alignment, Dr. Ya'ish implements kinematic and patient-specific protocols calibrated to replicate each patient's constitutional joint line and soft-tissue envelope. This physiological philosophy reduces unnatural tightness and restores a natural, pain-free arc of flexion.",
+      "Persistent knee pain, stiffness and difficulty walking can affect everyday life. When these symptoms are caused by advanced arthritis and do not improve with non-surgical treatment, total knee replacement may be considered. The procedure replaces damaged joint surfaces with artificial components to help reduce pain, improve movement and restore knee function.",
+    summaryExtra: [
+      "Dr. Feras Ya'ish follows an individualised approach, considering each patient's anatomy, joint alignment and soft-tissue balance when planning surgery. Where appropriate, his surgical planning incorporates kinematic and patient-specific principles to support a balanced and functional knee.",
+    ],
+    seoDescription:
+      "Explore total knee replacement with Dr. Feras Ya'ish in Abu Dhabi. Learn about surgical approaches, implants, recovery and consultation at Healthpoint Hospital.",
+    relatedSlugs: ["patient-specific-knee", "hip-replacement", "partial-knee"],
     who: [
       "Tricompartmental knee osteoarthritis",
-      "Failed non-operative care (physiotherapy, injections, activity modification)",
+      "Limited improvement with non-operative care",
       "Inflammatory arthritis of the knee",
-      "Patients wanting a more natural knee feel after replacement",
+      "Persistent pain and mobility limitations",
     ],
     approach: [
-      "Constitutional joint-line restoration rather than a forced 90° mechanical axis",
-      "3D imaging and, where indicated, robotic haptic resection boundaries",
-      "Ligament-sparing soft-tissue balancing across the full range of motion",
-      "Modern bearing surfaces selected for activity level and longevity",
+      "Constitutional joint-line and alignment assessment",
+      "3D imaging and robotic assistance where indicated",
+      "Ligament and soft-tissue balancing",
+      "Implant selection based on individual requirements",
     ],
     recovery: [
-      "Same-day or day-1 walking with dedicated orthopaedic physiotherapy",
-      "Reduced tightness compared with classic mechanical alignment in suitable patients",
-      "Structured milestones at 2 weeks, 6 weeks, 3 months, and 1 year",
+      "Early assisted walking when clinically appropriate",
+      "Dedicated orthopaedic physiotherapy",
+      "Milestones reviewed at 2 weeks, 6 weeks, 3 months and 1 year",
     ],
   },
   {

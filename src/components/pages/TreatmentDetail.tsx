@@ -7,6 +7,7 @@ import { CtaBand } from "@/components/CtaBand";
 import { PageFaq } from "@/components/PageFaq";
 import { BookButton } from "@/components/BookButton";
 import { ExternalArrow } from "@/components/ui/Icons";
+import { KneeReplacementArticle } from "@/components/pages/treatment-articles/KneeReplacementArticle";
 import { treatmentCopy } from "@/lib/ar-copy";
 import { useLanguage } from "@/lib/language";
 import { treatments, type Treatment } from "@/lib/treatments";
@@ -14,7 +15,11 @@ import { treatments, type Treatment } from "@/lib/treatments";
 export function TreatmentDetail({ treatment }: { treatment: Treatment }) {
   const { lang, t } = useLanguage();
   const copy = treatmentCopy(treatment, lang);
-  const others = treatments.filter((item) => item.slug !== treatment.slug);
+  const related =
+    treatment.relatedSlugs
+      ?.map((slug) => treatments.find((item) => item.slug === slug))
+      .filter((item): item is Treatment => Boolean(item)) ??
+    treatments.filter((item) => item.slug !== treatment.slug).slice(0, 3);
 
   return (
     <>
@@ -54,6 +59,12 @@ export function TreatmentDetail({ treatment }: { treatment: Treatment }) {
           </div>
           <div className="lg:col-span-6">
             <p className="text-base leading-relaxed text-text-secondary">{copy.summary}</p>
+            {lang === "en" &&
+              treatment.summaryExtra?.map((paragraph) => (
+                <p key={paragraph.slice(0, 48)} className="mt-4 text-base leading-relaxed text-text-secondary">
+                  {paragraph}
+                </p>
+              ))}
             <div className="mt-6 flex flex-wrap gap-3">
               <BookButton className="rounded bg-clinical-navy px-5 py-2.5 text-[13px] font-semibold text-white">
                 {t.requestConsultation}
@@ -95,13 +106,15 @@ export function TreatmentDetail({ treatment }: { treatment: Treatment }) {
         </div>
       </section>
 
+      {treatment.slug === "knee-replacement" && lang === "en" ? <KneeReplacementArticle /> : null}
+
       <PageFaq slug={treatment.slug} />
 
       <section className="py-space-3xl">
         <div className="page-wrap">
           <h2 className="mb-6 font-headline-lg text-[1.75rem] text-primary">{t.relatedProcedures}</h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {others.slice(0, 3).map((item) => (
+            {related.map((item) => (
               <Link
                 key={item.slug}
                 href={`/treatments/${item.slug}`}
