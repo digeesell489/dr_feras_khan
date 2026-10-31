@@ -14,6 +14,15 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  async redirects() {
+    return [
+      {
+        source: "/treatments/knee-replacement",
+        destination: "/treatments/total-knee-replacement",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

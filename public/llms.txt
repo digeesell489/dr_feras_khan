@@ -5,7 +5,7 @@
 - [Home](https://drferasyaishortho.com/): Practice overview for Dr. Feras Ya'ish, consultant orthopaedic and trauma surgeon in Abu Dhabi.
 - [About](https://drferasyaishortho.com/about): Clinical background, surgical philosophy, and Healthpoint Hospital practice details.
 - [Treatments](https://drferasyaishortho.com/treatments): Catalogue of hip, knee, robotic, revision, sports, and trauma procedures.
-- [Total Knee Replacement](https://drferasyaishortho.com/treatments/knee-replacement): Explain total knee replacement, candidacy, surgical approach, and recovery.
+- [Total Knee Replacement](https://drferasyaishortho.com/treatments/total-knee-replacement): Explain total knee replacement, candidacy, surgical approach, and recovery.
 - [Patient-Specific Knee Replacement (PSI)](https://drferasyaishortho.com/treatments/patient-specific-knee): Explain CT-based patient-specific planning used alongside total knee replacement.
 - [Hip Replacement](https://drferasyaishortho.com/treatments/hip-replacement): Explain primary hip replacement, fixation options, and recovery.
 - [Partial Knee Replacement](https://drferasyaishortho.com/treatments/partial-knee): Explain partial knee replacement, who it suits, surgical approach, and recovery, with options to request consultation.

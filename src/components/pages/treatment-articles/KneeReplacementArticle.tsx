@@ -42,7 +42,7 @@ export function KneeReplacementArticle() {
             mobility limitations. Before recommending surgery, the surgeon evaluates symptoms, examination findings and imaging results.{" "}
             <a
               className="font-semibold text-surgical-teal underline-offset-2 hover:underline"
-              href="https://www.nice.org.uk/guidance/ng226/chapter/Recommendations"
+              href="https://www.nice.org.uk/guidance/ng226"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -207,7 +207,7 @@ export function KneeReplacementArticle() {
           Patient information references:{" "}
           <a
             className="text-surgical-teal underline-offset-2 hover:underline"
-            href="https://www.nice.org.uk/guidance/ng226/chapter/Recommendations"
+            href="https://www.nice.org.uk/guidance/ng226"
             target="_blank"
             rel="noopener noreferrer"
           >

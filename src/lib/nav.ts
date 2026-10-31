@@ -19,7 +19,7 @@ export const footerPractice = [
 
 export const footerCare = [
   { href: "/treatments", label: "All Treatments" },
-  { href: "/treatments/knee-replacement", label: "Total Knee Replacement" },
+  { href: "/treatments/total-knee-replacement", label: "Total Knee Replacement" },
   { href: "/treatments/partial-knee", label: "Partial Knee Replacement" },
   { href: "/treatments/robotic-arthroplasty", label: "Robotic Joint Replacement" },
   { href: "/treatments/ligament-reconstruction", label: "Knee Ligament Reconstruction" },

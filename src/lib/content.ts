@@ -80,7 +80,7 @@ export const specialties = {
   cards: [
     {
       image: "/images/implant-knee.webp",
-      href: "/treatments/knee-replacement",
+      href: "/treatments/total-knee-replacement",
       category: "Arthroplasty",
       categoryAr: "استبدال المفصل",
       title: "Total Knee Replacement",

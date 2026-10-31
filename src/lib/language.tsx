@@ -203,7 +203,7 @@ const dictionary = {
     ],
     footerCare: [
       { href: "/treatments", label: "All Treatments" },
-      { href: "/treatments/knee-replacement", label: "Total Knee Replacement" },
+      { href: "/treatments/total-knee-replacement", label: "Total Knee Replacement" },
       { href: "/treatments/partial-knee", label: "Partial Knee Replacement" },
       { href: "/treatments/robotic-arthroplasty", label: "Robotic Joint Replacement" },
       { href: "/treatments/ligament-reconstruction", label: "Knee Ligament Reconstruction" },
@@ -418,7 +418,7 @@ const dictionary = {
     ],
     footerCare: [
       { href: "/treatments", label: "كل العلاجات" },
-      { href: "/treatments/knee-replacement", label: "استبدال الركبة الكامل" },
+      { href: "/treatments/total-knee-replacement", label: "استبدال الركبة الكامل" },
       { href: "/treatments/partial-knee", label: "استبدال الركبة الجزئي" },
       { href: "/treatments/robotic-arthroplasty", label: "الجراحة الروبوتية" },
       { href: "/treatments/ligament-reconstruction", label: "إعادة بناء أربطة الركبة" },

@@ -23,6 +23,8 @@ export type Treatment = {
   summary: string;
   /** Extra hero paragraphs after `summary` (English long-form pages). */
   summaryExtra?: string[];
+  /** Optional SEO title override for generateMetadata. */
+  seoTitle?: string;
   /** Optional SEO description override for generateMetadata. */
   seoDescription?: string;
   /** Prefer these related treatment slugs on the detail page when set. */
@@ -34,7 +36,7 @@ export type Treatment = {
 
 export const treatments: Treatment[] = [
   {
-    slug: "knee-replacement",
+    slug: "total-knee-replacement",
     tag: "Knee Arthroplasty",
     title: "Total Knee Replacement",
     short: "Total Knee Replacement",
@@ -47,8 +49,9 @@ export const treatments: Treatment[] = [
     summaryExtra: [
       "Dr. Feras Ya'ish follows an individualised approach, considering each patient's anatomy, joint alignment and soft-tissue balance when planning surgery. Where appropriate, his surgical planning incorporates kinematic and patient-specific principles to support a balanced and functional knee.",
     ],
+    seoTitle: "Expert Total Knee Replacement in UAE by Dr. Feras Ya'ish",
     seoDescription:
-      "Explore total knee replacement with Dr. Feras Ya'ish in Abu Dhabi. Learn about surgical approaches, implants, recovery and consultation at Healthpoint Hospital.",
+      "Explore total knee replacement with Dr. Feras Ya'ish in Abu Dhabi, UAE. Learn about surgery, recovery and treatment options.",
     relatedSlugs: ["patient-specific-knee", "hip-replacement", "partial-knee"],
     who: [
       "Tricompartmental knee osteoarthritis",

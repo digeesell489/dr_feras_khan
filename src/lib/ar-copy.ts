@@ -18,7 +18,7 @@ const presentationAr: Record<ConditionPresentation, string> = {
 };
 
 const hrefAr: Record<string, string> = {
-  "/treatments/knee-replacement": "استبدال الركبة الكامل",
+  "/treatments/total-knee-replacement": "استبدال الركبة الكامل",
   "/treatments/patient-specific-knee": "استبدال الركبة المخصص للمريض (PSI)",
   "/treatments/hip-replacement": "استبدال الورك",
   "/treatments/robotic-arthroplasty": "استبدال المفصل الروبوتي",
@@ -50,7 +50,7 @@ const treatmentsAr: Record<
   string,
   { tag: string; title: string; summary: string; who: string[]; approach: string[]; recovery: string[] }
 > = {
-  "knee-replacement": {
+  "total-knee-replacement": {
     tag: "استبدال الركبة",
     title: "استبدال الركبة الكامل",
     summary:

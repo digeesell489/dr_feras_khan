@@ -9,7 +9,7 @@ const treatments = [
   {
     title: "Knee Replacement Surgery",
     body: "Knee replacement may be considered when advanced joint damage causes ongoing pain, stiffness, and difficulty with everyday activities. Assessment helps determine whether total knee replacement or another option is suitable.",
-    href: "/treatments/knee-replacement",
+    href: "/treatments/total-knee-replacement",
     label: "Explore knee replacement →",
     image: "/images/implant-knee.webp",
   },

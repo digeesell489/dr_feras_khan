@@ -106,7 +106,7 @@ export function TreatmentDetail({ treatment }: { treatment: Treatment }) {
         </div>
       </section>
 
-      {treatment.slug === "knee-replacement" && lang === "en" ? <KneeReplacementArticle /> : null}
+      {treatment.slug === "total-knee-replacement" && lang === "en" ? <KneeReplacementArticle /> : null}
 
       <PageFaq slug={treatment.slug} />
 

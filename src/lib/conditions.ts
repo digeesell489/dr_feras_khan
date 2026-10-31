@@ -75,7 +75,7 @@ export const conditions: Condition[] = [
     ],
     treatments: [
       { href: "/treatments/partial-knee", label: "Partial Knee Replacement" },
-      { href: "/treatments/knee-replacement", label: "Kinematic Total Knee" },
+      { href: "/treatments/total-knee-replacement", label: "Kinematic Total Knee" },
       { href: "/treatments/robotic-arthroplasty", label: "Robotic Arthroplasty" },
     ],
   },

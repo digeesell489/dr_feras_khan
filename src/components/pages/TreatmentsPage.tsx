@@ -84,7 +84,7 @@ const extras: Record<
     href?: string;
   }
 > = {
-  "knee-replacement": {
+  "total-knee-replacement": {
     specialty: "Specialty Intervention 02 · Knee Joint",
     specialtyAr: "التدخل التخصصي 02 · مفصل الركبة",
     badges: ["Sub-Millimeter Balance", "Kinematic Fit"],

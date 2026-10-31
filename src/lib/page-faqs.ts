@@ -6,7 +6,7 @@ export type PageFaq = {
 };
 
 export const pageFaqs: Record<string, PageFaq[]> = {
-  "knee-replacement": [
+  "total-knee-replacement": [
     {
       q: "Who is a suitable candidate for total knee replacement?",
       qAr: "من هو المرشح المناسب لاستبدال الركبة الكامل؟",
