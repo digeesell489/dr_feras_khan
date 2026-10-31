@@ -8,28 +8,28 @@ import "./abu-landing.css";
 const treatments = [
   {
     title: "Knee Replacement Surgery",
-    body: "Knee replacement may be considered when advanced joint damage causes ongoing pain, stiffness, and difficulty with everyday activities. Assessment helps determine whether total knee replacement or another option is suitable.",
+    body: "If joint pain, stiffness, and normal function continue because of severe joint damage, a knee replacement might be recommended. Assessment is used to decide if total knee replacement or another treatment option is appropriate.",
     href: "/treatments/total-knee-replacement",
     label: "Explore knee replacement →",
     image: "/images/implant-knee.webp",
   },
   {
     title: "Hip Replacement Surgery",
-    body: "Hip replacement may be an option when significant joint damage affects walking, movement, or quality of life. Consultation covers diagnosis, alternatives, surgical considerations, and recovery expectations.",
+    body: "If there is a lot of damage to the hip joint, this can cause problems with walking, moving around or living life to the fullest, then hip replacement might be considered. Diagnosis and alternatives, surgical considerations, and recovery expectations are discussed.",
     href: "/treatments/hip-replacement",
     label: "Explore hip replacement →",
     image: "/images/clinical/hip-replacement-xray.webp",
   },
   {
     title: "Robotic Joint Replacement",
-    body: "Robotic-assisted technology can support planning and guide aspects of selected joint replacement procedures. Suitability depends on the patient's condition and clinical assessment.",
+    body: "For selected joint replacement procedures, the use of robotic-assisted technology can aid in planning and directing the various parts of the procedure. Appropriateness is subject to the clinical judgement and condition of the patient.",
     href: "/treatments/robotic-arthroplasty",
     label: "Explore robotic arthroplasty →",
     image: "/images/clinical/mako-theatre.webp",
   },
   {
     title: "Revision Hip and Knee Surgery",
-    body: "Revision surgery may be needed when a previous joint replacement develops complications, such as loosening, wear, or infection. Careful investigation helps guide next steps.",
+    body: "If there is a complication with the initial replacement surgery (such as infection, wear or loosening), revision surgery may be required. Next steps are informed by careful investigation.",
     href: "/treatments/revision-surgery",
     label: "Explore revision surgery →",
     image: "/images/clinical/revision-knee-xray.webp",
@@ -43,28 +43,28 @@ const treatments = [
   },
   {
     title: "Patient-Specific and Partial Knee Replacement",
-    body: "Patient-specific planning and partial knee replacement may suit selected patients depending on anatomy, the location of joint damage, and clinical findings.",
+    body: "For selected patients, depending on anatomy, the location of joint damage and clinical findings, patient-specific planning and/or partial knee replacement may be appropriate.",
     href: "/treatments/patient-specific-knee",
     label: "Explore patient-specific knee replacement →",
     image: "/images/clinical/partial-knee-compartments.webp",
   },
   {
     title: "Trauma and Malunion Treatment",
-    body: "Orthopaedic trauma care addresses injuries affecting bones and joints. Malunion treatment may be considered when a fracture heals in a position that affects alignment or function.",
+    body: "Orthopedic trauma care is for the treatment of injuries to bones and joints. Malunion treatment may be indicated if the fracture has healed in a misaligned position that affects alignment or function.",
     href: "/treatments/trauma",
     label: "Explore trauma treatment →",
     image: "/images/clinical/trauma-malunion-xray.webp",
   },
   {
     title: "Knee Arthroscopy",
-    body: "Knee arthroscopy uses small incisions and a camera to assess or treat selected problems inside the joint. The appropriate approach depends on the diagnosis.",
+    body: "Arthroscopy of the knee or Knee Arthroscopy is a procedure that provides an inside look at the knee joint and treats some specific problems using tiny incisions and a camera. The correct management is dependent on the diagnosis.",
     href: "/treatments/arthroscopy",
     label: "Explore arthroscopy →",
     image: "/images/clinical/knee-arthroscopy.webp",
   },
   {
     title: "Patellofemoral Instability",
-    body: "Repeated kneecap instability can affect comfort and confidence during movement. Assessment helps identify contributing factors and discuss appropriate management options.",
+    body: "Patellofemoral instability can have an impact on comfort and confidence while moving. Assessment can assist in determining possible contributing factors and the discussion of management options.",
     href: "/treatments/patellofemoral-instability",
     label: "Explore patellofemoral treatment →",
     image: "/images/landing/hip-knee.webp",
@@ -116,23 +116,23 @@ const consultReasons = [
 const faqs = [
   {
     q: "How do I choose the best orthopedic doctor in Abu Dhabi?",
-    a: "When choosing an orthopedic doctor, consider qualifications, experience, specialization and treatment options. Dr. Feras Ya'ish provides consultations for orthopedic conditions and hip and knee treatment options.",
+    a: "Qualifications, experience, specialization, and treatment options are some of the factors to take into account when selecting an orthopedic physician. As an expert orthopedic and trauma consultant in Abu Dhabi, Dr. Feras Ya'ish offers personalized consultation for orthopaedic problems and treatment options for the hips and knees.",
   },
   {
     q: "What conditions does an orthopedic specialist treat?",
-    a: "An orthopedic specialist assesses and treats conditions affecting bones, joints, ligaments and other parts of the musculoskeletal system. Treatment depends on the diagnosis and the patient's individual needs.",
+    a: "An orthopedic specialist assesses and treats conditions affecting bones, joints, ligaments, and other parts of the musculoskeletal system. Treatment will be based on the diagnosis and the patient's specific needs.",
   },
   {
     q: "Does Dr. Feras Ya'ish perform robotic joint replacement?",
-    a: "Dr. Feras Ya'ish offers expertise in joint replacement, including robotic-assisted approaches where clinically appropriate. Suitability depends on the patient's condition and assessment.",
+    a: "Yes, Dr. Feras Ya'ish has 25+ years of experience treating patients for joint replacements and performs a robotic-assisted surgical approach when clinically needed. Appropriateness is at the discretion of patient status and evaluation.",
   },
   {
     q: "Where can I consult Dr. Feras Ya'ish in Abu Dhabi?",
-    a: "The listed consultation location is Healthpoint Hospital, between Gates 1-6, Al Qiyada Street, Zayed Sports City, Al Rawdah, Abu Dhabi, UAE. The hospital contact number is +971 2 492 9000.",
+    a: "The consultation will be at Healthpoint Hospital, Al Qiyada Street, Zayed Sports City, Al Rawdah, Abu Dhabi, UAE, between Gates 1-6. The hospital contact number is +971 800 77.",
   },
   {
     q: "When should I consider hip or knee replacement surgery?",
-    a: "Hip or knee replacement may be considered when joint damage or arthritis causes persistent pain and limits daily activities, particularly when non-surgical treatments have not provided sufficient relief. An orthopedic consultation can help determine suitable options.",
+    a: "You should consider hip or knee replacement surgery if joint damage or arthritis has caused long-term pain and affected your ability to do everyday tasks. It may be worth considering, especially if other treatments have not been effective. An orthopedic consultation can help determine suitable options.",
   },
 ] as const;
 
@@ -146,13 +146,13 @@ export function AbuDhabiLandingPage() {
             <span className="eyebrow">Consultant Trauma &amp; Orthopaedics</span>
             <h1>Expert Orthopedic Doctor in Abu Dhabi</h1>
             <p className="lead">
-              Dr. Feras Ya&apos;ish is a Consultant Trauma and Orthopaedic Surgeon in Abu Dhabi, UAE with experience in
-              complex reconstructive procedures, robotic-assisted joint replacement, hip and knee replacement, and
-              orthopaedic trauma care.
+              Dr. Feras Ya&apos;ish is a Consultant Trauma and Orthopedic doctor in Abu Dhabi, UAE who has also been
+              involved in complex reconstructive procedures, Robotic-assisted Joint Replacement, Hip and Knee Replacement
+              and Orthopaedic Trauma care.
             </p>
             <p>
-              Get an individualized assessment of joint pain, mobility concerns, or an orthopaedic injury, with treatment
-              options explained according to your condition and goals.
+              Have a personal evaluation of joint pain, mobility issues or an orthopedic injury and understand the
+              treatment options based on your condition and your goals.
             </p>
             <div className="actions">
               <a
@@ -245,20 +245,20 @@ export function AbuDhabiLandingPage() {
             <span className="eyebrow">About the doctor</span>
             <h2>Meet Dr. Feras Ya&apos;ish, Consultant Trauma &amp; Orthopaedic Surgeon in Abu Dhabi</h2>
             <p>
-              Dr. Feras Ya&apos;ish is a Consultant Trauma and Orthopaedic doctor in Abu Dhabi with more than 25 years of
-              experience in trauma and orthopaedics. His clinical interests include joint replacement, revision hip and
-              knee surgery, knee ligament reconstruction, robotic-assisted joint replacement, and reconstructive
-              procedures.
+              Dr. Feras Ya&apos;ish is a Consultant Trauma and Orthopedics surgeon in Abu Dhabi with over 25 years&apos;
+              experience in Orthopedics and Trauma. He specializes in complex surgeries including joint replacements, hip
+              and knee surgery, knee ligament reconstruction, sports related traumas, robotic-assisted total replacement
+              surgery and reconstructive surgery.
             </p>
             <p>
-              His experience includes more than 4,500 joint arthroplasty procedures and contributions to orthopaedic
-              education and surgical training. During a consultation, he considers symptoms, medical history, examination
-              findings, and functional goals before discussing suitable options.
+              He has performed over 4,500 joint arthroplasty surgeries and procedures and has been involved in
+              orthopaedic education and surgical training. As an expert orthopedic consultant, he looks at your symptoms,
+              medical history, exam findings, and functional goals to determine appropriate options.
             </p>
             <p>
-              Patients looking for an orthopedic specialist in Abu Dhabi can discuss persistent joint pain, movement
-              limitations, previous surgery, or an injury and learn whether further investigations or treatment may be
-              appropriate.
+              Patients seeking an orthopedic surgeon in Abu Dhabi will be able to talk about any ongoing joint pain,
+              mobility issues, prior surgery, or injury, and determine if any additional tests or care might be
+              beneficial.
             </p>
             <ul className="checks">
               <li>Assessment of hip and knee conditions</li>
@@ -278,9 +278,9 @@ export function AbuDhabiLandingPage() {
             <span className="eyebrow">Areas of expertise</span>
             <h2>Orthopedic doctor in Abu Dhabi for Hip and Knee Conditions</h2>
             <p>
-              Joint pain and mobility problems can have different causes. Treatment depends on diagnosis, the extent of
-              joint damage, overall health, and the patient&apos;s goals. Explore Dr. Ya&apos;ish&apos;s treatment areas
-              below.
+              Joint pain and mobility issues may be caused by various factors. Treatment will be based on the diagnosis,
+              severity of joint damage, general health, and patient&apos;s expectations. Check out some of Dr.
+              Ya&apos;ish&apos;s treatment areas below.
             </p>
           </div>
           <div className="grid3">
@@ -316,9 +316,9 @@ export function AbuDhabiLandingPage() {
             <span className="eyebrow">Patient-centred care</span>
             <h2>A Personalized Approach to Orthopedic Treatment</h2>
             <p>
-              Choosing an orthopedic doctor in Abu Dhabi means understanding your diagnosis, available options, and what
-              each option may involve. Treatment decisions should be based on clinical assessment rather than a procedure
-              alone.
+              When selecting an expert orthopedic doctor in Abu Dhabi, it is essential to make sure that you know what
+              your diagnosis is, the choices that are available, and what each option might entail. Treatment should not
+              be based solely on a procedure, but rather on a clinical evaluation.
             </p>
           </div>
           <div className="steps">
@@ -350,8 +350,8 @@ export function AbuDhabiLandingPage() {
             <span className="eyebrow">Know when to seek help</span>
             <h2>When Should You Consult an Orthopedic Surgeon in Abu Dhabi?</h2>
             <p>
-              An orthopaedic assessment may help when symptoms persist, affect mobility, or interfere with everyday
-              activities.
+              If symptoms continue, are affecting mobility or affecting daily activities, an assessment by an orthopedic
+              specialist in Abu Dhabi can be helpful.
             </p>
           </div>
           <div className="grid3">
@@ -387,8 +387,8 @@ export function AbuDhabiLandingPage() {
             <span className="eyebrow">Practice &amp; teaching</span>
             <h2>Clinical Practice Gallery</h2>
             <p>
-              Selected photographs from clinic, theatre, and orthopaedic teaching settings that reflect Dr. Ya&apos;ish&apos;s
-              day-to-day practice and education work.
+              Selected photographs chosen from the clinic, theatre, and orthopedic teaching environment to illustrate Dr.
+              Feras Ya&apos;ish&apos;s practice and education work as a specialist orthopedic doctor in Abu Dhabi, UAE.
             </p>
           </div>
           <AbuLandingGallery />

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AbuDhabiLandingPage } from "@/components/pages/AbuDhabiLandingPage";
+import { AbuDhabiLandingPage, abuDhabiFaqs } from "@/components/pages/AbuDhabiLandingPage";
 import { JsonLd } from "@/components/JsonLd";
 import { SiteShell } from "@/components/SiteShell";
 import { SITE_URL } from "@/lib/schema";
@@ -55,13 +55,13 @@ const landingGraph = {
         "@type": "ImageObject",
         url: LOGO_URL,
       },
-      image: DOCTOR_IMAGE_URL,
+      image: LOGO_URL,
     },
     {
       "@type": "MedicalBusiness",
       "@id": `${SITE_URL}/#healthpoint-hospital`,
       name: "Healthpoint Hospital",
-      image: DOCTOR_IMAGE_URL,
+      image: LOGO_URL,
       logo: {
         "@type": "ImageObject",
         url: LOGO_URL,
@@ -73,7 +73,7 @@ const landingGraph = {
         addressRegion: "Abu Dhabi",
         addressCountry: "AE",
       },
-      telephone: "+971 2 492 9000",
+      telephone: "+971 800 77",
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
@@ -112,10 +112,26 @@ const landingGraph = {
   ],
 };
 
+const faqGraph = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": `${PAGE_URL}#faq`,
+  url: PAGE_URL,
+  mainEntity: abuDhabiFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
+
 export default function Page() {
   return (
     <>
       <JsonLd data={landingGraph} />
+      <JsonLd data={faqGraph} />
       <SiteShell>
         <AbuDhabiLandingPage />
       </SiteShell>
