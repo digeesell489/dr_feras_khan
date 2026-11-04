@@ -30,7 +30,8 @@ const newsreader = Newsreader({
   subsets: ["latin"],
   weight: ["500", "400", "600"],
   style: ["normal", "italic"],
-  preload: false,
+  // Hero H1 uses Newsreader (font-headline-hero); preload to reduce text LCP.
+  preload: true,
   display: "swap",
 });
 
@@ -57,9 +58,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="bg-alabaster-warm font-body-md text-body-md text-on-surface">
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

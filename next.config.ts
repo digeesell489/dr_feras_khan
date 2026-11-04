@@ -7,6 +7,25 @@ const longCache = [
   },
 ];
 
+const securityHeaders = [
+  {
+    key: "Strict-Transport-Security",
+    value: "max-age=31536000; includeSubDomains",
+  },
+  {
+    key: "X-Content-Type-Options",
+    value: "nosniff",
+  },
+  {
+    key: "X-Frame-Options",
+    value: "SAMEORIGIN",
+  },
+  {
+    key: "Referrer-Policy",
+    value: "strict-origin-when-cross-origin",
+  },
+];
+
 const nextConfig: NextConfig = {
   // Hostinger Node hosting runs standalone (not static export). Explicit standalone
   // also lets `headers()` apply — required to fix the 4h browser-cache PSI issue.
@@ -25,6 +44,10 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
+      {
+        source: "/:path*",
+        headers: securityHeaders,
+      },
       {
         source: "/_next/static/:path*",
         headers: longCache,

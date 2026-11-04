@@ -77,8 +77,8 @@ export function Hero() {
                   <Image
                     src="/images/doctor-cutout.webp"
                     alt="Dr. Feras Ya'ish"
-                    width={420}
-                    height={560}
+                    width={552}
+                    height={900}
                     preload
                     fetchPriority="high"
                     sizes="(min-width: 1024px) 420px, (min-width: 640px) 60vw, 90vw"

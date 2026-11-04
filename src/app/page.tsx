@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Approach } from "@/components/Approach";
-import { ComplexCentre } from "@/components/ComplexCentre";
 import { Excellence } from "@/components/Excellence";
 import { FAQ } from "@/components/FAQ";
 import { Hero } from "@/components/Hero";
@@ -16,7 +15,6 @@ import {
   TIKTOK_URL,
   YOUTUBE_URL,
 } from "@/lib/links";
-import { showCaseExamples } from "@/lib/visibility";
 
 const SITE_URL = "https://drferasyaishortho.com";
 
@@ -91,7 +89,6 @@ export default function Home() {
         <Hero />
         <Approach />
         <Excellence />
-        {showCaseExamples ? <ComplexCentre /> : null}
         <PatientEducation />
         <Hospital />
         <FAQ />

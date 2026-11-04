@@ -7,11 +7,13 @@ import { BookButton } from "@/components/BookButton";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { WhatsAppIcon, whatsappHref } from "@/components/WhatsAppFloat";
 import { useLanguage } from "@/lib/language";
-import { conditions } from "@/lib/conditions";
-import { eventMenu } from "@/lib/events";
+import {
+  conditionNav,
+  eventNav,
+  physicianNav,
+  treatmentNav,
+} from "@/lib/nav-menus";
 import { siteNav } from "@/lib/nav";
-import { physicianPages } from "@/lib/physicians";
-import { treatments } from "@/lib/treatments";
 import { CallIcon, CloseIcon, ExternalArrow, LogoMark, MenuIcon } from "./ui/Icons";
 
 export function Header() {
@@ -88,7 +90,7 @@ export function Header() {
                     </Link>
                     <div className="invisible absolute start-0 top-full z-50 min-w-[280px] pt-2 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                       <div className="overflow-hidden rounded-xl border border-surface-border bg-white py-2 shadow-[0_16px_40px_rgba(27,54,93,0.12)]">
-                        {eventMenu.map((entry) => (
+                        {eventNav.map((entry) => (
                           <Link
                             key={entry.href}
                             href={entry.href}
@@ -106,7 +108,12 @@ export function Header() {
               }
 
               if (item.href === "/treatments" || item.href === "/conditions" || item.href === "/for-physicians") {
-                const items = item.href === "/treatments" ? treatments : item.href === "/conditions" ? conditions : physicianPages;
+                const items =
+                  item.href === "/treatments"
+                    ? treatmentNav
+                    : item.href === "/conditions"
+                      ? conditionNav
+                      : physicianNav;
                 const allLabel =
                   item.href === "/treatments" ? t.allTreatments : item.href === "/conditions" ? t.allConditions : t.allPhysicians;
                 const baseHref = item.href;
@@ -232,7 +239,7 @@ export function Header() {
                     </button>
                     {eventsOpen ? (
                       <div className="mb-3 space-y-1 pb-2">
-                        {eventMenu.map((entry) => (
+                        {eventNav.map((entry) => (
                           <Link key={entry.href} href={entry.href} className="block py-1.5 text-sm text-sand-tint/80">
                             {lang === "ar" ? entry.shortAr : entry.short}
                           </Link>
@@ -280,10 +287,10 @@ export function Header() {
                               : t.allPhysicians}
                         </Link>
                         {(item.href === "/treatments"
-                          ? treatments
+                          ? treatmentNav
                           : item.href === "/conditions"
-                            ? conditions
-                            : physicianPages
+                            ? conditionNav
+                            : physicianNav
                         ).map((entry) => (
                           <Link
                             key={entry.slug}

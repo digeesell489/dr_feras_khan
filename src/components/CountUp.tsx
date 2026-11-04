@@ -35,7 +35,10 @@ function formatValue(n: number, parsed: Parsed) {
 export function CountUp({ value, className }: { value: string; className?: string }) {
   const parsed = parseStat(value);
   const ref = useRef<HTMLSpanElement>(null);
-  const [display, setDisplay] = useState(() => (parsed ? formatValue(0, parsed) : value));
+  // SSR / first paint must emit final numbers (content.counter.zero).
+  const [display, setDisplay] = useState(() =>
+    parsed ? formatValue(parsed.target, parsed) : value,
+  );
 
   useEffect(() => {
     const next = parseStat(value);
@@ -44,7 +47,9 @@ export function CountUp({ value, className }: { value: string; className?: strin
       return;
     }
 
-    setDisplay(formatValue(0, next));
+    // Keep final visible immediately. Do not reset to zero before intersection.
+    setDisplay(formatValue(next.target, next));
+
     const el = ref.current;
     if (!el) return;
 
@@ -52,6 +57,10 @@ export function CountUp({ value, className }: { value: string; className?: strin
     let started = false;
 
     const animate = () => {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        setDisplay(formatValue(next.target, next));
+        return;
+      }
       const duration = next.target >= 1000 ? 1800 : 1400;
       const start = performance.now();
       const tick = (now: number) => {
@@ -61,6 +70,9 @@ export function CountUp({ value, className }: { value: string; className?: strin
         if (t < 1) frame = requestAnimationFrame(tick);
         else setDisplay(formatValue(next.target, next));
       };
+      // Progressive enhancement: count from 0 only after the section is in view.
+      // First HTML / non-intersecting state already showed the final.
+      setDisplay(formatValue(0, next));
       frame = requestAnimationFrame(tick);
     };
 
