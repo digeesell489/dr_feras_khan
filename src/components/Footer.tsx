@@ -6,6 +6,7 @@ import { LanguageToggle } from "@/components/LanguageToggle";
 import { WhatsAppButton, WhatsAppIcon, whatsappHref } from "@/components/WhatsAppFloat";
 import { professionalLinks } from "@/lib/links";
 import { useLanguage } from "@/lib/language";
+import { localizedPath } from "@/lib/locale";
 import { isPublishedPath } from "@/lib/visibility";
 import {
   ArrowIcon,
@@ -34,7 +35,8 @@ const portalIcons = {
 } as const;
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
+  const hrefFor = (path: string) => localizedPath(lang, path);
 
   return (
     <footer className="cv-auto relative w-full overflow-hidden bg-clinical-slate-deep text-sand-tint" id="footer">
@@ -67,7 +69,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-space-xl pb-space-2xl sm:grid-cols-2 lg:grid-cols-12">
           <div className="flex flex-col gap-4 lg:col-span-3">
             <div className="flex flex-col items-start gap-3">
-              <Link href="/">
+              <Link href={hrefFor("/")}>
                 <LogoMark
                   variant="onDark"
                   loading="lazy"
@@ -90,7 +92,7 @@ export function Footer() {
             <ul className="flex flex-col gap-2.5">
               {t.footerPractice.filter((item) => isPublishedPath(item.href)).map((item) => (
                 <li key={item.href}>
-                  <Link className="text-sm text-sand-tint/70 transition-colors hover:text-white" href={item.href}>
+                  <Link className="text-sm text-sand-tint/70 transition-colors hover:text-white" href={hrefFor(item.href)}>
                     {item.label}
                   </Link>
                 </li>
@@ -103,7 +105,7 @@ export function Footer() {
             <ul className="flex flex-col gap-2.5">
               {t.footerCare.map((item) => (
                 <li key={item.href}>
-                  <Link className="text-sm text-sand-tint/70 transition-colors hover:text-white" href={item.href}>
+                  <Link className="text-sm text-sand-tint/70 transition-colors hover:text-white" href={hrefFor(item.href)}>
                     {item.label}
                   </Link>
                 </li>
@@ -116,7 +118,7 @@ export function Footer() {
             <ul className="flex flex-col gap-2.5">
               {t.footerEvents.map((item) => (
                 <li key={item.href}>
-                  <Link className="text-sm text-sand-tint/70 transition-colors hover:text-white" href={item.href}>
+                  <Link className="text-sm text-sand-tint/70 transition-colors hover:text-white" href={hrefFor(item.href)}>
                     {item.label}
                   </Link>
                 </li>

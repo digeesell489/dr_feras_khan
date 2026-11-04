@@ -1,9 +1,16 @@
 "use client";
 
-import { useLanguage, type Lang } from "@/lib/language";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useLanguage } from "@/lib/language";
+import { localizedPath, stripLocale } from "@/lib/locale";
 
 export function LanguageToggle({ variant = "light" }: { variant?: "light" | "dark" }) {
-  const { lang, setLang } = useLanguage();
+  const { lang } = useLanguage();
+  const pathname = usePathname() || "/";
+  const logicalPath = stripLocale(pathname);
+  const enPath = localizedPath("en", logicalPath);
+  const arPath = localizedPath("ar", logicalPath);
 
   const shell =
     variant === "dark"
@@ -11,32 +18,30 @@ export function LanguageToggle({ variant = "light" }: { variant?: "light" | "dar
       : "border-surface-border bg-sand-tint/80";
   const idle = variant === "dark" ? "text-sand-tint/70 hover:text-white" : "text-text-secondary hover:text-clinical-navy";
 
-  function select(next: Lang) {
-    setLang(next);
-  }
-
   return (
     <div className={`flex items-center rounded-full border px-1 py-1 text-[11px] font-semibold ${shell}`} role="group" aria-label="Language">
-      <button
-        type="button"
+      <Link
+        href={enPath}
+        hrefLang="en"
         className={`rounded-full px-2.5 py-0.5 transition-colors ${
           lang === "en" ? "bg-clinical-navy text-white" : idle
         }`}
         aria-pressed={lang === "en"}
-        onClick={() => select("en")}
+        prefetch={false}
       >
         EN
-      </button>
-      <button
-        type="button"
+      </Link>
+      <Link
+        href={arPath}
+        hrefLang="ar"
         className={`rounded-full px-2.5 py-0.5 transition-colors ${
           lang === "ar" ? "bg-clinical-navy text-white" : idle
         }`}
         aria-pressed={lang === "ar"}
-        onClick={() => select("ar")}
+        prefetch={false}
       >
         AR
-      </button>
+      </Link>
     </div>
   );
 }

@@ -458,13 +458,20 @@ type LanguageContextValue = {
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("en");
+export function LanguageProvider({
+  children,
+  initialLang = "en",
+}: {
+  children: ReactNode;
+  /** URL/locale segment is the source of truth for SSR and hydration. */
+  initialLang?: Lang;
+}) {
+  const [lang, setLangState] = useState<Lang>(initialLang);
 
+  // Keep client state aligned when navigating between / and /ar without a full reload.
   useEffect(() => {
-    const saved = window.localStorage.getItem("site-lang");
-    if (saved === "ar" || saved === "en") setLangState(saved);
-  }, []);
+    setLangState(initialLang);
+  }, [initialLang]);
 
   useEffect(() => {
     document.documentElement.lang = lang;

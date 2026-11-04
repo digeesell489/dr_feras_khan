@@ -12,10 +12,11 @@ export const showCaseExamples = false;
 export const showForPhysicians = false;
 
 export function isPublishedPath(href: string): boolean {
-  if (href === "/case-examples" || href.startsWith("/case-examples/")) {
+  const path = href.replace(/^\/(ar|en)(?=\/|$)/, "") || "/";
+  if (path === "/case-examples" || path.startsWith("/case-examples/")) {
     return showCaseExamples;
   }
-  if (href === "/for-physicians" || href.startsWith("/for-physicians/")) {
+  if (path === "/for-physicians" || path.startsWith("/for-physicians/")) {
     return showForPhysicians;
   }
   return true;

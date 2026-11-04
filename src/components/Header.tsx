@@ -7,6 +7,7 @@ import { BookButton } from "@/components/BookButton";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { WhatsAppIcon, whatsappHref } from "@/components/WhatsAppFloat";
 import { useLanguage } from "@/lib/language";
+import { localizedPath, stripLocale } from "@/lib/locale";
 import {
   conditionNav,
   eventNav,
@@ -17,8 +18,10 @@ import { siteNav } from "@/lib/nav";
 import { CallIcon, CloseIcon, ExternalArrow, LogoMark, MenuIcon } from "./ui/Icons";
 
 export function Header() {
-  const pathname = usePathname();
+  const pathname = usePathname() || "/";
   const { lang, t } = useLanguage();
+  const logicalPath = stripLocale(pathname);
+  const hrefFor = (path: string) => localizedPath(lang, path);
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [treatmentsOpen, setTreatmentsOpen] = useState(false);
@@ -58,7 +61,7 @@ export function Header() {
               : "border-white/70 bg-alabaster-warm/80 shadow-[0_8px_28px_rgba(27,54,93,0.06)] backdrop-blur-md"
           }`}
         >
-          <Link className="flex min-w-0 items-center justify-self-start" href="/">
+          <Link className="flex min-w-0 items-center justify-self-start" href={hrefFor("/")}>
             <LogoMark className="h-12 w-auto max-w-[220px] shrink-0 object-contain sm:h-14 sm:max-w-[280px]" />
           </Link>
 
@@ -66,14 +69,14 @@ export function Header() {
             {siteNav.map((item) => {
               const isActive =
                 item.href === "/"
-                  ? pathname === "/"
-                  : pathname === item.href || pathname.startsWith(`${item.href}/`);
+                  ? logicalPath === "/"
+                  : logicalPath === item.href || logicalPath.startsWith(`${item.href}/`);
 
               if (item.href === "/events") {
                 return (
                   <div key={item.href} className="group relative">
                     <Link
-                      href={item.href}
+                      href={hrefFor(item.href)}
                       className={`relative flex items-center gap-1 whitespace-nowrap px-2 py-1 text-[13px] font-semibold tracking-wide transition-colors ${
                         isActive ? "text-clinical-navy" : "text-on-surface-variant hover:text-clinical-navy"
                       }`}
@@ -93,9 +96,9 @@ export function Header() {
                         {eventNav.map((entry) => (
                           <Link
                             key={entry.href}
-                            href={entry.href}
+                            href={hrefFor(entry.href)}
                             className={`block px-4 py-2 text-[13px] hover:bg-sand-tint ${
-                              pathname === entry.href ? "font-semibold text-clinical-navy" : "text-text-secondary"
+                              logicalPath === entry.href ? "font-semibold text-clinical-navy" : "text-text-secondary"
                             }`}
                           >
                             {lang === "ar" ? entry.shortAr : entry.short}
@@ -121,7 +124,7 @@ export function Header() {
                 return (
                   <div key={item.href} className="group relative">
                     <Link
-                      href={baseHref}
+                      href={hrefFor(baseHref)}
                       className={`relative flex items-center gap-1 whitespace-nowrap px-2 py-1 text-[13px] font-semibold tracking-wide transition-colors ${
                         isActive ? "text-clinical-navy" : "text-on-surface-variant hover:text-clinical-navy"
                       }`}
@@ -139,7 +142,7 @@ export function Header() {
                     <div className="invisible absolute start-0 top-full z-50 min-w-[260px] pt-2 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                       <div className="overflow-hidden rounded-xl border border-surface-border bg-white py-2 shadow-[0_16px_40px_rgba(27,54,93,0.12)]">
                         <Link
-                          href={baseHref}
+                          href={hrefFor(baseHref)}
                           className="block px-4 py-2 text-[13px] font-semibold text-clinical-navy hover:bg-sand-tint"
                         >
                           {allLabel}
@@ -147,9 +150,9 @@ export function Header() {
                         {items.map((entry) => (
                           <Link
                             key={entry.slug}
-                            href={`${baseHref}/${entry.slug}`}
+                            href={hrefFor(`${baseHref}/${entry.slug}`)}
                             className={`block px-4 py-2 text-[13px] hover:bg-sand-tint ${
-                              pathname === `${baseHref}/${entry.slug}`
+                              logicalPath === `${baseHref}/${entry.slug}`
                                 ? "font-semibold text-clinical-navy"
                                 : "text-text-secondary"
                             }`}
@@ -166,7 +169,7 @@ export function Header() {
               return (
                 <Link
                   key={item.href}
-                  href={item.href}
+                  href={hrefFor(item.href)}
                   className={`relative whitespace-nowrap px-2 py-1 text-[13px] font-semibold tracking-wide transition-colors ${
                     isActive ? "text-clinical-navy" : "text-on-surface-variant hover:text-clinical-navy"
                   }`}
@@ -240,7 +243,7 @@ export function Header() {
                     {eventsOpen ? (
                       <div className="mb-3 space-y-1 pb-2">
                         {eventNav.map((entry) => (
-                          <Link key={entry.href} href={entry.href} className="block py-1.5 text-sm text-sand-tint/80">
+                          <Link key={entry.href} href={hrefFor(entry.href)} className="block py-1.5 text-sm text-sand-tint/80">
                             {lang === "ar" ? entry.shortAr : entry.short}
                           </Link>
                         ))}
@@ -279,7 +282,7 @@ export function Header() {
                         ? conditionsOpen
                         : physiciansOpen) ? (
                       <div className="mb-3 space-y-1 pb-2">
-                        <Link href={item.href} className="block py-1.5 text-sm text-surgical-teal-light">
+                        <Link href={hrefFor(item.href)} className="block py-1.5 text-sm text-surgical-teal-light">
                           {item.href === "/treatments"
                             ? t.allTreatments
                             : item.href === "/conditions"
@@ -294,7 +297,7 @@ export function Header() {
                         ).map((entry) => (
                           <Link
                             key={entry.slug}
-                            href={`${item.href}/${entry.slug}`}
+                            href={hrefFor(`${item.href}/${entry.slug}`)}
                             className="block py-1.5 text-sm text-sand-tint/80"
                           >
                             {lang === "ar" ? entry.shortAr : entry.short}
@@ -305,7 +308,7 @@ export function Header() {
                   </>
                 ) : (
                   <Link
-                    href={item.href}
+                    href={hrefFor(item.href)}
                     className="flex items-center justify-between py-3.5 font-headline-sm text-[1.35rem] text-white"
                   >
                     {t.nav[item.href]?.label ?? item.label}

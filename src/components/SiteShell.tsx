@@ -1,12 +1,14 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { useParams } from "next/navigation";
 import type { ReactNode } from "react";
 import { Footer, MobileBar } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { BookingProvider, useBooking } from "@/lib/booking";
 import { LanguageProvider } from "@/lib/language";
+import { toLang } from "@/lib/locale";
 
 // The booking modal (and its form) only renders after the user opens it, so load it as a
 // separate chunk instead of shipping it in the initial JS bundle.
@@ -22,8 +24,11 @@ function LazyBookingModal() {
 }
 
 export function SiteShell({ children }: { children: ReactNode }) {
+  const params = useParams<{ locale?: string }>();
+  const initialLang = toLang(typeof params?.locale === "string" ? params.locale : "en");
+
   return (
-    <LanguageProvider>
+    <LanguageProvider initialLang={initialLang}>
       <BookingProvider>
         <div className="min-h-full bg-alabaster-warm">
           <Header />

@@ -1,76 +1,9 @@
-import type { Metadata } from "next";
-import { Cairo, Newsreader, Plus_Jakarta_Sans } from "next/font/google";
-import Script from "next/script";
-import { JsonLd } from "@/components/JsonLd";
-import { SITE_URL, siteGraph } from "@/lib/schema";
-import "./globals.css";
+import type { ReactNode } from "react";
 
-const GA_MEASUREMENT_ID = "G-MD8H243F2D";
-
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  // Body/UI font: the hero lead paragraph and buttons render in it above the fold,
-  // so preload it to avoid a late font swap re-triggering LCP.
-  preload: true,
-  display: "swap",
-});
-
-const cairo = Cairo({
-  variable: "--font-cairo",
-  subsets: ["arabic", "latin"],
-  weight: ["400", "600", "700"],
-  preload: false,
-  display: "swap",
-});
-
-const newsreader = Newsreader({
-  variable: "--font-newsreader",
-  subsets: ["latin"],
-  weight: ["500", "400", "600"],
-  style: ["normal", "italic"],
-  // Hero H1 uses Newsreader (font-headline-hero); preload to reduce text LCP.
-  preload: true,
-  display: "swap",
-});
-
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: "Dr. Feras Ya'ish | Consultant Orthopaedic Surgeon, Abu Dhabi",
-  description:
-    "Orthopedic surgeon in Abu Dhabi — Dr. Feras Ya'ish at Healthpoint. Book a consultation today.",
-  alternates: {
-    canonical: "./",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
-
-export default function RootLayout({ children }: LayoutProps<"/">) {
-  return (
-    <html
-      lang="en"
-      className={`${jakarta.variable} ${newsreader.variable} ${cairo.variable} scroll-smooth antialiased`}
-    >
-      <body className="bg-alabaster-warm font-body-md text-body-md text-on-surface">
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="lazyOnload"
-        />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
-          `}
-        </Script>
-        <JsonLd data={siteGraph()} />
-        {children}
-      </body>
-    </html>
-  );
+/**
+ * Pass-through root layout. `<html>` / `<body>` live in `app/[locale]/layout.tsx`
+ * so each locale can set server `lang` / `dir` on the document element.
+ */
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return children;
 }
