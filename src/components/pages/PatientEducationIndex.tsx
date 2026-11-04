@@ -62,7 +62,12 @@ export function PatientEducationIndex() {
         </div>
       </section>
 
-      <CtaBand />
+      <CtaBand
+        eyebrow={t.eduTitle}
+        title={lang === "ar" ? "ناقش دليلاً في العيادة" : "Discuss a guide in clinic"}
+        body="Consultations take place at Healthpoint Hospital, Zayed Sports City, Abu Dhabi. Toll-free 800 77."
+        bodyAr="تتم الاستشارات في مستشفى هيلث بوينت، مدينة زايد الرياضية، أبوظبي. الرقم المجاني 800 77."
+      />
     </>
   );
 }
