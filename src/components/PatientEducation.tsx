@@ -140,7 +140,13 @@ export function PatientEducation() {
               const cardBody = (
                 <>
                   <span className="relative flex h-20 w-24 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-slate-900">
-                    <Image src={item.image} alt="" fill className="object-cover" sizes="96px" />
+                    <Image
+                      src={item.image}
+                      alt={lang === "ar" ? item.titleAr : item.title}
+                      fill
+                      className="object-cover"
+                      sizes="96px"
+                    />
                     <Icon name="play_circle" className="absolute text-[24px] text-surgical-teal-light" />
                     {item.duration ? (
                       <span className="absolute end-1 bottom-1 rounded bg-black/60 px-1 font-mono text-[9px] text-white">
@@ -222,7 +228,7 @@ export function PatientEducation() {
                   >
                     <Image
                       src={item.image}
-                      alt=""
+                      alt={lang === "ar" ? item.altAr : item.alt}
                       fill
                       className={item.fit}
                       sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"

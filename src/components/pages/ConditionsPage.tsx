@@ -234,7 +234,7 @@ export function ConditionsPage() {
             <h1 className="font-headline-hero text-[2.25rem] leading-tight lg:text-[3rem]">
               {loc(lang, "Precision Orthopaedic Surgical Solutions", "حلول جراحة عظام دقيقة")}
             </h1>
-            <AuthorByline colorClass="text-sand-tint/90" />
+            <AuthorByline colorClass="text-sand-tint/90" showCredentials />
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-sand-tint/75">
               {loc(
                 lang,

@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: PageParams }): Prom
   const { locale: localeParam } = await params;
   const locale: Locale = isLocale(localeParam) ? localeParam : "en";
   return withLocaleAlternates(locale, "/about", {
-    title: "About Dr. Feras Ya'ish | Consultant Trauma & Orthopaedic Surgeon",
+    title: "About Dr. Feras Ya'ish | Orthopaedics in Abu Dhabi",
     description:
       "About Dr. Feras Ya'ish — UK-trained consultant orthopaedic surgeon in Abu Dhabi. FRCS (Tr & Orth), CCT, and AO Recon MENA chair at Healthpoint.",
   });

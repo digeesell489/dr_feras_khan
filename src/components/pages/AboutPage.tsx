@@ -180,7 +180,7 @@ export function AboutPage() {
               )}
             </h1>
             <div className="mb-4">
-              <AuthorByline colorClass="text-sand-tint/90" />
+              <AuthorByline colorClass="text-sand-tint/90" showCredentials />
             </div>
             <p className="mb-4 max-w-xl text-sm leading-relaxed text-sand-tint/75">
               {loc(
