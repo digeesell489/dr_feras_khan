@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { AuthorByline } from "@/components/AuthorByline";
 import { CtaBand } from "@/components/CtaBand";
 import { BookButton } from "@/components/BookButton";
 import { ExternalArrow } from "@/components/ui/Icons";
@@ -13,6 +14,7 @@ export function EducationDetail({ item }: { item: EducationItem }) {
   const title = lang === "ar" ? item.titleAr : item.title;
   const body = lang === "ar" ? item.bodyAr : item.body;
   const others = educationItems.filter((entry) => entry.id !== item.id).slice(0, 3);
+  const hasSections = Boolean(item.sections?.length);
 
   return (
     <>
@@ -31,6 +33,7 @@ export function EducationDetail({ item }: { item: EducationItem }) {
           <h1 className="max-w-3xl font-headline-hero text-[2.15rem] leading-tight text-primary lg:text-[2.75rem]">
             {title}
           </h1>
+          <AuthorByline showCredentials />
         </div>
       </section>
 
@@ -62,14 +65,44 @@ export function EducationDetail({ item }: { item: EducationItem }) {
           </div>
           <div className="lg:col-span-6">
             <p className="mb-4 text-base leading-relaxed text-text-secondary">{body}</p>
-            {lang === "en" && item.sectionH2 ? (
+            {!hasSections && lang === "en" && item.sectionH2 ? (
               <h2 className="mb-3 font-headline-sm text-primary">{item.sectionH2}</h2>
             ) : null}
             <div className="space-y-3 text-sm leading-relaxed text-text-secondary">
               {(lang === "ar" ? item.contentAr : item.content).map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+                <p key={paragraph.slice(0, 48)}>{paragraph}</p>
               ))}
             </div>
+            {hasSections
+              ? item.sections!.map((section) => (
+                  <div key={section.h2} className="mt-8">
+                    <h2 className="mb-3 font-headline-sm text-primary">
+                      {lang === "ar" ? section.h2Ar : section.h2}
+                    </h2>
+                    <div className="space-y-3 text-sm leading-relaxed text-text-secondary">
+                      {(lang === "ar" ? section.paragraphsAr : section.paragraphs).map((paragraph) => (
+                        <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+                      ))}
+                    </div>
+                  </div>
+                ))
+              : null}
+            {item.relatedCare?.length ? (
+              <div className="mt-8">
+                <h2 className="mb-3 font-headline-sm text-primary">
+                  {lang === "ar" ? "روابط رعاية ذات صلة" : "Related care links"}
+                </h2>
+                <ul className="space-y-2 text-sm">
+                  {item.relatedCare.map((link) => (
+                    <li key={link.href}>
+                      <Link className="font-semibold text-clinical-navy hover:text-surgical-teal" href={link.href}>
+                        {lang === "ar" ? link.labelAr : link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
             <div className="mt-6">
               <BookButton className="rounded bg-clinical-navy px-5 py-2.5 text-[13px] font-semibold text-white">
                 {t.requestConsultation}
@@ -98,11 +131,8 @@ export function EducationDetail({ item }: { item: EducationItem }) {
                   </span>
                 </>
               );
-              return entry.videoUrl ? (
-                <a key={entry.id} href={entry.videoUrl} target="_blank" rel="noreferrer" className={className}>
-                  {card}
-                </a>
-              ) : (
+              // Always link internally for crawlable related rail; external play stays on hero only.
+              return (
                 <Link key={entry.id} href={`/patient-education/${entry.id}`} className={className}>
                   {card}
                 </Link>

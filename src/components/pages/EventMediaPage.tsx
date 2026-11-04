@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { AuthorByline } from "@/components/AuthorByline";
 import { ExternalArrow } from "@/components/ui/Icons";
 import { mediaAppearances } from "@/lib/media-appearances";
 import { useLanguage } from "@/lib/language";
@@ -18,6 +19,7 @@ export function EventMediaPage() {
           <h1 className="max-w-3xl font-headline-hero text-[2.25rem] leading-tight lg:text-[3rem]">
             {lang === "ar" ? "الظهور في الصحف والإعلام" : "Appearances on newspapers and media"}
           </h1>
+          <AuthorByline colorClass="text-sand-tint/90" showCredentials />
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-sand-tint/75">
             {lang === "ar"
               ? "مقابلات الدكتور فراس يعيش وتغطيته في الصحف والتلفزيون ووسائل الإعلام."

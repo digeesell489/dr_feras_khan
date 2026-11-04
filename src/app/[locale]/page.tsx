@@ -10,8 +10,10 @@ import { JsonLd } from "@/components/JsonLd";
 import { PatientEducation } from "@/components/PatientEducation";
 import { SiteShell } from "@/components/SiteShell";
 import { absoluteUrl, isLocale, withLocaleAlternates, type Locale } from "@/lib/locale";
-import { pageSchema } from "@/lib/schema";
+import { pageSchema, SITE_URL } from "@/lib/schema";
 import { showCaseExamples } from "@/lib/visibility";
+
+const OG_IMAGE_URL = `${SITE_URL}/images/doctor-about.webp`;
 
 const HOME_DESCRIPTION_EN =
   "Orthopedic surgeon in Abu Dhabi — Dr. Feras Ya'ish at Healthpoint. Book a consultation today.";
@@ -51,6 +53,20 @@ export async function generateMetadata({ params }: { params: PageParams }): Prom
       siteName: "Dr. Feras Ya'ish",
       type: "website",
       locale: locale === "ar" ? "ar" : "en",
+      images: [
+        {
+          url: OG_IMAGE_URL,
+          width: 1200,
+          height: 896,
+          alt: "Dr. Feras Ya'ish, Consultant Trauma and Orthopaedic Surgeon",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: copy.ogTitle,
+      description: copy.ogDescription,
+      images: [OG_IMAGE_URL],
     },
   });
 }

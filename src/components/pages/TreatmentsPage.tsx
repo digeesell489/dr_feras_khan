@@ -256,7 +256,7 @@ export function TreatmentsPage() {
           <h1 className="max-w-3xl font-headline-hero text-[2.25rem] leading-tight text-primary lg:text-[3rem]">
             {loc(lang, "Orthopaedic Surgical Specialties & Joint Care", "تخصصات جراحة العظام ورعاية المفاصل")}
           </h1>
-          <AuthorByline />
+          <AuthorByline showCredentials />
           <p className="mt-4 max-w-2xl text-text-secondary">
             {loc(
               lang,

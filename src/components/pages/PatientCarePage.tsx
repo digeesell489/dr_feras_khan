@@ -71,7 +71,7 @@ export function PatientCarePage() {
             <h1 className="font-headline-hero text-[2.25rem] leading-tight text-primary lg:text-[3rem]">
               {loc(lang, "Your Surgical Care & Recovery Journey", "رحلة الرعاية الجراحية والتعافي")}
             </h1>
-            <AuthorByline />
+            <AuthorByline showCredentials />
             <p className="mt-4 max-w-2xl text-text-secondary">
               {loc(
                 lang,
