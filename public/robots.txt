@@ -1,8 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /cgi-bin/
-# Unpublished feature sections — flip flags in src/lib/visibility.ts to publish
-Disallow: /for-physicians
-Disallow: /case-examples
 
 Sitemap: https://drferasyaishortho.com/sitemap.xml

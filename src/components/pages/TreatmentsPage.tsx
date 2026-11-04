@@ -10,7 +10,6 @@ import { treatmentCopy } from "@/lib/ar-copy";
 import { useLanguage } from "@/lib/language";
 import { loc } from "@/lib/loc";
 import { treatments, type TreatmentCategory } from "@/lib/treatments";
-import { isPublishedPath } from "@/lib/visibility";
 
 const comparison = {
   headers: ["Clinical Parameter", "Conventional Jigs", "Patient-Specific Guides (PSI)", "Robotic-Navigated (Mako / ROSA)"],
@@ -169,11 +168,10 @@ const extras: Record<
       { label: "MDT Collaboration", labelAr: "التعاون المتعدد", value: "Infectious Disease & Radiology", valueAr: "العدوى والأشعة" },
       { label: "Regional Expertise", labelAr: "الخبرة الإقليمية", value: "AO Recon MENA Faculty", valueAr: "هيئة AO Recon للمنطقة" },
     ],
-    cta: "Physician Referral & Case Review",
-    ctaAr: "إحالة الطبيب ومراجعة الحالة",
+    cta: "Request Revision Assessment",
+    ctaAr: "طلب تقييم المراجعة",
     note: "Major Referral Center",
     noteAr: "مركز إحالة رئيسي",
-    href: "/for-physicians",
   },
   arthroscopy: {
     specialty: "Specialty Intervention 06 · Knee Sports Injuries",
@@ -337,7 +335,7 @@ export function TreatmentsPage() {
                         <a className={ctaClass} href={meta.href}>
                           {loc(lang, meta.cta, meta.ctaAr)}
                         </a>
-                      ) : meta.href && isPublishedPath(meta.href) ? (
+                      ) : meta.href ? (
                         <Link className={ctaClass} href={meta.href}>
                           {loc(lang, meta.cta, meta.ctaAr)}
                         </Link>
@@ -447,24 +445,6 @@ export function TreatmentsPage() {
                 "بين البوابتين 1–6، شارع القيادة، مدينة زايد الرياضية، الروضة، ص.ب 112308، أبوظبي",
               )}
             </p>
-            {isPublishedPath("/for-physicians") ? (
-              <>
-                <p className="mt-4 text-[11px] tracking-wider text-surgical-teal-light uppercase">
-                  {loc(lang, "Physician Referrals", "إحالات الأطباء")}
-                </p>
-                <p className="mt-1 text-sm text-sand-tint/75">
-                  {loc(
-                    lang,
-                    "Direct tertiary referral desk for hospital-to-hospital transfers, radiological review, and complex trauma triage.",
-                    "مكتب إحالة تخصصي للتحويل بين المستشفيات ومراجعة الأشعة وفرز الرضوض المعقدة.",
-                  )}
-                </p>
-                <Link className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-surgical-teal-light" href="/for-physicians">
-                  {loc(lang, "Physician Referral Portal", "بوابة إحالة الأطباء")}
-                  <ExternalArrow />
-                </Link>
-              </>
-            ) : null}
             <div className="mt-4 flex justify-between text-[12px] text-sand-tint/70">
               <span>DoH Licensed Consultant</span>
               <span className="text-clinical-gold-honorary">FRCS (Tr &amp; Orth) UK</span>

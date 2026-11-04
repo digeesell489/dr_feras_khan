@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Approach } from "@/components/Approach";
-import { ComplexCentre } from "@/components/ComplexCentre";
 import { Excellence } from "@/components/Excellence";
 import { FAQ } from "@/components/FAQ";
 import { Hero } from "@/components/Hero";
@@ -11,7 +10,6 @@ import { PatientEducation } from "@/components/PatientEducation";
 import { SiteShell } from "@/components/SiteShell";
 import { absoluteUrl, isLocale, withLocaleAlternates, type Locale } from "@/lib/locale";
 import { pageSchema, SITE_URL } from "@/lib/schema";
-import { showCaseExamples } from "@/lib/visibility";
 
 const OG_IMAGE_URL = `${SITE_URL}/images/doctor-about.webp`;
 
@@ -89,7 +87,6 @@ export default async function Home({ params }: { params: PageParams }) {
         <Hero />
         <Approach />
         <Excellence />
-        {showCaseExamples ? <ComplexCentre /> : null}
         <PatientEducation />
         <Hospital />
         <FAQ />

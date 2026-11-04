@@ -11,7 +11,6 @@ import { localizedPath, stripLocale } from "@/lib/locale";
 import {
   conditionNav,
   eventNav,
-  physicianNav,
   treatmentNav,
 } from "@/lib/nav-menus";
 import { siteNav } from "@/lib/nav";
@@ -26,7 +25,6 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [treatmentsOpen, setTreatmentsOpen] = useState(false);
   const [conditionsOpen, setConditionsOpen] = useState(false);
-  const [physiciansOpen, setPhysiciansOpen] = useState(false);
   const [eventsOpen, setEventsOpen] = useState(false);
 
   useEffect(() => {
@@ -47,7 +45,6 @@ export function Header() {
     setOpen(false);
     setTreatmentsOpen(false);
     setConditionsOpen(false);
-    setPhysiciansOpen(false);
     setEventsOpen(false);
   }, [pathname]);
 
@@ -110,15 +107,9 @@ export function Header() {
                 );
               }
 
-              if (item.href === "/treatments" || item.href === "/conditions" || item.href === "/for-physicians") {
-                const items =
-                  item.href === "/treatments"
-                    ? treatmentNav
-                    : item.href === "/conditions"
-                      ? conditionNav
-                      : physicianNav;
-                const allLabel =
-                  item.href === "/treatments" ? t.allTreatments : item.href === "/conditions" ? t.allConditions : t.allPhysicians;
+              if (item.href === "/treatments" || item.href === "/conditions") {
+                const items = item.href === "/treatments" ? treatmentNav : conditionNav;
+                const allLabel = item.href === "/treatments" ? t.allTreatments : t.allConditions;
                 const baseHref = item.href;
 
                 return (
@@ -250,51 +241,31 @@ export function Header() {
                       </div>
                     ) : null}
                   </>
-                ) : item.href === "/treatments" || item.href === "/conditions" || item.href === "/for-physicians" ? (
+                ) : item.href === "/treatments" || item.href === "/conditions" ? (
                   <>
                     <button
                       type="button"
                       className="flex w-full items-center justify-between py-3.5 font-headline-sm text-[1.35rem] text-white"
                       onClick={() => {
                         if (item.href === "/treatments") setTreatmentsOpen((v) => !v);
-                        else if (item.href === "/conditions") setConditionsOpen((v) => !v);
-                        else setPhysiciansOpen((v) => !v);
+                        else setConditionsOpen((v) => !v);
                       }}
                     >
                       {t.nav[item.href]?.label ?? item.label}
                       <span
                         className={`text-surgical-teal-light transition ${
-                          (item.href === "/treatments"
-                            ? treatmentsOpen
-                            : item.href === "/conditions"
-                              ? conditionsOpen
-                              : physiciansOpen)
-                            ? "rotate-90"
-                            : ""
+                          (item.href === "/treatments" ? treatmentsOpen : conditionsOpen) ? "rotate-90" : ""
                         }`}
                       >
                         →
                       </span>
                     </button>
-                    {(item.href === "/treatments"
-                      ? treatmentsOpen
-                      : item.href === "/conditions"
-                        ? conditionsOpen
-                        : physiciansOpen) ? (
+                    {(item.href === "/treatments" ? treatmentsOpen : conditionsOpen) ? (
                       <div className="mb-3 space-y-1 pb-2">
                         <Link href={hrefFor(item.href)} className="block py-1.5 text-sm text-surgical-teal-light">
-                          {item.href === "/treatments"
-                            ? t.allTreatments
-                            : item.href === "/conditions"
-                              ? t.allConditions
-                              : t.allPhysicians}
+                          {item.href === "/treatments" ? t.allTreatments : t.allConditions}
                         </Link>
-                        {(item.href === "/treatments"
-                          ? treatmentNav
-                          : item.href === "/conditions"
-                            ? conditionNav
-                            : physicianNav
-                        ).map((entry) => (
+                        {(item.href === "/treatments" ? treatmentNav : conditionNav).map((entry) => (
                           <Link
                             key={entry.slug}
                             href={hrefFor(`${item.href}/${entry.slug}`)}

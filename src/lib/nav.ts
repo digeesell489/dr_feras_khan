@@ -11,8 +11,6 @@ export const siteNav = [
 export const footerPractice = [
   { href: "/about", label: "About the Practice" },
   { href: "/about#surgical-philosophy", label: "Holistic Approach" },
-  // Hidden while showCaseExamples is false (src/lib/visibility.ts)
-  { href: "/case-examples", label: "Case Examples" },
   { href: "/#faq", label: "FAQs" },
   { href: "/contact", label: "Contact & Appointments" },
 ];
@@ -27,12 +25,4 @@ export const footerCare = [
   { href: "/conditions/hip-osteoarthritis", label: "Hip Osteoarthritis" },
   { href: "/conditions/knee-osteoarthritis", label: "Knee Osteoarthritis" },
   { href: "/patient-care", label: "Patient Care Guide" },
-];
-
-// Hidden while showForPhysicians is false (src/lib/visibility.ts)
-export const footerPhysicians = [
-  { href: "/for-physicians", label: "Tertiary Referral Gateway" },
-  { href: "/for-physicians/urgent-escalation", label: "Urgent Trauma Escalation" },
-  { href: "/for-physicians/ao-recon-faculty", label: "AO Recon Faculty" },
-  { href: "/for-physicians/case-submission", label: "Case Submission" },
 ];

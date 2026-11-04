@@ -7,11 +7,7 @@ import { treatments } from "@/lib/treatments";
 export const dynamic = "force-static";
 
 /**
- * Indexable pages only. Deliberately excluded while unpublished
- * (see src/lib/visibility.ts — flip flags to feature again):
- * - /for-physicians/*
- * - /case-examples/*
- *
+ * Indexable pages only.
  * Route list and priorities align with the approved sitemap for the live site.
  * Each English path has a peer Arabic URL under `/ar` for hreflang parity.
  */

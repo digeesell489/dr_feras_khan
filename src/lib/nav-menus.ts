@@ -107,9 +107,6 @@ export const conditionNav: NavMenuItem[] = [
   },
 ];
 
-/** Empty while showForPhysicians is false — avoids shipping physician pages in Header. */
-export const physicianNav: NavMenuItem[] = [];
-
 export const eventNav: EventNavItem[] = [
   { href: "/events/images", short: "Event Image", shortAr: "صور الفعاليات" },
   {

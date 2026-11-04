@@ -139,7 +139,7 @@ const dictionary = {
     formHelp: "How can we help?",
     formThanksTitle: "Thank you. Your enquiry is ready for the appointments desk.",
     formThanksBody:
-      "Please call 800 77 to complete booking with Dr. Ya'ish at Healthpoint Hospital. For physician transfers, use the referral gateway.",
+      "Please call 800 77 to complete booking with Dr. Ya'ish at Healthpoint Hospital.",
     formDisclaimer:
       "This site is informational and does not book theatre slots. Healthpoint confirms appointments on 800 77. Use the form to prepare your details.",
     tollFreeUae: "Toll-free UAE",
@@ -195,14 +195,12 @@ const dictionary = {
       "/treatments": { label: "Treatments", short: "Treatments" },
       "/conditions": { label: "Conditions", short: "Conditions" },
       "/patient-care": { label: "Patient Care", short: "Care" },
-      "/for-physicians": { label: "For Physicians", short: "Physicians" },
       "/events": { label: "Events", short: "Events" },
       "/contact": { label: "Contact", short: "Contact" },
     } as Record<string, { label: string; short: string }>,
     footerPractice: [
       { href: "/about", label: "About the Practice" },
       { href: "/about#surgical-philosophy", label: "Holistic Approach" },
-      { href: "/case-examples", label: "Case Examples" },
       { href: "/#faq", label: "FAQs" },
       { href: "/contact", label: "Contact & Appointments" },
     ],
@@ -216,12 +214,6 @@ const dictionary = {
       { href: "/conditions/hip-osteoarthritis", label: "Hip Osteoarthritis" },
       { href: "/conditions/knee-osteoarthritis", label: "Knee Osteoarthritis" },
       { href: "/patient-care", label: "Patient Care Guide" },
-    ],
-    footerPhysicians: [
-      { href: "/for-physicians", label: "Tertiary Referral Gateway" },
-      { href: "/for-physicians/urgent-escalation", label: "Urgent Trauma Escalation" },
-      { href: "/for-physicians/ao-recon-faculty", label: "AO Recon Faculty" },
-      { href: "/for-physicians/case-submission", label: "Case Submission" },
     ],
     footerEvents: [
       { href: "/events/images", label: "Event Image" },
@@ -359,7 +351,7 @@ const dictionary = {
     formHelp: "كيف يمكننا المساعدة؟",
     formThanksTitle: "شكراً لك. استفسارك جاهز لمكتب المواعيد.",
     formThanksBody:
-      "يرجى الاتصال على 800 77 لإكمال الحجز مع الدكتور يعيش في مستشفى هيلث بوينت. لتحويلات الأطباء استخدم بوابة الإحالة.",
+      "يرجى الاتصال على 800 77 لإكمال الحجز مع الدكتور يعيش في مستشفى هيلث بوينت.",
     formDisclaimer:
       "هذا الموقع للمعلومات ولا يحجز غرف العمليات. يؤكد هيلث بوينت المواعيد عبر 800 77. استخدم النموذج لتجهيز بياناتك.",
     tollFreeUae: "مجاني داخل الإمارات",
@@ -415,14 +407,12 @@ const dictionary = {
       "/treatments": { label: "العلاجات", short: "العلاجات" },
       "/conditions": { label: "الحالات", short: "الحالات" },
       "/patient-care": { label: "رعاية المريض", short: "الرعاية" },
-      "/for-physicians": { label: "للأطباء", short: "الأطباء" },
       "/events": { label: "الفعاليات", short: "الفعاليات" },
       "/contact": { label: "تواصل", short: "تواصل" },
     } as Record<string, { label: string; short: string }>,
     footerPractice: [
       { href: "/about", label: "عن العيادة" },
       { href: "/about#surgical-philosophy", label: "المنهج الشامل" },
-      { href: "/case-examples", label: "أمثلة الحالات" },
       { href: "/#faq", label: "الأسئلة الشائعة" },
       { href: "/contact", label: "التواصل والمواعيد" },
     ],
@@ -436,12 +426,6 @@ const dictionary = {
       { href: "/conditions/hip-osteoarthritis", label: "خشونة الورك" },
       { href: "/conditions/knee-osteoarthritis", label: "خشونة الركبة" },
       { href: "/patient-care", label: "دليل رعاية المريض" },
-    ],
-    footerPhysicians: [
-      { href: "/for-physicians", label: "بوابة التحويل التخصصي" },
-      { href: "/for-physicians/urgent-escalation", label: "التصعيد الرضّي العاجل" },
-      { href: "/for-physicians/ao-recon-faculty", label: "هيئة AO Recon" },
-      { href: "/for-physicians/case-submission", label: "إرسال الحالة" },
     ],
     footerEvents: [
       { href: "/events/images", label: "صور الفعاليات" },

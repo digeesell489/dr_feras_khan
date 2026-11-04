@@ -182,7 +182,6 @@ export const conditions: Condition[] = [
     ],
     treatments: [
       { href: "/treatments/revision-surgery", label: "Revision Hip & Knee Surgery" },
-      { href: "/for-physicians", label: "Physician referral gateway" },
       { href: "/treatments/trauma", label: "Periprosthetic fracture care" },
     ],
   },
@@ -247,7 +246,6 @@ export const conditions: Condition[] = [
     treatments: [
       { href: "/treatments/trauma", label: "Trauma & Malunion Reconstruction" },
       { href: "/treatments/revision-surgery", label: "Revision if the implant is involved" },
-      { href: "/for-physicians/urgent-escalation", label: "Urgent physician escalation" },
     ],
   },
 ];

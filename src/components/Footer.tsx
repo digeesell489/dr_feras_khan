@@ -7,7 +7,6 @@ import { WhatsAppButton, WhatsAppIcon, whatsappHref } from "@/components/WhatsAp
 import { professionalLinks } from "@/lib/links";
 import { useLanguage } from "@/lib/language";
 import { localizedPath } from "@/lib/locale";
-import { isPublishedPath } from "@/lib/visibility";
 import {
   ArrowIcon,
   CallIcon,
@@ -90,7 +89,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <p className="mb-4 text-[11px] font-bold tracking-[0.16em] text-white uppercase">{t.colPractice}</p>
             <ul className="flex flex-col gap-2.5">
-              {t.footerPractice.filter((item) => isPublishedPath(item.href)).map((item) => (
+              {t.footerPractice.map((item) => (
                 <li key={item.href}>
                   <Link className="text-sm text-sand-tint/70 transition-colors hover:text-white" href={hrefFor(item.href)}>
                     {item.label}

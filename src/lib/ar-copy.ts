@@ -2,7 +2,6 @@ import type { Lang } from "@/lib/loc";
 import { loc, locList } from "@/lib/loc";
 import type { Treatment } from "@/lib/treatments";
 import type { Condition, ConditionPresentation, ConditionRegion } from "@/lib/conditions";
-import type { PhysicianPage } from "@/lib/physicians";
 
 const regionAr: Record<ConditionRegion, string> = {
   "Hip Joint": "مفصل الورك",
@@ -29,9 +28,7 @@ const hrefAr: Record<string, string> = {
   "/treatments/patellofemoral-instability": "جراحة عدم استقرار الرضفة",
   "/treatments/trauma": "إعادة بناء الرضوض",
   "/patient-care": "دليل رعاية المريض",
-  "/for-physicians": "بوابة إحالة الأطباء",
   "/conditions": "مستكشف الحالات",
-  "/for-physicians/urgent-escalation": "التصعيد العاجل للأطباء",
 };
 
 export function regionCopy(region: ConditionRegion, lang: Lang) {
@@ -259,27 +256,6 @@ const conditionsAr: Record<string, { title: string; summary: string; symptoms: s
   },
 };
 
-const physicianAr: Record<string, { title: string; eyebrow: string; summary: string }> = {
-  "urgent-escalation": {
-    title: "بروتوكول التصعيد الرضّي العاجل",
-    eyebrow: "مسارات تحويل موحدة",
-    summary:
-      "تحويل بين المستشفيات من المنشآت الحكومية والخاصة والعسكرية في أبوظبي ودبي والإمارات الشمالية لحالات الكسر حول الزرعة أو التهديد الوعائي أو إنتان المفصل الحاد.",
-  },
-  "ao-recon-faculty": {
-    title: "هيئة AO Recon والزمالات السريرية",
-    eyebrow: "التعليم الجراحي الأكاديمي",
-    summary:
-      "تعليم طبي مستمر ودورات جثث ولجان حالات تخصصية يشرف عليها الدكتور فراس يعيش في الشرق الأوسط، إضافة إلى برنامج مراقبة جراحية في موقع العيادة.",
-  },
-  "case-submission": {
-    title: "إرسال الحالة للأطباء بشكل آمن",
-    eyebrow: "إرسال مباشر",
-    summary:
-      "قدّموا البيانات التشخيصية والعمل المخبري وروابط التصوير لتقييم الدكتور يعيش وفق قانون الإمارات الاتحادي رقم 2 لسنة 2019 ومعايير ملفّي.",
-  },
-};
-
 export function treatmentCopy(item: Treatment, lang: Lang) {
   const ar = treatmentsAr[item.slug];
   return {
@@ -302,15 +278,5 @@ export function conditionCopy(item: Condition, lang: Lang) {
     summary: loc(lang, item.summary, ar?.summary ?? item.summary),
     symptoms: locList(lang, item.symptoms, ar?.symptoms ?? item.symptoms),
     evaluation: locList(lang, item.evaluation, ar?.evaluation ?? item.evaluation),
-  };
-}
-
-export function physicianCopy(item: PhysicianPage, lang: Lang) {
-  const ar = physicianAr[item.slug];
-  return {
-    title: loc(lang, item.title, ar?.title ?? item.title),
-    short: loc(lang, item.short, item.shortAr),
-    eyebrow: loc(lang, item.eyebrow, ar?.eyebrow ?? item.eyebrow),
-    summary: loc(lang, item.summary, ar?.summary ?? item.summary),
   };
 }

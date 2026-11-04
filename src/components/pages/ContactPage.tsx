@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { CtaBand } from "@/components/CtaBand";
 import { WhatsAppButton } from "@/components/WhatsAppFloat";
 import { CallIcon, ClockIcon, ExternalArrow, PinIcon } from "@/components/ui/Icons";
@@ -8,7 +7,6 @@ import { clinicHours } from "@/lib/content";
 import { HEALTHPOINT_APPOINTMENT } from "@/lib/links";
 import { loc } from "@/lib/loc";
 import { useLanguage } from "@/lib/language";
-import { showForPhysicians } from "@/lib/visibility";
 
 const mapQuery = "Healthpoint Hospital Zayed Sports City Abu Dhabi";
 const mapEmbed = `https://maps.google.com/maps?q=${encodeURIComponent(mapQuery)}&z=15&output=embed`;
@@ -43,9 +41,7 @@ export function ContactPage() {
       </section>
 
       <section className="py-space-3xl">
-        <div
-          className={`page-wrap grid gap-4 md:grid-cols-2 ${showForPhysicians ? "lg:grid-cols-4" : "lg:grid-cols-3"}`}
-        >
+        <div className="page-wrap grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           <article className="rounded-xl border border-surface-border bg-white p-5">
             <CallIcon className="mb-3 h-5 w-5 text-surgical-teal" />
             <h2 className="mb-1 font-headline-sm text-primary">{t.callCard}</h2>
@@ -67,16 +63,6 @@ export function ContactPage() {
             <p className="text-sm text-text-secondary">{t.tueFriClinics}</p>
             <p className="mt-1 text-sm text-text-secondary">{t.satMonTheatre}</p>
           </article>
-          {showForPhysicians ? (
-            <article className="rounded-xl border border-surface-border bg-white p-5">
-              <h2 className="mb-1 font-headline-sm text-primary">{t.referringDoctors}</h2>
-              <p className="mb-3 text-sm text-text-secondary">{t.referringDoctorsBody}</p>
-              <Link className="inline-flex items-center gap-1 text-[13px] font-semibold text-clinical-navy" href="/for-physicians">
-                {t.physicianGateway}
-                <ExternalArrow />
-              </Link>
-            </article>
-          ) : null}
         </div>
       </section>
 
