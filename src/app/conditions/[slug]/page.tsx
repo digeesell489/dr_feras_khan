@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const condition = getCondition(slug);
   if (!condition) return { title: "Conditions | Dr. Feras Ya'ish" };
   return {
-    title: `${condition.title} | Dr. Feras Ya'ish`,
-    description: condition.summary,
+    title: condition.seoTitle ?? `${condition.title} | Dr. Feras Ya'ish`,
+    description: condition.seoDescription ?? condition.summary,
   };
 }
 
@@ -31,10 +31,14 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       <JsonLd
         data={pageSchema({
           path: `/conditions/${condition.slug}`,
-          name: `${condition.title} | Dr. Feras Ya'ish`,
-          description: condition.summary,
+          name: condition.seoTitle ?? `${condition.title} | Dr. Feras Ya'ish`,
+          description: condition.seoDescription ?? condition.summary,
           type: "MedicalWebPage",
-          about: { "@type": "MedicalCondition", name: condition.title, description: condition.summary },
+          about: {
+            "@type": "MedicalCondition",
+            name: condition.title,
+            description: condition.seoDescription ?? condition.summary,
+          },
         })}
       />
       <SiteShell>

@@ -62,6 +62,9 @@ export function EducationDetail({ item }: { item: EducationItem }) {
           </div>
           <div className="lg:col-span-6">
             <p className="mb-4 text-base leading-relaxed text-text-secondary">{body}</p>
+            {lang === "en" && item.sectionH2 ? (
+              <h2 className="mb-3 font-headline-sm text-primary">{item.sectionH2}</h2>
+            ) : null}
             <div className="space-y-3 text-sm leading-relaxed text-text-secondary">
               {(lang === "ar" ? item.contentAr : item.content).map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>

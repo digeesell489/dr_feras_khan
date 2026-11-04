@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const item = getEducationItem(slug);
   if (!item) return { title: "Patient Education | Dr. Feras Ya'ish" };
   return {
-    title: `${item.title} | Dr. Feras Ya'ish`,
-    description: item.body,
+    title: item.seoTitle ?? `${item.title} | Dr. Feras Ya'ish`,
+    description: item.seoDescription ?? item.body,
   };
 }
 

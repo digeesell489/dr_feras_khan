@@ -61,7 +61,7 @@ const dictionary = {
     colVisit: "Visit",
     clinicHoursShort: "Tue–Fri clinic hours",
     heroBadge: "Consultant Trauma & Orthopaedic Surgeon",
-    heroTitle: "Dr. Feras Ya'ish, Orthopedic Surgeon in UAE",
+    heroTitle: "Dr. Feras Ya'ish, Orthopedic Surgeon in Abu Dhabi",
     heroCredentials: "MBBS · MRCS (Ed) · FRCS (Tr & Orth) · CCT (UK)",
     heroLead:
       "Dr. Feras Ya'ish is a UK-trained orthopedic surgeon in UAE with more than 25 years of experience in trauma and orthopaedics. As a Consultant Trauma & Orthopaedic Surgeon (MBBS, MRCS (Ed), FRCS (Tr & Orth), CCT (UK)), he provides care in robotic-assisted and patient-specific joint replacement, complex revision surgery and advanced knee ligament reconstruction.",
@@ -283,7 +283,7 @@ const dictionary = {
     colVisit: "الزيارة",
     clinicHoursShort: "ساعات العيادة الثلاثاء–الجمعة",
     heroBadge: "استشاري جراحة الحوادث والعظام",
-    heroTitle: "الدكتور فراس يعيش، جرّاح عظام في الإمارات",
+    heroTitle: "الدكتور فراس يعيش، جرّاح عظام في أبوظبي",
     heroCredentials: "MBBS · MRCS (Ed) · FRCS (Tr & Orth) · CCT (UK)",
     heroLead:
       "الدكتور فراس يعيش جرّاح عظام مدرَّب في المملكة المتحدة في الإمارات، بخبرة تزيد على 25 عاماً في جراحة الحوادث والعظام. بصفته استشاري جراحة الحوادث والعظام (MBBS، MRCS (Ed)، FRCS (Tr & Orth)، CCT (UK)) يقدّم رعاية في استبدال المفاصل بمساعدة الروبوت والمخصص للمريض، وجراحة المراجعة المعقدة، وإعادة بناء أربطة الركبة المتقدمة.",

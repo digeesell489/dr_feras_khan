@@ -27,7 +27,13 @@ export function siteGraph(): JsonLdNode {
         "@type": "Physician",
         "@id": PHYSICIAN_ID,
         name: "Dr. Feras Ya'ish",
-        alternateName: "Dr. Feras Ya'ish, Consultant Trauma & Orthopaedic Surgeon",
+        alternateName: [
+          "Dr. Feras Ya'ish, Consultant Trauma & Orthopaedic Surgeon",
+          "Dr Feras Yaish",
+          "Dr. Feras Yaish",
+          "Feras Yaish",
+          "Feras Ya'ish",
+        ],
         url: SITE_URL,
         description:
           "UK-trained consultant orthopaedic and trauma surgeon in Abu Dhabi. Specialist in robotic-assisted and patient-specific joint replacement, complex revision hip and knee surgery, and advanced knee ligament reconstruction.",

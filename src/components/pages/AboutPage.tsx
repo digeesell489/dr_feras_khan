@@ -57,9 +57,9 @@ const timeline = [
     titleAr: "استشاري جراحة العظام والحوادث",
     place: "Healthpoint Hospital Abu Dhabi · M42 Healthcare",
     placeAr: "مستشفى هيلث بوينت أبوظبي · M42 للرعاية الصحية",
-    body: "Leading robotic-assisted and patient-specific joint replacement, complex revision hip and knee surgery, and advanced knee ligament reconstruction. Serving tertiary referral patients across the UAE and GCC.",
+    body: "Focus on robotic-assisted and patient-specific joint replacement, complex revision hip and knee surgery, and advanced knee ligament reconstruction. Serving tertiary referral patients across the UAE and GCC.",
     bodyAr:
-      "يقود استبدال المفاصل بمساعدة الروبوت والمخصص للمريض، وجراحة مراجعة الورك والركبة المعقدة، وإعادة بناء أربطة الركبة. يستقبل مرضى الإحالة من الإمارات والخليج.",
+      "يركّز على استبدال المفاصل بمساعدة الروبوت والمخصص للمريض، وجراحة مراجعة الورك والركبة المعقدة، وإعادة بناء أربطة الركبة. يستقبل مرضى الإحالة من الإمارات والخليج.",
   },
   {
     years: "2020 — 2023",
@@ -420,21 +420,21 @@ export function AboutPage() {
               {loc(lang, "Practice Location", "موقع العيادة")}
             </p>
             <h2 className="mb-3 font-headline-lg text-headline-lg text-primary">
-              {loc(lang, "World-Class Recovery at Healthpoint Abu Dhabi", "تعافٍ عالمي المستوى في هيلث بوينت أبوظبي")}
+              {loc(lang, "Recovery Care at Healthpoint Abu Dhabi", "رعاية التعافي في هيلث بوينت أبوظبي")}
             </h2>
             <p className="mb-4 text-sm leading-relaxed text-text-secondary">
               {loc(
                 lang,
-                "All elective surgeries and tertiary joint reconstructions take place at Healthpoint Hospital, Zayed Sports City — equipped with laminar airflow operating suites, robotic navigation consoles, and luxurious recuperation wings.",
-                "تُجرى كل الجراحات الاختيارية وإعادة بناء المفاصل التخصصية في مستشفى هيلث بوينت، مدينة زايد الرياضية — بغرف عمليات بتدفق هوائي صفحي ووحدات ملاحة روبوتية وأجنحة تعافٍ فاخرة.",
+                "All elective surgeries and tertiary joint reconstructions take place at Healthpoint Hospital, Zayed Sports City — equipped with laminar airflow operating suites, robotic navigation consoles, and dedicated recuperation wards.",
+                "تُجرى كل الجراحات الاختيارية وإعادة بناء المفاصل التخصصية في مستشفى هيلث بوينت، مدينة زايد الرياضية — بغرف عمليات بتدفق هوائي صفحي ووحدات ملاحة روبوتية وأجنحة تعافٍ مخصصة.",
               )}
             </p>
             <ul className="space-y-2 text-sm text-text-secondary">
               <li>
                 {loc(
                   lang,
-                  "Ultra-clean surgical theatres with high-efficiency particulate air filtration",
-                  "غرف عمليات فائقة النظافة بفلاتر هواء عالية الكفاءة",
+                  "Surgical theatres with high-efficiency particulate air filtration",
+                  "غرف عمليات بفلاتر هواء عالية الكفاءة",
                 )}
               </li>
               <li>

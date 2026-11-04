@@ -2,11 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { AuthorByline } from "@/components/AuthorByline";
+import { ClinicalLongform } from "@/components/ClinicalLongform";
 import { CtaBand } from "@/components/CtaBand";
 import { PageFaq } from "@/components/PageFaq";
 import { BookButton } from "@/components/BookButton";
 import { ExternalArrow } from "@/components/ui/Icons";
 import { conditionCopy, hrefCopy, regionCopy } from "@/lib/ar-copy";
+import { getConditionLongform } from "@/lib/clinical-longform";
 import { conditions, type Condition } from "@/lib/conditions";
 import { useLanguage } from "@/lib/language";
 import { isPublishedPath } from "@/lib/visibility";
@@ -14,6 +17,7 @@ import { isPublishedPath } from "@/lib/visibility";
 export function ConditionDetail({ condition }: { condition: Condition }) {
   const { lang, t } = useLanguage();
   const copy = conditionCopy(condition, lang);
+  const longform = lang === "en" ? getConditionLongform(condition.slug) : [];
   const others = conditions.filter((item) => item.slug !== condition.slug).slice(0, 3);
 
   return (
@@ -31,6 +35,7 @@ export function ConditionDetail({ condition }: { condition: Condition }) {
           <h1 className="max-w-3xl font-headline-hero text-[2.15rem] leading-tight text-primary lg:text-[2.75rem]">
             {copy.title}
           </h1>
+          <AuthorByline />
         </div>
       </section>
 
@@ -67,7 +72,9 @@ export function ConditionDetail({ condition }: { condition: Condition }) {
       <section className="bg-sand-tint/70 py-space-3xl">
         <div className="page-wrap grid gap-5 md:grid-cols-3">
           <article className="rounded-xl border border-surface-border bg-white p-5">
-            <h2 className="mb-3 font-headline-sm text-primary">{t.typicalSymptoms}</h2>
+            <h2 className="mb-3 font-headline-sm text-primary">
+              {lang === "en" && condition.h2Symptoms ? condition.h2Symptoms : t.typicalSymptoms}
+            </h2>
             <ul className="space-y-2 text-sm text-text-secondary">
               {copy.symptoms.map((item) => (
                 <li key={item}>• {item}</li>
@@ -75,7 +82,9 @@ export function ConditionDetail({ condition }: { condition: Condition }) {
             </ul>
           </article>
           <article className="rounded-xl border border-surface-border bg-white p-5">
-            <h2 className="mb-3 font-headline-sm text-primary">{t.howWeEvaluate}</h2>
+            <h2 className="mb-3 font-headline-sm text-primary">
+              {lang === "en" && condition.h2Evaluation ? condition.h2Evaluation : t.howWeEvaluate}
+            </h2>
             <ul className="space-y-2 text-sm text-text-secondary">
               {copy.evaluation.map((item) => (
                 <li key={item}>• {item}</li>
@@ -97,6 +106,8 @@ export function ConditionDetail({ condition }: { condition: Condition }) {
           </article>
         </div>
       </section>
+
+      <ClinicalLongform sections={longform} />
 
       <PageFaq slug={condition.slug} />
 

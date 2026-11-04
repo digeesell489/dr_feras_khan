@@ -11,6 +11,12 @@ export type EducationItem = {
   titleAr: string;
   body: string;
   bodyAr: string;
+  /** Optional document title override for generateMetadata. */
+  seoTitle?: string;
+  /** Optional meta description override for generateMetadata. */
+  seoDescription?: string;
+  /** Optional in-article H2 for keyword placement. */
+  sectionH2?: string;
   content: string[];
   contentAr: string[];
   videoUrl?: string;
@@ -48,6 +54,8 @@ export const educationItems: EducationItem[] = [
     titleAr: "بعد سنوات من الجراحات وألم الركبة المستمر، كان خليفة القمزي قد أوشك أن يتعايش مع هذا الانزعاج.",
     body: "Khalifa Al Qamzi's recovery. A description of his return to walking after knee surgery at Healthpoint.",
     bodyAr: "تعافي خليفة القمزي: وصف لعودته للمشي بعد جراحة الركبة في هيلث بوينت.",
+    seoDescription:
+      "Patient-specific implant planning explained. How CT-based guides shape knee surgery decisions with Dr. Feras Ya'ish in Abu Dhabi at Healthpoint.",
     content: [
       "After years of surgeries and ongoing knee pain, Khalifa Al Qamzi had almost learned to live with the discomfort. But with the right care and the right doctor, things can change. Under the care of Dr. Firas and the Orthopedics team at Healthpoint, Khalifa found not just relief, but renewed confidence in his movement. Just days after surgery, he is already back on his feet — walking stronger, steadier, and with a better quality of life.",
     ],
@@ -67,6 +75,8 @@ export const educationItems: EducationItem[] = [
     titleAr: "شكر كبير لمتحدثنا الكريم الدكتور فراس يعيش على مساهمته القيّمة في المؤتمر الدولي الثامن لجراحة المفاصل في مصر.",
     body: "Clinical presentations. Dr. Ya'ish's professional contributions, including the 8th ICJR Egypt meeting held on 11 to 13 September 2025.",
     bodyAr: "عروض سريرية: مساهمات الدكتور يعيش المهنية، بما في ذلك اجتماع ICJR مصر الثامن من 11 إلى 13 سبتمبر 2025.",
+    seoDescription:
+      "Knee recovery milestones after joint surgery in Abu Dhabi — walking progress, physiotherapy, and return to daily life with Dr. Feras Ya'ish.",
     content: [
       "A huge thank you to our esteemed speaker, Dr. Feras Yaish, for his invaluable contribution to the 8th ICJR Egypt. Date: 11th–13th of September, 2025. Venue: Triumph Luxury Hotel, New Cairo, Egypt.",
     ],
@@ -85,6 +95,10 @@ export const educationItems: EducationItem[] = [
     titleAr: "التعافي بعد إعادة بناء الرباط المتصالب",
     body: "Recovery after ACL reconstruction. Educational guidance on brace use, strength milestones and criteria-based return to pivoting activities.",
     bodyAr: "التعافي بعد إعادة بناء الرباط المتصالب: إرشاد تثقيفي حول الدعامة ومحطات القوة ومعايير العودة للأنشطة المحورية.",
+    seoTitle: "Recovery After ACL Surgery in Abu Dhabi | Dr. Feras Ya'ish",
+    seoDescription:
+      "ACL recovery in Abu Dhabi: brace, strength, return-to-sport criteria. Learn more with Dr. Ya'ish.",
+    sectionH2: "ACL Recovery Milestones in Abu Dhabi",
     content: [
       "After ACL reconstruction, early physiotherapy protects the graft while restoring extension and quadriceps activation.",
       "Running and pivoting are not calendar-based alone. Strength, hop testing, and sport-specific control are required.",

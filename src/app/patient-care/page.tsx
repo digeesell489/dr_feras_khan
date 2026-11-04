@@ -4,7 +4,7 @@ import { SiteShell } from "@/components/SiteShell";
 export const metadata = {
   title: "Patient Care Guide | Dr. Feras Ya'ish",
   description:
-    "Surgical care and recovery journey, pre-operative preparation, hospital stay, and rehabilitation milestones. Appointments at Healthpoint Hospital, Abu Dhabi.",
+    "Your surgical care journey in Abu Dhabi: pre-operative preparation, hospital stay, and rehabilitation milestones with Dr. Feras Ya'ish at Healthpoint.",
 };
 
 export default function Page() {

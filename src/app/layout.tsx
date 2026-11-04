@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Dr. Feras Ya'ish | Consultant Orthopaedic Surgeon, Abu Dhabi",
   description:
-    "UK-trained consultant orthopaedic and trauma surgeon in Abu Dhabi. Specialist in robotic-assisted and patient-specific joint replacement, complex revision hip and knee surgery, and advanced knee ligament reconstruction.",
+    "Orthopedic surgeon in Abu Dhabi — Dr. Feras Ya'ish at Healthpoint. Book a consultation today.",
   alternates: {
     canonical: "./",
   },

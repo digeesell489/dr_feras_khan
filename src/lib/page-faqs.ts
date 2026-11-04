@@ -99,6 +99,12 @@ export const pageFaqs: Record<string, PageFaq[]> = {
       a: "Recovery follows the total knee replacement pathway, with walking often beginning on the day of surgery or the following day, supported by physiotherapy.",
       aAr: "يتبع التعافي مسار استبدال الركبة الكامل، وغالباً يبدأ المشي يوم الجراحة أو اليوم التالي بدعم العلاج الطبيعي.",
     },
+    {
+      q: "What imaging is needed before PSI?",
+      qAr: "ما التصوير المطلوب قبل PSI؟",
+      a: "A CT scan of the knee is typically required so guides can be planned to your anatomy. Your surgeon will confirm whether existing imaging is sufficient.",
+      aAr: "عادة تُطلب أشعة مقطعية للركبة لتخطيط الأدلة وفق تشريحك. يؤكد الجرّاح ما إذا كان التصوير الحالي كافياً.",
+    },
   ],
   "hip-replacement": [
     {
@@ -130,6 +136,12 @@ export const pageFaqs: Record<string, PageFaq[]> = {
       qAr: "ماذا يشمل التعافي بعد استبدال الورك؟",
       a: "Recovery includes physiotherapy, gait training, strengthening exercises, and follow-up appointments to assess healing and implant position.",
       aAr: "يشمل العلاج الطبيعي وتدريب المشي وتمارين التقوية ومواعيد المتابعة لتقييم الالتئام وموضع الزرعة.",
+    },
+    {
+      q: "Where is hip replacement performed?",
+      qAr: "أين يُجرى استبدال الورك؟",
+      a: "Elective hip replacement with Dr. Ya'ish is performed at Healthpoint Hospital in Abu Dhabi after shared decision-making and medical clearance.",
+      aAr: "يُجرى استبدال الورك الاختياري مع الدكتور يعيش في مستشفى هيلث بوينت في أبوظبي بعد القرار المشترك والموافقات الطبية.",
     },
   ],
   "partial-knee": [
@@ -163,6 +175,12 @@ export const pageFaqs: Record<string, PageFaq[]> = {
       a: "Many patients gradually resume walking and stair climbing with rehabilitation, depending on healing and their surgeon's guidance.",
       aAr: "يستأنف كثير من المرضى المشي وصعود الدرج تدريجياً مع التأهيل، حسب الالتئام وتوجيه الجرّاح.",
     },
+    {
+      q: "Can partial knee replacement be converted later?",
+      qAr: "هل يمكن تحويل الاستبدال الجزئي لاحقاً؟",
+      a: "If arthritis progresses in other compartments, conversion to total knee replacement may be discussed. Suitability is individual.",
+      aAr: "إذا تقدمت الخشونة في حجرات أخرى، قد تُناقش التحويل إلى استبدال كامل. الملاءمة فردية.",
+    },
   ],
   "robotic-arthroplasty": [
     {
@@ -194,6 +212,12 @@ export const pageFaqs: Record<string, PageFaq[]> = {
       qAr: "كم يستغرق التعافي بعد الاستبدال الروبوتي؟",
       a: "Recovery varies by patient and procedure. Many patients gradually regain independent walking over the first few weeks with appropriate physiotherapy.",
       aAr: "يختلف التعافي حسب المريض والإجراء. يستعيد كثير من المرضى المشي المستقل تدريجياً خلال الأسابيع الأولى مع العلاج الطبيعي المناسب.",
+    },
+    {
+      q: "Does the robot operate on its own?",
+      qAr: "هل يعمل الروبوت بمفرده؟",
+      a: "No. The surgeon remains in control. The system helps constrain bone preparation to a planned envelope while clinical decisions stay with the surgeon.",
+      aAr: "لا. يبقى الجرّاح متحكماً. يساعد النظام على تقييد تحضير العظم ضمن نطاق مخطَّط بينما تبقى القرارات السريرية بيد الجرّاح.",
     },
   ],
   "revision-surgery": [
@@ -227,8 +251,14 @@ export const pageFaqs: Record<string, PageFaq[]> = {
       a: "Recovery varies with the complexity of reconstruction, bone quality, and infection status. Hospital stay, weight-bearing, and physiotherapy are tailored to each patient.",
       aAr: "يختلف التعافي حسب تعقيد إعادة البناء وجودة العظم وحالة العدوى. تُكيَّف الإقامة والتحميل والعلاج الطبيعي لكل مريض.",
     },
+    {
+      q: "Do I need infection tests before revision?",
+      qAr: "هل أحتاج فحوصات عدوى قبل المراجعة؟",
+      a: "When infection is possible, blood markers and joint aspiration are commonly used before definitive reconstruction is planned.",
+      aAr: "عند احتمال العدوى تُستخدم عادة علامات دموية وبزل المفصل قبل تخطيط إعادة البناء النهائية.",
+    },
   ],
-  arthroscopy: [
+  "arthroscopy": [
     {
       q: "What is knee arthroscopy?",
       qAr: "ما هو منظار الركبة؟",
@@ -248,6 +278,12 @@ export const pageFaqs: Record<string, PageFaq[]> = {
       aAr: "يُدخل الجرّاح كاميرا صغيرة وأدوات عبر شقوق دقيقة لفحص المنطقة المصابة وعلاجها مع الحفاظ على النسيج السليم.",
     },
     {
+      q: "Is meniscal repair preferred over removal?",
+      qAr: "هل يُفضَّل إصلاح الهلالة على الاستئصال؟",
+      a: "When tissue quality allows, repair is generally preferred to preserve meniscal function. Not every tear can be repaired.",
+      aAr: "عندما تسمح جودة النسيج، يُفضَّل الإصلاح عموماً للحفاظ على وظيفة الهلالة. ليست كل التمزقات قابلة للإصلاح.",
+    },
+    {
       q: "How long does recovery take after knee arthroscopy?",
       qAr: "كم يستغرق التعافي بعد منظار الركبة؟",
       a: "Recovery depends on the procedure performed. Some patients return to desk work within days, while meniscal repairs may require a longer rehabilitation period.",
@@ -258,6 +294,44 @@ export const pageFaqs: Record<string, PageFaq[]> = {
       qAr: "متى أعود للجري بعد منظار الركبة؟",
       a: "Running should resume only when healing, strength, and functional testing indicate readiness, particularly after meniscal repair.",
       aAr: "يُستأنف الجري فقط عندما يدل الالتئام والقوة والاختبارات الوظيفية على الجاهزية، خصوصاً بعد إصلاح الهلالة.",
+    },
+  ],
+  "trauma": [
+    {
+      q: "What is trauma and malunion reconstruction?",
+      qAr: "ما هي إعادة بناء الرضوض والالتئام المعيب؟",
+      a: "It covers care for complex fractures, open injuries, and bones that have failed to heal or healed in a poor position, using stable fixation when indicated.",
+      aAr: "يشمل رعاية الكسور المعقدة والإصابات المفتوحة والعظام التي لم تلتئم أو التأمت في وضع سيئ، باستخدام تثبيت مستقر عند الحاجة.",
+    },
+    {
+      q: "When is tertiary trauma referral considered?",
+      qAr: "متى تُدرس إحالة الرضوض التخصصية؟",
+      a: "Hospital-to-hospital transfer may be appropriate for periarticular fractures, periprosthetic fractures, non-union, or malunion needing specialised reconstruction.",
+      aAr: "قد تناسب التحويل بين المستشفيات كسور حول المفصل أو حول الزرعة أو عدم الالتئام أو الالتئام المعيب الذي يحتاج إعادة بناء متخصصة.",
+    },
+    {
+      q: "What fixation methods are commonly used?",
+      qAr: "ما أساليب التثبيت الشائعة؟",
+      a: "Anatomically contoured locking plates and minimally invasive plate osteosynthesis may be used to restore articular surface and mechanical axis when indicated.",
+      aAr: "قد تُستخدم صفائح قفل مقولبة تشريحياً وتثبيت صفائحي طفيف التوغل لاستعادة السطح المفصلي والمحور الميكانيكي عند الحاجة.",
+    },
+    {
+      q: "How is weight-bearing decided after fracture surgery?",
+      qAr: "كيف يُحدَّد التحميل بعد جراحة الكسر؟",
+      a: "Weight-bearing status is fracture-specific and written in discharge instructions. Follow those rules rather than general advice from other patients.",
+      aAr: "حالة التحميل خاصة بالكسر وتُكتب في تعليمات الخروج. اتبع تلك القواعد لا النصائح العامة من مرضى آخرين.",
+    },
+    {
+      q: "Will metalwork always be removed later?",
+      qAr: "هل تُزال المعادن دائماً لاحقاً؟",
+      a: "Planned removal of metalwork is considered only when clinically indicated, not as a routine step for every patient.",
+      aAr: "يُدرس إزالة المعدن المخططة فقط عند الاستطباب السريري، لا كخطوة روتينية لكل مريض.",
+    },
+    {
+      q: "What should I bring if transferring from another hospital?",
+      qAr: "ماذا أحضر إذا نُقلت من مستشفى آخر؟",
+      a: "Bring prior radiographs, operative notes if available, and a clear timeline of the injury and previous treatment to support planning.",
+      aAr: "أحضر الأشعة السابقة وملاحظات العملية إن وُجدت وجدول زمني واضح للإصابة والعلاج السابق لدعم التخطيط.",
     },
   ],
   "ligament-reconstruction": [
@@ -291,6 +365,12 @@ export const pageFaqs: Record<string, PageFaq[]> = {
       a: "Return to sport depends on strength, knee stability, functional testing, and medical clearance. Running and pivoting activities should resume only when the patient meets the required milestones.",
       aAr: "تعتمد العودة على القوة وثبات الركبة والاختبارات الوظيفية والتصريح الطبي. يُستأنف الجري وأنشطة المحور فقط عند بلوغ المحطات المطلوبة.",
     },
+    {
+      q: "How long before pivoting sport after ACL reconstruction?",
+      qAr: "كم المدة قبل رياضات المحور بعد إعادة بناء الرباط؟",
+      a: "Pivoting sport waits on strength, hop testing, and clinical clearance—not a calendar date alone. Timelines are often measured in months.",
+      aAr: "تنتظر رياضات المحور القوة واختبارات القفز والموافقة السريرية لا التاريخ وحده. غالباً تُقاس الجداول بالأشهر.",
+    },
   ],
   "patellofemoral-instability": [
     {
@@ -323,37 +403,11 @@ export const pageFaqs: Record<string, PageFaq[]> = {
       a: "Recovery typically involves a brace, protected knee bending, and physiotherapy to rebuild quadriceps strength and stability. Return to sport depends on functional testing and medical clearance.",
       aAr: "يشمل عادة دعامة وثنياً محمياً للركبة وعلاجاً طبيعياً لإعادة قوة العضلة الرباعية والثبات. تعتمد العودة للرياضة على الاختبارات الوظيفية والتصريح الطبي.",
     },
-  ],
-  trauma: [
     {
-      q: "What is trauma and malunion reconstruction?",
-      qAr: "ما هي إعادة بناء الرضوض والالتئام المعيب؟",
-      a: "It involves treating complex fractures and correcting bones that have healed incorrectly or failed to heal after an injury.",
-      aAr: "تشمل علاج الكسور المعقدة وتصحيح العظام التي التأمت بشكل غير صحيح أو لم تلتئم بعد الإصابة.",
-    },
-    {
-      q: "Who may need reconstructive trauma surgery?",
-      qAr: "من قد يحتاج جراحة رضوض إعادة بنائية؟",
-      a: "Patients with complex fractures, open injuries, non-unions, malunions, or fractures around existing joint implants may require specialised surgical care.",
-      aAr: "قد يحتاجها المرضى ذوو الكسور المعقدة أو الإصابات المفتوحة أو عدم الالتئام أو الالتئام المعيب أو الكسور حول زرعات المفصل.",
-    },
-    {
-      q: "What is the difference between non-union and malunion?",
-      qAr: "ما الفرق بين عدم الالتئام والالتئام المعيب؟",
-      a: "Non-union occurs when a fracture fails to heal, while malunion occurs when a broken bone heals in an incorrect position.",
-      aAr: "عدم الالتئام يعني أن الكسر لم يلتئم، والالتئام المعيب يعني أن العظم المكسور التأَم في موضع غير صحيح.",
-    },
-    {
-      q: "How are complex fractures treated?",
-      qAr: "كيف تُعالج الكسور المعقدة؟",
-      a: "Treatment may involve locking plates, intramedullary nails, minimally invasive fixation, and staged reconstruction, depending on the injury.",
-      aAr: "قد يشمل العلاج صفائح قافلة أو مسامير داخل النقي أو تثبيتاً طفيف التوغل أو إعادة بناء على مراحل، حسب الإصابة.",
-    },
-    {
-      q: "How long does recovery take after fracture reconstruction?",
-      qAr: "كم يستغرق التعافي بعد إعادة بناء الكسر؟",
-      a: "Recovery depends on fracture severity, bone healing, and the procedure performed. Weight-bearing and physiotherapy are tailored to each patient.",
-      aAr: "يعتمد على شدة الكسر والتئام العظم والإجراء. يُكيَّف التحميل والعلاج الطبيعي لكل مريض.",
+      q: "Is bony realignment always required?",
+      qAr: "هل التصحيح العظمي مطلوب دائماً؟",
+      a: "No. MPFL reconstruction alone may be enough when soft-tissue failure is the main driver. Osteotomy is added when bone alignment pulls the kneecap out of its groove.",
+      aAr: "لا. قد تكفي إعادة بناء الرباط الرضفي الفخذي الإنسي وحده عندما يكون فشل الأنسجة الرخوة هو المحرك الرئيسي. تُضاف قطع العظم عندما تسحب محاذاة العظم الرضفة خارج أخدودها.",
     },
   ],
   "hip-osteoarthritis": [
@@ -387,6 +441,12 @@ export const pageFaqs: Record<string, PageFaq[]> = {
       a: "Hip replacement may be considered when persistent pain and stiffness significantly affect daily activities despite appropriate non-surgical treatment.",
       aAr: "قد يُدرس عندما يؤثر الألم والتيبس المستمران بشكل واضح في الأنشطة اليومية رغم العلاج غير الجراحي المناسب.",
     },
+    {
+      q: "When is hip replacement considered for osteoarthritis?",
+      qAr: "متى يُدرس استبدال الورك لخشونة الورك؟",
+      a: "It may be considered when night pain and walking limits persist despite reasonable non-operative care, after shared decision-making and imaging review.",
+      aAr: "قد يُدرس عندما يستمر ألم الليل وقيود المشي رغم رعاية غير جراحية معقولة، بعد القرار المشترك ومراجعة التصوير.",
+    },
   ],
   "knee-osteoarthritis": [
     {
@@ -418,6 +478,12 @@ export const pageFaqs: Record<string, PageFaq[]> = {
       qAr: "متى يُنصح باستبدال الركبة للخشونة؟",
       a: "Knee replacement may be considered when persistent pain and stiffness significantly limit daily activities despite appropriate non-surgical treatment. Partial or total replacement depends on the extent of joint damage.",
       aAr: "قد يُدرس عندما يحدّ الألم والتيبس المستمران من الأنشطة اليومية رغم العلاج غير الجراحي المناسب. يعتمد الجزئي أو الكامل على مدى تلف المفصل.",
+    },
+    {
+      q: "Can partial knee replacement treat knee osteoarthritis?",
+      qAr: "هل يعالج الاستبدال الجزئي خشونة الركبة؟",
+      a: "When wear is limited to one compartment and ligaments are suitable, partial knee replacement may be an option. Multi-compartment disease often needs total knee pathways.",
+      aAr: "عندما يقتصر التآكل على حيز واحد وتكون الأربطة مناسبة، قد يكون الاستبدال الجزئي خياراً. مرض الحجرات المتعددة غالباً يحتاج مسارات الاستبدال الكامل.",
     },
   ],
   "avascular-necrosis": [
@@ -451,6 +517,12 @@ export const pageFaqs: Record<string, PageFaq[]> = {
       a: "Total hip replacement is generally considered when the femoral head has collapsed and significant pain or secondary arthritis affects daily activities.",
       aAr: "يُدرس الاستبدال الكامل عادة عندما ينهار رأس الفخذ ويؤثر الألم الواضح أو الخشونة الثانوية في الأنشطة اليومية.",
     },
+    {
+      q: "Why is MRI important for avascular necrosis?",
+      qAr: "لماذا الرنين مهم لنخر رأس الفخذ؟",
+      a: "MRI is the most sensitive study before radiographic collapse and helps stage the femoral head so preservation versus replacement can be discussed.",
+      aAr: "الرنين أكثر الفحوصات حساسية قبل الانهيار الشعاعي ويساعد على تصنيف رأس الفخذ لمناقشة الحفاظ مقابل الاستبدال.",
+    },
   ],
   "hip-dysplasia": [
     {
@@ -482,6 +554,12 @@ export const pageFaqs: Record<string, PageFaq[]> = {
       qAr: "متى يُدرس استبدال الورك لهذه الحالات؟",
       a: "Hip replacement may be considered when significant cartilage damage or advanced arthritis causes persistent pain and limits daily activities.",
       aAr: "قد يُدرس عند تلف غضروفي واضح أو خشونة متقدمة تسبب ألماً مستمراً وتحدّ من الأنشطة اليومية.",
+    },
+    {
+      q: "Is every dysplastic hip replaced?",
+      qAr: "هل يُستبدل كل ورك مختل التنسج؟",
+      a: "No. Some patients are managed with activity change or joint-preserving strategies. Replacement, when needed, is planned to the patient's coverage and offset anatomy.",
+      aAr: "لا. يُدبَّر بعض المرضى بتعديل النشاط أو استراتيجيات الحفاظ على المفصل. وعند الحاجة يُخطَّط الاستبدال وفق تغطية المريض وإزاحته.",
     },
   ],
   "failed-joint-replacement": [
@@ -515,6 +593,12 @@ export const pageFaqs: Record<string, PageFaq[]> = {
       a: "Seek prompt medical assessment for increasing pain, warmth, drainage, or recurrent instability. Sudden severe pain after a fall, or suspected infection with fever, requires urgent evaluation.",
       aAr: "اطلب تقييماً سريعاً عند زيادة الألم أو الدفء أو الإفرازات أو عدم الاستقرار المتكرر. الألم الشديد المفاجئ بعد سقوط، أو اشتباه عدوى مع حمى، يستدعي تقييماً عاجلاً.",
     },
+    {
+      q: "Should I bring old implant information?",
+      qAr: "هل أحضر معلومات الزرعة القديمة؟",
+      a: "Yes when possible. Operative notes and implant stickers help plan modular reconstruction and identify prior components.",
+      aAr: "نعم عند الإمكان. ملاحظات العملية وملصقات الزرعة تساعد على تخطيط إعادة البناء المعيارية وتعرّف المكوّنات السابقة.",
+    },
   ],
   "sports-knee-injury": [
     {
@@ -547,6 +631,12 @@ export const pageFaqs: Record<string, PageFaq[]> = {
       a: "Return depends on healing, knee stability, strength, and functional testing. A structured rehabilitation plan helps determine when it is safe to resume sports.",
       aAr: "تعتمد العودة على الالتئام وثبات الركبة والقوة والاختبارات الوظيفية. تساعد خطة تأهيل منظمة على تحديد وقت استئناف الرياضة بأمان.",
     },
+    {
+      q: "Do all ACL tears need surgery?",
+      qAr: "هل تحتاج كل تمزقات الرباط المتصالب جراحة؟",
+      a: "No. Activity goals, instability symptoms, and associated injuries guide whether bracing and physiotherapy or reconstruction is appropriate.",
+      aAr: "لا. توجّه أهداف النشاط وأعراض عدم الاستقرار والإصابات المصاحبة ما إذا كان التدعيم والعلاج الطبيعي أو إعادة البناء مناسباً.",
+    },
   ],
   "fracture-malunion": [
     {
@@ -578,6 +668,12 @@ export const pageFaqs: Record<string, PageFaq[]> = {
       qAr: "ما هو الكسر حول الزرعة؟",
       a: "It is a fracture occurring around an existing joint replacement. Treatment depends on the fracture pattern, implant stability, and the condition of the surrounding bone.",
       aAr: "كسر يحدث حول استبدال مفصل موجود. يعتمد العلاج على نمط الكسر وثبات الزرعة وحالة العظم المحيط.",
+    },
+    {
+      q: "When should malunion be reviewed urgently?",
+      qAr: "متى تُراجع حالات الالتئام المعيب بشكل عاجل؟",
+      a: "New inability to bear weight, wound drainage, or progressive deformity after prior fixation should prompt prompt clinical review.",
+      aAr: "العجز الجديد عن التحميل أو نزح الجرح أو التشوه المتزايد بعد تثبيت سابق يستدعي مراجعة سريرية سريعة.",
     },
   ],
 };

@@ -12,11 +12,6 @@ export function generateStaticParams() {
   return treatments.map((item) => ({ slug: item.slug }));
 }
 
-// Page-specific SEO titles where the default `${title} | brand` would duplicate another URL.
-const seoTitleOverrides: Record<string, string> = {
-  "partial-knee": "Partial Knee Replacement Treatment | Dr. Feras Ya'ish",
-};
-
 function totalKneeReplacementGraph() {
   const path = "/treatments/total-knee-replacement";
   const pageUrl = `${SITE_URL}${path}`;
@@ -99,7 +94,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const treatment = getTreatment(slug);
   if (!treatment) return { title: "Treatments | Dr. Feras Ya'ish" };
-  const title = treatment.seoTitle ?? seoTitleOverrides[slug] ?? `${treatment.title} | Dr. Feras Ya'ish`;
+  const title = treatment.seoTitle ?? `${treatment.title} | Dr. Feras Ya'ish`;
   const description = treatment.seoDescription ?? treatment.summary;
   return {
     title,

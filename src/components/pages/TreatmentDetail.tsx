@@ -3,18 +3,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
+import { ClinicalLongform } from "@/components/ClinicalLongform";
 import { CtaBand } from "@/components/CtaBand";
 import { PageFaq } from "@/components/PageFaq";
 import { BookButton } from "@/components/BookButton";
 import { ExternalArrow } from "@/components/ui/Icons";
 import { KneeReplacementArticle } from "@/components/pages/treatment-articles/KneeReplacementArticle";
 import { treatmentCopy } from "@/lib/ar-copy";
+import { getTreatmentLongform } from "@/lib/clinical-longform";
 import { useLanguage } from "@/lib/language";
 import { treatments, type Treatment } from "@/lib/treatments";
 
 export function TreatmentDetail({ treatment }: { treatment: Treatment }) {
   const { lang, t } = useLanguage();
   const copy = treatmentCopy(treatment, lang);
+  const longform = lang === "en" ? getTreatmentLongform(treatment.slug) : [];
   const related =
     treatment.relatedSlugs
       ?.map((slug) => treatments.find((item) => item.slug === slug))
@@ -36,8 +39,7 @@ export function TreatmentDetail({ treatment }: { treatment: Treatment }) {
           <h1 className="max-w-3xl font-headline-hero text-[2.15rem] leading-tight text-primary lg:text-[2.75rem]">
             {copy.title}
           </h1>
-          {/* Byline limited to the audited URL (/treatments/patient-specific-knee); other treatment pages are not in scope. */}
-          {treatment.slug === "patient-specific-knee" ? <AuthorByline /> : null}
+          <AuthorByline />
         </div>
       </section>
 
@@ -79,7 +81,9 @@ export function TreatmentDetail({ treatment }: { treatment: Treatment }) {
       <section className="bg-sand-tint/70 py-space-3xl">
         <div className="page-wrap grid gap-5 md:grid-cols-3">
           <article className="rounded-xl border border-surface-border bg-white p-5">
-            <h2 className="mb-3 font-headline-sm text-primary">{t.whoFor}</h2>
+            <h2 className="mb-3 font-headline-sm text-primary">
+              {lang === "en" && treatment.h2Who ? treatment.h2Who : t.whoFor}
+            </h2>
             <ul className="space-y-2 text-sm text-text-secondary">
               {copy.who.map((item) => (
                 <li key={item}>• {item}</li>
@@ -87,7 +91,9 @@ export function TreatmentDetail({ treatment }: { treatment: Treatment }) {
             </ul>
           </article>
           <article className="rounded-xl border border-surface-border bg-white p-5">
-            <h2 className="mb-3 font-headline-sm text-primary">{t.surgicalApproach}</h2>
+            <h2 className="mb-3 font-headline-sm text-primary">
+              {lang === "en" && treatment.h2Approach ? treatment.h2Approach : t.surgicalApproach}
+            </h2>
             <ul className="space-y-2 text-sm text-text-secondary">
               {copy.approach.map((item) => (
                 <li key={item}>• {item}</li>
@@ -106,6 +112,7 @@ export function TreatmentDetail({ treatment }: { treatment: Treatment }) {
       </section>
 
       {treatment.slug === "total-knee-replacement" ? <KneeReplacementArticle /> : null}
+      <ClinicalLongform sections={longform} />
 
       <PageFaq slug={treatment.slug} />
 

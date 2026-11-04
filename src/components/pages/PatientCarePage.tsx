@@ -190,8 +190,8 @@ export function PatientCarePage() {
                 <p className="mb-4 text-sm text-sand-tint/80">
                   {loc(
                     lang,
-                    "Thorough preparation at home and clinical pre-clearance guarantee smooth hospital admission and safe discharge back into your home environment.",
-                    "التحضير الجيد في المنزل والموافقات الطبية يضمنان قبولاً سلساً وخروجاً آمناً.",
+                    "Thorough preparation at home and clinical pre-clearance help support a smoother hospital admission and a safer discharge plan back into your home environment.",
+                    "التحضير الجيد في المنزل والموافقات الطبية يساعدان على قبول أكثر سلاسة وخطة خروج أكثر أماناً إلى المنزل.",
                   )}
                 </p>
                 <ul className="space-y-2 text-sm text-sand-tint/90">
