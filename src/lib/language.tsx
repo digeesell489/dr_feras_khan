@@ -214,6 +214,7 @@ const dictionary = {
       { href: "/conditions/hip-osteoarthritis", label: "Hip Osteoarthritis" },
       { href: "/conditions/knee-osteoarthritis", label: "Knee Osteoarthritis" },
       { href: "/patient-care", label: "Patient Care Guide" },
+      { href: "/patient-education", label: "Patient Education" },
     ],
     footerEvents: [
       { href: "/events/images", label: "Event Image" },
@@ -426,6 +427,7 @@ const dictionary = {
       { href: "/conditions/hip-osteoarthritis", label: "خشونة الورك" },
       { href: "/conditions/knee-osteoarthritis", label: "خشونة الركبة" },
       { href: "/patient-care", label: "دليل رعاية المريض" },
+      { href: "/patient-education", label: "تثقيف المريض" },
     ],
     footerEvents: [
       { href: "/events/images", label: "صور الفعاليات" },

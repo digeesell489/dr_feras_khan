@@ -25,4 +25,5 @@ export const footerCare = [
   { href: "/conditions/hip-osteoarthritis", label: "Hip Osteoarthritis" },
   { href: "/conditions/knee-osteoarthritis", label: "Knee Osteoarthritis" },
   { href: "/patient-care", label: "Patient Care Guide" },
+  { href: "/patient-education", label: "Patient Education" },
 ];

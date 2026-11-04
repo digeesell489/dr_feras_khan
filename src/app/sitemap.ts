@@ -27,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/events/images", priority: 0.4 },
     { path: "/events/media", priority: 0.8 },
     { path: "/contact", priority: 0.8 },
+    { path: "/patient-education", priority: 0.8 },
     { path: "/patient-education/acl-recovery", priority: 0.8 },
     { path: "/orthopedic-doctor-in-abu-dhabi", priority: 0.8 },
   ];

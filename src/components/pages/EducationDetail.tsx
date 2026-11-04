@@ -21,7 +21,7 @@ export function EducationDetail({ item }: { item: EducationItem }) {
       <section className="bg-alabaster-warm py-space-2xl lg:py-space-3xl">
         <div className="page-wrap">
           <p className="mb-3 text-[12px] text-text-secondary">
-            <Link className="hover:text-clinical-navy" href="/#patient-education">
+            <Link className="hover:text-clinical-navy" href="/patient-education">
               {t.eduTitle}
             </Link>
             <span className="mx-2 text-outline-variant">/</span>
