@@ -26,6 +26,8 @@ export type Treatment = {
   summaryExtraAr?: string[];
   /** Optional SEO title override for generateMetadata. */
   seoTitle?: string;
+  /** Optional Arabic document title for `locale === "ar"`. */
+  seoTitleAr?: string;
   /** Optional SEO description override for generateMetadata. */
   seoDescription?: string;
   /** Optional keyworded H2 override for the Who card. */
@@ -58,7 +60,8 @@ export const treatments: Treatment[] = [
     summaryExtraAr: [
       "يتبع الدكتور فراس يعيش نهجاً فردياً يراعي تشريح كل مريض ومحاذاة المفصل وتوازن الأنسجة الرخوة عند تخطيط الجراحة. وعند المناسبة يدمج تخطيطه مبادئ المحاذاة الحركية والمخصصة للمريض لدعم ركبة متوازنة ووظيفية.",
     ],
-    seoTitle: "Total Knee Replacement in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitle: "Total Knee Replacement Surgery Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitleAr: "جراحة استبدال الركبة الكامل في أبوظبي | د. فراس يعيش",
     seoDescription:
       "Total knee replacement surgery in Abu Dhabi with Dr. Feras Ya'ish. Book a consultation at Healthpoint.",
     h2Who: "Total Knee Replacement Surgery in Abu Dhabi: Who It Is For",
@@ -93,9 +96,11 @@ export const treatments: Treatment[] = [
     category: "knee",
     summary:
       "CT-based pre-operative planning produces patient-specific instrumentation, so femoral and tibial cuts are mapped to the individual's own anatomy before the first incision is made. PSI sits alongside total knee replacement; it is the planning method, not a different operation.",
-    seoTitle: "Patient-Specific Knee (PSI) in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitle: "Patient-Specific Knee Replacement Abu Dhabi | Feras Ya'ish",
+    seoTitleAr: "استبدال الركبة المخصص للمريض في أبوظبي | د. فراس يعيش",
     seoDescription:
       "Patient specific knee replacement in Abu Dhabi with CT-based guides. Book a consultation.",
+    h2Who: "Patient Specific Knee Replacement in Abu Dhabi: Who It Is For",
     who: [
       "Patients planned for total knee replacement whose bone shape needs cuts mapped in advance",
       "Knees where a one-size-fits-all mechanical template would not match the individual's anatomy",
@@ -126,8 +131,10 @@ export const treatments: Treatment[] = [
     summary:
       "Primary total hip arthroplasty using cementless and hybrid fixation, with leg-length and offset restored to the patient's own anatomy.",
     seoTitle: "Hip Replacement Surgery in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitleAr: "جراحة استبدال الورك الكامل في أبوظبي | د. فراس يعيش",
     seoDescription:
       "Hip replacement in Abu Dhabi restoring leg length and offset. Book with Dr. Feras Ya'ish.",
+    h2Who: "Hip Replacement in Abu Dhabi: Who It Is For",
     who: [
       "Hip osteoarthritis limiting walking, sleep, or daily activity",
       "Failed non-operative care of the hip",
@@ -157,7 +164,8 @@ export const treatments: Treatment[] = [
     category: "knee",
     summary:
       "Partial knee replacement surgery in Abu Dhabi is suited to isolated medial or lateral compartment osteoarthritis. By resurfacing only the worn compartment, both the ACL and PCL can remain intact, supporting proprioception and a more natural knee, often with a quicker recovery than total knee replacement surgery.",
-    seoTitle: "Partial Knee Replacement in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitle: "Knee Replacement Surgery in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitleAr: "جراحة استبدال الركبة الجزئي في أبوظبي | د. فراس يعيش",
     seoDescription:
       "Partial knee replacement surgery in Abu Dhabi for single-compartment arthritis. Book a consultation.",
     h2Who: "Partial Knee Replacement Surgery in Abu Dhabi: Who It Is For",
@@ -189,7 +197,8 @@ export const treatments: Treatment[] = [
     category: "robotic",
     summary:
       "Robotic assisted joint replacement in Abu Dhabi combines next-generation robotic arm guidance with high-resolution pre-operative 3D-CT modeling. Surgeon-controlled haptic boundaries help keep component positioning close to the planned alignment while protecting soft tissue.",
-    seoTitle: "Robotic Joint Replacement in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitle: "Robotic-Assisted Joint Replacement Abu Dhabi | Feras Ya'ish",
+    seoTitleAr: "استبدال المفصل بمساعدة الروبوت في أبوظبي | د. فراس يعيش",
     seoDescription:
       "Robotic assisted joint replacement in Abu Dhabi — precise hip or knee planning. Book a consultation.",
     h2Approach: "Robotic Assisted Joint Replacement in Abu Dhabi: Surgical Approach",
@@ -223,8 +232,10 @@ export const treatments: Treatment[] = [
     summary:
       "Specialized referral pathway for previously operated joints with aseptic loosening, osteolysis, structural bone loss, instability, or periprosthetic joint infection (PJI). Uses modular revision stems, titanium trabecular 3D cones, custom acetabular augments, and hinge knee systems.",
     seoTitle: "Revision Hip & Knee Surgery in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitleAr: "جراحة مراجعة الورك والركبة المعقدة في أبوظبي | د. فراس يعيش",
     seoDescription:
       "Revision hip and knee surgery in Abu Dhabi for failed implants. Request a tertiary referral.",
+    h2Who: "Revision Hip and Knee Surgery in Abu Dhabi: Who It Is For",
     who: [
       "Painful or loose hip or knee replacements",
       "Suspected or confirmed periprosthetic joint infection",
@@ -256,8 +267,10 @@ export const treatments: Treatment[] = [
     summary:
       "Minimally invasive keyhole surgery for meniscal tears, cartilage lesions, and mechanical locking of the knee. High-definition arthroscopy allows targeted repair or debridement while protecting healthy tissue.",
     seoTitle: "Knee Arthroscopy Surgery in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitleAr: "منظار الركبة الجراحي في أبوظبي | الدكتور فراس يعيش",
     seoDescription:
       "Knee arthroscopy in Abu Dhabi for meniscus and cartilage. Book with Dr. Feras Ya'ish at Healthpoint.",
+    h2Who: "Knee Arthroscopy in Abu Dhabi: Who It Is For",
     who: [
       "Meniscal tear, ramp lesion, or root avulsion",
       "Mechanical locking, catching, or swelling after injury",
@@ -288,8 +301,10 @@ export const treatments: Treatment[] = [
     summary:
       "Anatomical reconstruction of the anterior cruciate ligament (ACL) and associated knee ligaments after rupture or multi-ligament injury. The goal is a stable, proprioceptive knee for daily function, prayer, work, and return to sport when appropriate.",
     seoTitle: "Knee Ligament Reconstruction in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitleAr: "إعادة بناء أربطة الركبة في أبوظبي | الدكتور فراس يعيش",
     seoDescription:
-      "Ligament reconstruction in Abu Dhabi for ACL and multi-ligament injury. Book with Dr. Feras Ya'ish.",
+      "Knee ligament reconstruction in Abu Dhabi for ACL and multi-ligament injury. Book with Dr. Feras Ya'ish.",
+    h2Who: "Knee Ligament Reconstruction in Abu Dhabi: Who It Is For",
     who: [
       "ACL rupture with giving-way during cutting, pivoting, or landing",
       "PCL or combined ligament injury",
@@ -319,7 +334,8 @@ export const treatments: Treatment[] = [
     category: "sports",
     summary:
       "Patellofemoral instability surgery in Abu Dhabi treats a kneecap that slips or repeatedly dislocates. The stabilising ligament is restored, and bone alignment is corrected only when it pulls the patella out of its groove.",
-    seoTitle: "Patellofemoral Instability in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitle: "Patellofemoral Instability Surgery Abu Dhabi | Feras Ya'ish",
+    seoTitleAr: "جراحة عدم استقرار الرضفة في أبوظبي | الدكتور فراس يعيش",
     seoDescription:
       "Patellofemoral instability surgery in Abu Dhabi for kneecap dislocation. Book a consultation.",
     h2Approach: "Patellofemoral Instability Surgery in Abu Dhabi: Surgical Approach",
@@ -352,10 +368,11 @@ export const treatments: Treatment[] = [
     category: "trauma",
     summary:
       "Trauma and malunion reconstruction in Abu Dhabi covers high-energy intra-articular fractures, open injuries, periarticular disruptions, and established non-unions or malunions, using anatomically contoured locking fixation when indicated.",
-    seoTitle: "Trauma & Malunion Surgery in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitle: "Trauma and Malunion Reconstruction Abu Dhabi | Feras Ya'ish",
+    seoTitleAr: "إعادة بناء الرضوض والالتئام المعيب في أبوظبي | د. فراس يعيش",
     seoDescription:
       "Trauma and malunion reconstruction in Abu Dhabi for complex fractures. Request a referral.",
-    h2Who: "Trauma & Malunion Reconstruction in Abu Dhabi: Who It Is For",
+    h2Who: "Trauma and Malunion Reconstruction in Abu Dhabi: Who It Is For",
     who: [
       "Acute periarticular or periprosthetic fractures",
       "Open fractures requiring staged reconstruction",

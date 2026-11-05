@@ -164,8 +164,8 @@ export const abuLandingReasons = [
 
 export const abuLandingFaqs: AbuLandingFaq[] = [
   {
-    q: "How do I choose the best orthopedic doctor in Abu Dhabi?",
-    qAr: "كيف أختار أفضل طبيب عظام في أبوظبي؟",
+    q: "How do I choose an orthopedic doctor in Abu Dhabi?",
+    qAr: "كيف أختار طبيب عظام في أبوظبي؟",
     a: "Qualifications, experience, specialization, and treatment options are some of the factors to take into account when selecting an orthopedic physician. As an expert orthopedic and trauma consultant in Abu Dhabi, Dr. Feras Ya'ish offers personalized consultation for orthopaedic problems and treatment options for the hips and knees.",
     aAr:
       "المؤهلات والخبرة والتخصص وخيارات العلاج من العوامل التي تُؤخذ في الحسبان عند اختيار طبيب عظام. بصفته استشارياً خبيراً في العظام والرضوض في أبوظبي، يقدّم الدكتور فراس يعيش استشارة مخصصة لمشكلات العظام وخيارات علاج الورك والركبة.",

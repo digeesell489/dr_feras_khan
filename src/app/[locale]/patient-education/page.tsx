@@ -10,8 +10,12 @@ type PageParams = Promise<{ locale: string }>;
 export async function generateMetadata({ params }: { params: PageParams }): Promise<Metadata> {
   const { locale: localeParam } = await params;
   const locale: Locale = isLocale(localeParam) ? localeParam : "en";
+  const title =
+    locale === "ar"
+      ? "تثقيف المرضى حول جراحة العظام في أبوظبي | د. فراس يعيش"
+      : "Patient Education Guides in Abu Dhabi | Dr. Feras Ya'ish";
   return withLocaleAlternates(locale, "/patient-education", {
-    title: "Patient Education | Dr. Feras Ya'ish",
+    title,
     description:
       "Patient education guides on robotic joint replacement, ACL recovery, revision surgery, and rehabilitation with Dr. Feras Ya'ish in Abu Dhabi.",
   });
@@ -29,7 +33,7 @@ export default function Page() {
       <JsonLd
         data={pageSchema({
           path: "/patient-education",
-          name: "Patient Education | Dr. Feras Ya'ish",
+          name: "Patient Education Guides in Abu Dhabi | Dr. Feras Ya'ish",
           description:
             "Patient education guides on robotic joint replacement, ACL recovery, revision surgery, and rehabilitation with Dr. Feras Ya'ish in Abu Dhabi.",
         })}

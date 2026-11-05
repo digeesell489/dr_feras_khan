@@ -101,7 +101,10 @@ export async function generateMetadata({
   const locale: Locale = isLocale(localeParam) ? localeParam : "en";
   const treatment = getTreatment(slug);
   if (!treatment) return { title: "Treatments | Dr. Feras Ya'ish" };
-  const title = treatment.seoTitle ?? `${treatment.title} | Dr. Feras Ya'ish`;
+  const title =
+    locale === "ar"
+      ? (treatment.seoTitleAr ?? treatment.seoTitle ?? `${treatment.title} | Dr. Feras Ya'ish`)
+      : (treatment.seoTitle ?? `${treatment.title} | Dr. Feras Ya'ish`);
   const description = treatment.seoDescription ?? treatment.summary;
   return withLocaleAlternates(locale, `/treatments/${treatment.slug}`, {
     title,

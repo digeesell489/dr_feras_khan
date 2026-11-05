@@ -26,6 +26,8 @@ export type EducationItem = {
   bodyAr: string;
   /** Optional document title override for generateMetadata. */
   seoTitle?: string;
+  /** Optional Arabic document title for `locale === "ar"`. */
+  seoTitleAr?: string;
   /** Optional meta description override for generateMetadata. */
   seoDescription?: string;
   /** Optional in-article H2 for keyword placement (legacy single H2). */
@@ -55,6 +57,7 @@ export const educationItems: EducationItem[] = [
     body: "What robotic arm guidance and 3D planning mean for hip or knee replacement with Dr. Feras Ya'ish in Abu Dhabi.",
     bodyAr: "ماذا تعني إرشاد ذراع الروبوت والتخطيط ثلاثي الأبعاد لاستبدال الورك أو الركبة مع الدكتور فراس يعيش في أبوظبي.",
     seoTitle: "Robotic Surgery Explained in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitleAr: "شرح جراحة المفاصل الروبوتية في أبوظبي | د. فراس يعيش",
     seoDescription:
       "Robotic-assisted joint replacement explained for patients in Abu Dhabi — planning, theatre guidance, and consultation with Dr. Feras Ya'ish.",
     content: [
@@ -158,6 +161,7 @@ export const educationItems: EducationItem[] = [
     body: "How CT-based guides and patient-specific blocks are used for knee replacement planning with Dr. Feras Ya'ish in Abu Dhabi.",
     bodyAr: "كيف تُستخدم الأدلة المبنية على المقطعي والكتل المخصصة لتخطيط استبدال الركبة مع الدكتور فراس يعيش في أبوظبي.",
     seoTitle: "PSI Knee Planning Guide in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitleAr: "دليل تخطيط زرعة الركبة المخصصة في أبوظبي | د. فراس يعيش",
     seoDescription:
       "Patient-specific implant planning explained. How CT-based guides shape knee surgery decisions with Dr. Feras Ya'ish in Abu Dhabi at Healthpoint.",
     content: [
@@ -264,9 +268,10 @@ export const educationItems: EducationItem[] = [
     titleAr: "تعافي الركبة بعد جراحة المفصل",
     body: "Walking progress, physiotherapy focus, and return-to-daily-life milestones after knee surgery in Abu Dhabi.",
     bodyAr: "تقدم المشي وتركيز العلاج الطبيعي ومحطات العودة للحياة اليومية بعد جراحة الركبة في أبوظبي.",
-    seoTitle: "Knee Recovery After Surgery in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitle: "Knee and Joint Recovery in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitleAr: "تعافي الركبة بعد الجراحة في أبوظبي | الدكتور فراس يعيش",
     seoDescription:
-      "Knee recovery milestones after joint surgery in Abu Dhabi — walking progress, physiotherapy, and return to daily life with Dr. Feras Ya'ish.",
+      "Knee and joint recovery in Abu Dhabi — walking, physio & daily milestones. Book with Dr. Feras Ya'ish.",
     content: [
       "Knee recovery after surgery in Abu Dhabi is a staged process: protect the wound, restore extension and safe walking, then rebuild strength for stairs, prayer positions, and work. Timelines are individual; clinic milestones matter more than comparing yourself to another patient’s calendar.",
       "This guide covers common post-operative themes after partial or total knee replacement and related reconstructive procedures. Your written protocol from the surgical and physiotherapy team always takes priority.",
@@ -277,8 +282,8 @@ export const educationItems: EducationItem[] = [
     ],
     sections: [
       {
-        h2: "What Knee Recovery After Surgery Means for Patients",
-        h2Ar: "ماذا يعني تعافي الركبة بعد الجراحة للمرضى",
+        h2: "Knee Joint Recovery Milestones in Abu Dhabi",
+        h2Ar: "محطات تعافي مفصل الركبة في أبوظبي",
         paragraphs: [
           "Early recovery focuses on swelling control, straightening the knee, and transferring safely with the walking aid prescribed for you. Later phases add endurance, balance, and activity-specific drills.",
           "Pain is expected to change over weeks; sudden severe pain, fever, wound drainage, or calf swelling needs prompt clinical contact rather than waiting for the next routine visit.",
@@ -365,6 +370,7 @@ export const educationItems: EducationItem[] = [
     body: "Recovery after ACL reconstruction. Educational guidance on brace use, strength milestones and criteria-based return to pivoting activities.",
     bodyAr: "التعافي بعد إعادة بناء الرباط المتصالب: إرشاد تثقيفي حول الدعامة ومحطات القوة ومعايير العودة للأنشطة المحورية.",
     seoTitle: "Recovery After ACL Surgery in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitleAr: "التعافي بعد جراحة الرباط المتصالب في أبوظبي | د. فراس يعيش",
     seoDescription:
       "ACL recovery in Abu Dhabi: brace, strength, return-to-sport criteria. Learn more with Dr. Ya'ish.",
     sectionH2: "ACL Recovery Milestones in Abu Dhabi",
@@ -477,6 +483,7 @@ export const educationItems: EducationItem[] = [
     body: "How CT planning, robotics, and conventional jigs are selected according to anatomy and goals.",
     bodyAr: "كيف يُختار التخطيط المقطعي والروبوت والقوالب التقليدية وفق التشريح والأهداف.",
     seoTitle: "Robotic vs Conventional in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitleAr: "الروبوت مقابل الاستبدال التقليدي في أبوظبي | د. فراس يعيش",
     seoDescription:
       "Robotic vs conventional joint replacement in Abu Dhabi — how modalities differ and how Dr. Feras Ya'ish chooses a plan at Healthpoint.",
     content: [
@@ -578,6 +585,7 @@ export const educationItems: EducationItem[] = [
     body: "Loosening, infection, instability, bone loss, and periprosthetic fracture as reasons for revision.",
     bodyAr: "الارتخاء والعدوى وعدم الاستقرار وفقدان العظم والكسر حول الزرعة كأسباب للمراجعة.",
     seoTitle: "Revision Hip and Knee Surgery Explained | Dr. Feras Ya'ish",
+    seoTitleAr: "شرح جراحة مراجعة الورك والركبة | الدكتور فراس يعيش",
     seoDescription:
       "Revision hip and knee surgery explained for patients in Abu Dhabi — when it is considered and how evaluation works with Dr. Feras Ya'ish.",
     content: [
@@ -677,7 +685,8 @@ export const educationItems: EducationItem[] = [
     titleAr: "استبدال ركبة جزئي أم كامل؟",
     body: "How compartment wear and ligament integrity guide the choice between partial and total knee replacement.",
     bodyAr: "كيف يوجّه تآكل الحيز وسلامة الأربطة الاختيار بين الاستبدال الجزئي والكامل.",
-    seoTitle: "Partial vs Total Knee Replacement in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitle: "Partial vs Total Knee in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitleAr: "استبدال ركبة جزئي أم كامل في أبوظبي | الدكتور فراس يعيش",
     seoDescription:
       "Partial vs total knee replacement in Abu Dhabi — how compartment wear and ligaments guide the choice with Dr. Feras Ya'ish.",
     content: [
@@ -774,6 +783,7 @@ export const educationItems: EducationItem[] = [
     body: "ACL rupture, meniscal tears, and instability — focused on the knee rather than general sports medicine.",
     bodyAr: "تمزق الرباط المتصالب وتمزقات الهلالة وعدم الاستقرار — بتركيز على الركبة لا على الطب الرياضي العام.",
     seoTitle: "Knee Sports Injuries in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitleAr: "فهم إصابات الركبة الرياضية في أبوظبي | الدكتور فراس يعيش",
     seoDescription:
       "Knee sports injuries in Abu Dhabi — ACL, meniscus, and instability education with Dr. Feras Ya'ish at Healthpoint.",
     content: [

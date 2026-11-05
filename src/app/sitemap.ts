@@ -23,8 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...conditions.map((item) => ({ path: `/conditions/${item.slug}`, priority: 0.8 })),
     { path: "/patient-care", priority: 0.8 },
     { path: "/events", priority: 0.8 },
-    // Gallery listing — lower priority; do not treat as article SEO (content.thin waiver)
-    { path: "/events/images", priority: 0.4 },
+    // /events/images is noindex (gallery; content.thin Path A) — omit from sitemap
     { path: "/events/media", priority: 0.8 },
     { path: "/contact", priority: 0.8 },
     { path: "/patient-education", priority: 0.8 },

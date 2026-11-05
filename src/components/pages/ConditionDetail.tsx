@@ -72,7 +72,7 @@ export function ConditionDetail({ condition }: { condition: Condition }) {
         <div className="page-wrap grid gap-5 md:grid-cols-3">
           <article className="rounded-xl border border-surface-border bg-white p-5">
             <h2 className="mb-3 font-headline-sm text-primary">
-              {lang === "en" && condition.h2Symptoms ? condition.h2Symptoms : t.typicalSymptoms}
+              {condition.h2Symptoms ?? t.typicalSymptoms}
             </h2>
             <ul className="space-y-2 text-sm text-text-secondary">
               {copy.symptoms.map((item) => (
@@ -82,7 +82,7 @@ export function ConditionDetail({ condition }: { condition: Condition }) {
           </article>
           <article className="rounded-xl border border-surface-border bg-white p-5">
             <h2 className="mb-3 font-headline-sm text-primary">
-              {lang === "en" && condition.h2Evaluation ? condition.h2Evaluation : t.howWeEvaluate}
+              {condition.h2Evaluation ?? t.howWeEvaluate}
             </h2>
             <ul className="space-y-2 text-sm text-text-secondary">
               {copy.evaluation.map((item) => (

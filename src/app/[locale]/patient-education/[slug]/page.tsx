@@ -20,8 +20,12 @@ export async function generateMetadata({
   const locale: Locale = isLocale(localeParam) ? localeParam : "en";
   const item = getEducationItem(slug);
   if (!item) return { title: "Patient Education | Dr. Feras Ya'ish" };
+  const title =
+    locale === "ar"
+      ? (item.seoTitleAr ?? item.seoTitle ?? `${item.title} | Dr. Feras Ya'ish`)
+      : (item.seoTitle ?? `${item.title} | Dr. Feras Ya'ish`);
   return withLocaleAlternates(locale, `/patient-education/${item.id}`, {
-    title: item.seoTitle ?? `${item.title} | Dr. Feras Ya'ish`,
+    title,
     description: item.seoDescription ?? item.body,
   });
 }
