@@ -9,6 +9,7 @@ import { isLocale, withLocaleAlternates, type Locale } from "@/lib/locale";
 const PATH = "/orthopedic-doctor-in-abu-dhabi";
 const PAGE_URL = `${SITE_URL}${PATH}`;
 const TITLE = "Expert Orthopedic Doctor in Abu Dhabi | Dr. Feras Ya'ish";
+const TITLE_AR = "استشاري جراحة العظام الخبير في أبوظبي | د. فراس يعيش";
 const DESCRIPTION =
   "Consult Dr. Feras Ya'ish, orthopedic doctor in Abu Dhabi, for expert hip and knee care, joint replacement and advanced surgical treatments.";
 const LOGO_URL = `${SITE_URL}/images/fy-ortho-logo.png`;
@@ -19,8 +20,9 @@ type PageParams = Promise<{ locale: string }>;
 export async function generateMetadata({ params }: { params: PageParams }): Promise<Metadata> {
   const { locale: localeParam } = await params;
   const locale: Locale = isLocale(localeParam) ? localeParam : "en";
+  const title = locale === "ar" ? TITLE_AR : TITLE;
   return withLocaleAlternates(locale, "/orthopedic-doctor-in-abu-dhabi", {
-  title: TITLE,
+  title,
   description: DESCRIPTION,
   alternates: {
     canonical: PATH,
@@ -30,7 +32,7 @@ export async function generateMetadata({ params }: { params: PageParams }): Prom
     follow: true,
   },
   openGraph: {
-    title: TITLE,
+    title,
     description: DESCRIPTION,
     url: PAGE_URL,
     siteName: "Dr. Feras Ya'ish",
@@ -44,7 +46,7 @@ export async function generateMetadata({ params }: { params: PageParams }): Prom
   },
   twitter: {
     card: "summary_large_image",
-    title: TITLE,
+    title,
     description: DESCRIPTION,
     images: [DOCTOR_IMAGE_URL],
   },

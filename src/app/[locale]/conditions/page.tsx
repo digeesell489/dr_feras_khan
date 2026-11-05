@@ -8,11 +8,15 @@ type PageParams = Promise<{ locale: string }>;
 export async function generateMetadata({ params }: { params: PageParams }): Promise<Metadata> {
   const { locale: localeParam } = await params;
   const locale: Locale = isLocale(localeParam) ? localeParam : "en";
+  const title =
+    locale === "ar"
+      ? "دليل الحالات والعلاجات العظمية في أبوظبي | د. فراس يعيش"
+      : "Conditions & Treatments Explorer | Dr. Feras Ya'ish";
   return withLocaleAlternates(locale, "/conditions", {
-  title: "Conditions & Treatments Explorer | Dr. Feras Ya'ish",
-  description:
-    "Interactive orthopaedic treatment explorer for hip, knee, trauma, and revision pathways.",
-});
+    title,
+    description:
+      "Interactive orthopaedic treatment explorer for hip, knee, trauma, and revision pathways.",
+  });
 }
 
 export default function Page() {

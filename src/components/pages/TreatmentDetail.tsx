@@ -82,7 +82,7 @@ export function TreatmentDetail({ treatment }: { treatment: Treatment }) {
         <div className="page-wrap grid gap-5 md:grid-cols-3">
           <article className="rounded-xl border border-surface-border bg-white p-5">
             <h2 className="mb-3 font-headline-sm text-primary">
-              {lang === "en" && treatment.h2Who ? treatment.h2Who : t.whoFor}
+              {treatment.h2Who ?? t.whoFor}
             </h2>
             <ul className="space-y-2 text-sm text-text-secondary">
               {copy.who.map((item) => (
@@ -92,7 +92,7 @@ export function TreatmentDetail({ treatment }: { treatment: Treatment }) {
           </article>
           <article className="rounded-xl border border-surface-border bg-white p-5">
             <h2 className="mb-3 font-headline-sm text-primary">
-              {lang === "en" && treatment.h2Approach ? treatment.h2Approach : t.surgicalApproach}
+              {treatment.h2Approach ?? t.surgicalApproach}
             </h2>
             <ul className="space-y-2 text-sm text-text-secondary">
               {copy.approach.map((item) => (

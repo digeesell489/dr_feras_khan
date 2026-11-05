@@ -19,6 +19,8 @@ export type Condition = {
   summary: string;
   /** Optional document title override for generateMetadata. */
   seoTitle?: string;
+  /** Optional Arabic document title for `locale === "ar"`. */
+  seoTitleAr?: string;
   /** Optional meta description override for generateMetadata. */
   seoDescription?: string;
   /** Optional keyworded H2 override for the symptoms card. */
@@ -43,6 +45,7 @@ export const conditions: Condition[] = [
     summary:
       "Hip osteoarthritis in Abu Dhabi presents as progressive cartilage wear of the femoral head and acetabulum. Patients typically describe groin stiffness, night pain, and reduced walking distance before joint-preserving care or reconstruction is planned.",
     seoTitle: "Hip Osteoarthritis in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitleAr: "خشونة مفصل الورك وعلاجها في أبوظبي | الدكتور فراس يعيش",
     seoDescription:
       "Hip osteoarthritis care in Abu Dhabi — from preservation to replacement. Book a consultation.",
     h2Symptoms: "Hip Osteoarthritis Symptoms in Abu Dhabi",
@@ -75,6 +78,7 @@ export const conditions: Condition[] = [
     summary:
       "Knee osteoarthritis in Abu Dhabi may affect the medial, lateral, or patellofemoral surfaces. Care ranges from activity modification and injections to partial or total knee replacement, with robotic assistance when precise alignment is required.",
     seoTitle: "Knee Osteoarthritis in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitleAr: "خشونة مفصل الركبة وعلاجها في أبوظبي | د. فراس يعيش",
     seoDescription:
       "Knee osteoarthritis treatment in Abu Dhabi — partial or total options. Book a consultation.",
     h2Evaluation: "Knee Osteoarthritis Evaluation in Abu Dhabi",
@@ -105,7 +109,8 @@ export const conditions: Condition[] = [
     image: "/images/hip-anatomy.webp",
     summary:
       "Avascular necrosis (osteonecrosis) interrupts blood supply to the femoral head. Collapse of the head leads to secondary arthritis. Early stages may be observed or decompressed; established collapse is typically treated with total hip reconstruction planned to the patient's anatomy.",
-    seoTitle: "Avascular Necrosis Treatment in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitle: "Avascular Necrosis of the Femoral Head Abu Dhabi | Dr. Feras",
+    seoTitleAr: "نخر رأس الفخذ اللاوعائي في أبوظبي | الدكتور فراس يعيش",
     seoDescription:
       "Avascular necrosis femoral head care in Abu Dhabi with Dr. Feras Ya'ish. Request an assessment.",
     h2Symptoms: "Avascular Necrosis of the Femoral Head Symptoms in Abu Dhabi",
@@ -136,8 +141,10 @@ export const conditions: Condition[] = [
     summary:
       "Acetabular dysplasia and femoroacetabular impingement alter load across the hip from a young age. Some patients present with groin stiffness and early arthritis. Reconstruction must restore coverage and offset; replacement, when required, is planned to the patient's anatomy rather than a generic cup position.",
     seoTitle: "Hip Dysplasia Treatment in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitleAr: "خلل تنسج الورك وعلاجه في أبوظبي | الدكتور فراس يعيش",
     seoDescription:
       "Hip dysplasia care in Abu Dhabi for coverage and early arthritis. Book with Dr. Feras Ya'ish.",
+    h2Symptoms: "Hip Dysplasia Symptoms in Abu Dhabi",
     symptoms: [
       "Activity-related groin pain in younger adults",
       "Catching or stiffness after sitting",
@@ -166,6 +173,7 @@ export const conditions: Condition[] = [
     summary:
       "Failed joint replacement care in Abu Dhabi addresses pain after hip or knee replacement from loosening, osteolysis, instability, fracture, or periprosthetic joint infection, using metal-reduction CT, aspiration protocols, and modular reconstruction when indicated.",
     seoTitle: "Failed Joint Replacement in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitleAr: "فشل أو ألم بعد استبدال المفصل في أبوظبي | د. فراس يعيش",
     seoDescription:
       "Failed joint replacement assessment in Abu Dhabi for painful implants. Request a revision review.",
     h2Evaluation: "Failed Joint Replacement Evaluation in Abu Dhabi",
@@ -196,6 +204,7 @@ export const conditions: Condition[] = [
     summary:
       "Sports knee injury treatment in Abu Dhabi covers ACL rupture, meniscal tears, ramp lesions, and multi-ligament injury with anatomical arthroscopic reconstruction and repair-first meniscal surgery when appropriate.",
     seoTitle: "Sports Knee Injuries in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitleAr: "إصابات الركبة الرياضية وعدم الاستقرار في أبوظبي | د. فراس",
     seoDescription:
       "Sports knee injury care in Abu Dhabi for ACL and meniscus tears. Book with Dr. Feras Ya'ish.",
     h2Symptoms: "Sports Knee Injury Symptoms in Abu Dhabi",
@@ -229,7 +238,8 @@ export const conditions: Condition[] = [
     imageFit: "contain",
     summary:
       "Fracture malunion and non-union care in Abu Dhabi addresses high-energy periarticular fractures, open injuries, and established healing failure with anatomical reduction and stable fixation on a tertiary trauma pathway.",
-    seoTitle: "Fracture Malunion Care in Abu Dhabi | Dr. Feras Ya'ish",
+    seoTitle: "Fractures, Non-Union & Malunion in Abu Dhabi | Feras Ya'ish",
+    seoTitleAr: "الكسور وعدم الالتئام والالتئام المعيب في أبوظبي | د. فراس",
     seoDescription:
       "Fracture malunion and non-union care in Abu Dhabi. Request trauma reconstruction advice.",
     h2Evaluation: "Fracture Malunion Evaluation in Abu Dhabi",

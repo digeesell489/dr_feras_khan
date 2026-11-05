@@ -22,8 +22,12 @@ export async function generateMetadata({
   const locale: Locale = isLocale(localeParam) ? localeParam : "en";
   const condition = getCondition(slug);
   if (!condition) return { title: "Conditions | Dr. Feras Ya'ish" };
+  const title =
+    locale === "ar"
+      ? (condition.seoTitleAr ?? condition.seoTitle ?? `${condition.title} | Dr. Feras Ya'ish`)
+      : (condition.seoTitle ?? `${condition.title} | Dr. Feras Ya'ish`);
   return withLocaleAlternates(locale, `/conditions/${condition.slug}`, {
-    title: condition.seoTitle ?? `${condition.title} | Dr. Feras Ya'ish`,
+    title,
     description: condition.seoDescription ?? condition.summary,
   });
 }
