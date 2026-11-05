@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import type { LongformSection } from "@/lib/clinical-longform";
 
-/** Render optional markdown-style [label](/path) links in longform paragraphs. */
+/** Render optional markdown-style [label](/path) links in longform paragraphs (SEO cross-links). */
 function renderParagraph(paragraph: string): ReactNode[] {
   const parts = paragraph.split(/(\[[^\]]+\]\([^)]+\))/g);
   return parts.map((part, index) => {
