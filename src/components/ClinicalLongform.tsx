@@ -1,6 +1,29 @@
 "use client";
 
+import Link from "next/link";
+import type { ReactNode } from "react";
 import type { LongformSection } from "@/lib/clinical-longform";
+
+/** Render optional markdown-style [label](/path) links in longform paragraphs. */
+function renderParagraph(paragraph: string): ReactNode[] {
+  const parts = paragraph.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, index) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (match) {
+      const [, label, href] = match;
+      return (
+        <Link
+          key={`${href}-${index}`}
+          className="font-semibold text-clinical-navy hover:text-surgical-teal"
+          href={href}
+        >
+          {label}
+        </Link>
+      );
+    }
+    return <span key={`text-${index}`}>{part}</span>;
+  });
+}
 
 /** Renders educational long-form H2 sections for treatment/condition depth. */
 export function ClinicalLongform({ sections }: { sections: LongformSection[] }) {
@@ -16,7 +39,7 @@ export function ClinicalLongform({ sections }: { sections: LongformSection[] }) 
             </h2>
             <div className="space-y-4 text-base leading-relaxed text-text-secondary">
               {section.paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 64)}>{paragraph}</p>
+                <p key={paragraph.slice(0, 64)}>{renderParagraph(paragraph)}</p>
               ))}
             </div>
           </article>

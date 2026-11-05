@@ -298,8 +298,9 @@ export const treatments: Treatment[] = [
     image: "/images/knee-mechanics.webp",
     imageAlt: "Knee ligament anatomy including the ACL",
     category: "sports",
+    relatedSlugs: ["arthroscopy", "patellofemoral-instability", "partial-knee"],
     summary:
-      "Anatomical reconstruction of the anterior cruciate ligament (ACL) and associated knee ligaments after rupture or multi-ligament injury. The goal is a stable, proprioceptive knee for daily function, prayer, work, and return to sport when appropriate.",
+      "ACL and multi-ligament care in Abu Dhabi: anatomical reconstruction of the anterior cruciate ligament (ACL) and associated knee ligaments after rupture or multi-ligament injury. The goal is a stable, proprioceptive knee for daily function, prayer, work, and return to sport when appropriate.",
     seoTitle: "Knee Ligament Reconstruction in Abu Dhabi | Dr. Feras Ya'ish",
     seoTitleAr: "إعادة بناء أربطة الركبة في أبوظبي | الدكتور فراس يعيش",
     seoDescription:
