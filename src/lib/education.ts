@@ -365,8 +365,8 @@ export const educationItems: EducationItem[] = [
     duration: "4:55",
     category: "Knee Sports Injuries",
     categoryAr: "إصابات الركبة الرياضية",
-    title: "Recovery After ACL Reconstruction",
-    titleAr: "التعافي بعد إعادة بناء الرباط المتصالب",
+    title: "ACL Recovery After Reconstruction in Abu Dhabi",
+    titleAr: "التعافي بعد إعادة بناء الرباط المتصالب — ACL recovery",
     body: "Recovery after ACL reconstruction. Educational guidance on brace use, strength milestones and criteria-based return to pivoting activities.",
     bodyAr: "التعافي بعد إعادة بناء الرباط المتصالب: إرشاد تثقيفي حول الدعامة ومحطات القوة ومعايير العودة للأنشطة المحورية.",
     seoTitle: "Recovery After ACL Surgery in Abu Dhabi | Dr. Feras Ya'ish",
@@ -379,7 +379,7 @@ export const educationItems: EducationItem[] = [
       "Running and pivoting are not calendar-based alone. Strength symmetry, hop testing, and sport-specific control are reviewed before return-to-play discussions.",
     ],
     contentAr: [
-      "يركز تعافي الرباط المتصالب في أبوظبي بعد إعادة البناء على حماية الطعم مع استعادة الفرد وتنشيط الرباعية وأنماط مشي آمنة في الأسابيع الأولى.",
+      "ACL recovery في أبوظبي بعد إعادة بناء الرباط المتصالب يركز على حماية الطعم مع استعادة الفرد وتنشيط الرباعية وأنماط مشي آمنة في الأسابيع الأولى.",
       "الجري والدوران ليسا وفق التقويم وحده. تُراجع تماثل القوة واختبارات القفز والتحكم الخاص بالرياضة قبل مناقشة العودة للعب.",
     ],
     sections: [
@@ -451,6 +451,16 @@ export const educationItems: EducationItem[] = [
         ],
         paragraphsAr: [
           "راجع معلومات علاج إعادة بناء الأربطة ودليل إصابات الركبة الرياضية وصفحات حالة إصابة الركبة الرياضية للمسارات ذات الصلة في هيلث بوينت.",
+        ],
+      },
+      {
+        h2: "ACL Surgery and Ligament Reconstruction Links",
+        h2Ar: "روابط جراحة الرباط المتصالب وإعادة بناء الأربطة",
+        paragraphs: [
+          "Surgical detail for ACL and multi-ligament reconstruction sits on the knee ligament reconstruction treatment page. Use this guide for brace, strength, and return-to-sport criteria after ACL reconstruction in Abu Dhabi.",
+        ],
+        paragraphsAr: [
+          "التفاصيل الجراحية لإعادة بناء الرباط المتصالب ACL والإصابات متعددة الأربطة موجودة في صفحة علاج إعادة بناء أربطة الركبة. استخدم هذا الدليل للدعامة والقوة ومعايير العودة للرياضة بعد إعادة البناء في أبوظبي.",
         ],
       },
     ],

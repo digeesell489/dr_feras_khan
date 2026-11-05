@@ -348,6 +348,13 @@ export const treatmentLongform: Record<string, LongformSection[]> = {
       ],
     },
     {
+      h2: "Ligament Injury Patterns We Treat in Abu Dhabi",
+      paragraphs: [
+        "Ligament injuries treated here centre on ACL rupture, PCL injury, and combined multi-ligament patterns after sport or trauma — not general anatomy primers. Instability, giving-way, and activity goals guide whether reconstruction is discussed.",
+        "Meniscal ramp or root injury often accompanies ACL tears and is planned in the same sitting when indicated. Related sports knee injury pathways are outlined on the [sports knee injury](/conditions/sports-knee-injury) condition page.",
+      ],
+    },
+    {
       h2: "How Knee Ligament Reconstruction (including ACL) Is Performed",
       paragraphs: [
         "Anatomical ACL reconstruction uses modern fixation and graft selection discussed for age, sport, and tissue quality. Associated meniscal and ligament injuries are addressed in the same sitting when indicated.",
@@ -362,10 +369,17 @@ export const treatmentLongform: Record<string, LongformSection[]> = {
       ],
     },
     {
+      h2: "ACL Reconstruction Within Knee Ligament Surgery",
+      paragraphs: [
+        "ACL reconstruction uses anatomical tunnels and modern fixation; graft choice is discussed for age, sport, and tissue quality. Associated ligament and meniscal work is addressed when the examination and MRI require it.",
+        "For brace use, strength milestones, and criteria-based return to pivoting, see the [ACL recovery guide](/patient-education/acl-recovery).",
+      ],
+    },
+    {
       h2: "Recovery After Knee Ligament Reconstruction (including ACL)",
       paragraphs: [
         "Running and pivoting are not calendar-only. Strength, hop testing, and sport-specific control gate return. Associated meniscal repair may slow early flexion.",
-        "Shared plans with physiotherapy\u2014and team medical staff for professionals\u2014reduce mixed messages. Expect months of progressive loading, not weeks.",
+        "Shared plans with physiotherapy\u2014and team medical staff for professionals\u2014reduce mixed messages. Expect months of progressive loading, not weeks. Patient-facing milestones are summarised in the [ACL recovery guide](/patient-education/acl-recovery).",
       ],
     },
     {

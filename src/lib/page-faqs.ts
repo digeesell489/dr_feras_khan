@@ -356,8 +356,8 @@ export const pageFaqs: Record<string, PageFaq[]> = {
     {
       q: "How long does recovery take after ACL reconstruction?",
       qAr: "كم يستغرق التعافي بعد إعادة بناء الرباط المتصالب؟",
-      a: "Recovery takes several months and varies with the injury, graft choice, and rehabilitation progress. Returning to sport requires meeting specific functional criteria.",
-      aAr: "يستغرق عدة أشهر ويختلف حسب الإصابة واختيار الطعم وتقدم التأهيل. تتطلب العودة للرياضة استيفاء معايير وظيفية محددة.",
+      a: "Recovery takes several months and varies with the injury, graft choice, and rehabilitation progress. Returning to sport requires meeting specific functional criteria. See the ACL recovery guide at /patient-education/acl-recovery for brace, strength, and return-to-sport milestones.",
+      aAr: "يستغرق عدة أشهر ويختلف حسب الإصابة واختيار الطعم وتقدم التأهيل. تتطلب العودة للرياضة استيفاء معايير وظيفية محددة. راجع دليل ACL recovery على /patient-education/acl-recovery للدعامة والقوة ومحطات العودة للرياضة.",
     },
     {
       q: "When can I return to sports after ligament reconstruction?",
