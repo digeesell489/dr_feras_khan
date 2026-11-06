@@ -45,7 +45,7 @@ export const treatments: Treatment[] = [
   {
     slug: "total-knee-replacement",
     tag: "Knee Arthroplasty",
-    title: "Total Knee Replacement Surgery in Abu Dhabi",
+    title: "Total Knee Replacement Surgery in UAE",
     short: "Total Knee Replacement",
     shortAr: "استبدال الركبة الكامل",
     image: "/images/implant-knee.webp",
