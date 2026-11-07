@@ -1,7 +1,28 @@
 import { NextRequest, NextResponse } from "next/server";
-import { defaultLocale, locales } from "@/lib/locale";
+import { defaultLocale, locales, stripLocale } from "@/lib/locale";
 
 const PUBLIC_FILE = /\.[^/]+$/;
+
+/** Permanently removed sections — 410 tells crawlers to drop them from the index. */
+const GONE_PREFIXES = ["/for-physicians"] as const;
+
+function isGonePath(pathname: string): boolean {
+  const logical = stripLocale(pathname).replace(/\/$/, "") || "/";
+  return GONE_PREFIXES.some(
+    (prefix) => logical === prefix || logical.startsWith(`${prefix}/`),
+  );
+}
+
+function goneResponse(): NextResponse {
+  return new NextResponse("Gone", {
+    status: 410,
+    headers: {
+      "Content-Type": "text/plain; charset=utf-8",
+      "X-Robots-Tag": "noindex, nofollow",
+      "Cache-Control": "public, max-age=0, must-revalidate",
+    },
+  });
+}
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -14,6 +35,10 @@ export function middleware(request: NextRequest) {
     PUBLIC_FILE.test(pathname)
   ) {
     return NextResponse.next();
+  }
+
+  if (isGonePath(pathname)) {
+    return goneResponse();
   }
 
   const segment = pathname.split("/")[1];
